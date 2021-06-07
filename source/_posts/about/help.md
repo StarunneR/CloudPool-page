@@ -4,9 +4,10 @@ categories: 浊池
 main: 我们都是年轻人
 date: 2099-01-01
 ---
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=240 src="//music.163.com/outchain/player?type=1&id=36875829&auto=1&height=430"></iframe>
 
-<!-- {% aplayer "What Would I Change It To" "Avicii" "https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Music/05_What_Would_I_Change_It_To_(feat._AlunaGeorge).m4a" "What_Would_I_Change_It_To.jpg" "autoplay" "lrc:What_Would_I_Change_It_To.lrc" %} -->
+{% aplayer "What Would I Change It To" "Avicii" "https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Music/05_What_Would_I_Change_It_To_(feat._AlunaGeorge).m4a" "What_Would_I_Change_It_To.jpg" "autoplay:false" "lrc:What_Would_I_Change_It_To.lrc" %}
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=400 height=240 src="//music.163.com/outchain/player?type=1&id=36875829&auto=1&height=430"></iframe>
 
 ---
 
@@ -89,7 +90,7 @@ CloudPool浊池曾是由~~一群~~年轻人管理的博客,十分感谢你的关
     20.12.13 完成访问速度优化
     21.1.14 修复首页(index)的文章概要显示错误问题
     21.1.30 电脑/宽屏Pad端网页完善目录功能
-    21.2.5 考虑到访问速度原因，新增域名voiiu.com，寓意 (双拼输入)v[zh]o[uo]i[ch]i[i] & u[you]
+    21.2.5 考虑到访问速度原因，新增域名voiiu.com，寓意 (双拼输入)v(zh)o(uo)i(ch)i & u(you)
     21.2.6 手机端网页加入目录功能
     21.5.24 换用Waline评论系统
 ---
