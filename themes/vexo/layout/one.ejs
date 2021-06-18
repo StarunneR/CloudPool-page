@@ -9,7 +9,6 @@
     <h4>接口来自: <a href="https://hitokoto.cn/">一言</a></h4>
 </main>
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-<%- js('js/valine.min.js') %>
 <script>
     (function () {
         var url = '<%= config.url %>/<%= page.path %>';
@@ -21,14 +20,24 @@
                 })
     })()
 </script>
+<!--<%- js('js/valine.min.js') %>-->
+<script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
 <script>
-    new Valine({
+    new Waline({
         el: '#vcomments',
+        serverURL: 'https://comment-kappa.vercel.app',
+        emoji: [
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+        ],
         appId: '<%- page.appId %>',
         appKey: '<%- page.appKey %>',
         avatar: '<%- page.avatar %>',
-        enableQQ: true,
-        placeholder: '<%- page.prompt %> <% if (page.required == "nick" ) { %>\n\n至少填写昵称，若需显示头像请参考置顶页 <% } %>',
-        requiredFields: ['<%= page.required %>'],
+//      enableQQ: true,
+        placeholder: '<%- page.prompt %> <% if (page.required == "nick" ) { %> <% } %>',
+        requiredFields: ['<%= page.required %>'], 
     })
 </script>

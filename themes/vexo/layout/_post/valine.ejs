@@ -9,12 +9,17 @@
             el: '#vcomments',
             // add serverURL
             serverURL: 'https://comment-kappa.vercel.app',
+            // add emoji
+            emoji: [
+                'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
+                'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+                'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
+                'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq',
+                'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
+            ],
             appId: '<%- theme.comment.valine.appId %>',
             appKey: '<%- theme.comment.valine.appKey %>',
             avatar: '<%- theme.comment.valine.avatar %>',
-            enableQQ: '<%- theme.comment.valine.enableQQ %>',
-            placeholder: '<%- theme.comment.valine.placeholder %> \n <% if (theme.comment.valine.required == "nick" ) { %>\n必需填写昵称。若填写QQ号，再点击邮箱栏会自动获取QQ昵称以及头像 <% } %>',
-            requiredFields: ['<%= theme.comment.valine.required %>'],
         })
     </script>
 </div>
