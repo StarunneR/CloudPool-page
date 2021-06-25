@@ -11,7 +11,7 @@ date: 2099-01-01
 
 ---
 
-CloudPool浊池曾是由~~一群~~年轻人管理的博客,十分感谢你的关注。使用Hexo作为博客框架,GitHub Page/GitLab Page作为静态页面托管平台。
+CloudPool浊池曾是由年轻人管理的博客,十分感谢你的关注。使用Hexo作为博客框架,GitHub Page/GitLab Page作为静态页面托管平台。
 联系QQ: 1783074382。
 
 <!--以及另一个建设中的网页：**[浊池读书 voii.cc](https://voii.cc)**
