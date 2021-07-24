@@ -13,13 +13,12 @@ main: 授人以渔
 * [种子搜](https://www.zhongzilou.com/) [种子搜导航](https://www.zhongzidizhi.com/)
 * [BThub 地址发布 GitHub](https://github.com/fwonggh/Bthub) [GitLab](https://gitlab.com/fwonggh/Bthub/-/blob/master/README.md)
 * [雨花阁 地址发布](https://www.yuhuage.club/)
-* [磁力蜘蛛 源网址](http://www.eclzz.net/) [跳转域名](http://www.eclzz.shop/)
 * [BT4G](https://bt4g.org/)
 * [磁力熊搜素](https://www.cilixiong.com/search/)
-* [巴士搜索](http://bashi5.org)
+* [巴士搜索](http://bashi5.com)
 
 不可用：
-磁力熊猫，磁力柠檬 ，老王磁力，BT1207，SkrBT，[磁力狗](http://ciligou.app/)
+磁力蜘蛛，磁力熊猫，磁力柠檬 ，老王磁力，BT1207，SkrBT，[磁力狗](http://ciligou.app/)
 **建议搜索电影英文名**
 
 ---
