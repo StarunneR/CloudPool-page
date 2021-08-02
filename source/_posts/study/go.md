@@ -1,6 +1,7 @@
 ---
 title: 学术垃圾场
-date: 2021-04-17
+date: 2021-08-02
+date2: 2021-04-17
 date1: 2021-01-14
 tags: [视频,学习,MOOC,公开课]
 categories: 学习
@@ -50,3 +51,8 @@ counting: on
 同上
 ### [天若OCR开源版V5.0.0](https://github.com/AnyListen/tianruoocr/releases)
 截图 + OCR文字识别
+
+## 学习资源推荐
+### [Crash Course](https://crashcourse.club/category/)
+> [Study Skills 学习技巧](https://crashcourse.club/category/study_skills/)
+> [Big History 大历史](https://www.bilibili.com/video/av2166968)
