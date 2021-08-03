@@ -9,6 +9,7 @@ menu:
  一句: /one/
  网盘: https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/
  ( ^ω^): http://emoji.voiiu.com/
+
 # LOFTER: https://cloudpool.lofter.com
 # 关于: /about/
 
@@ -22,8 +23,8 @@ social:
 
 
 
-# highlight:
-#  tomorrow
+highlight:
+  tomorrow
 
 # catalog
 catalog: true
