@@ -162,16 +162,29 @@ iOS上最后一个支持直接从Windows电脑导入音乐文件的APP
 
 * Fing
 
-Wifi信息获取与同一wifi下设备扫描，懂的都懂
+Wifi信息获取与同一wifi下设备扫描
 
 ## 手机App
+
+### 应用市场
+
+[腾讯应用宝](https://sj.qq.com/myapp/)
+[豌豆荚](https://www.wandoujia.com)
+[应用汇](http://www.appchina.com)
+[华为应用市场](https://appgallery.huawei.com/)
+[酷安](https://www.coolapk.com)
+---
+[Apkpure](https://apkpure.com)
+[APKMirror](https://www.apkmirror.com)
+[Aptoide](https://cn.aptoide.com/)
+[apkmonk](https://www.apkmonk.com)
 
 ### 生活
 
 几何天气
 高德地图
 摩拜单车 & 哈啰出行
-To Do
+Microsoft To Do
 
 Airbnb
 大众点评
