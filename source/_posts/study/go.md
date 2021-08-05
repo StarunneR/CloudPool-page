@@ -54,5 +54,24 @@ counting: on
 
 ## 学习资源推荐
 ### [Crash Course](https://crashcourse.club/category/)
-> [Study Skills 学习技巧](https://crashcourse.club/category/study_skills/)
+
+<!--> [Study Skills 学习技巧](https://www.bilibili.com/video/BV1bW411a7oM)
 > [Big History 大历史](https://www.bilibili.com/video/av2166968)
+> [Philosophy 哲学](https://www.bilibili.com/video/BV1fx411b7Hp)
+> [Physhology 心理学](https://www.bilibili.com/video/BV1Ax411N75Q)
+> [Computer Science 计算机科学](https://www.bilibili.com/video/BV1EW411u7th)
+> [Economics 经济学](https://www.bilibili.com/video/BV1Xs411k7Nr)
+> [Anatomy & Physiology 解剖与生理](https://www.bilibili.com/video/BV15s411i7Wx)
+> [Literature 文学](https://space.bilibili.com/5981968/favlist?fid=973425868) （不全）
+> [Sociology 社会学](https://crashcourse.club/category/sociology/) （不全）
+> [Film History 电影史](https://space.bilibili.com/5981968/favlist?fid=973426368)
+> [Film Criticism 电影鉴赏](https://space.bilibili.com/5981968/favlist?fid=973170268)
+> [Film Production 电影创作](https://space.bilibili.com/5981968/favlist?fid=973170368)
+> [Intellectual Property 知识产权](https://www.bilibili.com/video/BV1Ws41117Xw)
+> [American History 美国史](https://space.bilibili.com/5981968/favlist?fid=973425768)
+> [World History 世界史第一季](http://open.sina.com.cn/course/id_465) （不全）
+> [World History 世界史第二季](https://www.bilibili.com/video/BV15s411Y7VW)
+> [World Mythology 世界神话学](https://space.bilibili.com/8950786/favlist?fid=852593486)
+
+[鸾爷@bilibili](https://space.bilibili.com/1950746)
+-->
