@@ -42,7 +42,7 @@ pre
   transform: unset !important
 
 .app-body
-  padding: 1em  0.5em //注意archive页面左对齐
+  padding: 1em  1em
   margin: auto
   height: 100%
   max-width: 1200px
@@ -50,6 +50,8 @@ pre
   opacity: 0
   transform: translateY(-20px)
   transition: all 0.4s
+  @media m-mobile
+    padding: initial
 
 .hljs
   background: none !important
@@ -94,6 +96,8 @@ pre
   font-style: normal
   padding-bottom: 20px
   padding-left: 2em
+  @media m-mobile
+    padding-left: 1em
   &:first-child
     margin-top: 60px
 
