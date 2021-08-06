@@ -42,12 +42,8 @@ pre
   transform: unset !important
 
 .app-body
-  padding: 1em  0.5em
+  padding: 1em  0.5em //注意archive页面左对齐
   margin: auto
-  @media m-mobile
-      margin: 0 0.5em
-  @media m-pad
-      margin: 0 1em
   height: 100%
   max-width: 1200px
   position: relative
@@ -183,4 +179,5 @@ h2.article-head
 // @import "_pages/subterranean"
 @import "_pages/cloudpoolmag"
 @import "_pages/one"
-@import "custom"
+@import "_counting/busuanzi"
+@import "_comment/valine"
