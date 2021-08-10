@@ -10,6 +10,7 @@ required:
 ---
 **[“一句”](/one)** 接口来自: <a href="https://hitokoto.cn/">一言 hijikoto.cn</a>
 
-* 评论头像设定（需科学上网）：
+
+**评论头像设定**（需科学上网）：
 1. [注册](https://wordpress.com/start/wpcc/oauth2-user/zh-cn)，邮箱与此处登录邮箱一致
 2. 在设置页上传头像
