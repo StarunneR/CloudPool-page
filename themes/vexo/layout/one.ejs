@@ -6,7 +6,7 @@
 <main class="app-body">
     <!--<div class="card-container"></div>-->
     <div id="vcomments" class=""></div>
-    <h4>接口来自: <a href="https://hitokoto.cn/">一言</a></h4>
+    <%- page.content %>
 </main>
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 <script>
@@ -37,7 +37,7 @@
         appKey: '<%- page.appKey %>',
         avatar: '<%- page.avatar %>',
 //      enableQQ: true,
-        placeholder: '<%- page.prompt %> <% if (page.required == "nick" ) { %> <% } %>',
+        placeholder: '<%- page.prompt %>',
         requiredFields: ['<%= page.required %>'], 
     })
 </script>

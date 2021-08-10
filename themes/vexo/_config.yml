@@ -48,7 +48,7 @@ comment:
   valine:
     appId: M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI
     appKey: arEPHdbMnKwMjQgiWsLgw34N
-    placeholder: 说点什么吧
+    placeholder: 
     pageSize: 8
     guest_info: nick,mail
     avatar: mp

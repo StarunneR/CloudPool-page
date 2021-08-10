@@ -32,7 +32,9 @@ CloudPool浊池曾是由年轻人管理的博客,十分感谢你的关注。使�
 
 ---
 
-<!--* 评论头像设定：[注册](https://wordpress.com/start/wpcc/oauth2-user/zh-cn)-->
+* 评论头像设定（需科学上网）：
+1. [注册](https://wordpress.com/start/wpcc/oauth2-user/zh-cn)，邮箱与此处登录邮箱一致
+2. 在设置页上传头像
 * 评论时留下对应邮箱即可
 * 评论可以使用[**Markdown格式**](https://commonmark.org/help/)。    [教程1](https://www.runoob.com/markdown/md-tutorial.html) Or [教程2](https://markdown.tw)
 
@@ -92,7 +94,7 @@ CloudPool浊池曾是由年轻人管理的博客,十分感谢你的关注。使�
     21.2.5 考虑到访问速度原因，新增域名voiiu.com，寓意 (双拼输入)v(zh)o(uo)i(ch)i & u(you)
     21.2.6 手机端网页加入目录功能
     21.5.24 换用Waline评论系统
-    21.8.6 修复：waline评论换行不起效问题
+    21.8.10 修复Waline评论格式问题
 ---
     网站开支：
     18.6.7 购买域名 cloudpool2017.com 一年 -￥7.15

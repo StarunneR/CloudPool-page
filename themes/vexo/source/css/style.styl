@@ -56,104 +56,6 @@ pre
 .hljs
   background: none !important
 
-.tags
-  margin: 15px 0
-  span
-    &:first-child
-      margin-right: 10px
-      font-weight: 600
-
-.tag-code
-  font-family: 'Roboto Mono', Monaco, courier, monospace
-  font-size: .8em
-  display: inline-block
-  background-color: color-background
-  color: color-orange
-  padding: 3px 5px
-  margin: 0 2px 5px 0
-  border-radius: 2px
-  white-space: nowrap
-
-.categories
-  margin: 15px 0
-  span
-    &:first-child
-      margin-right: 10px
-      font-weight: 600
-
-.categories-code
-  font-family: 'Roboto Mono', Monaco, courier, monospace
-  font-size: .8em
-  display: inline-block
-  background-color: color-background
-  color: color-orange
-  padding: 3px 5px
-  margin: 0 2px 5px 0
-  border-radius: 2px
-  white-space: nowrap
-
-.article-card
-  font-style: normal
-  padding-bottom: 20px
-  padding-left: 2em
-  @media m-mobile
-    padding-left: 1em
-  &:first-child
-    margin-top: 60px
-
-h2.article-head
-  font-style: normal
-  font-size: 1.6em
-  margin-bottom: 0
-
-.article-head > a
-  font-style: normal
-  color: color-dark
-  &:hover
-    border-bottom: 2px solid color-primary
-
-.article-date
-  font-style: normal
-  color: color-gray
-  margin: 10px 0
-  font-size: 0.9em
-
-.article-summary
-  font-style: italic
-  margin: 10px 0
-  color: color-dark
-
-.more
-  font-weight: 600
-  display: inline-block
-  transition: all 0.3s
-  &:hover
-    transform: translateX(10px)
-
-.notice
-  font-size: 12px
-  display: block
-  margin-top: 10px
-  text-align: center
-  color: color-gray
-  font-style: italic
-
-.image-view-wrap
-  position: fixed
-  top: 0
-  left: 0
-  bottom: 0
-  right: 0
-  z-index: 1000
-  transition: all 0.3s ease-in-out
-  .image-view-inner
-    position: relative
-  img
-    display: block
-    margin: 0 auto
-    cursor: zoom-out
-    transition: all 0.3s ease-in-out
-
 .wrap-active
   background-color: rgba(255, 255, 255, .9)
 
@@ -175,14 +77,16 @@ h2.article-head
 @import "_partial/pager"
 @import "_partial/layout"
 @import "_partial/nav"
+
 @import "_pages/post"
 @import "_pages/archives"
+@import "_pages/article"
 @import "_pages/about"
 @import "_pages/catalog"
 @import "_pages/categories"
 @import "_pages/tags"
-// @import "_pages/subterranean"
 @import "_pages/cloudpoolmag"
 @import "_pages/one"
+
 @import "_counting/busuanzi"
 @import "_comment/valine"
