@@ -5,7 +5,7 @@
 <main class="app-body">
     <!--<div class="card-container"></div>-->
     <div id="vcomments" class=""></div>
-    <!-- <%- page.content %> -->
+    <%- page.content %>
 </main>
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 <script>
@@ -19,7 +19,6 @@
                 })
     })()
 </script>
-<!--<%- js('js/valine.min.js') %>-->
 <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
 <script>
     new Waline({
@@ -36,7 +35,6 @@
         appKey: '<%- page.appKey %>',
         avatar: '<%- page.avatar %>',
         IPQPS: 0,
-//      enableQQ: true,
         placeholder: '<%- page.prompt %>',
         requiredFields: ['<%= page.required %>'], 
     })
