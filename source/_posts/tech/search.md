@@ -10,7 +10,7 @@ counting:
 sub: 
 ---
 
-### 普通搜索
+### 普通搜索引擎
 
 * [百度](https://www.baidu.com)
 * [神马搜狗360](https://www.gobaidugle.com/search3?engine=3&keyword=&num=10&one=sm&two=sogou&three=so&rsv_enter=1&rsv_bp=1)
