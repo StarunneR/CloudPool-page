@@ -12,6 +12,8 @@ counting: on
 
 ## MOOC平台
 ### 中国大学
+* [华文慕课](http://www.chinesemooc.org/) 
+（北京大学）
 * [学堂在线](https://next.xuetangx.com)
 （清华大学等）
 * [好大学在线](https://www.cnmooc.org)
