@@ -42,7 +42,7 @@ pre
   transform: unset !important
 
 .app-body
-  padding: 1em  1em
+  padding: 16px  16px
   margin: auto
   height: 100%
   max-width: 1200px
@@ -60,7 +60,7 @@ pre
   background-color: rgba(255, 255, 255, .9)
 
 .small-icon
-  width: 1em
+  width: 16px
   margin-right: 2px
   border-radius: 100%
 
@@ -77,7 +77,6 @@ pre
 @import "_partial/pager"
 @import "_partial/layout"
 @import "_partial/nav"
-
 @import "_pages/post"
 @import "_pages/archives"
 @import "_pages/article"
@@ -87,6 +86,23 @@ pre
 @import "_pages/tags"
 @import "_pages/cloudpoolmag"
 @import "_pages/one"
-
 @import "_counting/busuanzi"
 @import "_comment/valine"
+
+// toggle hider title
+.hider_title {
+    cursor: pointer;
+    background: #eeeeee;
+}
+
+// toggle indicators
+.close:before {
+    padding-left: .5em;
+    padding-right: .5em;
+    content: "▼";
+}
+.open:before {
+    padding-left: .5em;
+    padding-right: .5em;
+    content: "▲";
+}
