@@ -95,6 +95,7 @@ CloudPool浊池曾是由年轻人管理的博客,十分感谢你的关注。使�
     21.2.6 手机端网页加入目录功能
     21.5.24 换用Waline评论系统
     21.8.10 修复Waline评论格式问题
+    21.10.21 加入 {% fold %} {% endfold %} 折叠功能，代码来自 https://bambrow.com/20200726-hexo-blog-toggles/
 ---
     网站开支：
     18.6.7 购买域名 cloudpool2017.com 一年 -￥7.15
