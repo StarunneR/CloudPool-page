@@ -24,7 +24,7 @@ main: 小孩子千万不要学
 说明：此方法建议用在路由器上，路由器需刷固件(Merlin/Padavan/Openwrt/...) 至于哪些路由器支持刷机请自行查找 但好消息是贵一点且流行的路由器一般都有第三方固件
 
 a.打开 [Tunnel Broker](https://tunnelbroker.net/)，注册账号（实际上具体信息可以随便填）
-b.Create New Tunnel, 填写公网 ip 地址(可百度'ip'查看);服务器事实上建议选美国的，延迟低，原因不明。自用纽约的
+b.Create New Tunnel, 填写公网 ip 地址(可百度'ip'查看);服务器事实上建议选美国的，延迟低，原因不明。
 c.对应路由器设置填写<sup>[1]</sup>
 d.（若路由器重启）回 Tunnel Details，重填 IP 地址（如有变化）[未重启则可以不管]
 
@@ -33,7 +33,7 @@ d.（若路由器重启）回 Tunnel Details，重填 IP 地址（如有变化�
     服务器ipv4地址/6in4远程端点/WAN IPv4地址----Server IPv4 Address
     服务器ipv6地址/IPv6 外网默认网关/WAN IPv6默认网关----Server IPv6 Address    *除尾端'/64'
     客户端ipv6地址/IPv6 外网地址/WAN IPv6地址----Client IPv6 Address    *除尾端'/64'
-    内网IPv6前缀/IPv6 内网地址/LAN IPv6地址----Routed /48:    *需首先点击Asign    **除尾端'/48'
+    内网IPv6前缀/IPv6 内网地址/LAN IPv6地址----Routed /64
 
     其他说明：1.IP地址尾部的/**为地址长度规定，路由器设置填写时若需要填写前缀长度则填写对应数字
              2.IPv6 DNS可填写：2001:470:20::2   2001:4860:4860::8888    2001:4860:4860::8844

@@ -131,16 +131,7 @@ F1 截图大法好
 - [ChipGenius v4.20.1107](ChipGenius_v4_20_1107_fix.rar)  可用于查看各接口协议版本（如判断是否正常运行USB3.1）  
     来自 https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287
 
-- [清理工具 CCleaner](http://www.ccleaner.com/business/ccleaner-business-edition)
-
-    1. 点击Free Trial，下载 Business Edition，**断网运行**，注册码：
-        License Key: C2YW-XZT7-A4SE-UD89-YZPC
-        Name: <任意>
-    可在设置中取消开机自启
-    2. 使用记事本打开 C:\Windows\System32\drivers\etc\hosts
-    增加一行
-        127.0.0.1 license.piriform.com
-
+- [清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
 <!-- 
 - 问题：AMD集显安装通用驱动后提示驱动程序版本不匹配
 解决方法：注册表打开 HKEY_LOCAL_MACHINE\SOFTWARE\AMD\CN ，删除DriverVersion内型号字段，重启
