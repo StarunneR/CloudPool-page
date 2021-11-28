@@ -46,6 +46,8 @@ counting: on
 [Bing学术](https://cn.bing.com/academic/)
 [Microsoft Academic](https://academic.microsoft.com)
 
+[清华大学图书馆推荐网络学术站点](http://wr.lib.tsinghua.edu.cn)
+
 ## 软件
 ### [冰点文库下载器](https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Software/)
 免费下载**百度、豆丁、丁香、MBALib、Book118**等文库的文档。下载为pdf图片文件及txt文本文件
