@@ -13,7 +13,7 @@ sub:
 ### 普通搜索引擎
 
 * [百度](https://www.baidu.com)
-* [神马搜狗360](https://www.gobaidugle.com/search3?engine=3&keyword=&num=10&one=sm&two=sogou&three=so&rsv_enter=1&rsv_bp=1)
+* [神马搜狗3](https://www.gobaidugle.com/search3?engine=3&keyword=&num=10&one=sm&two=sogou&three=toutiao&rsv_enter=1&rsv_bp=1)
 * [必应](https://bing.com/)
 * [Google](https://www.google.com)
 * [DuckDuckGo](https://duckduckgo.com/)
@@ -40,4 +40,3 @@ sub:
 * [亚马逊](https://www.amazon.cn/)
 * [聚美优品](http://gz.jumei.com/)
 
-* [淘东搜素](https://www.gobaidugle.com/search2?engine=2&keyword=%E6%88%91%E5%9C%A8%E4%B8%8A%E9%9D%A2&num=10&one=taobao&two=jd&rsv_enter=1&rsv_bp=1)
