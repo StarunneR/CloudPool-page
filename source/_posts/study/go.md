@@ -38,9 +38,9 @@ counting: on
 设计软件教程
 
 ## 搜索
-### [Google学术](https://scholar.google.com)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)&emsp;&emsp;[Microsoft Academic](https://academic.microsoft.com)
+* [Google学术](https://scholar.google.com)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)&emsp;&emsp;[Microsoft Academic](https://academic.microsoft.com)
 [Mirror List](https://www.library.ac.cn/)
-* [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链学术搜索](https://www.blyun.com/) [超星读秀学术搜索](https://www.duxiu.com/) [超星发现系统](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/) []
+* [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链学术搜索](https://www.blyun.com/) [超星读秀学术搜索](https://www.duxiu.com/) [超星发现系统](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/)
 * [学术屋导航](http://sci.xueshuwu.cn/)
 * [虫部落学术搜素](https://scholar.chongbuluo.com/)
 * [虫部落电子书搜素](https://ebook.chongbuluo.com/)
