@@ -1,7 +1,8 @@
 ---
 title: 常用软件推荐
 author: m1
-date: 2021-08-03
+date: 2022-03-23
+date1: 2021-08-03
 tags: [实用, 软件, 安装]
 categories: 浊技术
 main: Windows软件
@@ -11,7 +12,7 @@ catalog: on
 
 ### 浏览器
 
-* [Chrome 浏览器](https://www.google.cn/intl/zh-CN/chrome/) 或 [google.com](https://www.google.com/intl/zh-CN/chrome/)
+* [Chrome 浏览器 google.cn](https://www.google.cn/intl/zh-CN/chrome/) 或 [google.com](https://www.google.com/intl/zh-CN/chrome/)
 
     优点：1.使用流畅，用户体较好；2.兼容性极好(万物基于Chrome)
     缺点：1.占用后台资源较多；2.附加组件功能与同步功能 可 能 无法使用。
@@ -24,14 +25,14 @@ catalog: on
 * [Vivaldi 浏览器](https://vivaldi.com/zh-hans/)
 
     优点：1.耐看；2.Chromium(谷歌浏览器)内核，附加组件齐全；3.同步设置功能可用
-    缺点：同Chrome
+    缺点：同Chrome,更新比Chrome慢
 
 > 附加组件： 
 1.广告过滤：Firefox - [uBlock Origin](https://addons.mozilla.org/zh-CN/firefox/addon/ublock-origin/) 
 2.查词/翻译：[沙拉查词](https://saladict.crimx.com/) 
 3.减少网页跟踪：[隐私獾PrivacyBadger](https://privacybadger.org/)
-3.狗东领券助手：[京价保](https://jjb.im/)
 4.右键解锁：Firefox - [快乐右键](https://addons.mozilla.org/zh-CN/firefox/addon/%E5%BF%AB%E4%B9%90%E5%8F%B3%E9%94%AE/)  Chrome - [启用右键](https://chrome.google.com/webstore/detail/enable-right-click-for-go/ofgdcdohlhjfdhbnfkikfeakhpojhpgm)
+5.购物比价：[守候购物小助手](https://exzs.cn/extension/ShoppingAssistant.html) 或 [购物党自动比价工具](https://www.gwdang.com/app/extension)
 
 ### 工具软件
 
@@ -54,10 +55,6 @@ catalog: on
     DSP管理器 - 激活 重采样器 (PPHS) - 配置 目标采样 48000 Hz　　[参考来源](https://tieba.baidu.com/p/5431845992)
 
     音乐排序方式可选择：右键播放列表标题 - 列 - 专辑艺术家
-
-* [手心输入法](http://www.xinshuru.com/)
-
-一款比较**干净**的输入法
 
 * 压缩软件
 
@@ -120,18 +117,18 @@ F1 截图大法好
 
 ### 其他小工具
 
-- [Dism++](https://www.chuyu.me/zh-Hans/index.html) 实用系统管理小工具集合
+<!-- - [Dism++](https://www.chuyu.me/zh-Hans/index.html) 实用系统管理小工具集合-->
 
-- [卡硬工具箱](http://www.kbtool.cn/) 硬件检测、管理、性能测试工具以及各种实用软件
+<!-- - [卡硬工具箱](http://www.kbtool.cn/) 硬件检测、管理、性能测试工具以及各种实用软件 -->
 
-- [waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases) 更好地放大图片
+<!-- - [waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases) 更好地放大图片 -->
 
-- [AgentNEO](https://neoladder.org/) + [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)
+<!-- - [AgentNEO](https://neoladder.org/) + [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)-->
 
-- [ChipGenius v4.20.1107](ChipGenius_v4_20_1107_fix.rar)  可用于查看各接口协议版本（如判断是否正常运行USB3.1）  
-    来自 https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287
+<!-- - [ChipGenius v4.20.1107](ChipGenius_v4_20_1107_fix.rar)  可用于查看各接口协议版本（如判断是否正常运行USB3.1）  
+    来自 https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287 -->
 
-- [清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
+<!-- - [清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download) -->
 <!-- 
 - 问题：AMD集显安装通用驱动后提示驱动程序版本不匹配
 解决方法：注册表打开 HKEY_LOCAL_MACHINE\SOFTWARE\AMD\CN ，删除DriverVersion内型号字段，重启

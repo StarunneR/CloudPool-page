@@ -1,6 +1,7 @@
 ---
 title: 学术垃圾场
-date: 2021-08-02
+date: 2022-03-30
+date3: 2021-08-02
 date2: 2021-04-17
 date1: 2021-01-14
 tags: [视频,学习,MOOC,公开课]
@@ -37,14 +38,14 @@ counting: on
 设计软件教程
 
 ## 搜索
-### [虫部落学术搜素](https://scholar.chongbuluo.com/)
-### [学术屋导航](http://sci.xueshuwu.cn/)
-### [虫部落电子书搜素](https://ebook.chongbuluo.com/)
-[CNKI](https://www.cnki.net/)
-[Google学术](https://scholar.google.com) 
-[百度学术](https://xueshu.baidu.com)
-[Bing学术](https://cn.bing.com/academic/)
-[Microsoft Academic](https://academic.microsoft.com)
+### [Google学术](https://scholar.google.com)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)&emsp;&emsp;[Microsoft Academic](https://academic.microsoft.com)
+[Mirror List](https://www.library.ac.cn/)
+* [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链学术搜索](https://www.blyun.com/) [超星读秀学术搜索](https://www.duxiu.com/) [超星发现系统](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/) []
+* [学术屋导航](http://sci.xueshuwu.cn/)
+* [虫部落学术搜素](https://scholar.chongbuluo.com/)
+* [虫部落电子书搜素](https://ebook.chongbuluo.com/)
+* 电子书搜索：
+[古登堡计划](https://www.gutenberg.org/) [ebookee](https://www.ebookee.ws/) 
 
 [清华大学图书馆推荐网络学术站点](http://wr.lib.tsinghua.edu.cn)
 

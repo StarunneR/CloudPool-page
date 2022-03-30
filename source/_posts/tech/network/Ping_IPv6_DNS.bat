@@ -1,5 +1,5 @@
 @echo off
-echo #DNS Ping -6 Test#
+echo # DNS Ping -6 Test
 echo.
 echo ## China
 echo.
@@ -30,7 +30,7 @@ echo.
 echo ### Beijing Jiaotong University
 ping -6 2001:da8:205:2060::188 -w 1000
 echo.
-echo ### University Of Science & Technology Beijing
+echo ### University Of Science \& Technology Beijing
 ping -6 2001:da8:208:10::6 -w 1000
 echo.
 echo ### Chinese Academy of Sciences (Yeti)
