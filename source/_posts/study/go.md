@@ -38,9 +38,8 @@ counting: on
 设计软件教程
 
 ## 搜索
-* [Google学术](https://scholar.google.com)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)&emsp;&emsp;[Microsoft Academic](https://academic.microsoft.com)
-[Mirror List](https://www.library.ac.cn/)
-* [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链学术搜索](https://www.blyun.com/) [超星读秀学术搜索](https://www.duxiu.com/) [超星发现系统](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/)
+* [Google学术](https://scholar.google.com) [Mirror List](https://www.library.ac.cn/)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)&emsp;&emsp;[Microsoft Academic](https://academic.microsoft.com)
+* [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链](https://www.blyun.com/) [超星读秀](https://www.duxiu.com/) [超星发现](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/)
 * [学术屋导航](http://sci.xueshuwu.cn/)
 * [虫部落学术搜素](https://scholar.chongbuluo.com/)
 * [虫部落电子书搜素](https://ebook.chongbuluo.com/)
@@ -59,24 +58,3 @@ counting: on
 
 ## 学习资源推荐
 ### [Crash Course](https://crashcourse.club/category/)
-
-<!--> [Study Skills 学习技巧](https://www.bilibili.com/video/BV1bW411a7oM)
-> [Big History 大历史](https://www.bilibili.com/video/av2166968)
-> [Philosophy 哲学](https://www.bilibili.com/video/BV1fx411b7Hp)
-> [Physhology 心理学](https://www.bilibili.com/video/BV1Ax411N75Q)
-> [Computer Science 计算机科学](https://www.bilibili.com/video/BV1EW411u7th)
-> [Economics 经济学](https://www.bilibili.com/video/BV1Xs411k7Nr)
-> [Anatomy & Physiology 解剖与生理](https://www.bilibili.com/video/BV15s411i7Wx)
-> [Literature 文学](https://space.bilibili.com/5981968/favlist?fid=973425868) （不全）
-> [Sociology 社会学](https://crashcourse.club/category/sociology/) （不全）
-> [Film History 电影史](https://space.bilibili.com/5981968/favlist?fid=973426368)
-> [Film Criticism 电影鉴赏](https://space.bilibili.com/5981968/favlist?fid=973170268)
-> [Film Production 电影创作](https://space.bilibili.com/5981968/favlist?fid=973170368)
-> [Intellectual Property 知识产权](https://www.bilibili.com/video/BV1Ws41117Xw)
-> [American History 美国史](https://space.bilibili.com/5981968/favlist?fid=973425768)
-> [World History 世界史第一季](http://open.sina.com.cn/course/id_465) （不全）
-> [World History 世界史第二季](https://www.bilibili.com/video/BV15s411Y7VW)
-> [World Mythology 世界神话学](https://space.bilibili.com/8950786/favlist?fid=852593486)
-
-[鸾爷@bilibili](https://space.bilibili.com/1950746)
--->
