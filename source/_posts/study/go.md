@@ -12,6 +12,7 @@ counting: on
 ---
 
 ## MOOC平台
+
 ### 中国大学
 * [华文慕课](http://www.chinesemooc.org/) 
 （北京大学）
@@ -38,11 +39,10 @@ counting: on
 设计软件教程
 
 ## 搜索
-* [Google学术](https://scholar.google.com) [Mirror List](https://www.library.ac.cn/)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)&emsp;&emsp;[Microsoft Academic](https://academic.microsoft.com)
-* [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链](https://www.blyun.com/) [超星读秀](https://www.duxiu.com/) [超星发现](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/)
+* [Google学术](https://scholar.google.com) & [Mirror List](https://www.library.ac.cn/)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)
 * [学术屋导航](http://sci.xueshuwu.cn/)
-* [虫部落学术搜素](https://scholar.chongbuluo.com/)
-* [虫部落电子书搜素](https://ebook.chongbuluo.com/)
+* [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链](https://www.blyun.com/) [超星读秀](https://www.duxiu.com/) [超星发现](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/)
+* [虫部落学术搜素](https://scholar.chongbuluo.com/) & [虫部落电子书搜素](https://ebook.chongbuluo.com/)
 * 电子书搜索：
 [古登堡计划](https://www.gutenberg.org/) [ebookee](https://www.ebookee.ws/) 
 
