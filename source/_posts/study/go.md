@@ -51,7 +51,6 @@ counting: on
 ## 软件
 ### [冰点文库下载器](https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Software/) or [豆丁当当下载器](https://www.lanzous.com/b953911)
 免费下载**百度、豆丁、丁香、MBALib、Book118**等文库的文档。下载为pdf图片文件及txt文本文件
-同上
 ### [PandaOCR](https://github.com/miaomiaosoft/PandaOCR) or [PandaOCR.Pro专业版](https://github.com/miaomiaosoft/PandaOCR.Pro) or [天若OCR开源版V5.0.0](https://github.com/AnyListen/tianruoocr/releases)
 截图 + OCR文字识别
 
