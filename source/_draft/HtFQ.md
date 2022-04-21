@@ -1,16 +1,15 @@
 ---
-title: 自用梯子教程
+title: 校园网IPv6开启教程
 author: m1
-date: 2019-06-22
+date: 2022-04-14
+date1: 2019-06-22
 tags:
 categories:
-main: 小孩子千万不要学
+main: IPv6的一种实现方式
 ---
 
-    写在前面的话：这个是一个很复杂的教程，不过这种方法免费，而且应该安全
-    缺点：只支持Windows电脑与Android手机
-
----
+    写在前面：
+    IPv6的全称是Internet Protocol version 6（互联网协议第6版）。开启IPv6对于用户的好处主要是更加安全，访问互联网时异常广告可能减少，访问数据更加难于监控，并且访问部分专业网站可能有一定的网络提速效果
 
 ## 第一步：开启 IPv6
 
@@ -23,8 +22,8 @@ main: 小孩子千万不要学
 2.设置 6in4 隧道
 说明：此方法建议用在路由器上，路由器需刷固件(Merlin/Padavan/Openwrt/...) 至于哪些路由器支持刷机请自行查找 但好消息是贵一点且流行的路由器一般都有第三方固件
 
-a.打开 [Tunnel Broker](https://tunnelbroker.net/)，注册账号（实际上具体信息可以随便填）
-b.Create New Tunnel, 填写公网 ip 地址(可百度'ip'查看);服务器事实上建议选美国的，延迟低，原因不明。
+a.打开 [Tunnel Broker](https://tunnelbroker.net/)，注册账号（具体信息可以随便填）
+b.Create New Tunnel, 填写公网 ip 地址(可百度'ip'查看);服务器可以选则Singapore，延迟低，原因不明。
 c.对应路由器设置填写<sup>[1]</sup>
 d.（若路由器重启）回 Tunnel Details，重填 IP 地址（如有变化）[未重启则可以不管]
 
