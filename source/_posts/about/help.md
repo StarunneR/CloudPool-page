@@ -22,9 +22,8 @@ CloudPool浊池曾是由年轻人管理的博客,十分感谢你的关注。使�
 
 若网站访问速度慢，可选择以下镜像站点：
 
-<https://voiiu.com>
-<https://zhuochi.org>
-<https://blog.voii.cc>
+[voiiu.com](https://voiiu.com)
+[zhuochi.org](https://zhuochi.org)
 
 ---
 

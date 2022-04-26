@@ -5,7 +5,7 @@ date3: 2021-08-02
 date2: 2021-04-17
 date1: 2021-01-14
 author: m1
-tags: [视频,学习,MOOC,公开课]
+tags: [视频,学习,MOOC]
 categories: 学习
 main: 我们还能学什么
 catalog: on
