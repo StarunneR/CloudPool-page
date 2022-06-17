@@ -13,8 +13,8 @@ catalog: on
 
 * [种子搜](https://www.zhongzidi9.com/) [种子搜导航](https://www.zhongzidizhi.com/) （推荐）
 * [BThub 地址发布 GitHub](https://github.com/fwonggh/Bthub) [GitLab](https://gitlab.com/fwonggh/Bthub/-/blob/master/README.md) （推荐）
-* [磁力狗1](http://clg00.site)或[磁力狗2](http://clg.im) （推荐）
-* [雨花阁 地址发布](https://www.yuhuage.club/) （推荐）
+* [磁力狗1](http://clg00.site)或~~[磁力狗2](http://clg.im)~~或~~[磁力狗3](http://ciligou.app)~~（推荐）
+* [雨花阁 地址发布1](https://github.com/yuhuage/dizhi)或[地址发布2](https://bitbucket.org/yuhuage/yuhuage/src/master/)（推荐）
 * [片源网](https://pianyuan.org)
 * [BT4G](https://bt4g.org/)
 * [磁力熊搜素](https://www.cilixiong.com/search/)
