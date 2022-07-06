@@ -1,6 +1,6 @@
 ---
 title: 电影搜素网站
-date: 2021-10-19
+date: 2022-07-06
 author: m1
 tags: [下载,资源,电影,娱乐]
 categories: 浊技术
@@ -13,10 +13,14 @@ catalog: on
 
 * [种子搜](https://www.zhongzidi9.com/) [种子搜导航](https://www.zhongzidizhi.com/) （推荐）
 * [BThub 地址发布 GitHub](https://github.com/fwonggh/Bthub) [GitLab](https://gitlab.com/fwonggh/Bthub/-/blob/master/README.md) （推荐）
-* [磁力狗1](http://clg00.site)或~~[磁力狗2](http://clg.im)~~或~~[磁力狗3](http://ciligou.app)~~（推荐）
-* [雨花阁 地址发布1](https://github.com/yuhuage/dizhi)或[地址发布2](https://bitbucket.org/yuhuage/yuhuage/src/master/)（推荐）
+* [BT4G](https://bt4g.org/)（推荐）
+
+---
+
+* [磁力狗1](clg00.org)或[磁力狗2](clg.im)或[磁力狗3](ciligou.top)
+* [磁力猫1](clm7.net)或[磁力猫2](clm.la)或[磁力猫3](cilimao.biz)
+* [雨花阁 地址发布1](https://github.com/yuhuage/dizhi)或[地址发布2](https://bitbucket.org/yuhuage/yuhuage/src/master/)
 * [片源网](https://pianyuan.org)
-* [BT4G](https://bt4g.org/)
 * [磁力熊搜素](https://www.cilixiong.com/search/)
 * [巴士搜索](http://bashi5.com)
 
@@ -38,10 +42,12 @@ BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光�
 ### 字幕下载：
 [字幕库](http://zimuku.org)
 [射手网](https://assrt.net/)
-[字幕天堂](http://www.zmtiantang.cc/)
-[字幕下载](http://www.zmxiazai.com/)
 [SubHD](https://subhd.tv)
 
+<!--
+[字幕天堂](http://www.zmtiantang.cc/)
+[字幕下载](http://www.zmxiazai.com/)
+-->
 ---
 ### 离线下载工具
 
