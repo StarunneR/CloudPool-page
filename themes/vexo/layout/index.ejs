@@ -1,3 +1,5 @@
+<script type="text/javascript" src="/js/title_hider.js"></script>
+
 <main class="app-body" style="background-color: #fff">
   <% page.posts.each(function(post) { %>
     <%- partial('_pages/index', { post: post, index: true }) %>
@@ -7,4 +9,6 @@
     <%- partial('_partial/pager') %>
   <% } %>
 </main>
+
+
 
