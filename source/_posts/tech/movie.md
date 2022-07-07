@@ -17,8 +17,8 @@ catalog: on
 
 ---
 
-* [磁力狗1](clg00.org)或[磁力狗2](clg.im)或[磁力狗3](ciligou.top)
-* [磁力猫1](clm7.net)或[磁力猫2](clm.la)或[磁力猫3](cilimao.biz)
+* [磁力狗1](http://clg00.org)或[磁力狗2](http://clg.im)或[磁力狗3](http://ciligou.top)
+* [磁力猫1](http://clm7.net)或[磁力猫2](http://clm.la)或[磁力猫3](http://cilimao.biz)
 * [雨花阁 地址发布1](https://github.com/yuhuage/dizhi)或[地址发布2](https://bitbucket.org/yuhuage/yuhuage/src/master/)
 * [片源网](https://pianyuan.org)
 * [磁力熊搜素](https://www.cilixiong.com/search/)
