@@ -11,11 +11,13 @@ date: 2099-01-01
 <script>
     const ap = new APlayer({
     container: document.getElementById('aplayer'),
+    lrcType: 3,
     audio: [{
         name: 'What Would I Change It To',
         artist: 'Avicii (feat. AlunaGeorge)',
         url: 'http://pan.zhuochi.org/CloudShare/Music/05_What_Would_I_Change_It_To_(feat._AlunaGeorge).m4a',
-        cover: 'cover.jpg'
+        cover: 'What_Would_I_Change_It_To.jpg',
+        lrc: 'What_Would_I_Change_It_To.lrc'
     }]
 });
 </script>
