@@ -5,8 +5,20 @@ main: 我们都是年轻人
 date: 2099-01-01
 ---
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=auto height=300px src="https://music.163.com/outchain/player?type=1&id=36875829&auto=1&height=430">
-</iframe>
+<link rel="stylesheet" href="/css/APlayer.min.css">
+<div id="aplayer"></div>
+<script src="/js/APlayer.min.js"></script>
+<script>
+    const ap = new APlayer({
+    container: document.getElementById('aplayer'),
+    audio: [{
+        name: 'What Would I Change It To',
+        artist: 'Avicii (feat. AlunaGeorge)',
+        url: 'http://pan.zhuochi.org/CloudShare/Music/05_What_Would_I_Change_It_To_(feat._AlunaGeorge).m4a',
+        cover: 'cover.jpg'
+    }]
+});
+</script>
 
 ---
 
