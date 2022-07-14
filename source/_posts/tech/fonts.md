@@ -22,8 +22,6 @@ SimSun-ExtB
 楷体
 微软雅黑
 
-* [下载](https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Fonts/Windows.zip)
-
 ### Office自带：
 隶书
 幼圆
@@ -40,8 +38,6 @@ SimSun-ExtB
 华文行楷
 华文新魏
 
-* [下载](https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Fonts/Office.zip)
-
 ### 常用免费可商用字体：
 思源黑体
 思源宋体
@@ -52,7 +48,7 @@ SimSun-ExtB
 站酷高端黑
 站酷快乐体
 
-* [下载](https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Fonts/Free.zip)
+* [下载](https://pan.zhuochi.org/CloudShare/Fonts/)
 
 王汉宗自由字型
 

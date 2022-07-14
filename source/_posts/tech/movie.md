@@ -86,7 +86,7 @@ BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光�
 1. 安装[Python3](https://www.python.org/downloads/)
 2. [Download from GitHub](https://github.com/soimort/you-get/releases) you-get.tar.gz 或 Source code (zip)
 3. 解压，Add to **PATH**
-    右键此电脑 *属性* - 窗口左侧 *高级系统设置* - 窗口下方 *环境变量* - 用户变量下方 *编辑* - *新建* 输入解压后文件夹地址
+   右键此电脑 *属性* - 窗口左侧 *高级系统设置* - 窗口下方 *环境变量* - 用户变量下方 *编辑* - *新建* 输入解压后文件夹地址
 
 常用功能：
     $ you-get [url]  # 下载视频 (自动下载字幕/弹幕)
