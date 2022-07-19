@@ -110,6 +110,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
     21.8.10 修复Waline评论格式问题
     21.10.21 加入 {% fold %} {% endfold %} 折叠功能，代码来自 https://bambrow.com/20200726-hexo-blog-toggles/
     22.5.17 cdn.jsdelivr.com is down, 修改waline.min.js的引入方式至项目内
+    22.7.19 将Waline升级到v2.6.1，并调整样式
 ---
 <!--    网站开支：
     18.6.7 购买域名 cloudpool2017.com 一年 -￥7.15
