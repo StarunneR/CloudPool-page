@@ -43,11 +43,9 @@ mathjax:
 
 # Comment
 comment:
-  valine:
+  waline:
     appId: M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI
     appKey: arEPHdbMnKwMjQgiWsLgw34N
-    placeholder: 1
-    pageSize: 8
-    guest_info: nick,mail
+    requiredMeta: 'nick'
     avatar: mp
-    enableQQ: true
+

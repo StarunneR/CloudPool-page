@@ -3,27 +3,27 @@
     <div id="vcomments" class="commentboard"></div>
 </div>
 <script src="https://unpkg.com/@waline/client@2.6.1/dist/waline.js"></script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+/>
 <script>
-    // new Valine({
     Waline.init({
         el: '#vcomments',
         // add serverURL
         serverURL: 'https://comment-kappa.vercel.app',
         // add emoji
         emoji: [
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq',
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
-            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tw-emoji',
-            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+            'https://unpkg.com/@waline/emojis@1.0.1/qq',
+            'https://unpkg.com/@waline/emojis@1.0.1/tieba',
+            'https://unpkg.com/@waline/emojis@1.0.1/weibo',
+            'https://unpkg.com/@waline/emojis@1.0.1/alus',
+            'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
         ],
-        appId: '<%- theme.comment.valine.appId %>',
-        appKey: '<%- theme.comment.valine.appKey %>',
-        avatar: '<%- theme.comment.valine.avatar %>',
+        appId: '<%- theme.comment.waline.appId %>',
+        appKey: '<%- theme.comment.waline.appKey %>',
+        avatar: '<%- theme.comment.waline.avatar %>',
+        requiredMeta: ['<%- theme.comment.waline.requiredMeta %>'],
+        // pageSize: '<%- theme.comment.waline.pageSize %>',
     })
 </script>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-/>
