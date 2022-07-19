@@ -2,10 +2,10 @@
     <div class="card-container"></div>
     <div id="vcomments" class="commentboard"></div>
 </div>
-<script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
+<script src="https://unpkg.com/@waline/client@2.6.1/dist/waline.js"></script>
 <script>
     // new Valine({
-    new Waline({
+    Waline.init({
         el: '#vcomments',
         // add serverURL
         serverURL: 'https://comment-kappa.vercel.app',
@@ -23,3 +23,7 @@
         avatar: '<%- theme.comment.valine.avatar %>',
     })
 </script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+/>
