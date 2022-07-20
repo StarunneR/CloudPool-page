@@ -3,10 +3,7 @@
     <div id="vcomments" class="commentboard"></div>
 </div>
 <script src="https://unpkg.com/@waline/client@2.6.1/dist/waline.js"></script>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@waline/client@v2/dist/waline.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
 <script>
     Waline.init({
         el: '#vcomments',
@@ -20,10 +17,10 @@
             'https://unpkg.com/@waline/emojis@1.0.1/alus',
             'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
         ],
-        appId: '<%- theme.comment.waline.appId %>',
-        appKey: '<%- theme.comment.waline.appKey %>',
-        avatar: '<%- theme.comment.waline.avatar %>',
-        requiredMeta: ['<%- theme.comment.waline.requiredMeta %>'],
-        // pageSize: '<%- theme.comment.waline.pageSize %>',
+        appId: '<%- config.comment.waline.appId %>',
+        appKey: '<%- config.comment.waline.appKey %>',
+        // avatar: '<%- config.comment.waline.avatar %>',
+        requiredMeta: ['<%- config.comment.waline.requiredMeta %>'],
+        // pageSize: '<%- config.comment.waline.pageSize %>',
     })
 </script>

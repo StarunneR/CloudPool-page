@@ -160,3 +160,11 @@ live2d:
   react:
     opacityDefault: 1.0
     opacityOnHover: 0.2
+
+# Comment
+comment:
+  waline:
+    appId: M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI
+    appKey: arEPHdbMnKwMjQgiWsLgw34N
+    requiredMeta: 'nick'
+    avatar: mp
