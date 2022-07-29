@@ -28,10 +28,10 @@ highlight:
 catalog: true
 
 # donate
-donate: true
+donate: false
 
 # qrcode
-qrcode: true
+qrcode: false
 
 baidu_id: 
 
