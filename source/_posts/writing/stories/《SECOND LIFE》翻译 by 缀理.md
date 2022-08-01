@@ -2,7 +2,7 @@
 title: 《SECOND LIFE》翻译
 date: 2018-07-21
 tags: 小说
-author: m7
+author: 缀理
 categories: 浊故事
 font: 宋体
 main: 废话与不是废话与翻译

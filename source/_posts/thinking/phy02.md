@@ -1,6 +1,6 @@
 ---
 title: 奥卡姆上帝
-author: m10
+author: 绝叫
 date: 2018-08-26
 tags: [学术,杂谈]
 categories: 浊喳喳

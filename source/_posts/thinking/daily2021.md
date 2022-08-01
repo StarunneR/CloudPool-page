@@ -4,6 +4,7 @@ date: 2021-01-01
 author: m1
 tags:
     - BB
+    - Daily
 categories:
     - 浊喳喳
 main: From 21-01-01

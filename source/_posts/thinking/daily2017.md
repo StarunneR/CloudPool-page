@@ -5,6 +5,7 @@ date: 2017-11-12
 author: m1
 tags:
     - BB
+    - Daily
 categories:
     - 浊喳喳
 main: 17.7.20-17.12.9

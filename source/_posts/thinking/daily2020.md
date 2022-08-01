@@ -4,6 +4,7 @@ date: 2020-06-04
 author: m1
 tags:
     - BB
+    - Daily
 categories:
     - 浊喳喳
 main: 2020

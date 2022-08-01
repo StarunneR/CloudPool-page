@@ -4,6 +4,7 @@ date: 2022-07-14
 author: m1
 tags:
     - BB
+    - Daily
 categories:
     - 浊喳喳
 main: From 22-07-14

@@ -4,6 +4,7 @@ date: 2019-11-21
 author: m1
 tags:
     - BB
+    - Daily
 categories:
     - 浊喳喳
 main: ？
