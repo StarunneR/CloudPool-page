@@ -24,15 +24,14 @@ date: 2099-01-01
 });
 </script>
 
+<!--
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" height=86 src="//music.163.com/outchain/player?type=2&id=1848179967&auto=1&height=66"></iframe>
+-->
 
 ---
 
 CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使用Hexo作为博客框架，GitHub Page/GitLab Page作为静态页面托管平台，
 站长联系QQ: 1783074382。
-
-<!--以及另一个建设中的网页：**[浊池读书 voii.cc](https://voii.cc)**
-说明：voii = [双拼](Wiki_Screenshot.png)输入 浊池-->
 
 **[为什么我们要做浊池](/About/why_we_made_it/)**
 
