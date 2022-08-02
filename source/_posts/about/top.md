@@ -33,7 +33,7 @@ date: 2099-01-01
 CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使用Hexo作为博客框架，GitHub Page/GitLab Page作为静态页面托管平台，
 站长联系QQ: 1783074382。
 
-**[为什么我们要做浊池](/About/why_we_made_it/)**
+<strong><a href="/about/why_we_made_it/" target="_blank">为什么我们要做浊池</a></strong>
 
 ---
 
