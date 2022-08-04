@@ -12,7 +12,7 @@ date: 2099-01-01
     const ap = new APlayer({
     container: document.getElementById('aplayer'),
     lrcType: 3,
-    loop: one,
+    loop: 'one',
     audio: [{
         name: 'What Would I Change It To',
         artist: 'Avicii (feat. AlunaGeorge)',

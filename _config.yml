@@ -10,7 +10,7 @@ summary:
 github_username: cloudpool2017
 gitlab_username: CloudPool
 language: zh-Hans
-timezone: Asia/Chongqing
+timezone: Asia/Beijing
 logo: /images/logo.png
 favicon: /images/cloudpool-favicon.ico
 keyword: 浊池, CloudPool, CloudPool浊池
@@ -133,8 +133,8 @@ member:
   
 # Lazyload
 lazyload:
-  enable: false
-  onlypost: false
+  enable: true
+  onlypost: true
   loadingImg: #eg. ./images/loading.png
   
 live2d:
