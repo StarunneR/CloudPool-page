@@ -17,19 +17,20 @@ main: 2 Songs
     loop: 'none',
     audio: [
         {
-        name: 'What I Did For Love',
-        artist: 'David Guetta (feat. Emeli Sandé)',
-        url: 'What I Did For Love.m4a',
-        cover: 'Cover.jpg',
-        lrc: 'What I Did For Love.lrc',
-        },
-        {
         name: 'No Money No Love',
         artist: 'David Guetta & Showtek (feat. Elliphant & Ms. Dynamite)',
         url: 'No Money No Love.m4a',
         cover: 'Cover.jpg',
         lrc: 'No Money No Love.lrc',
+        },
+        {
+        name: 'What I Did For Love',
+        artist: 'David Guetta (feat. Emeli Sandé)',
+        url: 'What I Did For Love.m4a',
+        cover: 'Cover.jpg',
+        lrc: 'What I Did For Love.lrc',
         }
+
     ]
 });
 </script>
