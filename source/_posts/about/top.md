@@ -115,6 +115,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
     21.10.21 加入 {% fold %} {% endfold %} 折叠功能，代码来自 https://bambrow.com/20200726-hexo-blog-toggles/
     22.5.17 cdn.jsdelivr.com is down, 修改waline.min.js的引入方式至项目内
     22.7 将Waline升级到v2.6.1，改良自动部署脚本
+    22.8.8 侧边分享按钮图标修复
 ---
 <!--    网站开支：
     18.6.7 购买域名 cloudpool2017.com 一年 -￥7.15
