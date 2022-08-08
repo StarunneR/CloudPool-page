@@ -12,7 +12,7 @@ date: 2099-01-01
     const ap = new APlayer({
     container: document.getElementById('aplayer'),
     lrcType: 3,
-    loop: 'one',
+    loop: 'none',
     audio: [{
         name: 'What Would I Change It To',
         artist: 'Avicii (feat. AlunaGeorge)',
@@ -49,7 +49,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
 
 ---
 
-* 评论头像设定（需科学上网）：
+* 一句评论头像设定：
 1. [注册](https://wordpress.com/start/wpcc/oauth2-user/zh-cn)，邮箱与此处登录邮箱一致
 2. 在设置页上传头像
 * 评论时留下对应邮箱即可
