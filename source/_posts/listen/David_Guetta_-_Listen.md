@@ -19,16 +19,16 @@ main: 2 Songs
         {
         name: 'What I Did For Love',
         artist: 'David Guetta (feat. Emeli Sandé)',
-        url: 'David Guetta feat. Emeli Sandé - 02. What I Did For Love.m4a',
+        url: 'What I Did For Love.m4a',
         cover: 'Cover.jpg',
-        lrc: 'David Guetta feat. Emeli Sandé - 02. What I Did For Love.lrc',
+        lrc: 'What I Did For Love.lrc',
         },
         {
         name: 'No Money No Love',
         artist: 'David Guetta & Showtek (feat. Elliphant & Ms. Dynamite)',
-        url: 'David Guetta & Showtek feat. feat. Elliphant & Ms. Dynamite - 03. No Money No Love.m4a',
+        url: 'No Money No Love.m4a',
         cover: 'Cover.jpg',
-        lrc: 'David Guetta & Showtek feat. feat. Elliphant & Ms. Dynamite - 03. No Money No Love.lrc',
+        lrc: 'No Money No Love.lrc',
         }
     ]
 });
