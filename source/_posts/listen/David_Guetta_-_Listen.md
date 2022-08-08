@@ -30,7 +30,6 @@ main: 2 Songs
         cover: 'Cover.jpg',
         lrc: 'What I Did For Love.lrc',
         }
-
     ]
 });
 </script>
