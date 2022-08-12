@@ -18,7 +18,7 @@ main: 4 Songs
     audio: [
         {
         name: 'The Prime Time of Your Life',
-        artist: 'David Guetta (feat. Emeli Sandé)',
+        artist: 'Daft Punk',
         url: 'A2. The Prime Time of Your Life.m4a',
         cover: 'Cover.jpg',
         lrc: 'A2. The Prime Time of Your Life.lrc',
