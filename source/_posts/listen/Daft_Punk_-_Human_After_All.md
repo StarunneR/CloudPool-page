@@ -1,5 +1,5 @@
 ---
-title: David Guetta - Listen
+title: Daft Punk - Human After All
 date: 2022-08-12
 author: m1
 tags: 音乐
@@ -50,4 +50,4 @@ main: 4 Songs
 
 ---
 
-[网易云音乐 What I Did For Love](https://music.163.com/song?id=29747485), [No Money No Love](https://music.163.com/song?id=29747491)
+[网易云音乐 Human After All](https://music.163.com/#/album?id=1609279)
