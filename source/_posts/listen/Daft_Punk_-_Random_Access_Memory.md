@@ -24,6 +24,13 @@ main: 4 Songs
         lrc: '02 - The Game of Love.lrc',
         },
         {
+        name: 'Touch',
+        artist: 'Daft Punk',
+        url: '07 - Touch.m4a',
+        cover: 'Cover.jpg',
+        lrc: '07 - Touch.lrc',
+        },
+        {
         name: 'Get Lucky',
         artist: 'Daft Punk',
         url: '08 - Get Lucky.m4a',
