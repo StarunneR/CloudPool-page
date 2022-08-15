@@ -47,9 +47,9 @@ main: 6 Songs
         {
         name: 'What Would I Change It To',
         artist: 'Avicii',
-        url: '05 What Would I Change It To (feat. AlunaGeorge)..m4a',
+        url: '05 What Would I Change It To (feat. AlunaGeorge).m4a',
         cover: 'Cover.jpg',
-        lrc: '05 What Would I Change It To (feat. AlunaGeorge)..lrc',
+        lrc: '05 What Would I Change It To (feat. AlunaGeorge).lrc',
         },
         {
         name: 'So Much Better',
