@@ -17,7 +17,7 @@ main: 7 Songs
     loop: 'none',
     audio: [
         {
-        name: '1 Life In Technicolor',
+        name: 'Life In Technicolor',
         artist: 'Coldplay',
         url: '1 Life In Technicolor.m4a',
         cover: 'Cover.jpg',
