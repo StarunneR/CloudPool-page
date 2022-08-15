@@ -71,4 +71,4 @@ main: 7 Songs
 
 ---
 
-[网易云音乐 True (Bonus Edition)](https://music.163.com/#/album?id=95491876)
+[网易云音乐 AVĪCI (01)](https://music.163.com/#/album?id=35919060)
