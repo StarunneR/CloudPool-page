@@ -1,5 +1,5 @@
 ---
-title: Avicii - True
+title: Avicii - AVĪCI (01)
 date: 2022-08-15 00:00
 author: m1
 tags: 音乐
