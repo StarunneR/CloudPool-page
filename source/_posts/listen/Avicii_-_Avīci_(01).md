@@ -1,6 +1,6 @@
 ---
 title: Avicii - True
-date: 2022-08-14 00:00
+date: 2022-08-15 00:00
 author: m1
 tags: 音乐
 categories: 浊音
