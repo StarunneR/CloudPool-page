@@ -1,5 +1,5 @@
 ---
-title: Coldplay - Viva La Vida or Death or All His Friends
+title: Coldplay - Viva La Vida or Death And All His Friends
 date: 2022-08-15 12:00
 author: m1
 tags: 音乐
