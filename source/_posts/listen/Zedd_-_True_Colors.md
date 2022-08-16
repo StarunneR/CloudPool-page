@@ -87,7 +87,7 @@ main: Full album, 11 Songs
         lrc: '10 Daisy.lrc',
         },
         {
-        name: '11 Illusion',
+        name: 'Illusion',
         artist: 'Zedd (Feat. Echosmith)',
         url: '11 Illusion (Feat. Echosmith).m4a',
         cover: 'Cover.jpg',
