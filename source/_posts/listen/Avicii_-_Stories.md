@@ -4,7 +4,7 @@ date: 2022-08-14 16:00
 author: m1
 tags: 音乐
 categories: 浊音
-main: The whole album, 16 Songs
+main: Full album,, 16 Songs
 ---
 
 <link rel="stylesheet" href="/css/APlayer.min.css">
