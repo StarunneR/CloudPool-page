@@ -1,4 +1,4 @@
---
+---
 title: Ed Sheeran - 5
 date: 2022-08-20
 author: m1
@@ -20,49 +20,49 @@ main: 7 Songs
         name: 'You Need Me, I Don\'t Need You',
         artist: 'Ed Sheeran',
         url: '01 You Need Me, I Don\'t Need You.m4a',
-        cover: 'Cover.jpg',
+        cover: 'Cover.png',
         lrc: '01 You Need Me, I Don\'t Need You.lrc',
         },
         {
         name: 'The City',
         artist: 'Ed Sheeran',
         url: '02 The City.m4a',
-        cover: 'Cover.jpg',
+        cover: 'Cover.png',
         lrc: '02 The City.lrc',
         },
         {
         name: 'Homeless',
         artist: 'Ed Sheeran',
         url: '03 Homeless.m4a',
-        cover: 'Cover.jpg',
+        cover: 'Cover.png',
         lrc: '03 Homeless.lrc',
         },
         {
         name: 'Little Bird',
         artist: 'Ed Sheeran',
         url: '04 Little Bird.m4a',
-        cover: 'Cover.jpg',
+        cover: 'Cover.png',
         lrc: '04 Little Bird.lrc',
         },
         {
         name: 'Fire Alarms',
         artist: 'Ed Sheeran',
         url: '05 Fire Alarms.m4a',
-        cover: 'Cover.jpg',
+        cover: 'Cover.png',
         lrc: '05 Fire Alarms.lrc',
         },
         {
         name: 'You',
         artist: 'Ed Sheeran (feat. Wiley)',
         url: '06 You (feat. Wiley).m4a',
-        cover: 'Cover.jpg',
+        cover: 'Cover.png',
         lrc: '06 You (feat. Wiley).lrc',
         },
         {
         name: 'Drown Me Out',
         artist: 'Ed Sheeran (feat. Ghetts)',
         url: '07 Drown Me Out (feat. Ghetts).m4a',
-        cover: 'Cover.jpg',
+        cover: 'Cover.png',
         lrc: '07 Drown Me Out (feat. Ghetts).lrc',
         }
     ]
