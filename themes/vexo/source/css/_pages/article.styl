@@ -16,8 +16,22 @@ h2.article-head
 .article-head > a
   font-style: normal
   color: color-dark
-  &:hover
-    border-bottom: 2px solid color-primary
+  transition: all 0.3s ease-in-out
+  display: inline-block
+  position: relative
+  &:before 
+    content: ""
+    color: #4aa2f1
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    width: 0
+    height: 100%
+    border-bottom: 3px solid
+    transition: all 0.2s ease-in-out
+  &:hover::before
+    width: 100%
 
 .article-date
   font-style: normal
@@ -34,6 +48,7 @@ h2.article-head
   font-weight: 600
   display: inline-block
   transition: all 0.3s
+  color: #046cf1
   &:hover
     transform: translateX(10px)
 
