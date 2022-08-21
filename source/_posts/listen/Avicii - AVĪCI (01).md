@@ -18,21 +18,21 @@ main: Full album, 6 Songs
     audio: [
         {
         name: 'Friend of Mine',
-        artist: 'Avicii',
+        artist: 'Avicii (feat. Vargas & Lagola)',
         url: '01 Friend of Mine (feat. Vargas & Lagola).m4a',
         cover: 'Cover.jpg',
         lrc: '01 Friend of Mine (feat. Vargas & Lagola).lrc',
         },
         {
         name: 'Lonely Together',
-        artist: 'Avicii',
+        artist: 'Avicii (feat. Rita Ora)',
         url: '02 Lonely Together (feat. Rita Ora).m4a',
         cover: 'Cover.jpg',
         lrc: '02 Lonely Together (feat. Rita Ora).lrc',
         },
         {
         name: 'You Be Love',
-        artist: 'Avicii',
+        artist: 'Avicii (feat. Billy Raffoul)',
         url: '03 You Be Love (feat. Billy Raffoul).m4a',
         cover: 'Cover.jpg',
         lrc: '03 You Be Love (feat. Billy Raffoul).lrc',
@@ -46,7 +46,7 @@ main: Full album, 6 Songs
         },
         {
         name: 'What Would I Change It To',
-        artist: 'Avicii',
+        artist: 'Avicii (feat. AlunaGeorge)',
         url: '05 What Would I Change It To (feat. AlunaGeorge).m4a',
         cover: 'Cover.jpg',
         lrc: '05 What Would I Change It To (feat. AlunaGeorge).lrc',
