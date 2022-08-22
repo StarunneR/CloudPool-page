@@ -56,7 +56,7 @@ main: 6 Songs
         artist: 'Tiësto',
         url: '06 Rocky.m4a',
         cover: 'Cover.png',
-        lrc: '06 Rocky.lrc',
+        lrc: '',
         }
     ]
 });
