@@ -1,6 +1,6 @@
 ---
 title: 每日一句2022
-date: 2022-08-15
+date: 2022-08-24
 author: m1
 tags:
     - BB
