@@ -166,5 +166,7 @@ comment:
   waline:
     appId: M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI
     appKey: arEPHdbMnKwMjQgiWsLgw34N
-    requiredMeta: 'nick'
+    requiredMeta: ''
     avatar: mp
+    placeholder: '说些什么'
+    meta: ['nick','mail']
