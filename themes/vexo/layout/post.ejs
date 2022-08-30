@@ -3,7 +3,9 @@
     <%- page.title %>
   </h2>
   <p class="post-date">
-    <%- date(page.date, "YYYY-MM-DD") %>
+    <% if (page.date) { %>
+      <%- date(page.date, "YYYY-MM-DD") %>
+    <% } %>
   </p>
 </div>
 <main class="app-body flex-box">
@@ -14,7 +16,6 @@
   <article class="post-article">
     <%- partial('_post/author') %>
     <!-- Busuanzi Post Counting -->
-    <!--page count does not work-->
     <section class="markdown-content" style="font-family:<%- page.font %>; text-indent:<%- page.indent %>">
       <%- page.content %>
     </section>
