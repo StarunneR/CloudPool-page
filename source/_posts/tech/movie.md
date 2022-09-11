@@ -29,7 +29,7 @@ catalog: on
 **建议搜索电影英文名**
 ~~可能需要科学上网~~
 
-{% fold 电影文件名称说明 %}
+{% fold >电影文件名称说明 %}
 1.片源（画质） ：
 BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光压缩)＞WEB-DL(iTunes等网络正版购买)＞KORSUB(韩版)＞＞TC(胶片版)＞TS（准枪版）＞CAM（枪版），推荐WEB-DL及其之前的，不用在意HD/HDRip/DVDRip
 2.分辨率：   4K=2160P=UHD＞1080P=FHD=全高清＞720P=HD=高清
