@@ -8,10 +8,10 @@
     <% } %>
   </p>
 </div>
+<% if (theme.catalog && page.catalog == "on") { %>
+  <%- partial('_post/catalog') %>
+<% } %>
 <main class="app-body flex-box">
-  <% if (theme.catalog && page.catalog == "on") { %>
-    <%- partial('_post/catalog') %>
-  <% } %>
   <!-- Article START -->
   <article class="post-article">
     <%- partial('_post/author') %>

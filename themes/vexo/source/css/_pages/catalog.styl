@@ -6,6 +6,8 @@
   -webkit-flex-shrink: 0
   @media m-mobile
     display: none
+  @media m-pad
+    display: none
   .toc-main
     padding-top: 10px
     padding-left: 20px
@@ -50,12 +52,14 @@
   flex-shrink: 0
   -webkit-flex-shrink: 0
   @media m-mobile
-    display: block
+    display: inline-block
+  @media m-pad
+    display: inline-block
   .toc-main
     padding-top: 16px
     padding-left: 12px
     border-left: 1px solid color-border
-    //width: 160px
+    width: auto
     white-space: nowrap
     overflow-y: auto
     scrollbar-width: thin
