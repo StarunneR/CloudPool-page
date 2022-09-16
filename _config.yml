@@ -167,6 +167,6 @@ comment:
     appId: M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI
     appKey: arEPHdbMnKwMjQgiWsLgw34N
     requiredMeta: ''
-    avatar: mp
+    avatar: 'mp'
     placeholder: '说些什么'
     meta: ['nick','mail']

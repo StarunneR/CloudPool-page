@@ -1,33 +1,27 @@
-<div class="">
-    <div class="card-container"></div>
-    <div id="vcomments" class="commentboard"></div>
-    <div class="waline-pageview-count" style="display: none !important"></div>
-</div>
 <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
-<!--<script src="https://cdn.bootcdn.net/ajax/libs/waline/2.6.3/waline.min.js"></script>
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/waline/2.6.3/waline.min.css" />-->
+<div id="waline"></div>
 <script>
     Waline.init({
-        el: '#vcomments',
+        el: '#waline',
         // add serverURL
-        serverURL: 'https://valine.zhuochi.org/',
+        serverURL: 'https://waline.zhuochi.org/',
         // add emoji
         emoji: [
-        //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq',
-        //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/tieba',
-        //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/weibo',
-        //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/alus',
-        //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/bilibili',
+            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq',
+            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/tieba',
+            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/weibo',
+            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/alus',
+            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/bilibili',
             'https://unpkg.com/@waline/emojis@1.0.1/weibo',
             'https://unpkg.com/@waline/emojis@1.0.1/qq',
-        //  'https://unpkg.com/@waline/emojis@1.0.1/tieba',
-        //  'https://unpkg.com/@waline/emojis@1.0.1/alus',
-        //  'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
-        //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/大航海嘉然',
-        //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/向晚大魔王/',
-        //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/贝拉kira/',
-        //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/嘉然今天吃什么',
+            //  'https://unpkg.com/@waline/emojis@1.0.1/tieba',
+            //  'https://unpkg.com/@waline/emojis@1.0.1/alus',
+            //  'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
+            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/大航海嘉然',
+            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/向晚大魔王/',
+            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/贝拉kira/',
+            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/嘉然今天吃什么',
         ],
         appId: '<%- config.comment.waline.appId %>',
         appKey: '<%- config.comment.waline.appKey %>',
@@ -40,3 +34,5 @@
         // requiredFields: ['nick']
     })
 </script>
+<!--<script src="https://cdn.bootcdn.net/ajax/libs/waline/2.6.3/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/waline/2.6.3/waline.min.css" />-->
