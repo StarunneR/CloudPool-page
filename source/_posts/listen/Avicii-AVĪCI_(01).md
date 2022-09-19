@@ -1,6 +1,6 @@
 ---
-title: Avicii - TIM
-date: 2022-09-19 00:00
+title: Avicii - AVĪCI (01)
+date: 2022-08-19 00:00
 author: m1
 tags: 音乐
 categories: 浊音
