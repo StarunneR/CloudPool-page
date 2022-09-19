@@ -153,7 +153,7 @@ OCR侬晓得伐啦
 [应用汇](http://www.appchina.com)
 [华为应用市场](https://appgallery.huawei.com/)
 [酷安](https://www.coolapk.com)
----
+
 [Apkpure](https://apkpure.com)
 [APKMirror](https://www.apkmirror.com)
 [Aptoide](https://cn.aptoide.com/)
