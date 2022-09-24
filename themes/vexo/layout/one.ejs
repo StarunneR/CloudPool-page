@@ -5,7 +5,7 @@
 
 <main class="app-body">
     <!--<div class="card-container"></div>-->
-    <div id="vcomments" class=""></div>
+    <div id="waline" class=""></div>
     <%- page.content %>
 </main>
 <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
@@ -20,22 +20,25 @@
                 })
     })()
 </script>
-<script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
 <!--<script src="/js/Waline.min.js"></script>-->
 <script>
-    new Waline({
-        el: '#vcomments',
-        serverURL: 'https://valine.zhuochi.org/',
+    Waline.init({
+        el: '#waline',
+        serverURL: 'https://waline.zhuochi.org/',
         emoji: [
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq',
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo',
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba',
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus',
-            'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/qq',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/tieba',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/alus',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/bmoji'
         ],
         appId: '<%- page.appId %>',
         appKey: '<%- page.appKey %>',
-        avatar: '<%- page.avatar %>',
+        avatarCDN: 'https://gravatar.loli.top/avatar/',
+        //avatar: '<%- config.comment.waline.avatar %>',
         placeholder: '<%- page.prompt %>',
         requiredFields: ['<%= page.required %>'], 
         pageview: true,
