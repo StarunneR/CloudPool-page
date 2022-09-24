@@ -6,7 +6,7 @@ tags:
     - BB
     - 生活
 categories:
-    - 浊喳喳
+    - 浊修
 main: 生活生活就是生生生活活活
 ---
 
