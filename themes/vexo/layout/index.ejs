@@ -8,7 +8,8 @@
   <% if (page.total > 1){ %>
     <%- partial('_partial/pager') %>
   <% } %>
-
+  
+  <div id="waline" display="none"></div>
   <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
   <script>
     Waline.init({
