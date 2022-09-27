@@ -7,30 +7,13 @@
     <%- partial('_partial/pager') %>
   <% } %>
   
-  <div id="waline" style="display: none" ></div>
-  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js" async></script>
+  <div id="waline" style="display: none"></div>
+  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
   <script async>
     Waline.init({
         el: '#waline',
         // add serverURL
         serverURL: 'https://waline.zhuochi.org/',
-        // add emoji
-        emoji: [
-            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq',
-            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/tieba',
-            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/weibo',
-            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/alus',
-            //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/bilibili',
-            'https://unpkg.com/@waline/emojis@1.0.1/weibo',
-            'https://unpkg.com/@waline/emojis@1.0.1/qq',
-            //  'https://unpkg.com/@waline/emojis@1.0.1/tieba',
-            //  'https://unpkg.com/@waline/emojis@1.0.1/alus',
-            //  'https://unpkg.com/@waline/emojis@1.0.1/bilibili',
-            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/大航海嘉然',
-            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/向晚大魔王/',
-            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/贝拉kira/',
-            //  'https://cdn.jsdelivr.net/gh/kottory/waline-emoji@1.0.1/嘉然今天吃什么',
-        ],
         appId: '<%- config.comment.waline.appId %>',
         appKey: '<%- config.comment.waline.appKey %>',
         // avatar: '<%- config.comment.waline.avatar %>',
