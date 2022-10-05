@@ -92,4 +92,4 @@ main: Full album, 10 Songs
 
 ---
 
-[网易云音乐 二手玫瑰 - 二手玫瑰](https://music.163.com/#/album?id=3102776)
+[网易云音乐 二手玫瑰 - 二手玫瑰](https://music.163.com/#/album?id=34882)
