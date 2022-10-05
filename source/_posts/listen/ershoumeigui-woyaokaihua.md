@@ -1,6 +1,6 @@
 ---
-title: 二手玫瑰 - 我要开花
-date: 2022-10-05
+title: 二手玫瑰 - 我要开花 (2018)
+date: 2022-10-05 04:00
 author: m1
 tags: 音乐
 categories: 浊音
@@ -35,7 +35,7 @@ main: Full album, 10 Songs
         artist: '二手玫瑰',
         url: '03 轻松加愉快.m4a',
         cover: 'Cover.png',
-        lrc: '03 轻松加愉快lrc',
+        lrc: '03 轻松加愉快.lrc',
         },
         {
         name: '能行',

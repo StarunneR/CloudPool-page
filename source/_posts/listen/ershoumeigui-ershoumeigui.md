@@ -1,6 +1,6 @@
 ---
-title: 二手玫瑰 - 二手玫瑰
-date: 2022-10-05
+title: 二手玫瑰 - 二手玫瑰 (2003)
+date: 2022-10-05 01:00
 author: m1
 tags: 音乐
 categories: 浊音
