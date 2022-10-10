@@ -1,6 +1,6 @@
 ---
 title: Imagine Dragons - Night Visions
-date: 2022-10-07
+date: 2022-10-08
 author: m1
 tags: 音乐
 categories: 浊音
