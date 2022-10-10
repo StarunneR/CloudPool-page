@@ -1,12 +1,12 @@
 ---
 title: To Learn 
-date: 2022-10-05
+date: 2022-10-10
 author: m1
 tags:
-    - BB
+    - 学习
     - 生活
 categories:
-    - 浊修
+    - 浊学
 main: 生活生活就是生生生活活活
 ---
 
@@ -20,3 +20,7 @@ main: 生活生活就是生生生活活活
 [FL Studio下载](https://usersdrive.com/ww9z10yygexu.html) [百度云（提取码: 6s23）](https://pan.baidu.com/s/15oGsTDCGO4VbDzgAdLa7aQ?pwd=6s23) [来源](https://appnee.com/fl-studio/)
 
 ~~该死的思杰马克丁~~
+
+2. 学简单摄影
+
+* [手机摄影基础](https://le.ouchn.cn/courseDetails/CH880000000287) 2/19
