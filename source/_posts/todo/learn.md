@@ -4,7 +4,6 @@ date: 2022-10-16
 author: m1
 tags:
     - 学习
-    - 生活
 categories:
     - 浊学
 main: 生活生活就是生生生活活活
