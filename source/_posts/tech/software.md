@@ -1,7 +1,8 @@
 ---
 title: 常用软件推荐
 author: m1
-date: 2022-09-01
+date: 2022-10-16 
+date3: 2022-09-01
 date2: 2022-03-23
 date1: 2021-08-03
 tags: [实用, 软件, 安装]
@@ -107,9 +108,8 @@ OCR侬晓得伐啦
 
 #### FL Studio
 
-可在[懒得勤快](https://ldqk.org/1373)找到下载链接。有绿色版本（解压即可运行）或安装+破解版本（**可能**有更加接近原版的体验）供选择。
-
-若使用安装+破解版本，请先下载原版安装包安装，[下载地址](https://www.image-line.com/fl-studio-download/)
+可在[AppNee](https://appnee.com/fl-studio/)找到下载链接。
+[百度云（提取码: 6s23）](https://pan.baidu.com/s/15oGsTDCGO4VbDzgAdLa7aQ?pwd=6s23)
 
 #### Adobe全家桶
 
@@ -127,11 +127,13 @@ OCR侬晓得伐啦
 
 <!-- - [Dism++](https://www.chuyu.me/zh-Hans/index.html) 实用系统管理小工具集合-->
 
-[图吧工具箱](http://http://www.tbtool.cn/) DIY爱好者的必备工具合集
+[图吧工具箱](http://www.tbtool.cn/) DIY爱好者的必备工具合集
 
 [卡硬工具箱](http://www.kbtool.cn/) 硬件检测、管理、性能测试工具以及各种实用软件。但已有两年未更新
 
 [AppNee Freeware Group.](https://appnee.com) 一个各类破解版软件非常多的博客
+
+[7zip ZS](https://github.com/mcmilk/7-Zip-zstd/) 增强版7zip，加入了丰富的Hash校验功能。
 
 <!-- - [waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases) 更好地放大图片 -->
 
