@@ -22,4 +22,4 @@ main: 生活生活就是生生生活活活
 
 2. 学简单摄影
 
-* [手机摄影基础](https://le.ouchn.cn/courseDetails/CH880000000287) 7/19
+* [手机摄影基础](https://le.ouchn.cn/courseDetails/CH880000000287) 9/19
