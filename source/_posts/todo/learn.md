@@ -1,6 +1,6 @@
 ---
 title: To Learn 
-date: 2022-10-18
+date: 2022-11-01
 author: m1
 tags:
     - 学习
@@ -22,4 +22,4 @@ main: 生活生活就是生生生活活活
 
 2. 学简单摄影
 
-* [手机摄影基础](https://le.ouchn.cn/courseDetails/CH880000000287) 9/19
+* [手机摄影基础](https://le.ouchn.cn/courseDetails/CH880000000287) 10/19
