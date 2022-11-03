@@ -119,6 +119,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
     22.8.15 网刊重新上线
     22.8.27 Waline评论接口更换为自定义域名，解决原评论接口waline.app被墙问题
     22.9.17 更新Waline版本至最新
+    22.11.3 加入插件hexo-lazyload-image，实现图片lazyload
 ---
 <!--    网站开支：
     18.6.7 购买域名 cloudpool2017.com 一年 -￥7.15
