@@ -21,7 +21,7 @@ main: Full album, 12 Songs
         artist: 'Train',
         url: 'This\'ll Be My Year.m4a',
         cover: 'Cover.jpg',
-        lrc: 'This\'ll Be My Year',
+        lrc: 'This\'ll Be My Year.lrc',
         },
         {
         name: 'Drive By',
