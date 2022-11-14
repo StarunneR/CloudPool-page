@@ -72,7 +72,11 @@ catalog: on
 
 3. **[7-zip](https://sparanoid.com/lab/7z/)**
 
-    老牌开源压缩软件，绿色无广告，就是丑了点。
+    老牌开源压缩软件，带有CRC SHA校验功能。
+
+    **[7-Zip zstd](https://github.com/mcmilk/7-Zip-zstd)**
+
+    7-zip增强版，更多的压缩算法，增加了MD5及更多的校验功能。
 
 #### [截图工具 Snipaste](https://zh.snipaste.com/)
 
