@@ -121,20 +121,6 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
     22.9.17 更新Waline版本至最新
     22.11.3 加入插件hexo-lazyload-image，实现图片lazyload
 ---
-<!--    网站开支：
-    18.6.7 购买域名 cloudpool2017.com 一年 -￥7.15
-    18.7.20 购买域名 cloudpool.co 一年 -￥45.67续费域名 zhuochi.org 一年 -￥74.02
-    18.8.21 购买域名 zhuochi.org 一年 -￥72.93
-    18.11 续费域名 zhuochi.org 一年 -￥74.02
-    18.11 在Porkbun购买邮箱服务 cloudpool@zhuochi.org 一年 -￥166.87
-    19.5 续费zhuochi.org 一年 -$10.70
-    20.5 续费cloudpoool.me 一年 -$8.56
-    20.5 续费zhuochi.org 一年 -$10
-    20.12 购买域名voiiu.com 一年 -$8.56
-    21.6.7 续费域名 zhuochi.org 一年 -￥68.93
-    21.
--->
-
 
 <!--    备注：各大静态网站服务对比
     |名称  |主域名         |百度是否收录|其他                    |
