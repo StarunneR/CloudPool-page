@@ -1,5 +1,5 @@
 ---
-title: 每日一句2019@StʌrunneR
+title: 每日一句2019
 date: 2019-11-21
 author: m1
 tags:
