@@ -53,7 +53,7 @@ main: 6 Songs
         },
         {
         name: 'Michael Row the Boat Ashore',
-        artist: 'Tiësto',
+        artist: 'The Brothers Four',
         url: 'Michael Row the Boat Ashore.m4a',
         cover: 'Cover.jpg',
         lrc: 'Michael Row the Boat Ashore.lrc',
