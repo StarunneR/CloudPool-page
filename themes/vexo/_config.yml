@@ -44,7 +44,7 @@ mathjax:
 lazyload:
   enable: true
   onlypost: true # optional
-  loadingImg: # optional eg ./images/loading.gif
+  loadingImg: ./images/loading.gif # optional eg ./images/loading.gif
   isSPA: false # optional
   preloadRatio: 3 # optional, default is 1
 
