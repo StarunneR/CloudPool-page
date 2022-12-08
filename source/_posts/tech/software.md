@@ -119,7 +119,8 @@ OCR侬晓得伐啦
 
 1. Windows
 
-可前往[@vposy - 新浪微博](https://www.weibo.com/vposy)置顶帖获得船新版本下载链接。置顶微博内容**仅关注**可见。
+可前往[@vposy - 新浪微博](https://www.weibo.com/vposy)关注查看置顶帖获得船新版本下载链接。
+也可在[电报群](https://t.me/s/adobe_vposy)中获取
 
 2. Mac
 
