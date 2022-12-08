@@ -15,7 +15,6 @@
   <!-- Article START -->
   <article class="post-article">
     <%- partial('_post/author') %>
-    <!-- Busuanzi Post Counting -->
     <section class="markdown-content" style="font-family:<%- page.font %>; text-indent:<%- page.indent %>;">
       <%- page.content %>
     </section>
@@ -26,23 +25,11 @@
       <%- partial('_partial/tag', { tags: page.tags }) %>
     </div>
     <% } %>
-    <!-- SideBar Catalog -->
     <%- partial('_post/nav') %>
-    <!-- Comment -->
     <%- partial('_post/comment') %>
-    <!-- Busuanzi counts -->
     <%- partial('_post/counting') %>
-    <%#- partial('_post/share') %>
-    <!-- advertisement -->
-    <div class="advertisement">
-      <p> 广告：快速学习 Crash Course十分钟速成课 <a href="https://crashcourse.club/">字幕组网站</a></p>
-    </div>
-    <!-- 二维码 START -->
-    <div class="qrcode">
-      <canvas id="share-qrcode"></canvas>
-      <p class="notice">扫描二维码，分享此文章</p>
-    </div>
-    <!-- 二维码 END -->
+    <%- partial('_post/ad') %>
+    <%- partial('_post/qrcode') %>
   </article>
   <!-- Article END -->
 </main>
