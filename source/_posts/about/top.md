@@ -25,10 +25,6 @@ date: 2099-01-01
 });
 </script>
 
-<!--
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" height=86 src="//music.163.com/outchain/player?type=2&id=1848179967&auto=1&height=66"></iframe>
--->
-
 ---
 
 CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使用Hexo作为博客框架，GitHub Page/GitLab Page作为静态页面托管平台，
@@ -49,7 +45,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
 
 ---
 
-* 一句评论头像设定：
+* 评论头像设定：
 1. [注册](https://wordpress.com/start/wpcc/oauth2-user/zh-cn)，邮箱与此处登录邮箱一致
 2. 在设置页上传头像
 * 评论时留下对应邮箱即可
@@ -103,7 +99,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
     18.12 开启Porkbun附赠的SSL证书服务，并实现全站https
     19.6.22 找回源文件
     20.2.21 Valine 头像添加
-    20.6.12 搬迁到cloudpoool.me
+    20.6.12 域名迁至cloudpool.me
     20.12 考虑到访问量原因，迁回zhuochi.org
     20.12.13 完成访问速度优化
     21.1.14 修复首页(index)的文章概要显示错误问题

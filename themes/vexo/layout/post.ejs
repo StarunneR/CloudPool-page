@@ -55,13 +55,16 @@
       })
     })
 
-    // qrcode
-    var qr = new QRious({
-      element: document.getElementById('share-qrcode'),
-      value: document.location.href
-    });
   })();
 </script>
 
 <!-- 代码压缩 -->
 <script type="text/javascript" src="/js/fold_action.js"></script>
+
+<script defer>
+  // qrcode
+  var qr = new QRious({
+  element: document.getElementById('share-qrcode'),
+  value: document.location.href
+  })
+</script>

@@ -1,23 +1,26 @@
 <div id="article-banner"> 
-    <p id="hitokoto" class="yiyan"><a href="#" id="hitokoto_text">:D 加载中...</a></p>
+    <p id="hitokoto" class="one_text">
+        <a href="#">:D 加载中...</a>
+    </p>
     <!--<input type="text" name="one_link"></input><a href="../"><button type="button">Go</button></a> 要求：按钮链接到../INPUT-->
 </div>
+<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 
 <main class="app-body">
     <!--<div class="card-container"></div>-->
     <div id="waline" class=""></div>
     <%- page.content %>
 </main>
-<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+
 <script>
     (function () {
         var url = '<%= config.url %>/<%= page.path %>';
         $('#article-banner').geopattern(url);
         $('.header').removeClass('fixed-header')
         $('.card-header').each(function () {
-                    var name = $(this).data('name');
-                    $(this).geopattern(name);
-                })
+            var name = $(this).data('name');
+            $(this).geopattern(name);
+        })
     })()
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
