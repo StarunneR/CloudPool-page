@@ -1,7 +1,8 @@
 ---
 title: 常用软件推荐
 author: m1
-date: 2022-10-16 
+date: 2022-12-12
+date4: 2022-10-16 
 date3: 2022-09-01
 date2: 2022-03-23
 date1: 2021-08-03
@@ -45,13 +46,13 @@ catalog: on
 
 #### [视频播放器 PotPlayer](http://potplayer.daum.net/?lang=zh_CN) + [皮肤](modern_x_for_potplayer_update_by_illequal_d9a1sdy.zip)
 
-官网若打不开可尝试~~科学上网~~
+官网若打不开可尝试~~科学上网~~或[PotPlayer中文网](https://potplayer.org/)
 
 #### [音乐播放器 Foobox](https://github.com/dream7180/foobox-cn/)
 
 @Dreamawake 大神制作的 Foobar2000 美化优化版本。支持多平台搜索歌曲、自动匹配歌词与[WASAPI音乐输出](https://baike.baidu.com/item/WASAPI/8114771?fr=aladdin)功能。
 
-    软件WASAPI输出：[组件下载](https://www.foobar2000.org/components/view/foo_out_wasapis)
+    兼容性软件WASAPI输出插件：[组件下载](https://www.foobar2000.org/components/view/foo_out_wasapis)
 
     WASAPI输出若提示 error: endpoint creation failed 解决方法：
     DSP管理器 - 激活 重采样器 (PPHS) - 配置 目标采样 48000 Hz　　[参考来源](https://tieba.baidu.com/p/5431845992)
@@ -60,9 +61,13 @@ catalog: on
 
 #### 压缩软件
 
-1. **[Bandizip](http://www.bandisoft.com/bandizip/)** & [v6.x旧版本](http://www.bandisoft.com/bandizip/old/6/)
+1. **[7-zip](https://sparanoid.com/lab/7z/)**
 
-    老牌压缩软件。可使用 v6.x 版本，最新版本 v7.x 含有广告。
+    老牌开源压缩软件，带有CRC SHA校验功能。
+
+    **[7-Zip zstd](https://github.com/mcmilk/7-Zip-zstd)**
+
+    7-zip增强版，更多的压缩算法，增加了MD5及更多的校验功能。
 
 2. **WinRAR**
 
@@ -70,13 +75,9 @@ catalog: on
     请先卸载之前安装的WinRAR(如果有)
     [激活文件备份](rarkey.rar)
 
-3. **[7-zip](https://sparanoid.com/lab/7z/)**
+3. **[Bandizip](http://www.bandisoft.com/bandizip/)** & [v6.x旧版本](http://www.bandisoft.com/bandizip/old/6/)
 
-    老牌开源压缩软件，带有CRC SHA校验功能。
-
-    **[7-Zip zstd](https://github.com/mcmilk/7-Zip-zstd)**
-
-    7-zip增强版，更多的压缩算法，增加了MD5及更多的校验功能。
+    老牌压缩软件。可使用 v6.x 版本，最新版本 v7.x 含有广告。
 
 #### [截图工具 Snipaste](https://zh.snipaste.com/)
 
@@ -86,8 +87,9 @@ F1 截图大法好
 
 不是它多好用，是iTunes太难用
 
-### 学术相关软件
+### 学术软件
 
+<!--
 #### [冰点文库下载器](http://www.bingdian001.com/?p=832)  [备份下载](https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Software/Fish-v3214-0914(%E5%86%B0%E7%82%B9%E4%B8%8B%E8%BD%BD%E5%99%A8).zip)
 
 下载**百度文库**的文档
@@ -95,10 +97,15 @@ F1 截图大法好
 #### [豆丁当当](https://www.52pojie.cn/thread-1185880-1-1.html)  [备份下载](https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/Software/%E8%B1%86%E4%B8%81%E5%BD%93%E5%BD%93V2.7.zip)
 
 下载**豆丁网、book118等网站**的文档
+-->
 
-#### Office 365
+#### [SumatraPDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer)
 
-可以尝试在某宝上搜索'Office 365'
+轻量、简洁、多功能PDF阅读器
+
+#### [EndNote](https://endnote.com/)
+
+可以在[知乎 - 柴柴的科研分享](https://zhuanlan.zhihu.com/p/87749797)内找到Endnote 20 Win版下载地址，安装后可升级至最新版本（抱Tsinghua大佬大腿）
 
 #### [caj2pdf-qt](https://caj2pdf-qt.sainnhe.dev/)
 
@@ -106,7 +113,11 @@ CAJ 转 PDF 转换器，写论文必备
 
 #### [PandaOCR](https://github.com/miaomiaosoft/PandaOCR.Pro)
 
-OCR侬晓得伐啦
+[OCR](https://baike.baidu.com/item/%E5%85%89%E5%AD%A6%E5%AD%97%E7%AC%A6%E8%AF%86%E5%88%AB)识别侬晓得伐啦
+
+#### Office 365
+
+可以尝试在某宝上搜索'Office 365'
 
 ### 专业设计软件
 
@@ -137,8 +148,6 @@ OCR侬晓得伐啦
 [卡硬工具箱](http://www.kbtool.cn/) 硬件检测、管理、性能测试工具以及各种实用软件。但已有两年未更新
 
 [AppNee Freeware Group.](https://appnee.com) 一个各类破解版软件非常多的博客
-
-[7zip ZS](https://github.com/mcmilk/7-Zip-zstd/) 增强版7zip，加入了丰富的Hash校验功能。
 
 <!-- - [waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases) 更好地放大图片 -->
 
