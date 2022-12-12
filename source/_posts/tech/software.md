@@ -149,14 +149,14 @@ CAJ 转 PDF 转换器，写论文必备
 
 [AppNee Freeware Group.](https://appnee.com) 一个各类破解版软件非常多的博客
 
-<!-- - [waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases) 更好地放大图片 -->
+[waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases) 更好地放大图片
 
 <!-- - [AgentNEO](https://neoladder.org/) + [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)-->
 
 <!-- - [ChipGenius v4.20.1107](ChipGenius_v4_20_1107_fix.rar)  可用于查看各接口协议版本（如判断是否正常运行USB3.1）  
     来自 https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287 -->
 
-<!-- - [清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download) -->
+[垃圾清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
 
 ---
 
