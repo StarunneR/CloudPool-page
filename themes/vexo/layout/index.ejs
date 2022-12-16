@@ -6,25 +6,6 @@
   <% if (page.total > 1){ %>
     <%- partial('_partial/pager') %>
   <% } %>
-  
-  <div id="waline" style="display: none"></div>
-  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
-  <script>
-    Waline.init({
-        el: '#waline',
-        // add serverURL
-        serverURL: 'https://waline.zhuochi.org/',
-        appId: '<%- config.comment.waline.appId %>',
-        appKey: '<%- config.comment.waline.appKey %>',
-        // avatar: '<%- config.comment.waline.avatar %>',
-        requiredMeta: ['<%- config.comment.waline.requiredMeta %>'],
-        placeholder: '<%- config.comment.waline.placeholder %>',
-        // pageSize: '<%- config.comment.waline.pageSize %>',
-        enableQQ: true,
-        pageview: true,
-        // requiredFields: ['nick']
-    })
-  </script>
 </main>
 
 
