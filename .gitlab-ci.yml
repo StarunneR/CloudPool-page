@@ -1,15 +1,17 @@
-image: node:18.12.1
-pages:
-  cache:
-    paths:
+image: node:10-alpine # use nodejs v10 LTS
+cache:
+  paths:
     - node_modules/
 
-  script:
+before_script:
   - npm install hexo-cli -g
   - npm install
-  - hexo g
+
+pages:
+  script:
+    - hexo generate
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master
