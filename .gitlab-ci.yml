@@ -1,10 +1,10 @@
-image: node
+image: node:13.14.0
 cache:
   paths:
     - node_modules/
 
 before_script:
-  - npm install hexo -g
+  - npm install hexo-cli -g
   - npm install
 
 pages:
