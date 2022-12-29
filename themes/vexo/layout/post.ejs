@@ -1,0 +1,70 @@
+<div id="article-banner">
+  <h2>
+    <%- page.title %>
+  </h2>
+  <p class="post-date">
+    <% if (page.date) { %>
+      <%- date(page.date, "YYYY-MM-DD") %>
+    <% } %>
+  </p>
+</div>
+<% if (theme.catalog && page.catalog == "on") { %>
+  <%- partial('_post/catalog') %>
+<% } %>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <%- partial('_post/author') %>
+    <section class="markdown-content" style="font-family:<%- page.font %>; text-indent:<%- page.indent %>;">
+      <%- page.content %>
+    </section>
+    <!-- Tags -->
+    <% if (page.tags && page.tags.length) { %>
+    <div class="tags">
+      <span>标签：</span>
+      <%- partial('_partial/tag', { tags: page.tags }) %>
+    </div>
+    <% } %>
+    <%- partial('_post/nav') %>
+    <%- partial('_post/comment') %>
+    <%- partial('_post/counting') %>
+    <%- partial('_post/ad') %>
+    <%- partial('_post/qrcode') %>
+  </article>
+  <!-- Article END -->
+</main>
+
+<script>
+  (function () {
+    var url = '<%= config.url %>/<%= page.path %>';
+    var banner = '<%= page.banner %>'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function () {
+      $(this).attr('src', './images/error.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+  })();
+</script>
+
+<!-- 代码压缩 -->
+<script type="text/javascript" src="/js/fold_action.js"></script>
+
+<script defer>
+  // qrcode
+  var qr = new QRious({
+  element: document.getElementById('share-qrcode'),
+  value: document.location.href
+  })
+</script>

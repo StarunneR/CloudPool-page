@@ -1,0 +1,64 @@
+<div id="article-banner"> 
+    <p id="hitokoto" class="one">
+        <a href="#" id="hitokoto_text" class="one_text">:D 加载中...</a>
+        <div class="one_source"><span id="hitokoto_author"></span> —— <span id="hitokoto_from"></span></div>
+    </p>
+    <!--<input type="text" name="one_link"></input><a href="../"><button type="button">Go</button></a> 要求：按钮链接到../INPUT-->
+</div>
+<script defer>
+    fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('hitokoto_text')
+      hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+      hitokoto.innerText = data.hitokoto
+      const author = document.getElementById('hitokoto_author')
+      author.innerText = data.from_who
+      if (data.from_who != data.from) {
+        const from = document.getElementById('hitokoto_from')
+        from.innerText = data.from
+      }
+    })
+    .catch(console.error)
+</script>
+
+<main class="app-body">
+    <!--<div class="card-container"></div>-->
+    <div id="waline" class="one_waline"></div>
+    <%- page.content %>
+</main>
+
+<script>
+    (function () {
+        var url = '<%= config.url %>/<%= page.path %>';
+        $('#article-banner').geopattern(url);
+        $('.header').removeClass('fixed-header')
+        $('.card-header').each(function () {
+            var name = $(this).data('name');
+            $(this).geopattern(name);
+        })
+    })()
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
+<script>
+    Waline.init({
+        el: '#waline',
+        serverURL: 'https://waline.voiiu.com/',
+        emoji: [
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/qq',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/tieba',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/alus',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili',
+            'https://cdn.jsdelivr.net/gh/walinejs/emojis/bmoji'
+        ],
+        appId: '<%- page.appId %>',
+        appKey: '<%- page.appKey %>',
+        avatarCDN: 'https://gravatar.loli.top/avatar/',
+        //avatar: '<%- config.comment.waline.avatar %>',
+        placeholder: '<%- page.prompt %>',
+        requiredFields: ['<%= page.required %>'], 
+        pageview: true,
+    })
+</script>

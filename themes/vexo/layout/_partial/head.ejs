@@ -1,0 +1,36 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="<%= config.description || theme.description %>">
+  <meta name="keyword" content="<%= config.keyword || theme.keyword %>">
+  <% if (config.logo){ %>
+  <link rel="shortcut icon" type="image/ico" href="<%= config.favicon %>">
+  <% } else { %>
+  <%- favicon_tag('css/images/logo.png') %>
+  <% } %>
+  <title>
+    <% if (page.title){ %>
+    <%= page.title %> | <%= config.title %>
+    <% } else { %>
+    <%= config.title %>
+    <% } %>
+  </title>
+  <!-- CSS -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet" />
+  <!--<link href="https://cdn.bootcdn.net/ajax/libs/geopattern/1.2.3/css/geopattern.min.css" rel="stylesheet" />-->
+  <!--<link href="/css/nprogress.min.css" rel="stylesheet" /> --><!-- Progress bar: NProgress v0.2.0 -->
+  <!-- <link href="/css/plugins/tomorrow.min.css" rel="stylesheet">  -->
+  <%- css(['css/style']) %>
+
+  <!-- JS -->
+  <!--<script type="text/javascript" src="/js/jquery.min.js"></script> --><!-- version: 3.2.1 -->
+  <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script><!-- version: 1.2.3 -->
+  <script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" ></script>
+  <!--<script type="text/javascript" src="/js/nprogress.min.js"></script> --><!-- version: 0.2.0 --> 
+  <script type="text/javascript" src="/js/busuanzi.js" async></script>
+  <script type="text/javascript" src="/js/qrious.min.js" async></script> <!-- version: 4.0.2 -->
+  <!--  <%- partial('_third-party/mathjax') %>-->
+</head>
+

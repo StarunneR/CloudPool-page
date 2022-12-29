@@ -1,0 +1,63 @@
+#tag-cloud
+  margin: 30px 0
+  text-align: center
+  a
+    border: none
+    line-height: 28px
+    margin: 0 4px
+    margin-bottom: 8px
+    background: #bbe
+    display: inline-block
+    border-radius: 4px
+    padding: 0 10px
+    color: color-white
+    transition: background .5s
+    &:hover
+      background: rgb(0, 133, 161)
+  .tag0
+    background: #1E90FF
+  .tag1
+    background: #4169E1
+  .tag2
+    background: #0000FF
+
+.tags
+  margin: 15px 0
+  span
+    &:first-child
+      margin-right: 10px
+      font-weight: 600
+
+.tag-code
+  font-family: 'Roboto Mono', Monaco, courier, monospace
+  font-size: .8em
+  display: inline-block
+  background-color: color-background
+  color: color-orange
+  padding: 3px 5px
+  margin: 0 2px 5px 0
+  border-radius: 2px
+  white-space: nowrap
+
+.tag-list
+  margin-left: 1em
+  margin-right: 1em
+
+.tag-name
+  font-size: 1.4em
+  position: relative
+  &:before
+    content: "#"
+    color: color-primary
+    position: absolute;
+    left: -.7em
+    top: -2px
+    font-size: 1.2em
+    font-weight: 700
+    
+.tag-preview
+  font-size: 1.1em
+  padding-left: 1em
+  li
+    cursor: pointer
+    margin: 10px 0

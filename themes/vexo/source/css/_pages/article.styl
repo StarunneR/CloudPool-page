@@ -1,0 +1,77 @@
+
+.article-card
+  font-style: normal
+  padding-bottom: 20px
+  padding-left: 2em
+  @media m-mobile
+    padding-left: 1em
+  &:first-child
+    margin-top: 60px
+
+h2.article-head
+  font-style: normal
+  font-size: 1.6em
+  margin-bottom: 0
+
+.article-head > a
+  font-style: normal
+  color: color-dark
+  transition: all 0.3s ease-in-out
+  display: inline-block
+  position: relative
+  &:before 
+    content: ""
+    color: #4aa2f1
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    width: 0
+    height: 100%
+    border-bottom: 3px solid
+    transition: all 0.2s ease-in-out
+  &:hover::before
+    width: 100%
+
+.article-date
+  font-style: normal
+  color: color-gray
+  margin: 10px 0
+  font-size: 0.9em
+
+.article-summary
+  font-style: italic
+  margin: 10px 0
+  color: color-dark
+
+.more
+  font-weight: 600
+  display: inline-block
+  transition: all 0.3s
+  &:hover
+    transform: translateX(10px)
+
+.notice
+  font-size: 12px
+  display: block
+  margin-top: 10px
+  text-align: center
+  color: color-gray
+  font-style: italic
+
+.image-view-wrap
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: 1000
+  transition: all 0.3s ease-in-out
+  .image-view-inner
+    position: relative
+  img
+    display: block
+    margin: 0 auto
+    cursor: zoom-out
+    transition: all 0.3s ease-in-out
+
