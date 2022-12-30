@@ -1,9 +1,9 @@
-.DS_Store
-*.log
-* - 副本.*
 .history/
 .deploy_git/
 .github/
 Thumbs.db
 db.json
 public/
+* - 副本.*
+.DS_Store
+*.log
