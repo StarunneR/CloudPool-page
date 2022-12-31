@@ -172,5 +172,5 @@ comment:
     appKey: arEPHdbMnKwMjQgiWsLgw34N
     requiredMeta: ''
     avatar: 'mp'
-    placeholder: '说些什么'
+    placeholder: '说、什么8 \n \n支持Markdown语法： \n*斜体* , **粗体** , \#/###/###### 1-6级标题 , *** 或 --- = 水平分割线 , ~~删除线~~ , > 引用内容 , `代码块` , 1. 序号列表 , * 无序列表 , [链接文字](链接地址), <br> = 空行'
     meta: ['nick','mail']
