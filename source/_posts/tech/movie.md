@@ -8,7 +8,9 @@ main: 授人以渔
 catalog: on
 ---
 ## [豆瓣电影](https://movie.douban.com/)
+
 ---
+
 ## 找资源
 
 * [种子搜](https://www.zhongzidi9.com/) [种子搜导航](https://www.zhongzidizhi.com/) （推荐）
@@ -17,12 +19,11 @@ catalog: on
 
 ---
 
-* [磁力狗1](http://clg00.org)或[磁力狗2](http://clg.im)或[磁力狗3](http://ciligou.top)
-* [磁力猫1](http://clm7.net)或[磁力猫2](http://clm.la)或[磁力猫3](http://cilimao.biz)
+* [磁力狗地址发布页](https://磁力狗.com/)或[磁力狗2](http://clg88.cc)
 * [雨花阁 地址发布1](https://github.com/yuhuage/dizhi)或[地址发布2](https://bitbucket.org/yuhuage/yuhuage/src/master/)
-* [片源网](https://pianyuan.org)
 * [磁力熊搜素](https://www.cilixiong.com/search/)
 * [巴士搜索](http://bashi5.com)
+~~* [片源网](https://pianyuan.org)~~
 
 不可用：
 磁力蜘蛛，磁力熊猫，磁力柠檬 ，老王磁力，BT1207，SkrBT
@@ -39,7 +40,8 @@ BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光�
     Ref: [知乎：陕北老汉-网络影视资源下载指南](https://zhuanlan.zhihu.com/p/28715214)
 {% endfold %}
 
-### 字幕下载：
+### 字幕下载
+
 [字幕库](http://zimuku.org)
 [射手网](https://assrt.net/)
 [SubHD](https://subhd.tv)
@@ -49,29 +51,33 @@ BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光�
 [字幕下载](http://www.zmxiazai.com/)
 -->
 ---
+
 ### 离线下载工具
 
-##### 国内
+#### 国内
+
 * [微云](https://www.weiyun.com)
 * [115](https://115.com)
 * [比特球](https://pan.bitqiu.com/)
 
-##### 国外
+#### 国外
+
 * [SonicBit](https://dash.sonicbit.net/)
 * [LoadBt](https://www.loadbt.com/files)
 * [Furk.net](https://www.furk.net/)
 
 ##### 其他
-度盘 渣雷 ~~[6盘](https://v3-beta.6pan.cn/)~~ ~~[马上离线下](https://browser.enjoymore.fun/)~~
 
+度盘 渣雷 ~~[6盘](https://v3-beta.6pan.cn/)~~ ~~[马上离线下](https://browser.enjoymore.fun/)~~
 
     Reference: https://zhuanlan.zhihu.com/p/153555873
 
 ---
 
-## 网页视频下载 
+## 网页视频下载
 
 ### Internet Download Manager (IDM)
+
 {% fold 说明 %}
 非常好用的下载工具，有浏览器视频嗅探与一键下载功能
 收费软件，30天试用期，虽然网上有破解版，但还是建议购买，因为更新频繁
@@ -83,6 +89,7 @@ BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光�
 
 {% fold 说明 %}
 使用方法：
+
 1. 安装[Python3](https://www.python.org/downloads/)
 2. [Download from GitHub](https://github.com/soimort/you-get/releases) you-get.tar.gz 或 Source code (zip)
 3. 解压，Add to **PATH**
@@ -99,6 +106,7 @@ BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光�
 
 {% fold 说明 %}
 使用方法：
+
 1. 安装[Python3](https://www.python.org/downloads/)
 2. [Download from GitHub](https://github.com/ytdl-org/youtube-dl/releases)) youtube-dl.exe 或 youtube-dl.tar.gz
 3. 解压，Add to **PATH**
@@ -110,4 +118,3 @@ BluRay(蓝光原盘)＞Remux(蓝光无损提取)＞BluRay/BRRip/BD/BDRip(蓝光�
     $ youtube-dl --write-sub [url]  # 下载字幕文件
     $ youtube-dl --write-auto-sub [url]  # 下载自动生成的字幕文件 (Youtube only)
 {% endfold %}
-
