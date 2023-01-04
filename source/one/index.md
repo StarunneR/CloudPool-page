@@ -7,7 +7,7 @@ appId: M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI
 appKey: arEPHdbMnKwMjQgiWsLgw34N
 required: 
 ---
-**[“一言”](/one)** 接口来自: [一言 hijikoto.cn](https://hitokoto.cn)</a>
+**[“一言”](/one)** 接口来自: [一言 hijikoto.cn](https://hitokoto.cn)
 
 ---
 
