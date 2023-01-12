@@ -1,28 +1,14 @@
 <div id="article-banner">
-    <p id="hitokoto" class="one">
-        <a href="#" id="hitokoto_text" class="one_text">:D 加载中...</a>
+    <div id="hitokoto" class="one">
+        <div><a href="#" id="hitokoto_text" class="one_text">:D 加载中...</a></div>
         <div class="one_source">
-           —— <span id="hitokoto_from"></span> <span id="hitokoto_author"></span>
+            —— <span id="hitokoto_from"></span> <span id="hitokoto_author"></span>
+            <button onclick="getYiju()" class="refresh_button">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" x="0px" y="0px" opacity="1" viewBox="0 0 100 85" width="1.5em" height="1.5em"><g style="fill: #3c8920"><path d="M78.271,21.729C71.028,14.486,61.028,10,50,10C27.944,10,10,27.944,10,50S27.944,90,50,90S90,72.056,90,50L80,50C80,66.542,66.542,80,50,80S20,66.542,20,50S33.458,20,50,20C58.271,20,65.771,23.365,71.203,28.797L60,40L90,40L90,10L78.271,21.729Z" stroke="none"></path></g></svg>
+            </button>
         </div>
-    </p>
-    <!--<input type="text" name="one_link"></input><a href="../"><button type="button">Go</button></a> 要求：按钮链接到../INPUT-->
+    </div>
 </div>
-<script defer>
-    fetch('https://v1.hitokoto.cn')
-        .then(response => response.json())
-        .then(data => {
-            const hitokoto = document.getElementById('hitokoto_text')
-            hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-            hitokoto.innerText = data.hitokoto
-            const author = document.getElementById('hitokoto_author')
-            author.innerText = data.from_who
-            if (data.from_who != data.from) {
-                const from = document.getElementById('hitokoto_from')
-                from.innerText = data.from
-            }
-        })
-        .catch(console.error)
-</script>
 
 <main class="app-body">
     <!--<div class="card-container"></div>-->
@@ -31,15 +17,33 @@
 </main>
 
 <script>
-        (function () {
-            var url = '<%= config.url %>/<%= page.path %>';
-            $('#article-banner').geopattern(url);
-            $('.header').removeClass('fixed-header')
-            $('.card-header').each(function () {
-                var name = $(this).data('name');
-                $(this).geopattern(name);
+    function getYiju() {
+        fetch('https://v1.hitokoto.cn')
+            .then(response => response.json())
+            .then(data => {
+                const hitokoto = document.getElementById('hitokoto_text')
+                hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                hitokoto.innerText = data.hitokoto
+                const author = document.getElementById('hitokoto_author')
+                author.innerText = data.from_who
+                if (data.from_who != data.from) {
+                    const from = document.getElementById('hitokoto_from')
+                    from.innerText = data.from
+                }
             })
-        })()
+            .catch(console.error)
+    }
+    getYiju()
+</script>
+
+<script>
+    var url = '<%= config.url %>/<%= page.path %>';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header')
+    $('.card-header').each(function () {
+        var name = $(this).data('name');
+        $(this).geopattern(name);
+    })
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
 <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
