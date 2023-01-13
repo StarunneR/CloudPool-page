@@ -27,6 +27,10 @@
                     const author = document.getElementById('hitokoto_author')
                     author.innerText = data.from_who
                 }
+                else {
+                    const author = document.getElementById('hitokoto_author')
+                    author.innerText = []
+                }
             })
             .catch(console.error)
     }
