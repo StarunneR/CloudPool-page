@@ -1,8 +1,8 @@
 <div id="article-banner">
     <div id="hitokoto" class="one">
-        <div><a href="#" id="hitokoto_text" class="one_text">:D 加载中...</a></div>
+        <div><a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a></div>
         <div class="one_source">
-            —— <span id="hitokoto_from"></span> <span id="hitokoto_author"></span> <img class="refresh_button" onclick="getYiju()" src="/images/refresh.png" />
+            —— <span id="hitokoto_author"></span> <span id="hitokoto_from"></span> <img class="refresh_button" onclick="getYiju()" src="/images/refresh.png" />
         </div>
     </div>
 </div>
@@ -21,11 +21,11 @@
                 const hitokoto = document.getElementById('hitokoto_text')
                 hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
                 hitokoto.innerText = data.hitokoto
-                const author = document.getElementById('hitokoto_author')
-                author.innerText = data.from_who
+                const from = document.getElementById('hitokoto_from')
+                from.innerText = data.from
                 if (data.from_who != data.from) {
-                    const from = document.getElementById('hitokoto_from')
-                    from.innerText = data.from
+                    const author = document.getElementById('hitokoto_author')
+                    author.innerText = data.from_who
                 }
             })
             .catch(console.error)
