@@ -26,10 +26,9 @@
     </div>
     <% } %>
     <%- partial('_post/nav') %>
-    <% if (theme.comment != "false") { %>
-      <%- partial('_post/catalog') %>
+    <% if (page.comment != "false") { %>
+      <%- partial('_post/comment') %>
     <% } %>
-    <%- partial('_post/comment') %>
     <!-- <%- partial('_post/counting') %> -->
     <%- partial('_post/ad') %>
     <%- partial('_post/qrcode') %>
