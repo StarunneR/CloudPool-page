@@ -65,8 +65,8 @@
         // avatar: '<%- config.comment.waline.avatar %>',
         // pageSize: '<%- config.comment.waline.pageSize %>',
         // enableQQ: true,
-        requiredFields: ['<%= page.required %>'],
-        pageview: false,
+        requiredFields: ['<%- page.required %>'],
+        pageview: '<%- page.counting %>',
         emoji: [
             //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/qq',
             //    'https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.1/tieba',

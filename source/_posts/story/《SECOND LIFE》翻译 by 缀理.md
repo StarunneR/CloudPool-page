@@ -6,7 +6,7 @@ author: 缀理
 categories: 浊故事
 font: 宋体
 main: 废话与不是废话与翻译
-catalog: on
+catalog: true
 ---
 
 ▽写在前面的废话
