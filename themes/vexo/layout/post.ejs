@@ -31,7 +31,9 @@
     <% } %>
     <!-- <%- partial('_post/counting') %> -->
     <%- partial('_post/ad') %>
-    <%- partial('_post/qrcode') %>
+    <% if (page.qrcode != "false") { %>
+      <%- partial('_post/qrcode') %>
+    <% } %>
   </article>
   <!-- Article END -->
 </main>
