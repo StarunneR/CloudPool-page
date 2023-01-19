@@ -9,7 +9,7 @@
         var url = img.src
         var a = document.createElement('a')
         var down_event = new MouseEvent('click')
-        a.download = '<%-config.title%> - <%-page.title%>'
+        a.download = '<%= config.title %> - <%= page.title %>'
         a.href = url
         a.dispatchEvent(down_event)
     })
