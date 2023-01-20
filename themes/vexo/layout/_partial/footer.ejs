@@ -16,12 +16,7 @@
   }
 </script>
 
-<!-- Fastclick v1.0.6 -->
-<script>
-  async("https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){ 
-    FastClick.attach(document.body);
-  })
-</script>
+<%- js('js/script') %> <!--无法移至head.js中，原因不明-->
 
 <!-- Highlight.js -->
 <!-- <script>
@@ -58,4 +53,4 @@
     })();
 </script>
 <% } %>
-<%- js('js/script') %> <!--无法移至head.js中，原因不明-->
+
