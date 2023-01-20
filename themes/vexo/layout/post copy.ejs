@@ -38,6 +38,8 @@
   <!-- Article END -->
 </main>
 
+<script type="text/javascript" src="/js/qrious.min.js" ></script>
+
 <script>
   (function () {
     var url = '<%= config.url %>/<%= page.path %>';
@@ -58,7 +60,7 @@
         'cursor': 'default'
       })
     })
-
+    
     // qrcode
     var qr = new QRious({
     element: document.getElementById('share-qrcode'),
