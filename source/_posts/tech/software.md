@@ -8,8 +8,9 @@ date2: 2022-03-23
 date1: 2021-08-03
 tags: [实用, 软件, 安装]
 categories: 浊技术
+catalog:  
 main: Windows软件
-catalog: on
+qrcode: 
 ---
 ## 电脑
 

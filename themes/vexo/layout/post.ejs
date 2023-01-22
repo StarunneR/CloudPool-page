@@ -8,7 +8,7 @@
     <% } %>
   </p>
 </div>
-<% if (theme.catalog && page.catalog == "true") { %>
+<% if (page.catalog == true) { %>
   <%- partial('_post/catalog') %>
 <% } %>
 <main class="app-body flex-box">
@@ -26,12 +26,12 @@
     </div>
     <% } %>
     <%- partial('_post/nav') %>
-    <% if (page.comment != "false") { %>
+    <% if (page.comment != false) { %>
       <%- partial('_post/comment') %>
     <% } %>
     <!-- <%- partial('_post/counting') %> -->
     <%- partial('_post/ad') %>
-    <% if (page.qrcode != "false") { %>
+    <% if (page.qrcode != false) { %>
       <%- partial('_post/qrcode') %>
     <% } %>
   </article>

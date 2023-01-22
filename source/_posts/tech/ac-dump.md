@@ -8,8 +8,8 @@ author: m1
 tags: [视频,学习,MOOC]
 categories: 学习
 main: 我们还能学什么
-catalog: on
-counting: on
+catalog: true
+counting: true
 ---
 
 ## MOOC平台
@@ -43,7 +43,7 @@ counting: on
 * [Google学术](https://scholar.google.com) & [Mirror List](https://www.library.ac.cn/)&emsp;&emsp;[百度学术](https://xueshu.baidu.com)&emsp;&emsp;[Bing学术](https://cn.bing.com/academic/)&emsp;&emsp;[CNKI中国知网](https://www.cnki.net/)
 * [学术屋导航](http://sci.xueshuwu.cn/)
 * [全国报刊索引](https://www.cnbksy.com/) [易阅通](https://www.cnpereading.com/) [超星百链](https://www.blyun.com/) [超星读秀](https://www.duxiu.com/) [超星发现](https://www.zhizhen.com/) [开元知海·e读](http://www.yidu.edu.cn/) [比菲尔德大学BASE搜索](https://www.base-search.net/)
-* [虫部落学术搜素](https://scholar.chongbuluo.com/) & [虫部落电子书搜素](https://ebook.chongbuluo.com/)
+* [虫部落学术搜素](https://scholar.chtruegbuluo.com/) & [虫部落电子书搜素](https://ebook.chtruegbuluo.com/)
 * 电子书搜索：
 [古登堡计划](https://www.gutenberg.org/) [ebookee](https://www.ebookee.ws/) 
 
