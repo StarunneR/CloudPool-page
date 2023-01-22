@@ -29,7 +29,6 @@
     <% if (page.comment != false) { %>
       <%- partial('_post/comment') %>
     <% } %>
-    <!-- <%- partial('_post/counting') %> -->
     <%- partial('_post/ad') %>
     <% if (page.qrcode != false) { %>
       <%- partial('_post/qrcode') %>
@@ -58,9 +57,23 @@
         'cursor': 'default'
       })
     })
+
+    var OriginTitile = document.title;
+    var titleTime;
+  
+    //title_hider
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '(つェ⊂)看不见我看不见我~ ' + OriginTitile;
+            clearTimeout(titleTime);
+        }
+        else {
+            document.title = '(*´∇｀*) 被你发现啦~ ' + OriginTitile;
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            }, 1500);
+        }
+    });
   })();
 </script>
-
-<!-- 代码压缩 -->
-<script type="text/javascript" src="/js/fold_action.js"></script>
 

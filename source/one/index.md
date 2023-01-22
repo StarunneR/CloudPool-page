@@ -5,7 +5,7 @@ avatar: mp
 placeholder: 一言以蔽之，曰：“思无邪”。
 appId: M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI
 appKey: arEPHdbMnKwMjQgiWsLgw34N
-counting: true
+counting: 
 required: 
 ---
 **[“一言”](/one)** 接口来自: [一言 hijikoto.cn](https://hitokoto.cn)

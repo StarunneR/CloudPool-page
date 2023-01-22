@@ -10,7 +10,7 @@ counting: on
 ---
 * 来源：[微信公众号 - TanzdersiebenSchleier](https://mp.weixin.qq.com/s/xTq0px43x1sWTX8CBdLhxw)
 
-## 1 
+## 1
 
 我住的街区有很多垃圾、垃圾桶和垃圾车。
 

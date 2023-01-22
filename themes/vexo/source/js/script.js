@@ -53,14 +53,16 @@
       scrollTop: maoH - header.height()
     }, 500)
   })
-  
+
   $('#category-cloud a').on('click', function () {
     var list = $('.category-list')
     var name = $(this).data('name')
     var maoH = list.find('#' + name).offset().top
 
 
-    $('html,body').animate({ scrollTop: maoH - header.height() }, 500)
+    $('html,body').animate({
+      scrollTop: maoH - header.height()
+    }, 500)
   })
 
   $('.author-logo').on('click', function () {
@@ -72,8 +74,8 @@
   })
 
   $('.arrow-down').on('click', function () {
-    $('html, body').animate({ 
-      scrollTop: banner.offsetHeight - header.height() 
+    $('html, body').animate({
+      scrollTop: banner.offsetHeight - header.height()
     }, 500)
   })
 
@@ -88,9 +90,20 @@
       }, 500)
     }
   })
-  
+
   top.on('click', function () {
-    $('html, body').animate({ scrollTop: 0 }, 600)
+    $('html, body').animate({
+      scrollTop: 0
+    }, 600)
+  })
+
+  $(document).ready(function () {
+    $(document).on('click', '.fold_hider', function () {
+      $('>.fold', this.parentNode).slideToggle();
+      $('>:first', this).toggleClass('open');
+    });
+    //默认情况下折叠
+    $("div.fold").css("display", "none");
   })
 
   document.addEventListener('scroll', function () {
@@ -108,10 +121,21 @@
     } else {
       top.removeClass('opacity')
     }
-	if (scrollTop > 190) {
+    if (scrollTop > 190) {
       catalog.addClass('fixed-toc')
     } else {
       catalog.removeClass('fixed-toc')
     }
   })
+
+  //tag.js
+  function tag() {
+    var tag = location.hash.replace('#', '');
+    if (tag) {
+        var tagId = "#tag-" + tag;
+        $("html, body").animate({
+            scrollTop: $(tagId).offset().top
+        }, 400);
+    }
+}
 })(jQuery)
