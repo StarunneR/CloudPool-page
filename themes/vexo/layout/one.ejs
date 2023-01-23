@@ -43,20 +43,7 @@
   getYiju();
 </script>
 
-<script>
-  (function () {
-    var url = "<%= config.url %>/<%= page.path %>";
-    var banner = "<%= page.banner %>";
-    if (banner !== "" && banner !== "undefined" && banner !== "null") {
-      $("#article-banner").css({
-        "background-image": "url(" + banner + ")",
-      });
-    } else {
-      $("#article-banner").geopattern(url);
-    }
-    $(".header").removeClass("fixed-header");
-  })();
-</script>
+<%- partial('_partial/banner') %>
 
 <script>
   $(".card-header").each(function () {

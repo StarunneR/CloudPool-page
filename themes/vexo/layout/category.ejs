@@ -23,12 +23,10 @@
     <% }) %>
 </main>
 
+<%- partial('_partial/banner') %>
+
 <script>
     (function () {
-        var url = '<%= config.url %>/<%= page.path %>'
-        $('#article-banner').geopattern(url)
-        $('.header').removeClass('fixed-header')
-
         var category = location.hash.replace('#', '')
         if (category) {
             var categoryId = "#category-" + category;
