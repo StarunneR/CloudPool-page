@@ -21,29 +21,6 @@
 </main>
 
 <script>
-  function getYiju() {
-    fetch("https://v1.hitokoto.cn")
-      .then((response) => response.json())
-      .then((data) => {
-        const hitokoto = document.getElementById("hitokoto_text");
-        hitokoto.href = "https://hitokoto.cn/?uuid=" + data.uuid;
-        hitokoto.innerText = data.hitokoto;
-        const from = document.getElementById("hitokoto_from");
-        from.innerText = data.from;
-        if (data.from_who != data.from) {
-          const author = document.getElementById("hitokoto_author");
-          author.innerText = data.from_who;
-        } else {
-          const author = document.getElementById("hitokoto_author");
-          author.innerText = [];
-        }
-      })
-      .catch(console.error);
-  }
-  getYiju();
-</script>
-
-<script>
   (function () {
     var url = "<%= config.url %>/<%= page.path %>";
     var banner = "<%= page.banner %>";
@@ -65,4 +42,5 @@
   });
 </script>
 
+<%- partial('_third-party/hitokoto') %>
 <%- partial('_third-party/waline') %>

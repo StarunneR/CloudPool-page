@@ -28,10 +28,21 @@
 
 <script>
   (function () {
-    var url = '<%= config.url %>/<%= page.path %>'
-    $('#article-banner').geopattern(url)
-    $('.header').removeClass('fixed-header')
+    var url = "<%= config.url %>/<%= page.path %>";
+    var banner = "<%= page.banner %>";
+    if (banner !== "" && banner !== "undefined" && banner !== "null") {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+  })();
+</script>
 
+<script>
+  (function () {
     var tag = location.hash.replace('#', '')
     if (tag) {
       var tagId = "#tag-" + tag;

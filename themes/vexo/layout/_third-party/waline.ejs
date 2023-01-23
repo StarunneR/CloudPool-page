@@ -1,0 +1,35 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
+<script>
+  // 中文默认
+  const locale = {
+    placeholder:
+      "<%- page.placeholder %>" || "<%- config.comment.waline.placeholder %>",
+  };
+
+  Waline.init({
+    el: "#waline",
+    serverURL: "https://waline-cn.voiiu.com",
+    appId: "<%- page.appId %>",
+    appKey: "<%- page.appKey %>",
+    login: "disable",
+    avatarCDN: "https://gravatar.loli.top/avatar/",
+    //avatar: '<%- config.comment.waline.avatar %>',
+    placeholder: "<%- page.placeholder %>",
+    meta: ["nick", "mail"],
+    requiredFields: ["<%= page.required %>"],
+    pageview: "<%- page.counting %>",
+    emoji: [
+      "https://cdn.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://cdn.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://cdn.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://cdn.jsdelivr.net/gh/walinejs/emojis/bilibili",
+      "https://cdn.jsdelivr.net/gh/walinejs/emojis/bmoji",
+    ],
+    locale,
+  });
+</script>

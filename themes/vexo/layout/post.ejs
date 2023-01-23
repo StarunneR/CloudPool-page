@@ -1,21 +1,18 @@
 <div id="article-banner">
-  <h2>
-    <%- page.title %>
-  </h2>
+  <h2><%- page.title %></h2>
   <p class="post-date">
-    <% if (page.date) { %>
-      <%- date(page.date, "YYYY-MM-DD") %>
-    <% } %>
+    <% if (page.date) { %> <%- date(page.date, "YYYY-MM-DD") %> <% } %>
   </p>
 </div>
-<% if (page.catalog == true) { %>
-  <%- partial('_post/catalog') %>
-<% } %>
+<% if (page.catalog == true) { %> <%- partial('_post/catalog') %> <% } %>
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
     <%- partial('_post/author') %>
-    <section class="markdown-content" style="font-family:<%- page.font %>; text-indent:<%- page.indent %>;">
+    <section
+      class="markdown-content"
+      style="font-family: <%- page.font %>; text-indent: <%- page.indent %>"
+    >
       <%- page.content %>
     </section>
     <!-- Tags -->
@@ -24,13 +21,13 @@
       <span>标签：</span>
       <%- partial('_partial/tag', { tags: page.tags }) %>
     </div>
-    <% } %>
+    <% } %> 
     <%- partial('_post/nav') %>
-    <% if (page.comment != false) { %>
-      <%- partial('_post/comment') %>
+    <% if (page.comment != false) { %> <%-
+      partial('_post/comment') %>
     <% } %>
     <%- partial('_post/ad') %>
-    <% if (page.qrcode != false) { %>
+    <% if(page.qrcode != false) { %>
       <%- partial('_post/qrcode') %>
     <% } %>
   </article>
@@ -39,41 +36,44 @@
 
 <script>
   (function () {
-    var url = '<%= config.url %>/<%= page.path %>';
-    var banner = '<%= page.banner %>'
-    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
-      $('#article-banner').css({
-        'background-image': 'url(' + banner + ')'
-      })
+    var url = "<%= config.url %>/<%= page.path %>";
+    var banner = "<%= page.banner %>";
+    if (banner !== "" && banner !== "undefined" && banner !== "null") {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
     } else {
-      $('#article-banner').geopattern(url)
+      $("#article-banner").geopattern(url);
     }
-    $('.header').removeClass('fixed-header')
-
-    // error image
-    $(".markdown-content img").on('error', function () {
-      $(this).attr('src', './images/error.png')
-      $(this).css({
-        'cursor': 'default'
-      })
-    })
-
-    var OriginTitile = document.title;
-    var titleTime;
-  
-    //title_hider
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '(つェ⊂)看不见我看不见我~ ' + OriginTitile;
-            clearTimeout(titleTime);
-        }
-        else {
-            document.title = '(*´∇｀*) 被你发现啦~ ' + OriginTitile;
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            }, 1500);
-        }
-    });
+    $(".header").removeClass("fixed-header");
   })();
 </script>
 
+<script>
+  //title_hider
+  function title_hider() {
+    var OriginTitile = document.title;
+    var titleTime;
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        document.title = "(つェ⊂)看不见我看不见我~ " + OriginTitile;
+        clearTimeout(titleTime);
+      } else {
+        document.title = "(*´∇｀*) 被你发现啦~ " + OriginTitile;
+        titleTime = setTimeout(function () {
+          document.title = OriginTitile;
+        }, 1500);
+      }
+    });
+  }
+</script>
+
+<script>
+  // error image
+  $(".markdown-content img").on("error", function () {
+    $(this).attr("src", "/images/error.png");
+    $(this).css({
+      cursor: "default",
+    });
+  });
+</script>
