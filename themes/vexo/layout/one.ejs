@@ -15,41 +15,10 @@
 </div>
 
 <main class="app-body">
-  <!--<div class="card-container"></div>-->
   <div id="waline" class="one_waline"></div>
   <%- page.content %>
 </main>
 
-<script>
-  function getYiju() {
-    fetch("https://v1.hitokoto.cn")
-      .then((response) => response.json())
-      .then((data) => {
-        const hitokoto = document.getElementById("hitokoto_text");
-        hitokoto.href = "https://hitokoto.cn/?uuid=" + data.uuid;
-        hitokoto.innerText = data.hitokoto;
-        const from = document.getElementById("hitokoto_from");
-        from.innerText = data.from;
-        if (data.from_who != data.from) {
-          const author = document.getElementById("hitokoto_author");
-          author.innerText = data.from_who;
-        } else {
-          const author = document.getElementById("hitokoto_author");
-          author.innerText = [];
-        }
-      })
-      .catch(console.error);
-  }
-  getYiju();
-</script>
-
 <%- partial('_partial/banner') %>
-
-<script>
-  $(".card-header").each(function () {
-    var name = $(this).data("name");
-    $(this).geopattern(name);
-  });
-</script>
-
+<%- partial('_third-party/hitokoto') %>
 <%- partial('_third-party/waline') %>

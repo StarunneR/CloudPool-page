@@ -9,9 +9,14 @@ menu:
  一言: /one/
  网盘: //pan.zhuochi.org/CloudShare/
  ( ^ω^): //emoji.zhuochi.org/
-
 # LOFTER: https://cloudpool.lofter.com
 # 关于: /about/
+
+post:
+  comment: true
+  qrcode: true
+  reward: false
+  ad: true
 
 social:
   email: cloudpool2017@gmail.com

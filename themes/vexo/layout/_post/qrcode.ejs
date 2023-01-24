@@ -5,6 +5,12 @@
 
 <script type="text/javascript" src="/js/qrious.min.js" ></script>
 <script>
+    // qrcode
+    var qr = new QRious({
+        element: document.getElementById('share-qrcode'),
+        value: document.location.href
+    })
+
     $("#share-qrcode").click(function () {
         var img = document.getElementById('share-qrcode')
         var url = img.src
@@ -13,11 +19,5 @@
         a.download = '<%= config.title %> - <%= page.title %>'
         a.href = url
         a.dispatchEvent(down_event)
-    })
-
-    // qrcode
-    var qr = new QRious({
-        element: document.getElementById('share-qrcode'),
-        value: document.location.href
     })
 </script>

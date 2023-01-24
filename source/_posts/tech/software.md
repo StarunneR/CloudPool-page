@@ -176,6 +176,7 @@ CAJ 转 PDF 转换器，写论文必备
 [Aptoide](https://cn.aptoide.com/)
 [apkmonk](https://www.apkmonk.com)
 
+{% fold %}
 #### 生活
 
 几何天气
@@ -227,7 +228,4 @@ iOS上最后一个支持直接从Windows电脑导入音乐文件的APP
 4. 拖拽文件放入Documents文件夹 或 点击 导入 - 选择文件夹
 5. iPhone/iPad打开海贝音乐，划出左栏，点击文件扫描
 
-
-
-
-
+{% endfold %}

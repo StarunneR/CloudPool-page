@@ -11,23 +11,26 @@
     <%- partial('_post/author') %>
     <section
       class="markdown-content"
-      style="font-family: <%- page.font %>; text-indent: <%- page.indent %>"
-    >
+      style="font-family: <%- page.font %>; text-indent: <%- page.indent %>">
       <%- page.content %>
     </section>
-    <!-- Tags -->
     <% if (page.tags && page.tags.length) { %>
-    <div class="tags">
-      <span>标签：</span>
-      <%- partial('_partial/tag', { tags: page.tags }) %>
-    </div>
+      <div class="tags">
+        <span>标签：</span>
+        <%- partial('_partial/tag', { tags: page.tags }) %>
+      </div>
     <% } %> 
     <%- partial('_post/nav') %>
-    <% if (page.comment != false) { %> <%-
-      partial('_post/comment') %>
+    <% if (theme.post.ad == true && page.ad != false) { %>
+      <%- partial('_post/ad') %>
     <% } %>
-    <%- partial('_post/ad') %>
-    <% if(page.qrcode != false) { %>
+    <% if (theme.post.comment == true && page.comment != false) { %>
+      <%- partial('_post/comment') %>
+    <% } %>
+    <% if (theme.post.reward == true && page.reward == true) { %>
+      <%- partial('_post/reward') %>
+    <% } %>
+    <% if (theme.post.comment == true && page.qrcode != false) { %>
       <%- partial('_post/qrcode') %>
     <% } %>
   </article>

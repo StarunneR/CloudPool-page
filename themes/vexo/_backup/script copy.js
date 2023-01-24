@@ -59,6 +59,7 @@
     var name = $(this).data('name')
     var maoH = list.find('#' + name).offset().top
 
+
     $('html,body').animate({
       scrollTop: maoH - header.height()
     }, 500)
@@ -93,7 +94,7 @@
   top.on('click', function () {
     $('html, body').animate({
       scrollTop: 0
-    }, 300)
+    }, 600)
   })
 
   $(document).ready(function () {
@@ -103,6 +104,28 @@
     });
     //默认情况下折叠
     $("div.fold").css("display", "none");
+  })
+
+  document.addEventListener('scroll', function () {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+    var headerH = header.height()
+    if (banner) {
+      if (scrollTop > headerH) {
+        header.addClass('fixed-header')
+      } else if (scrollTop === 0) {
+        header.removeClass('fixed-header')
+      }
+    }
+    if (scrollTop > 100) {
+      top.addClass('opacity')
+    } else {
+      top.removeClass('opacity')
+    }
+    if (scrollTop > 190) {
+      catalog.addClass('fixed-toc')
+    } else {
+      catalog.removeClass('fixed-toc')
+    }
   })
 
   //tag.js

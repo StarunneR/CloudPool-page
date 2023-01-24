@@ -5,6 +5,14 @@
 <main class="app-body project-app">
   <div class="card-container" id="all-project"></div>
 </main>
+<!-- from script.js | start-->
+<script>
+  $(".card-header").each(function () {
+    var name = $(this).data("name");
+    $(this).geopattern(name);
+  });
+</script>
+<!-- end -->
 <script>
   (function() {
     var url = '<%= config.url %>/<%= page.path %>';
