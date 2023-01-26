@@ -9,7 +9,7 @@ tags: [视频,学习,MOOC]
 categories: 学习
 main: 我们还能学什么
 catalog: true
-counting: true
+counting: 
 ---
 
 ## MOOC平台
