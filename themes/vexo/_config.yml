@@ -32,12 +32,6 @@ highlight:
 # catalog
 catalog: true
 
-# donate
-donate: false
-
-# qrcode
-qrcode: false
-
 baidu_id: 
 
 # MathJax Support
