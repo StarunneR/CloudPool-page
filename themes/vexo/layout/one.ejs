@@ -3,17 +3,19 @@
     <div>
       <a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a>
     </div>
-    <div class="one_source">
-      —— <span id="hitokoto_author"></span> <span id="hitokoto_from"></span>
-      <img
+    <span class="one_source" id="one_source">
+      —— <span id="hitokoto_author"></span> <span id="hitokoto_from"></span><img
         class="refresh_button"
         onclick="getYiju()"
-        src="/images/refresh.png"
+        src="/css/images/refresh.png"
+      /><img
+        class="refresh_button"
+        onclick="copy()"
+        src="/css/images/copy.png"
       />
-    </div>
+    </span>
   </div>
 </div>
-
 <main class="app-body">
   <div id="waline" class="one_waline"></div>
   <%- page.content %>
@@ -22,3 +24,14 @@
 <%- partial('_partial/banner') %>
 <%- partial('_third-party/hitokoto') %>
 <%- partial('_third-party/waline') %>
+
+<script type="text/javascript">
+  function copy() {
+    var text = document.getElementById("hitokoto").innerText
+    var input = document.getElementById("wl-edit");
+    input.value = text; // 修改文本框的内容
+    input.select(); // 选中文本
+    document.execCommand("copy"); // 执行浏览器复制命令
+    // alert("复制成功");
+  }
+</script>
