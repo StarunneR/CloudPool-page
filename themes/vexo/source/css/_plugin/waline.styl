@@ -1,12 +1,3 @@
-//.wl-header-item:nth-child(3), .vheader-item:nth-child(3)
-//    display: none
-
-//.wl-btn:nth-child(2), .vbtn:nth-child(2)
-//    display: none
-
-.v[data-class="v"] .vheader
-    border-bottom: none
-
 .wl-meta, .vmeta
     display: none
 //meta: IP归属 浏览器 OS
@@ -26,10 +17,26 @@
     padding-bottom: 0.5em
 
 .wl-input
-    autocomplete: on
+    autocomplete: true
+
+.wl-btn.primary
+    background: color-primary !important
+    border-color: color-primary !important
 
 .wl-tabs
     scrollbar-width: none
+
+.wl-tab-wrapper
+    scrollbar-width: thin
+    &::-webkit-scrollbar
+        width: 6px
+        background-color: #eee
+    &::-webkit-scrollbar-thumb
+        background-color: #c1c1c1
+        &:hover 
+            background-color: #a8a8a8
+    &:active 
+        background-color: #787878
 
 //选择class="wl-header item3"的元素
 //.wl-card
