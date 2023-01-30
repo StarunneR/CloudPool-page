@@ -25,7 +25,7 @@
   function copy() {
     // Create a new textarea element as cache for copying
     let text = document.getElementById("hitokoto").innerText
-    let cache_area = document.createElement('textarea');
+    const cache_area = document.createElement('textarea');
     document.body.appendChild(cache_area);
     cache_area.innerHTML = text;
     //cache_area.setAttribute('create',1);

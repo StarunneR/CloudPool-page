@@ -17,10 +17,9 @@
   </div>
 </div>
 <main class="app-body">
-  <div id="waline" class="one_waline"></div>
+  <%- partial('_plugin/waline') %>
   <%- page.content %>
 </main>
 
 <%- partial('_partial/banner') %>
-<%- partial('_third-party/hitokoto') %>
-<%- partial('_third-party/waline') %>
+<%- partial('_plugin/hitokoto') %>

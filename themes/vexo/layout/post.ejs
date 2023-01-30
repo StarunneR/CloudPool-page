@@ -25,7 +25,7 @@
       <%- partial('_post/ad') %>
     <% } %>
     <% if (theme.post.comment == true && page.comment != false) { %>
-      <%- partial('_post/comment') %>
+      <%- partial('_plugin/waline') %>
     <% } %>
     <% if (theme.post.reward == true && page.reward == true) { %>
       <%- partial('_post/reward') %>

@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.css" />
 <script src="https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.js"></script>
 -->
+<div id="waline"></div>
 <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/waline/2.14.7/waline.min.css">
 <script src="https://cdn.bootcdn.net/ajax/libs/waline/2.14.7/waline.min.js"></script>
 <script>
@@ -61,14 +62,14 @@
   Waline.init({
     el: "#waline",
     serverURL: "https://waline-cn.voiiu.com",
-    appId: "<%- page.appId %>",
-    appKey: "<%- page.appKey %>",
+    appId: "<%- page.appId %>" || "<%- config.comment.waline.appId %>",
+    appKey: "<%- page.appKey %>" || "<%- config.comment.waline.appKey %>",
     login: "disable",
     avatarCDN: "https://gravatar.loli.top/avatar/",
     //avatar: '<%- config.comment.waline.avatar %>',
     placeholder: "<%- page.placeholder %>",
     meta: ["nick", "mail"],
-    requiredMeta: ["<%= page.required %>"],
+    requiredMeta: ["<%- page.required %>"],
     pageview: "<%- page.counting %>",
     emoji: [
       "https://cdn.jsdelivr.net/gh/walinejs/emojis/qq",
