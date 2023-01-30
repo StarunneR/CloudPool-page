@@ -24,17 +24,3 @@
 <%- partial('_partial/banner') %>
 <%- partial('_third-party/hitokoto') %>
 <%- partial('_third-party/waline') %>
-
-<script type="text/javascript">
-  function copy() {
-    var text = document.getElementById("hitokoto").innerText
-    var input = document.getElementById("wl-edit");
-    input.value = text; // 修改文本框的内容
-    input.select(); // 选中文本
-    document.execCommand("copy"); // 执行浏览器复制命
-    var event = document.createEvent("HTMLEvents");
-    event.initEvent("change", true, true);
-    document.querySelector("#wl-edit").dispatchEvent(event);
-    // alert("复制成功");
-  }
-</script>

@@ -20,3 +20,24 @@
   }
   getYiju();
 </script>
+
+<script type="text/javascript">
+  function copy() {
+    // Text Element: id="hijikoyo"
+    let text = document.getElementById("hitokoto").innerText
+    const input = document.createElement('textarea');
+    document.body.appendChild(input);
+    input.innerHTML = text;
+    input.setAttribute('create',1);
+    input.select();
+    document.execCommand("copy");
+    var list=document.getElementsByTagName('textarea')
+    var inputList = Array.prototype.slice.call(list)
+    inputList.forEach((item)=>{
+      if(item.getAttribute('create'))document.body.removeChild(item);
+    });
+    //Focus Textarea
+    const wl_textarea = document.getElementById("wl-edit");
+    wl_textarea.select();
+  }
+</script>
