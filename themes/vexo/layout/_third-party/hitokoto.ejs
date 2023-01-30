@@ -23,21 +23,26 @@
 
 <script type="text/javascript">
   function copy() {
-    // Text Element: id="hijikoyo"
+    // Create a new textarea element as cache for copying
     let text = document.getElementById("hitokoto").innerText
-    const input = document.createElement('textarea');
-    document.body.appendChild(input);
-    input.innerHTML = text;
-    input.setAttribute('create',1);
-    input.select();
+    let cache_area = document.createElement('textarea');
+    document.body.appendChild(cache_area);
+    cache_area.innerHTML = text;
+    //cache_area.setAttribute('create',1);
+    cache_area.select();
     document.execCommand("copy");
-    var list=document.getElementsByTagName('textarea')
-    var inputList = Array.prototype.slice.call(list)
-    inputList.forEach((item)=>{
-      if(item.getAttribute('create'))document.body.removeChild(item);
-    });
-    //Focus Textarea
-    const wl_textarea = document.getElementById("wl-edit");
-    wl_textarea.select();
+    document.body.removeChild(cache_area);
+
+    let input_box = document.getElementById("wl-edit");
+    // console.log(input_box);
+    if (input_box.value == "") {
+      input_box.value = text;
+      // dispatch input event to make upload button ready
+      let evt = document.createEvent('HTMLEvents')
+      evt.initEvent('input', true, true)
+      input_box.dispatchEvent(evt)
+    } else {
+      input_box.select();
+    }
   }
 </script>
