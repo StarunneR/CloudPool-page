@@ -4,5 +4,5 @@ date: 说些什么
 avatar: mp
 information: nick
 required: 
-counting: true
+counting: false
 ---
