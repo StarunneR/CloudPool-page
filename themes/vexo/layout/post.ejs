@@ -8,9 +8,27 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <%- partial('_post/author') %>
+    
+    <label for="font-select">更换字体：</label>
+    <select name="font" id="font">
+      <option value="inherit">默认(Adobe思源黑体)</option>
+      <option value="'Noto Sans SC'">Google思源黑体</option>
+      <option value="'Microsoft YaHei'">微软雅黑</option>
+      <option value="'Noto Serif SC'">Google思源宋体</option>
+      <option value="'SimSun'">新宋体</option>      
+      <option value="'KaiTi'">楷体</option>
+    </select>
+
+    <h1 class="article-author">
+      <% if (page.author !== "m1") { %>
+          <%- page.author %>
+      <% } else if (page.author == "m1") { %>
+          StarunneR
+      <% } %>
+    </h1>
+
     <section
-      class="markdown-content"
+      class="markdown-content" id="content"
       style="font-family: <%- page.font %>; text-indent: <%- page.indent %>">
       <%- page.content %>
     </section>
@@ -49,3 +67,11 @@
     });
   });
 </script>
+
+<script>    
+$(document).ready(function(){
+  $("#font").click(function(){
+    $(".markdown-content").css({"font-family": font.value});
+  });
+});
+</script> 
