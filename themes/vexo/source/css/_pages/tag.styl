@@ -40,19 +40,21 @@
   white-space: nowrap
 
 .tag-list
-  margin-left: 1em
-  margin-right: 1em
+  margin-left: 2em
+  margin-right: 2em
 
 .tag-name
-  font-size: 1.4em
+  font-size: 1.5em
   position: relative
   &:before
+    display: flex
+    align-items: center
+    justify-content: center
+    //Best Way to set verticle align center
     content: "#"
     color: color-primary
     position: absolute;
-    left: -.7em
-    top: -2px
-    font-size: 1.2em
+    left: -0.7em
     font-weight: 700
     
 .tag-preview

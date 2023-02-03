@@ -1,0 +1,17 @@
+<label for="font-select">更换字体：</label>
+<select name="font" id="font">
+  <option value="inherit">默认(思源黑体)</option>
+  <option value="'Noto Sans SC'">思源黑体细体</option>
+  <option value="'Microsoft YaHei'">微软雅黑</option>
+  <option value="'Noto Serif SC'">思源宋体</option>
+  <option value="'SimSun'">新宋体</option>      
+  <option value="'KaiTi'">楷体</option>
+</select>
+
+<h1 class="article-author">
+  <% if (page.author !== "m1") { %>
+      <%- page.author %>
+  <% } else if (page.author == "m1") { %>
+      StarunneR
+  <% } %>
+</h1>

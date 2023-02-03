@@ -3,17 +3,30 @@
   font-style: normal
   padding-bottom: 20px
   padding-left: 2em
-  @media m-mobile
-    padding-left: 1em
-  a
-    font-family: 'Noto Sans SC', system-ui, -apple-system, Arial, 'Helvetica Neue', sans-serif
+  h2
+    font-style: normal
+    font-size: 1.6em
+    margin-bottom: 0
   &:first-child
     margin-top: 60px
-
-h2.article-head
-  font-style: normal
-  font-size: 1.6em
-  margin-bottom: 0
+  .article-date
+    color: color-gray
+    margin: 10px 0
+    font-size: 0.9em
+  .article-summary
+    font-family: 'Source Serif 4 src1', 'Source Serif 4 src2', sans-serif, system-ui, -apple-system, Arial, 'Helvetica Neue'
+    font-size: medium
+    font-style: italic
+    margin: 10px 0
+    color: color-dark
+  .more
+    font-weight: 600
+    display: inline-block
+    transition: all 0.3s
+    &:hover
+      transform: translateX(10px)
+  @media m-mobile
+    padding-left: 1em
 
 .article-head > a
   font-style: normal
@@ -34,26 +47,6 @@ h2.article-head
     transition: all 0.2s ease-in-out
   &:hover::before
     width: 100%
-
-.article-date
-  font-style: normal
-  color: color-gray
-  margin: 10px 0
-  font-size: 0.9em
-
-.article-summary
-  font-family: 'Noto Sans SC', 'Source Serif 4 src1', 'Source Serif 4 src2', sans-serif, system-ui, -apple-system, Arial, 'Helvetica Neue'
-  font-size: medium
-  font-style: italic
-  margin: 10px 0
-  color: color-dark
-
-.more
-  font-weight: 600
-  display: inline-block
-  transition: all 0.3s
-  &:hover
-    transform: translateX(10px)
 
 .image-view-wrap
   position: fixed

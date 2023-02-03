@@ -1,32 +1,16 @@
 <div id="article-banner">
   <h2><%- page.title %></h2>
-  <p class="post-date">
-    <% if (page.date) { %> <%- date(page.date, "YYYY-MM-DD") %> <% } %>
-  </p>
+  <% if (page.date) { %> 
+    <p class="post-date">
+    <%- date(page.date, "YYYY-MM-DD") %>
+    </p>
+  <% } %>
 </div>
 <% if (page.catalog == true) { %> <%- partial('_post/catalog') %> <% } %>
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    
-    <label for="font-select">更换字体：</label>
-    <select name="font" id="font">
-      <option value="inherit">默认(Adobe思源黑体)</option>
-      <option value="'Noto Sans SC'">Google思源黑体</option>
-      <option value="'Microsoft YaHei'">微软雅黑</option>
-      <option value="'Noto Serif SC'">Google思源宋体</option>
-      <option value="'SimSun'">新宋体</option>      
-      <option value="'KaiTi'">楷体</option>
-    </select>
-
-    <h1 class="article-author">
-      <% if (page.author !== "m1") { %>
-          <%- page.author %>
-      <% } else if (page.author == "m1") { %>
-          StarunneR
-      <% } %>
-    </h1>
-
+    <%- partial('_post/front') %>
     <section
       class="markdown-content" id="content"
       style="font-family: <%- page.font %>; text-indent: <%- page.indent %>">
@@ -34,7 +18,6 @@
     </section>
     <% if (page.tags && page.tags.length) { %>
       <div class="tags">
-        <span>标签：</span>
         <%- partial('_partial/tag', { tags: page.tags }) %>
       </div>
     <% } %> 
