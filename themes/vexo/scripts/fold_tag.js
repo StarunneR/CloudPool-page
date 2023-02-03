@@ -8,7 +8,7 @@ function fold(args, content) {
       text: text,
       engine: 'markdown'
     }).replace(/^<p>/, '').replace(/<\/p>$/, '') +
-    '</div></div><div class="fold_content">\n' +
+    '</div></div><div class="fold">\n' +
     hexo.render.renderSync({
       text: content,
       engine: 'markdown'
