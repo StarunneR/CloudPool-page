@@ -45,16 +45,6 @@
   // error image
   $(".markdown-content img").on("error", function () {
     $(this).attr("src", "/images/error.png");
-    $(this).css({
-      cursor: "default",
-    });
+    $(this).css({cursor: "default",});
   });
 </script>
-
-<script>    
-$(document).ready(function(){
-  $("#font").click(function(){
-    $(".markdown-content").css({"font-family": font.value});
-  });
-});
-</script> 
