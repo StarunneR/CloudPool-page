@@ -170,7 +170,7 @@ live2d:
   pluginRootPath: live2dw/ # Root path of plugin to be on the site (Relative)
   pluginJsPath: lib/ # JavaScript path related to plugin's root (Relative)
   pluginModelPath: assets/ # Relative model path related to plugin's root (Relative)
-  scriptFrom: local
+  scriptFrom: jsdelivr
   tagMode: false # Whether only to replace live2d tag instead of inject to all pages
   log: true # Whether to show logs in console
   model:

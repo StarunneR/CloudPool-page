@@ -1,14 +1,15 @@
 <div id="article-banner">
-  <h2><%- page.title %></h2>
+  <h2 class="post-title"><%- page.title %></h2>
   <% if (page.date) { %> 
     <p class="post-date">
     <%- date(page.date, "YYYY-MM-DD") %>
     </p>
   <% } %>
 </div>
-<% if (page.catalog == true) { %> <%- partial('_post/catalog') %> <% } %>
+<% if (page.catalog == true) { %>
+  <%- partial('_post/catalog') %>
+<% } %>
 <main class="app-body flex-box">
-  <!-- Article START -->
   <article class="post-article">
     <%- partial('_post/front') %>
     <section
@@ -35,7 +36,6 @@
       <%- partial('_post/qrcode') %>
     <% } %>
   </article>
-  <!-- Article END -->
 </main>
 
 <%- partial('_partial/banner') %>

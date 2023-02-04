@@ -22,7 +22,7 @@
   color: color-white
 
 body
-  font-family: 'Source Sans 3', 'SourceHanSansCN', sans-serif, 'Noto Sans SC', 'Noto Serif SC', 'Source Serif 4 src1', 'Source Serif 4 src2', system-ui, -apple-system, Arial, 'Helvetica Neue', sans-serif
+  font-family: 'Source Sans 3', 'SourceHanSansCN', sans-serif,/* 'Noto Sans SC', 'Noto Serif SC',*/ 'Source Serif 4 src1', 'Source Serif 4 src2', system-ui, -apple-system,  sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   -webkit-text-size-adjust: none
@@ -56,7 +56,7 @@ pre
   transform: unset !important
 
 .app-body
-  // padding: 16px  16px
+  padding: 20px 32px
   margin: auto
   height: 100%
   max-width: 1200px
@@ -64,8 +64,8 @@ pre
   opacity: 0
   transform: translateY(-20px)
   transition: all 0.4s
-  //@media m-mobile
-  //  padding: 16px 10px
+  @media m-mobile
+    padding: 16px 10px
 
 .hljs
   background: none !important

@@ -1,2 +1,4 @@
 url('//cdn.jsdelivr.net/npm/source-sans/TTF/SourceSans3-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
 //  font-family: 'Source Sans 3 src1', 'Source Sans 3 src2', 'Noto Sans SC', 'Noto Serif SC', 'Source Serif 4 src1', 'Source Serif 4 src2', system-ui, -apple-system, Arial, 'Helvetica Neue', sans-serif
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;500&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;500&display=swap" rel="stylesheet">

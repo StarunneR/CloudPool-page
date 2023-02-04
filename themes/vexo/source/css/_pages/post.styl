@@ -4,7 +4,7 @@
   top: 0
   left: 0
   padding: 80px 20px 25px 20px
-  font-family: 'Noto Sans SC', system-ui, -apple-system, Arial, 'Helvetica Neue', sans-serif
+  font-family: sans-serif, system-ui, -apple-system, Arial, 'Helvetica Neue'
   text-align: center
   position: relative
   background-repeat: no-repeat
@@ -12,9 +12,9 @@
   background-size: cover
   @media m-mobile
     padding: 80px 10px 25px 10px
-  h2
+  .post-title
     margin: .4em 0
-    font-size: 2.2em
+    font-size: 2em
     color: color-white
     //text-shadow: 0 0 40px color-dark
     opacity: 0
@@ -72,7 +72,7 @@
       border-radius: 100%
 
 .text-front
-  margin-right: 20%
+  margin-right: 10%
   
 // .markdown-content, .article-summary
 
@@ -93,7 +93,6 @@
   p
     line-height: 1.6em
     margin-bottom: .7em
-    font-weight: 300
     code
       background-color: color-background
       color: color-dark
@@ -207,20 +206,21 @@
       a
         transition:color .13s linear
         color: lightblue
-  .fold_hider .hider_title
-    width: fit-content
-    font-size: 0.9em
-    font-style: oblique
-    font-weight: bold
-    background-color: color-vary
-    color: white
-    border-radius: 4px
-    text-indent: 0.1em
-    padding-left: 2px
-    padding-right: 5px
   .fold
-    font-family: 'Noto Sans SC', sans-serif, 'Arial'
-    font-size: smaller
+    .fold_hider .hider_title
+      width: fit-content
+      font-size: 0.9em
+      font-style: oblique
+      font-weight: bold
+      background-color: color-vary
+      color: white
+      border-radius: 4px
+      text-indent: 0.1em
+      padding-left: 2px
+      padding-right: 5px
+    .fold_content
+      font-family: 'Noto Sans SC', sans-serif, 'Arial'
+      font-size: smaller
 
 .money-like
   padding: 2em 0 .5em

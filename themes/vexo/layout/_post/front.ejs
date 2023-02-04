@@ -1,11 +1,9 @@
-<span class="text-front">
+<span>
   <label for="font-select" class="front-label">更换字体</label>
   <select name="font" id="font">
-    <option value="inherit">默认(思源黑体)</option>
-    <option value="'Noto Sans SC'">思源黑体细体</option>
-    <option value="'Microsoft YaHei'">微软雅黑细体</option>
-    <option value="'Noto Serif SC'">思源宋体</option>
-    <option value="'SimSun'">新宋体</option>      
+    <option value="sans-serif">默认（黑体）</option>
+    <option value="lighter">黑体（细体）</option>    
+    <option value="serif,'SimSun','Source Serif 4 src1', 'Source Serif 4 src2','Noto Serif SC'">宋体</option>     
     <option value="'KaiTi'">楷体</option>
   </select>
 </span>
@@ -26,7 +24,12 @@
 <script>    
   $(document).ready(function(){
     $("#font").click(function(){
-      $(".markdown-content").css({"font-family": font.value});
+      if (this.value != "lighter") {
+        $(".markdown-content").css({"font-family": font.value});
+        $(".markdown-content").css({"font-weight": 'initial'});
+      } else {
+        $(".markdown-content").css({"font-weight": 'lighter'});
+      };
     });
   });
   

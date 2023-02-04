@@ -96,13 +96,14 @@
     }, 300)
   })
 
+  //fold_action.js
   $(document).ready(function () {
     $(document).on('click', '.fold_hider', function () {
-      $('>.fold', this.parentNode).slideToggle();
+      $('>.fold_content', this.parentNode).slideToggle();
       $('>:first', this).toggleClass('open');
     });
     //默认情况下折叠
-    $("div.fold").css("display", "none");
+    $("div.fold_content").css("display", "none");
   })
 
   //tag.js
