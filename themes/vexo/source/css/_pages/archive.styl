@@ -3,24 +3,20 @@
     position: absolute
     top: 4em
     bottom: 0
-    left: 1.5em
+    margin-left: 6px
     width: 4px
     height: auto
     content: ''
-    background-color:color-primary
-    @media m-mobile
-      left: 1.5em
-
+    background-color: color-primary
 .time-section
   padding-left: 30px
   position: relative
   .section-year
     cursor: pointer
     font-size: 2em
-    margin-left: 10px
     &:before
       position: absolute
-      left: 9px
+      left: -1px !important
       top: 0.4em
       content: ''
       background-color: color-white
@@ -28,15 +24,13 @@
       height: 12px
       border: 2px solid color-primary
       border-radius: 50%
-      @media m-mobile
-        left: 0.25em
   .section-list
     .section-list-item
-      margin: 20px 0 20px 10px
+      margin: 20px 0 20px 0px
       position: relative
       &:before
         position: absolute
-        left: -29px
+        left: -27px !important
         top: 7px
         content: ''
         background-color: color-primary
