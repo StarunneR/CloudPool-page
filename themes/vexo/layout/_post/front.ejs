@@ -4,7 +4,7 @@
     <option value="Arial, Helvetica, sans-serif">默认（黑体）</option>
     <option value="lighter">黑体（细体）</option>    
     <option value="serif,'SimSun','Source Serif 4 src1', 'Source Serif 4 src2','Noto Serif SC'">宋体</option>     
-    <option value="Arial,'KaiTi'">楷体</option>
+    <option value="Arial,'KaiTi','STKaiti'">楷体</option>
   </select>
 </span>
 
@@ -26,7 +26,7 @@
     $("#font").click(function(){
       if (this.value != "lighter") {
         $(".markdown-content").css({"font-family": font.value});
-        $(".markdown-content").css({"font-weight": 'initial'});
+        $(".markdown-content").css({"font-weight": 'unset'});
       } else {
         $(".markdown-content").css({"font-weight": 'lighter'});
       };
