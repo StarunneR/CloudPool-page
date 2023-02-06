@@ -26,10 +26,27 @@
   background-size: cover
   @media m-mobile
     padding: 80px 10px 25px 10px
-  .post-title
+  .page-title
     margin: .4em 0
     font-size: 2em
     color: color-white
+    text-shadow: 0 0 20px color-lighter
+    opacity: 0
+    transform: translateY(10px)
+    transition: all 0.5s
+    @media m-mobile
+      font-size: 2em
+  .page-subtitle
+    margin: 10px 0 20px 0
+    color: color-white3
+    opacity: 0
+    transform: translateY(10px)
+    transition: all 1s
+    transition-delay: 0.2s
+  .post-title
+    margin: .4em 0
+    font-size: 2em
+    color: color-white2
     //text-shadow: 0 0 40px color-dark
     opacity: 0
     transform: translateY(-20px)
