@@ -24,11 +24,11 @@
 <script>    
   $(document).ready(function(){
     $("#font").click(function(){
-      if (this.value != "lighter") {
-        $(".markdown-content").css({"font-family": font.value});
-        $(".markdown-content").css({"font-weight": 'unset'});
-      } else {
+      if (this.value == "lighter") {
         $(".markdown-content").css({"font-weight": 'lighter'});
+      } else {
+        $(".markdown-content").css({"font-family": font.value});
+        $(".markdown-content").css({"font-weight": 'initial'});
       };
     });
   });

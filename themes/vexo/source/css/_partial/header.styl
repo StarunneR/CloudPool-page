@@ -28,20 +28,20 @@
   @media m-mobile
     padding: 0.5em 1em
     position: relative
-
-.logo
-  width: 40px
-  float: left
-  height: 28px
-  margin-right: 12px
-
-.home-link
-  display: flex
-  align-items: center
-  float: left
-  font-weight: 500
-  color: color-white
-  font-size: 1.5em
+  .home-link
+    display: flex
+    align-items: center
+    float: left
+    font-family: Tahoma, Verdana, Segoe, PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif
+    font-weight: 500
+    font-size: 1.5em
+    .logo
+      width: 40px
+      height: 28px
+      margin-right: 12px
+    .hover-show
+      background-color: color-primary
+      border-radius: 15%
 
 .right-list
   list-style: none
@@ -49,21 +49,16 @@
   padding: 0
   @media m-mobile
     display: none
-
-.list-item
-  display: inline-block
-  margin: 0 8px
-
-.item-link
-  height: 40px
-  line-height: 40px
-  text-decoration: none
-  color: color-white
-  padding-bottom: 3px
-
-.item-link
-  &:hover
-    border-bottom: 3px solid color-primary
+  .list-item
+    display: inline-block
+    margin: 0 8px
+    .item-link
+      height: 40px
+      line-height: 40px
+      text-decoration: none
+      padding-bottom: 3px
+      &:hover
+        border-bottom: 3px solid color-primary
 
 .active
   border-bottom: 3px solid color-primary
@@ -128,9 +123,7 @@
 .mobile-active
   color: color-primary
 
-.hover-show
-  background-color: color-primary
-  border-radius: 15%
+
 
 header:hover .hover-show
   color:white
