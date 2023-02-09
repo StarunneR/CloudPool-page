@@ -1,10 +1,11 @@
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 <span>
   <label for="font-select" class="front-label">更换字体</label>
   <select name="font" id="font">
-    <option value="Arial, Helvetica, sans-serif">默认（黑体）</option>
-    <option value="lighter">黑体（细体）</option>    
-    <option value="serif,'SimSun','Source Serif 4 src1', 'Source Serif 4 src2','Noto Serif SC'">宋体</option>     
-    <option value="Arial,'KaiTi','STKaiti'">楷体</option>
+    <option value="heiti">默认（黑体）</option>
+    <option value="light-heiti">黑体（细体）</option>    
+    <option value="songti">宋体</option>     
+    <option value="kaiti">楷体</option>
   </select>
 </span>
 
@@ -23,13 +24,20 @@
 
 <script>    
   $(document).ready(function(){
-    $("#font").click(function(){
-      if (this.value == "lighter") {
-        $(".markdown-content").css({"font-weight": 'lighter'});
-      } else {
-        $(".markdown-content").css({"font-family": font.value});
+    $("#font").change(function(){
+      if (this.value == "heiti") {
+        $(".markdown-content").css({"font-family": "Arial, Helvetica, sans-serif"});
         $(".markdown-content").css({"font-weight": 'initial'});
-      };
+      } else if (this.value == "light-heiti") {
+        $(".markdown-content").css({"font-weight": '100'});
+        $(".markdown-content").css({"font-family": "Arial, Helvetica, sans-serif"});
+      } else if (this.value == "songti") {
+        $(".markdown-content").css({"font-weight": 'initial'});
+        $(".markdown-content").css({"font-family": "Serif,'SimSun','Noto Serif SC'"});
+      } else if (this.value == "kaiti") {
+        $(".markdown-content").css({"font-weight": 'initial'});
+        $(".markdown-content").css({"font-family": "Arial,'KaiTi','STKaiti'"});
+      }
     });
   });
   
