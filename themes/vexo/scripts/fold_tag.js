@@ -13,6 +13,7 @@ function fold(args, content) {
       text: content,
       engine: 'markdown'
     }) +
-    '\n</div></div>';
+    '\n</div></div>' + 
+    '<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">';
 }
 hexo.extend.tag.register('fold', fold, {ends: true});
