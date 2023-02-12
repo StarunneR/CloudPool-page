@@ -17,7 +17,7 @@
   .menu .icon-bar
     background-color: color-gray
   .item-link
-    color: color-dark
+    color: color-dark !important
 
 .header-container
   max-width: 1200px
@@ -29,19 +29,27 @@
   @media m-mobile
     padding: 0.5em 1em
     position: relative
-
-.logo
-  width: 40px
-  float: left
-  height: 28px
-  margin-right: 12px
 .home-link
   display: flex
   align-items: center
-  float: left
+  position: absolute
+  top: 0
+  bottom: 0
+  margin: auto
   font-weight: 500
-  color: color-white
   font-size: 1.5em
+  color: color-white
+  .logo
+    width: 40px
+    float: left
+    height: 28px
+    margin-right: 12px
+  .eng_mark
+    text-shadow: 1px 1px 2px color-vary
+    margin-right: 2px
+  .chn_mark
+    background-color: color-primary
+    border-radius: 15%
 
 .right-list
   list-style: none
@@ -49,21 +57,17 @@
   padding: 0
   @media m-mobile
     display: none
-
-.list-item
-  display: inline-block
-  margin: 0 8px
-
-.item-link
-  height: 40px
-  line-height: 40px
-  text-decoration: none
-  color: color-white
-  padding-bottom: 3px
-
-.item-link
-  &:hover
-    border-bottom: 3px solid color-primary
+  .list-item
+    display: inline-block
+    margin: 0 8px
+    .item-link
+      height: 40px
+      line-height: 40px
+      text-decoration: none
+      color: color-white
+      padding-bottom: 3px
+      &:hover
+        border-bottom: 3px solid color-primary
 
 .active
   border-bottom: 3px solid color-primary
@@ -77,7 +81,7 @@
   .icon-bar
     display: block
     width: 24px
-    height: 2px
+    height: 2.5px
     border-radius: 1px
     margin-top: 4px
     background-color: color-white
@@ -98,39 +102,35 @@
   transition: max-height .2s ease
   @media m-mobile
     display: block
+  .menu-list
+    padding: 0
+    .menu-item
+      position: relative
+      list-style: none
+      text-align: center
+      padding: 10px 0
+      &:after
+        content: ''
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        border-bottom: 1px solid color-border
+        -webkit-transform: scaleY(0.5)
+        transform: scaleY(0.5)
+      .menu-link
+        text-decoration: none
+        color: color-gray
 
 .open
   max-height: 1000px
   transition-delay: .1s
 
-.menu-list
-  padding: 0
-
-.menu-item
-  position: relative
-  list-style: none
-  text-align: center
-  padding: 10px 0
-  &:after
-    content: ''
-    position: absolute
-    left: 0
-    bottom: 0
-    width: 100%
-    border-bottom: 1px solid color-border
-    -webkit-transform: scaleY(0.5)
-    transform: scaleY(0.5)
-
-.menu-link
-  text-decoration: none
-  color: color-gray
-
 .mobile-active
-  color: color-primary
+  color: color-adja3 !important
+  font-weight: bold
 
-.hover-show
-  background-color: color-primary
-  border-radius: 15%
-
-header:hover .hover-show
+header:hover .chn_mark
+  color:white
+.nomask
   color:white

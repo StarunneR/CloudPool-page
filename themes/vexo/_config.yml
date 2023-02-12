@@ -2,11 +2,11 @@ excerpt_link: 阅读全文
 
 menu:
   主页: /
-  分类: /category/
-  标签: /tag/
-  归档: /archive/
-  网刊: /mag/
-  一言: /one/
+  分类: category/
+  标签: tag/
+  归档: archive/
+  网刊: mag/
+  一言: one/
   网盘: //pan.zhuochi.org/CloudShare/
   ( ^ω^): //emoji.zhuochi.org/
 # LOFTER: https://cloudpool.lofter.com

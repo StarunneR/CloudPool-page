@@ -41,6 +41,7 @@
       isOpen = !isOpen
     }
     $('.menu-mask').toggleClass('open')
+    $('.chn_mark').toggleClass('nomask')
   })
 
   $('#tag-cloud a').on('click', function () {
