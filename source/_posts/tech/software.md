@@ -31,9 +31,9 @@ qrcode:
     优点：1.耐看；2.Chromium(谷歌浏览器)内核，附加组件齐全；3.同步设置功能可用
     缺点：同Chrome,更新比Chrome慢
 
-> 附加组件： 
-1.广告过滤：Firefox - [uBlock Origin](https://addons.mozilla.org/zh-CN/firefox/addon/ublock-origin/) 
-2.查词/翻译：[沙拉查词](https://saladict.crimx.com/) 
+> 附加组件：
+1.广告过滤：[uBlock Origin](https://ublockorigin.com/)
+2.查词/翻译：[沙拉查词](https://saladict.crimx.com/)
 3.减少网页跟踪：[隐私獾PrivacyBadger](https://privacybadger.org/)
 4.右键解锁：Firefox - [快乐右键](https://addons.mozilla.org/zh-CN/firefox/addon/%E5%BF%AB%E4%B9%90%E5%8F%B3%E9%94%AE/)  Chrome - [启用右键](https://chrome.google.com/webstore/detail/enable-right-click-for-go/ofgdcdohlhjfdhbnfkikfeakhpojhpgm)
 5.购物比价：[守候购物小助手](https://exzs.cn/extension/ShoppingAssistant.html) 或 [购物党自动比价工具](https://www.gwdang.com/app/extension)
@@ -43,7 +43,7 @@ qrcode:
 #### [火绒](https://www.huorong.cn/)
 
 很不错的一款**杀毒软件**
-<span class="heimu" title="你知道的太多了">曾经看到有小道消息说最早是金山(?)的某员工看不惯母公司的行为，一气之下跑出来做了一个良心杀软</span>
+~~曾经看到有小道消息说最早是金山(?)的某员工看不惯母公司的行为，一气之下跑出来做了一个良心杀软~~
 
 #### [视频播放器 PotPlayer](http://potplayer.daum.net/?lang=zh_CN) + [皮肤](modern_x_for_potplayer_update_by_illequal_d9a1sdy.zip)
 
@@ -130,12 +130,9 @@ CAJ 转 PDF 转换器，写论文必备
 #### Adobe全家桶
 
 1. Windows
-
 可前往[@vposy - 新浪微博](https://www.weibo.com/vposy)关注查看置顶帖获得船新版本下载链接。
 也可在[电报群](https://t.me/s/adobe_vposy)中获取
-
 2. Mac
-
 可前往[Adobe ZII官网](https://www.adobezii.com) 或 [Appnee - ADOBE ZII](https://free.appnee.com/adobe-zii/)下载
 
 ~~已废弃：CCMaker, Adobe Deluxe Patcher~~
@@ -161,7 +158,7 @@ CAJ 转 PDF 转换器，写论文必备
 
 ---
 
-## 手机App
+### 手机App
 
 #### 安卓应用市场
 
@@ -177,6 +174,7 @@ CAJ 转 PDF 转换器，写论文必备
 [apkmonk](https://www.apkmonk.com)
 
 {% fold %}
+
 #### 生活
 
 几何天气
@@ -222,6 +220,7 @@ Cellular-Z
 iOS上最后一个支持直接从Windows电脑导入音乐文件的APP
 
 * 导入方法：
+
 1. 电脑上安装爱思助手，iPhone/iPad上安装海贝音乐
 2. iPhone/iPad连接电脑，打开爱思助手 - 我的设备 - 应用游戏，找到海贝音乐
 3. 点击浏览
