@@ -54,9 +54,9 @@
   
   $("#indent-checkbox").change(function(){
     if (this.checked) {
-      $(".markdown-content").css({"text-indent": "2em"});
+      $(".markdown-content > p").css({"text-indent": "2em"});
     } else {
-      $(".markdown-content").css({"text-indent": "0"});
+      $(".markdown-content > p").css({"text-indent": "0"});
     }
   });
 </script> 
