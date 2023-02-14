@@ -1,10 +1,11 @@
 ---
 title: OneRepublic - Native
-date: 2022-12-17
+date: 2023-02-14
+date2: 2022-12-17
 author: m1
 tags: 音乐
 categories: 浊音
-main: Full Album, 18 Songs
+main: 6 Songs in memory of myself
 ---
 
 <link rel="stylesheet" href="/css/APlayer.min.css">
@@ -45,74 +46,11 @@ main: Full Album, 18 Songs
         lrc: '04 Feel Again.lrc',
         },
         {
-        name: 'What You Wanted',
-        artist: 'OneRepublic',
-        url: '05 What You Wanted.m4a',
-        cover: 'Cover.jpg',
-        lrc: '05 What You Wanted.lrc',
-        },
-        {
-        name: 'I Lived',
-        artist: 'OneRepublic',
-        url: '06 I Lived.m4a',
-        cover: 'Cover.jpg',
-        lrc: '06 I Lived.lrc',
-        },
-        {
-        name: 'Light It Up',
-        artist: 'OneRepublic',
-        url: '07 Light It Up.m4a',
-        cover: 'Cover.jpg',
-        lrc: '07 Light It Up.lrc',
-        },
-        {
-        name: 'Can’t Stop',
-        artist: 'OneRepublic',
-        url: '08 Can’t Stop.m4a',
-        cover: 'Cover.jpg',
-        lrc: '08 Can’t Stop.lrc',
-        },
-        {
         name: 'Au Revoir',
         artist: 'OneRepublic',
         url: '09 Au Revoir.m4a',
         cover: 'Cover.jpg',
         lrc: '09 Au Revoir.lrc',
-        },
-        {
-        name: 'Burning Bridges',
-        artist: 'OneRepublic',
-        url: '10 Burning Bridges.m4a',
-        cover: 'Cover.jpg',
-        lrc: '10 Burning Bridges.lrc',
-        },
-        {
-        name: 'Something I Need',
-        artist: 'OneRepublic',
-        url: '11 Something I Need.m4a',
-        cover: 'Cover.jpg',
-        lrc: '11 Something I Need.lrc',
-        },
-        {
-        name: 'Preacher',
-        artist: 'OneRepublic',
-        url: '12 Preacher.m4a',
-        cover: 'Cover.jpg',
-        lrc: '12 Preacher.lrc',
-        },
-        {
-        name: 'Don\'t Look Down',
-        artist: 'OneRepublic',
-        url: '13 Don\'t Look Down.m4a',
-        cover: 'Cover.jpg',
-        lrc: '13 Don\'t Look Down.lrc',
-        },
-        {
-        name: 'Something\'s Gotta Give',
-        artist: 'OneRepublic',
-        url: '14 Something\'s Gotta Give.m4a',
-        cover: 'Cover.jpg',
-        lrc: '14 Something\'s Gotta Give.lrc',
         },
         {
         name: 'Life In Color',
@@ -127,20 +65,6 @@ main: Full Album, 18 Songs
         url: '16 If I Lose Myself (Acoustic).m4a',
         cover: 'Cover.jpg',
         lrc: '16 If I Lose Myself (Acoustic).lrc',
-        },
-        {
-        name: 'What You Wanted (Acoustic)',
-        artist: 'OneRepublic',
-        url: '17 What You Wanted (Acoustic).m4a',
-        cover: 'Cover.jpg',
-        lrc: '17 What You Wanted (Acoustic).lrc',
-        },
-        {
-        name: 'Burning Bridges (Acoustic)',
-        artist: 'OneRepublic',
-        url: '18 Burning Bridges (Acoustic).m4a',
-        cover: 'Cover.jpg',
-        lrc: '18 Burning Bridges (Acoustic).lrc',
         }
     ]
 });
@@ -148,4 +72,12 @@ main: Full Album, 18 Songs
 
 ---
 
+第一次听到的是Counting Stars，当年很火的一首歌。百度百科：`2014年4月10日，歌曲被提名为公告牌音乐奖最佳数字单曲`，是呀，已经是快要有十年的一首歌了。
+同样是百度百科：`无论旋律、节奏还是歌词，这都是一首朗朗上口、明快轻松的歌，扫除了年轻人的迷茫不安，注入昂扬能量 。歌曲告诉人们生活不是关于身边的物质，而是关于内心和思想。当遇到问题的时候，要思考自己所想。歌曲运用反讽的手法，让人们思考生命的真谛。不管酸甜苦辣，每一个人都要继续坚持走下去。`
+这大概也是第一首也是为数不多的一首我记住歌词，可以完整唱到尾的欧美流行音乐。
+
+整个专辑有一种激昂向上的基调，也许算**黄金时代**的流行音乐(?)
+我那个时候在沮丧的时候听了好多次呀，也就是在那段时间买了现在仍在服役的MP3：[FIIO X1](http://www.fiio.com.cn/x1)，它是我仍在使用的最老的电子藏品。
+
+---
 [网易云音乐 OneRepublic - Native](https://music.163.com/#/album?id=145941865)
