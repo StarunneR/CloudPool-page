@@ -5,7 +5,7 @@ date2: 2022-12-17
 author: m1
 tags: 音乐
 categories: 浊音
-main: 6 Songs in memory of myself
+main: 7 Songs in memory of myself
 ---
 
 <link rel="stylesheet" href="/css/APlayer.min.css">
@@ -77,7 +77,7 @@ main: 6 Songs in memory of myself
 这大概也是第一首也是为数不多的一首我记住歌词，可以完整唱到尾的欧美流行音乐。
 
 整个专辑有一种激昂向上的基调，也许算**黄金时代**的流行音乐(?)
-我那个时候在沮丧的时候听了好多次呀，也就是在那段时间买了现在仍在服役的MP3：[FIIO X1](http://www.fiio.com.cn/x1)，它是我仍在使用的最老的电子藏品。
+我那个时候在沮丧的时候听了好多次呀，也就是在那段时间买了现在仍在服役的MP3：[FIIO X1](https://www.fiio.com/x1)，它是我仍在使用的最老的电子藏品。
 
 ---
 [网易云音乐 OneRepublic - Native](https://music.163.com/#/album?id=145941865)
