@@ -11,7 +11,9 @@
 <% } %>
 <main class="app-body flex-box">
   <article class="post-article">
-    <%- partial('_post/front') %>
+    <% if (page.content) { %>
+      <%- partial('_post/front') %>
+    <% } %>
     <section
       class="markdown-content" id="content"
       style="font-family: <%- page.font %>; text-indent: <%- page.indent %>">
@@ -23,16 +25,16 @@
       </div>
     <% } %> 
     <%- partial('_post/nav') %>
-    <% if (theme.post.ad == true && page.ad != false) { %>
+    <% if (theme.post.ad == true && page.ad != false && page.content) { %>
       <%- partial('_post/ad') %>
     <% } %>
     <% if (theme.post.comment == true && page.comment != false) { %>
       <%- partial('_plugin/waline') %>
     <% } %>
-    <% if (theme.post.reward == true && page.reward == true) { %>
+    <% if (theme.post.reward == true && page.reward == true && page.content) { %>
       <%- partial('_post/reward') %>
     <% } %>
-    <% if (theme.post.comment == true && page.qrcode != false) { %>
+    <% if (theme.post.comment == true && page.qrcode != false && page.content) { %>
       <%- partial('_post/qrcode') %>
     <% } %>
   </article>
