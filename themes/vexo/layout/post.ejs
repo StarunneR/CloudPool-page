@@ -13,17 +13,17 @@
   <article class="post-article">
     <% if (page.content) { %>
       <%- partial('_post/front') %>
+      <section
+        class="markdown-content" id="content"
+        style="font-family: <%- page.font %>; text-indent: <%- page.indent %>">
+        <%- page.content %>
+      </section>
+      <% if (page.tags && page.tags.length) { %>
+        <div class="tags">
+          <%- partial('_partial/tag', { tags: page.tags }) %>
+        </div>
+      <% } %> 
     <% } %>
-    <section
-      class="markdown-content" id="content"
-      style="font-family: <%- page.font %>; text-indent: <%- page.indent %>">
-      <%- page.content %>
-    </section>
-    <% if (page.tags && page.tags.length) { %>
-      <div class="tags">
-        <%- partial('_partial/tag', { tags: page.tags }) %>
-      </div>
-    <% } %> 
     <%- partial('_post/nav') %>
     <% if (theme.post.ad == true && page.ad != false && page.content) { %>
       <%- partial('_post/ad') %>
