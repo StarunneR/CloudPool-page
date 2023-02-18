@@ -13,9 +13,7 @@
   <article class="post-article">
     <% if (page.content) { %>
       <%- partial('_post/front') %>
-      <section
-        class="markdown-content" id="content"
-        style="font-family: <%- page.font %>; text-indent: <%- page.indent %>">
+      <section class="markdown-content" id="content">
         <%- page.content %>
       </section>
       <% if (page.tags && page.tags.length) { %>
