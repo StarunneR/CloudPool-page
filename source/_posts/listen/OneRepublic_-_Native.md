@@ -83,7 +83,7 @@ main: 7 Songs in memory of myself
 [网易云音乐 OneRepublic - Native](https://music.163.com/#/album?id=145941865)
 
 ---
-{% fold Counting_Stars歌词 %}
+{% fold Counting Stars 歌词 %}
 Lately I've been I've been losing sleep
 最近我总是辗转反侧
 Dreaming about the things that we could be
@@ -278,7 +278,7 @@ The lessons I've learned
 那些我学到的东西
 {% endfold %}
 
-{% fold Love_Runs_Out歌词%}
+{% fold Love Runs Out 歌词%}
 I'll be your light, your match, your burning sun
 我将会成为你的光,你的火源,你的烈阳
 I'll be the bright and black that's making you run
@@ -407,7 +407,7 @@ Till the love runs out
 直到我们的爱走到尽头
 {% endfold %}
 
-{% fold If_I_Lose_Myself歌词 %}
+{% fold If I Lose Myself 歌词 %}
 I’m standing up at the sun
 我伫立在阳光下
 Thought of all the people, places and things I’ve loved
@@ -486,7 +486,7 @@ whoooooo,whoooo,
 whooooooo
 {% endfold %}
 
-{% fold Feel_Again歌词 %}
+{% fold Feel Again 歌词 %}
 It's been a long time coming since I've seen your face
 很久没有看到你的脸
 And I've never went back trying to replace everything that I've had till my feet went numb
@@ -595,7 +595,7 @@ Feel again.
 感觉得到了
 {% endfold %}
 
-{% fold Au_Revoir(再见)歌词 %}
+{% fold Au Revoir(再见) 歌词 %}
 Today I'm not myself
 今天我有点不在状态
 And you, you're someone else
@@ -645,7 +645,7 @@ All that really matters is we're doing it right now
 Right now
 {% endfold %}
 
-{% fold Life_In_Color歌词 %}
+{% fold Life In Color 歌词 %}
 I do my best
 我耗尽全力
 To find some kind of glow

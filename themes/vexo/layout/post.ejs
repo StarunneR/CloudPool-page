@@ -1,9 +1,10 @@
 <div id="article-banner">
   <h2 class="post-title"><%- page.title %></h2>
-  <% if (page.date) { %> 
-    <p class="post-date">
-    <%- date(page.date, "YYYY-MM-DD") %>
-    </p>
+  <% if (page.subtitle) { %>
+    <h3 class="post-subtitle"><%- page.subtitle %></h3>
+  <% } %>
+  <% if (!page.nodate) { %> 
+    <p class="post-date"><%- date(page.date, "YYYY-MM-DD") %></p>
   <% } %>
 </div>
 <% if (page.catalog == true) { %>

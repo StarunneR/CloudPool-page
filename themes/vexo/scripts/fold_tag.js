@@ -1,11 +1,11 @@
 /* global hexo */
-// Usage: {% fold Title %} Something {% endfold %}
+// Usage: {% fold Title %} Content {% endfold %}
 function fold(args, content) {
-  var text = args[0];
-  if (!text) text = "点击显示/隐藏";
+  let title = args.join(' ');
+  if (!title) {title = "点击显示/隐藏"};
   return '<div class="fold"><div class="fold_hider"><div class="close hider_title">' +
     hexo.render.renderSync({
-      text: text,
+      text: title,
       engine: 'markdown'
     }).replace(/^<p>/, '').replace(/<\/p>$/, '') +
     '</div></div><div class="fold_content">\n' +
