@@ -99,7 +99,7 @@
 
   //fold_action.js
   $(document).ready(function () {
-    $(document).on('click', '.fold_hider', function () {
+    $('.fold_hider').on('click', function () {
       $('>.fold_content', this.parentNode).slideToggle();
       $('>:first', this).toggleClass('open');
     });

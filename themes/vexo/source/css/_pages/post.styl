@@ -81,10 +81,15 @@
   width: 100%
   @media m-mobile
     margin-top: 0
-  .front-label
-    font-family: initial
-    font-weight: bold
-    border-style: dotted
+  .front-parent
+    display: flex
+    align-items: center
+    .front-child
+      flex: 1
+      .front-label
+        font-family: initial
+        font-weight: bold
+        border-style: dotted
   .article-author
     font-family: 'Calibri', 'Helvetica Neue', sans-serif, 'Arial'
     font-size: 1.5em
@@ -94,9 +99,6 @@
     .authorlogo
       width: 1.4em
       border-radius: 100%
-
-.text-front
-  margin-right: 10%
   
 // .markdown-content, .article-summary
 
@@ -380,6 +382,27 @@
       opacity: .5 !important
     .aplayer-lrc-current
       opacity: 1 !important
+
+.nav-container
+  width: 100%
+  padding-top: 1.5em
+  margin-top: 1.5em
+  border-top: 1px dashed color-border
+  font-weight: 600
+  &:after, &:before
+    content: ''
+    display: table
+    clear: both
+  .nav-left
+    float: left
+  .nav-right
+    float: right
+  .nav-arrow
+    color: color-dark
+  a
+    color: color-darker
+    &:hover
+      color: color-contrast
 
 
 

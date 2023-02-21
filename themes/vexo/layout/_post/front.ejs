@@ -1,62 +1,84 @@
-<span>
-  <label for="font-select" class="front-label">更换字体</label>
-  <select name="font" id="font">
-    <option value="heiti">默认</option>
-    <option value="light-heiti">黑体（细体）</option>
-    <option value="lighter-heiti">黑体（极细）</option> 
-    <option value="songti">宋体</option>
-    <option value="light-songti">宋体（细体）</option>
-    <option value="kaiti">楷体</option>
-  </select>
-</span>
+<div class="front-parent">
+  <span class="front-child" id="front-fontselector">
+    <label class="front-label" for="font-select">更换字体</label>
+    <select name="font" id="font">
+      <option value="heiti">默认</option>
+      <option value="light-heiti">黑体（细体）</option>
+      <option value="lighter-heiti">黑体（极细）</option>
+      <option value="songti">宋体</option>
+      <option value="light-songti">宋体（细体）</option>
+      <option value="kaiti">楷体</option>
+      <option value="fangsong">仿宋</option>
+    </select>
+  </span>
 
-<span class="text-front">
-  <label for="TextIndent" class="front-label">段首缩进</label>
-  <input type="checkbox" id="indent-checkbox" name="text-indent" value="">
-</span>
+  <span class="front-child" id="front-fontsize">
+    <label class="front-label" for="fontsize-range">字体大小</label>
+    <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
+    <span class="fontsize-value"></span>
+  </span>
+
+  <span class="front-child" id="front-indent">
+    <label class="front-label" for="TextIndent">段首缩进</label>
+    <input type="checkbox" id="indent-checkbox" name="text-indent" value="" />
+  </span>
+</div>
 
 <h1 class="article-author">
-  <% if (page.author !== "m1") { %>
-      <%- page.author %>
-  <% } else if (page.author == "m1") { %>
-      StarunneR
-  <% } %>
+  <% if (page.author !=="m1" ) { %>
+    <%- page.author %>
+      <% } else if (page.author=="m1" ) { %>
+        StarunneR
+        <% } %>
 </h1>
 
-<script>    
-  $(document).ready(function(){
-    $("#font").change(function(){
-      if (this.value == "heiti") {
-        $(".markdown-content").css({"font-family": "Arial, Helvetica, sans-serif"});
-        $(".markdown-content").css({"font-weight": 'initial'});
-      } else if (this.value == "light-heiti") {
-        $(".markdown-content").css({"font-weight": '300'});
-        $(".markdown-content").css({"font-family": "'Noto Sans SC',sans-serif"});
-        $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=fallback rel=stylesheet>");
-      } else if (this.value == "lighter-heiti") {
-        $(".markdown-content").css({"font-weight": '100'});
-        $(".markdown-content").css({"font-family": "'Noto Sans SC',sans-serif"});
-        $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=fallback rel=stylesheet>");
-      } else if (this.value == "songti") {
-        $(".markdown-content").css({"font-weight": '400'});
-        $(".markdown-content").css({"font-family": "'Noto Serif SC',Serif"});
-        $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=fallback rel=stylesheet>");
-      } else if (this.value == "light-songti") {
-        $(".markdown-content").css({"font-weight": '200'});
-        $(".markdown-content").css({"font-family": "'Noto Serif SC',Serif"});
-        $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=fallback rel=stylesheet>");
-      } else if (this.value == "kaiti") {
-        $(".markdown-content").css({"font-weight": 'initial'});
-        $(".markdown-content").css({"font-family": "Arial,'KaiTi','STKaiti'"});
-      }
-    });
+<script>
+  let FontChanger = function () {
+    if (this.value == "heiti") {
+      $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
+      $(".markdown-content").css({ "font-weight": 'initial' });
+    } else if (this.value == "light-heiti") {
+      $(".markdown-content").css({ "font-weight": '300' });
+      $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
+      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap rel=stylesheet>");
+    } else if (this.value == "lighter-heiti") {
+      $(".markdown-content").css({ "font-weight": '100' });
+      $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
+      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
+    } else if (this.value == "songti") {
+      $(".markdown-content").css({ "font-weight": '400' });
+      $(".markdown-content").css({ "font-family": "'SimSun','Noto Serif SC',Serif" });
+      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
+    } else if (this.value == "light-songti") {
+      $(".markdown-content").css({ "font-weight": '200' });
+      $(".markdown-content").css({ "font-family": "'SimSun','Noto Serif SC',Serif" });
+      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
+    } else if (this.value == "kaiti") {
+      $(".markdown-content").css({ "font-weight": 'initial' });
+      $(".markdown-content").css({ "font-family": "Arial,'KaiTi','STKaiti'" });
+    } else if (this.value == "fangsong") {
+      $(".markdown-content").css({ "font-weight": 'initial' });
+      $(".markdown-content").css({ "font-family": "Arial,'FangSong','STFangsong'" });
+    }
+  };
+  $("#font").on('change', FontChanger);
+  $(function (){
+    $("#font").on('click',FontChanger);
   });
-  
-  $("#indent-checkbox").change(function(){
+
+  $("#indent-checkbox").change(function () {
     if (this.checked) {
-      $(".markdown-content > p").css({"text-indent": "2em"});
+      $(".markdown-content > p").css({ "text-indent": "2em" });
     } else {
-      $(".markdown-content > p").css({"text-indent": "0"});
+      $(".markdown-content > p").css({ "text-indent": "0" });
     }
   });
-</script> 
+
+  $(".fontsize-value").html("100%");
+  let rangeSwitch = function () {
+    let fontsizePercent = $("#fontsize-slider").val();
+    $(".markdown-content").css("font-size", fontsizePercent + "%")
+    $(".fontsize-value").html(fontsizePercent + "%")
+  }
+  $("#fontsize-slider").on("input", rangeSwitch)
+</script>
