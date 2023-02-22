@@ -145,7 +145,7 @@ CAJ 转 PDF 转换器，写论文必备
 
 [卡硬工具箱](http://www.kbtool.cn/) 硬件检测、管理、性能测试工具以及各种实用软件。但已有两年未更新
 
-[AppNee Freeware Group.](https://appnee.com) 一个各类破解版软件非常多的博客
+[AppNee Freeware Group.](https://appnee.com) 一个各类破解版软件非常多的网站
 
 [waifu2x-caffe](https://github.com/lltcggie/waifu2x-caffe/releases) 更好地放大图片
 
@@ -155,6 +155,7 @@ CAJ 转 PDF 转换器，写论文必备
     来自 https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287 -->
 
 [垃圾清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
+可在[AppNee](https://appnee.com/fl-studio/)找到破解版下载链接。
 
 ---
 
