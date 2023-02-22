@@ -108,6 +108,10 @@ F1 截图大法好
 
 可以在[知乎 - 柴柴的科研分享](https://zhuanlan.zhihu.com/p/87749797)内找到Endnote 20 Win版下载地址，安装后可升级至最新版本（抱Tsinghua大佬大腿）
 
+#### [Zotero](https://www.zotero.org/)
+
+EndNote免费替代品
+
 #### [caj2pdf-qt](https://caj2pdf-qt.sainnhe.dev/)
 
 CAJ 转 PDF 转换器，写论文必备

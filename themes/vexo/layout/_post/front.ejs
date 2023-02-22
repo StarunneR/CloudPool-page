@@ -15,7 +15,7 @@
   <span class="front-child" id="front-fontsize">
     <label class="front-label" for="fontsize-range">字体大小</label>
     <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
-    <span class="fontsize-value"></span>
+    <span id="fontsize-value"></span>
   </span>
 
   <span class="front-child" id="front-indent">
@@ -74,11 +74,11 @@
     }
   });
 
-  $(".fontsize-value").html("100%");
+  $("#fontsize-value").html("100%");
   let rangeSwitch = function () {
     let fontsizePercent = $("#fontsize-slider").val();
     $(".markdown-content").css("font-size", fontsizePercent + "%")
-    $(".fontsize-value").html(fontsizePercent + "%")
+    $("#fontsize-value").html(fontsizePercent + "%")
   }
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
