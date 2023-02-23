@@ -8,7 +8,8 @@
   <div class="front-child" id="front-fontselector">
     <label class="front-label" for="font-select">更换字体</label>
     <select name="font" id="font">
-      <option value="heiti">默认</option>
+      <option value="default">默认</option>
+      <option value="heiti">黑体</option>
       <option value="light-heiti">黑体（细体）</option>
       <option value="lighter-heiti">黑体（极细）</option>
       <option value="songti">宋体</option>
@@ -27,16 +28,20 @@
 <h1 class="article-author">
   <% if (page.author !=="m1" ) { %>
     <%- page.author %>
-      <% } else if (page.author=="m1" ) { %>
-        StarunneR
-        <% } %>
+  <% } else if (page.author=="m1" ) { %>
+    StarunneR
+  <% } %>
 </h1>
 
 <script>
   let FontChanger = function () {
-    if (this.value == "heiti") {
+    if (this.value == "default") {
       $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
       $(".markdown-content").css({ "font-weight": 'initial' });
+    } if (this.value == "heiti") {
+      $(".markdown-content").css({ "font-weight": '400' });
+      $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
+      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap rel=stylesheet>");
     } else if (this.value == "light-heiti") {
       $(".markdown-content").css({ "font-weight": '300' });
       $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
@@ -55,10 +60,11 @@
       $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
     } else if (this.value == "kaiti") {
       $(".markdown-content").css({ "font-weight": 'initial' });
-      $(".markdown-content").css({ "font-family": "Arial,'KaiTi','STKaiti'" });
+      $(".markdown-content").css({ "font-family": "Arial,'STKaiti','KaiTi','FZKai-Z03S'" });
+      $("head").append("<link href=https://cdn.jsdelivr.net/npm/@wc1font/fz-kai-z-03-s@1.0.2/font.min.css rel=stylesheet>");
     } else if (this.value == "fangsong") {
       $(".markdown-content").css({ "font-weight": 'initial' });
-      $(".markdown-content").css({ "font-family": "Arial,'FangSong','STFangsong'" });
+      $(".markdown-content").css({ "font-family": "Arial,'STFangsong','FangSong','FangSong_GB2312','FZFangSong-Z02S'" });
     }
   };
   $("#font").on('change', FontChanger);

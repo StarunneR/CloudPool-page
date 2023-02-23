@@ -46,7 +46,7 @@
 
   $('#tag-cloud a').on('click', function () {
     var list = $('.tag-list')
-    var name = $(this).data('name')
+    var name = $(this).data('name').replace(/[\ \'\/\+\#]/gi, "\\$&")
     var maoH = list.find('#' + name).offset().top
 
 
@@ -57,7 +57,7 @@
 
   $('#category-cloud a').on('click', function () {
     var list = $('.category-list')
-    var name = $(this).data('name')
+    var name = $(this).data('name').replace(/[\ \'\/\+\#]/gi, "\\$&")
     var maoH = list.find('#' + name).offset().top
 
     $('html,body').animate({
@@ -97,6 +97,28 @@
     }, 300)
   })
 
+  document.addEventListener('scroll', function () {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+    var headerH = header.height()
+    if (banner) {
+      if (scrollTop > headerH) {
+        header.addClass('fixed-header')
+      } else if (scrollTop === 0) {
+        header.removeClass('fixed-header')
+      }
+    }
+    if (scrollTop > 100) {
+      top.addClass('opacity')
+    } else {
+      top.removeClass('opacity')
+    }
+    if (scrollTop > $('#catalog').offset().top) {
+      catalog.addClass('fixed-toc')
+    } else {
+      catalog.removeClass('fixed-toc')
+    }
+  })
+
   //fold_action.js
   $(document).ready(function () {
     $('.fold_hider').on('click', function () {
@@ -115,6 +137,6 @@
         $("html, body").animate({
             scrollTop: $(tagId).offset().top
         }, 400);
+      }
     }
-}
 })(jQuery)
