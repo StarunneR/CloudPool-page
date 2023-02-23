@@ -1,5 +1,11 @@
 <div class="front-parent">
-  <span class="front-child" id="front-fontselector">
+  <div class="front-child" id="front-fontsize">
+    <label class="front-label" for="fontsize-range">字体大小</label>
+    <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
+    <span id="fontsize-value"></span>
+  </div>
+  
+  <div class="front-child" id="front-fontselector">
     <label class="front-label" for="font-select">更换字体</label>
     <select name="font" id="font">
       <option value="heiti">默认</option>
@@ -10,18 +16,12 @@
       <option value="kaiti">楷体</option>
       <option value="fangsong">仿宋</option>
     </select>
-  </span>
+  </div>
 
-  <span class="front-child" id="front-fontsize">
-    <label class="front-label" for="fontsize-range">字体大小</label>
-    <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
-    <span id="fontsize-value"></span>
-  </span>
-
-  <span class="front-child" id="front-indent">
+  <div class="front-child" id="front-indent">
     <label class="front-label" for="TextIndent">段首缩进</label>
     <input type="checkbox" id="indent-checkbox" name="text-indent" value="" />
-  </span>
+  </div>
 </div>
 
 <h1 class="article-author">
