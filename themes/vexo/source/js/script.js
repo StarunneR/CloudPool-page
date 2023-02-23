@@ -48,8 +48,6 @@
     var list = $('.tag-list')
     var name = $(this).data('name').replace(/[\ \'\/\+\#]/gi, "\\$&")
     var maoH = list.find('#' + name).offset().top
-
-
     $('html,body').animate({
       scrollTop: maoH - header.height()
     }, 500)
@@ -59,7 +57,6 @@
     var list = $('.category-list')
     var name = $(this).data('name').replace(/[\ \'\/\+\#]/gi, "\\$&")
     var maoH = list.find('#' + name).offset().top
-
     $('html,body').animate({
       scrollTop: maoH - header.height()
     }, 500)
@@ -82,7 +79,8 @@
   $('.toc-nav a').on('click', function (e) {
     e.preventDefault()
     var catalogTarget = e.currentTarget
-    var scrollTarget = $(catalogTarget.getAttribute('href'))
+    // var scrollTarget = $(catalogTarget.getAttribute('href'))
+    var scrollTarget = $(decodeURIComponent(catalogTarget.getAttribute('href')))
     var top = scrollTarget.offset().top
     if (top > 0) {
       $('html,body').animate({
@@ -92,9 +90,7 @@
   })
 
   top.on('click', function () {
-    $('html, body').animate({
-      scrollTop: 0
-    }, 300)
+    $('html, body').animate({ scrollTop: 0 }, 300)
   })
 
   document.addEventListener('scroll', function () {
