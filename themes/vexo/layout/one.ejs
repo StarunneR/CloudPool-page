@@ -1,8 +1,6 @@
 <div id="article-banner">
   <div id="hitokoto" class="one">
-    <div>
-      <a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a>
-    </div>
+    <a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a>
     <div class="one_source" id="one_source">
       —— <span id="hitokoto_author"></span> <span id="hitokoto_from"></span><img class="refresh_button" onclick="getYiju()" src="/css/images/refresh.png"/><img class="copy_button" onclick="copy()" src="/css/images/copy.png"/>
     </div>
@@ -10,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
   </div>
 </div>
+
+<%- partial('_partial/banner') %>
+<%- partial('_plugin/hitokoto') %>
 
 <main class="app-body">
   <%- partial('_plugin/waline') %>
@@ -26,6 +27,3 @@
     })
   </script>
 </main>
-
-<%- partial('_partial/banner') %>
-<%- partial('_plugin/hitokoto') %>
