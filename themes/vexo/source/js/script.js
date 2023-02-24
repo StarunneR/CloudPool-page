@@ -3,9 +3,10 @@
   var app = $('.app-body')
   var header = $('.header')
   var banner = document.getElementById('article-banner') || false
+  var catalog = document.getElementById('catalog') || false
   var about = document.getElementById('about-banner') || false
   var top = $('.scroll-top')
-  var catalog = $('.catalog-container .toc-main')
+  var catalog_toc = $('.catalog-container .toc-main')
   var isOpen = false
 
   $(document).ready(function () {
@@ -85,12 +86,12 @@
     if (top > 0) {
       $('html,body').animate({
         scrollTop: top - 65
-      }, 500)
+      }, 600)
     }
   })
 
   top.on('click', function () {
-    $('html, body').animate({ scrollTop: 0 }, 300)
+    $('html, body').animate({ scrollTop: 0 }, 600)
   })
 
   document.addEventListener('scroll', function () {
@@ -108,10 +109,13 @@
     } else {
       top.removeClass('opacity')
     }
-    if (scrollTop > $('#catalog').offset().top) {
-      catalog.addClass('fixed-toc')
-    } else {
-      catalog.removeClass('fixed-toc')
+    if (catalog) {
+      let catalog_top = $('#catalog').offset().top
+      if (scrollTop > catalog_top) {
+        catalog_toc.addClass('fixed-toc')
+      } else {
+        catalog_toc.removeClass('fixed-toc')
+      }
     }
   })
 

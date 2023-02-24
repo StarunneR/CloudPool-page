@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "blog-v2.1",
+			"path": "."
+		},
+		{
+			"name": "hexo-theme-vexo",
+			"path": "../hexo-theme-vexo"
+		},
+		{
+			"name": "hexo-tag-aplayer2",
+			"path": "../hexo-tag-aplayer2"
+		}
+	],
+	"settings": {}
+}
