@@ -19,6 +19,12 @@
         $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=../../images/emoji.png class=wl-action id=wl-emoji></a>")
     })();
   </script>
+  <script>
+    // Clean TEXTAREA
+    $(".wl-card").change(function () {
+      document.getElementById('wl-edit').value = ""
+    })
+  </script>
 </main>
 
 <%- partial('_partial/banner') %>
