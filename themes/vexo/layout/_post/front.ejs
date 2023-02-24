@@ -65,6 +65,7 @@
     } else if (this.value == "fangsong") {
       $(".markdown-content").css({ "font-weight": 'initial' });
       $(".markdown-content").css({ "font-family": "Arial,'STFangsong','FangSong','FangSong_GB2312','FZFangSong-Z02S'" });
+      $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-fang-song-z-02-s/font.css rel=stylesheet>");
     }
   };
   $("#font").on('change', FontChanger);
