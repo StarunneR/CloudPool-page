@@ -14,6 +14,11 @@
 <main class="app-body">
   <%- partial('_plugin/waline') %>
   <%- page.content %>
+  <script>
+    (function () {
+        $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=../../images/emoji.png class=wl-action id=wl-emoji></a>")
+    })();
+  </script>
 </main>
 
 <%- partial('_partial/banner') %>
