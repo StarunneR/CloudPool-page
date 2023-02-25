@@ -15,9 +15,16 @@ sub:
 
 * [百度](https://www.baidu.com)
 * [Google](https://www.google.com)
-* [DuckDuckGo](https://duckduckgo.com/)
-* [神马搜狗360](https://www.gobaidugle.com/search3?engine=3&keyword=&num=10&one=sm&two=sogou&three=so&rsv_enter=1&rsv_bp=1)
 * [必应](https://bing.com/)
+* [搜狗搜索](https://www.sogou.com/)
+* [360搜索](https://www.so.com/)
+* [神马搜索](https://www.gobaidugle.com/search?engine=1&keyword=&num=10&one=sm)
+* [无追搜索](https://www.wuzhuiso.com/)
+* [DuckDuckGo](https://duckduckgo.com/)
+* [Yandex](https://yandex.com/)
+* [Search Encypt](https://www.searchencrypt.com)
+* [Startpage](https://www.startpage.com/)
+* [Qwant](https://www.qwant.com/)
 
 ### 以图搜图
 
@@ -47,4 +54,3 @@ sub:
 * [网易严选](http://you.163.com/)
 * [亚马逊](https://www.amazon.cn/)
 * [聚美优品](http://gz.jumei.com/)
-
