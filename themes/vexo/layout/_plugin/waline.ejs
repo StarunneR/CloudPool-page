@@ -78,3 +78,14 @@
     locale,
   });
 </script>
+<script>
+  // emoji
+  (function () {
+      $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=/images/emoji.png class=wl-action id=wl-emoji></a>")
+  })();
+
+  // Clean TEXTAREA
+  $(".wl-card").change(function () {
+    document.getElementById('wl-edit').value = ""
+  })
+</script>

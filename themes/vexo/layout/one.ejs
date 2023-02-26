@@ -1,6 +1,6 @@
 <div id="article-banner">
   <div id="hitokoto" class="one">
-    <div><a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a></div>
+    <div class="one_main"><a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a></div>
     <div class="one_source" id="one_source">
       —— <span id="hitokoto_author"></span> <span id="hitokoto_from"></span><img class="refresh_button" onclick="getYiju()" src="/css/images/refresh.png"/><img class="copy_button" onclick="copy()" src="/css/images/copy.png"/>
     </div>
@@ -15,15 +15,4 @@
 <main class="app-body">
   <%- partial('_plugin/waline') %>
   <%- page.content %>
-  <script>
-    (function () {
-        $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=../../images/emoji.png class=wl-action id=wl-emoji></a>")
-    })();
-  </script>
-  <script>
-    // Clean TEXTAREA
-    $(".wl-card").change(function () {
-      document.getElementById('wl-edit').value = ""
-    })
-  </script>
 </main>
