@@ -40,3 +40,9 @@ mathjax:
   per_page: false
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
+# Local Search Support
+local_search:
+  enable: false
+
+
+

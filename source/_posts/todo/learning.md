@@ -1,6 +1,6 @@
 ---
 title: To Learn 
-date: 2022-12-03
+date: 2023-02-27
 author: m1
 tags:
     - 学习
@@ -21,3 +21,4 @@ main: 生活生活就是生生生活活活
     * [手机摄影基础](https://le.ouchn.cn/courseDetails/CH880000000287) 12/19
 
 3. [Crash Course 地理学](https://www.bilibili.com/video/BV1mt4y1B7hY/) 6/40
+4. [Crash Course 科学史](https://crashcourse.club/category/history_of_science) 1/46

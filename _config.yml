@@ -199,3 +199,18 @@ comment:
     placeholder: '说、什么8 \n\n可在gravatar.com注册，使用邮箱绑定头像 \n支持Markdown语法：*斜体*, **粗体**, \# - ###### 1-6级标题, *** 或 --- = 水平分割线, ~~删除线~~, > 引用内容, `代码块`, 1. 序号列表, * 无序列表, ^上角标^, ~下角标~, <br> = 空行, [链接文字](链接地址), ![图片名称](图片地址.png), '
     meta: ['nick','mail']
     counting: true
+
+algolia:
+  appId: "HT8BNHADA7"
+  apiKey: "ab0da26917fd9c0cd35e59681628c169"
+  adminApiKey: "258edd55b609bc85dc3c236e0b344d9f"
+  chunkSize: 5000
+  indexName: "cloudpool"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - permalink
+    - slug
+    - tag
+    - category
+    - title
