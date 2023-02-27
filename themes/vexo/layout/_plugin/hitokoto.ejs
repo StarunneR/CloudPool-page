@@ -22,7 +22,7 @@
 </script>
 
 <script type="text/javascript">
-  function copy() {
+  function copyYiju() {
     // Create a new textarea element as cache for copying
     let text = document.getElementById("hitokoto").innerText
     const cache_area = document.createElement('textarea');
@@ -30,7 +30,7 @@
     cache_area.innerHTML = text;
     //cache_area.setAttribute('create',1);
     cache_area.select();
-    document.execCommand("copy");
+    document.execCommand("copyYiju");
     document.body.removeChild(cache_area);
 
     let input_box = document.getElementById("wl-edit");
