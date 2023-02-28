@@ -94,6 +94,7 @@
     $('html, body').animate({ scrollTop: 0 }, 600)
   })
 
+
   document.addEventListener('scroll', function () {
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
     var headerH = header.height()
@@ -133,10 +134,13 @@
   function tag() {
     var tag = location.hash.replace('#', '');
     if (tag) {
-        var tagId = "#tag-" + tag;
-        $("html, body").animate({
-            scrollTop: $(tagId).offset().top
-        }, 400);
-      }
+      var tagId = "#tag-" + tag;
+      $("html, body").animate({
+          scrollTop: $(tagId).offset().top
+      }, 400);
     }
+  }
+
+  let emoji_URL = "//emoji." + window.location.hostname
+  $('a[href*="<main>"]').attr("href", emoji_URL)
 })(jQuery)
