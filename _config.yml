@@ -201,16 +201,7 @@ comment:
     counting: true
 
 algolia:
-  appId: "HT8BNHADA7"
-  apiKey: "ab0da26917fd9c0cd35e59681628c169"
+  applicationID: 'HT8BNHADA7'
+  apiKey: 'ab0da26917fd9c0cd35e59681628c169'
   adminApiKey: "258edd55b609bc85dc3c236e0b344d9f"
-  chunkSize: 5000
-  indexName: "cloudpool"
-  fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - permalink
-    - slug
-    - tag
-    - category
-    - title
+  indexName: 'cloudpool'

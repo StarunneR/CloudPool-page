@@ -77,8 +77,7 @@
   });
   $('.toc-nav a').on('click', function (e) {
     e.preventDefault();
-    var catalogTarget = e.currentTarget; // var scrollTarget = $(catalogTarget.getAttribute('href'))
-
+    var catalogTarget = e.currentTarget;
     var scrollTarget = $(decodeURIComponent(catalogTarget.getAttribute('href')));
     var top = scrollTarget.offset().top;
 
@@ -129,18 +128,6 @@
     }); //默认情况下折叠
 
     $("div.fold_content").css("display", "none");
-  }); //tag.js
-
-  function tag() {
-    var tag = location.hash.replace('#', '');
-
-    if (tag) {
-      var tagId = "#tag-" + tag;
-      $("html, body").animate({
-        scrollTop: $(tagId).offset().top
-      }, 400);
-    }
-  }
-
+  });
   $("a[href*='<emoji>']").attr("href", "//emoji." + window.location.hostname);
 })(jQuery);
