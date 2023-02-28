@@ -5,8 +5,8 @@
   var banner = document.getElementById('article-banner') || false
   var catalog = document.getElementById('catalog') || false
   var about = document.getElementById('about-banner') || false
-  var top = $('.scroll-top')
-  var catalog_toc = $('.catalog-container .toc-main')
+  var top = $('.scroll-top') || false
+  var catalog_toc = $('.catalog-container .toc-main') || false
   var isOpen = false
 
   $(document).ready(function () {
@@ -141,6 +141,5 @@
     }
   }
 
-  let emoji_URL = "//emoji." + window.location.hostname
-  $('a[href*="<main>"]').attr("href", emoji_URL)
+  $("a[href*='<emoji>']").attr("href", "//emoji." + window.location.hostname)
 })(jQuery)
