@@ -20,5 +20,6 @@ main: 生活生活就是生生生活活活
 
     * [手机摄影基础](https://le.ouchn.cn/courseDetails/CH880000000287) 12/19
 
-3. [Crash Course 地理学](https://space.bilibili.com/2702416/channel/collectiondetail?sid=12394) 7/40
+3. [Crash Course 地理学](https://space.bilibili.com/2702416/channel/collectiondetail?sid=12394) 7/40(50)
 4. [Crash Course 科学史](https://crashcourse.club/category/history_of_science) 2/46
+5. [Crash Course 商学技能](https://crashcourse.club/category/business) 0/8(17)
