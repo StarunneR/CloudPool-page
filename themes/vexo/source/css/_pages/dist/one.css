@@ -1,0 +1,61 @@
+.one {
+  margin: 10px 0 20px 0;
+  color: color-white;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.4s;
+  transition-delay: 0.1s;
+  backdrop-filter: blur(10px);
+  border-radius: 25%;
+}
+.one .one_main .one_text {
+  font-size: 3em;
+  color: color-white;
+  font-family: "Long Cang", "STFangsong", "FangSong", "FangSong_GB2312";
+}
+.one .one_main .one_text:before {
+  content: "『";
+  padding-right: 0.5em;
+  font-size: 0.5em;
+}
+.one .one_main .one_text:after {
+  content: "』";
+  padding-left: 0.5em;
+  font-size: 0.5em;
+}
+.one .one_source {
+  display: inline-block;
+  text-align: left;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 200;
+  font-size: 1.5em;
+  color: color-white;
+  margin: 1em auto auto 25%;
+  line-height: 1.5em;
+}
+.one .one_source .refresh_button {
+  width: 1em;
+  height: 1em;
+  margin-left: 1em;
+  cursor: pointer;
+}
+.one .one_source .refresh_button:hover {
+  transform: scale(1.1);
+}
+.one .one_source .refresh_button:active {
+  transform: scale(1);
+  box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
+}
+.one .one_source .copy_button {
+  width: 1em;
+  height: 1em;
+  margin-left: 0.4em;
+  cursor: pointer;
+}
+.one .one_source .copy_button:hover {
+  transform: scale(1.1);
+}
+.one .one_source .copy_button:active {
+  transform: scale(1);
+  box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
+}
