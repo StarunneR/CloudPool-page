@@ -4,7 +4,7 @@ date: 2023-03-05
 author: m1
 tags: 音乐
 categories: 浊音
-main: Full album, 21 Songs. Sorry.
+main: Full album, 21 Songs.
 ---
 
 <link rel="stylesheet" href="/css/APlayer.min.css">
