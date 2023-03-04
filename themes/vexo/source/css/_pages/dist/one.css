@@ -5,8 +5,11 @@
   transform: translateY(-20px);
   transition: all 0.4s;
   transition-delay: 0.1s;
-  backdrop-filter: blur(10px);
-  border-radius: 25%;
+}
+.one .one_main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 .one .one_main .one_text {
   font-size: 3em;
