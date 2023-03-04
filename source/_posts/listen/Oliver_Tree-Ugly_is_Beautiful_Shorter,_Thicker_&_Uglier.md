@@ -4,7 +4,7 @@ date: 2023-03-05
 author: m1
 tags: 音乐
 categories: 浊音
-main: Full album, 21 Songs.
+main: Full album, 21 Songs. Sorry.
 ---
 
 <link rel="stylesheet" href="/css/APlayer.min.css">
@@ -169,3 +169,6 @@ main: Full album, 21 Songs.
 
 ---
 [网易云音乐 Oliver Tree - Ugly is Beautiful Shorter, Thicker (Deluxe)](https://music.163.com/#/album?id=128016227)
+
+---
+对不起。
