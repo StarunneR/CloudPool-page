@@ -28,10 +28,12 @@
     <% } %>
     <%- partial('_post/nav') %>
     <% if (theme.post.ad == true && page.ad != false && page.content) { %>
-      <%- partial('_post/ad') %>
+      <div class="advertisement">
+        <p> 广告：快速学习 Crash Course十分钟速成课 <a href="https://crashcourse.club/">字幕组网站</a></p>
+      </div>
     <% } %>
     <% if (theme.post.comment == true && page.comment != false) { %>
-      <%- partial('_post/comment') %>
+      <%- partial('_plugin/waline') %>
     <% } %>
     <% if (theme.post.reward == true && page.reward == true && page.content) { %>
       <%- partial('_post/reward') %>

@@ -1,60 +1,62 @@
+<link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
+
 <div id="article-banner">
   <div id="hitokoto" class="one">
     <div class="one_main"><a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a></div>
     <div class="one_source" id="one_source">
       ——&nbsp;<span id="hitokoto_author"></span>&nbsp;<span id="hitokoto_from"></span><img class="refresh_button" onclick="getYiju()" src="/css/images/refresh.png"/><img class="copy_button" onclick="copyYiju()" src="/css/images/copy.png"/>
     </div>
-    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
-    <script>
-      function getYiju() {
-        fetch("https://v1.hitokoto.cn")
-          .then((response) => response.json())
-          .then((data) => {
-            const hitokoto = document.getElementById("hitokoto_text");
-            hitokoto.href = "https://hitokoto.cn/?uuid=" + data.uuid;
-            hitokoto.innerText = data.hitokoto;
-            const from = document.getElementById("hitokoto_from");
-            from.innerText = data.from;
-            if (data.from_who != data.from) {
-              const author = document.getElementById("hitokoto_author");
-              author.innerText = data.from_who;
-            } else {
-              const author = document.getElementById("hitokoto_author");
-              author.innerText = [];
-            }
-          })
-          .catch(console.error);
-      }
-      getYiju();
-    </script>
-
-    <script>
-      function copyYiju() {
-        // Create a new textarea element as cache for copying
-        let text = document.getElementById("hitokoto").innerText
-        const cache_area = document.createElement('textarea');
-        document.body.appendChild(cache_area);
-        cache_area.innerHTML = text;
-        cache_area.select();
-        document.execCommand('copy');
-        document.body.removeChild(cache_area);
-    
-        let input_box = document.getElementById("wl-edit");
-        // console.log(input_box);
-        if (input_box.value == "") {
-          input_box.value = text;
-          // dispatch input event to make upload button ready
-          let evt = document.createEvent('HTMLEvents')
-          evt.initEvent('input', true, true)
-          input_box.dispatchEvent(evt)
-        } else {
-          input_box.select();
-        }
-      }
-    </script>    
   </div>
 </div>
+
+<script>
+  function getYiju() {
+    fetch("https://v1.hitokoto.cn")
+      .then((response) => response.json())
+      .then((data) => {
+        const hitokoto = document.getElementById("hitokoto_text");
+        hitokoto.href = "https://hitokoto.cn/?uuid=" + data.uuid;
+        hitokoto.innerText = data.hitokoto;
+        const from = document.getElementById("hitokoto_from");
+        from.innerText = data.from;
+        if (data.from_who != data.from) {
+          const author = document.getElementById("hitokoto_author");
+          author.innerText = data.from_who;
+        } else {
+          const author = document.getElementById("hitokoto_author");
+          author.innerText = [];
+        }
+      })
+      .catch(console.error);
+  }
+  getYiju();
+</script>
+
+<script>
+  function copyYiju() {
+    // Create a new textarea element as cache for copying
+    let text = document.getElementById("hitokoto").innerText
+    const cache_area = document.createElement('textarea');
+    document.body.appendChild(cache_area);
+    cache_area.innerHTML = text;
+    cache_area.select();
+    document.execCommand('copy');
+    document.body.removeChild(cache_area);
+
+    let input_box = document.getElementById("wl-edit");
+    // console.log(input_box);
+    if (input_box.value == "") {
+      input_box.value = text;
+      // dispatch input event to make upload button ready
+      let evt = document.createEvent('HTMLEvents')
+      evt.initEvent('input', true, true)
+      input_box.dispatchEvent(evt)
+    } else {
+      input_box.select();
+    }
+  }
+</script>
 
 <%- partial('_partial/banner') %>
 
