@@ -3,6 +3,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <meta name="description" content="<%= config.description || theme.description %>">
   <meta name="keyword" content="<%= config.keyword || theme.keyword %>">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
   <% if (config.logo){ %>
   <link rel="shortcut icon" type="image/ico" href="<%= config.favicon %>">
   <% } else { %>
@@ -18,6 +19,7 @@
   <!-- CSS -->
   <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet"/>
   <link href="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"/>
+  <link href="https://cdn.bootcdn.net/ajax/libs/waline/2.14.9/waline.min.css" rel="stylesheet">
   <%- css(['css/style']) %>
 
   <!-- JS -->
