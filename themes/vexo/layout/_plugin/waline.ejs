@@ -1,8 +1,10 @@
-<script src="https://cdn.bootcdn.net/ajax/libs/waline/2.14.9/waline.min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/waline/2.14.9/waline.min.js"></script>-->
-<div id="waline"></div>
-<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/waline/2.14.9/waline.min.css">
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/waline/2.14.9/waline.min.css">-->
+<div id="waline">
+  <script src="//cdn.bootcdn.net/ajax/libs/waline/2.14.9/waline.min.js"></script>
+  <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/waline/2.14.9/waline.min.css">
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/waline/2.14.9/waline.min.js"></script>-->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/waline/2.14.9/waline.min.css">-->
+</div>
+
 <script>
   // 中文默认
   const locale = {
@@ -57,9 +59,9 @@
     reactionTitle: '你认为这篇文章怎么样？',
   };
 
-  Waline.init({
+  const waline = Waline.init({
     el: "#waline",
-    serverURL: "https://waline-cn.voiiu.com",
+    serverURL: "https://waline-cn.voiiu.com/",
     appId: "<%- page.appId %>" || "<%- config.comment.waline.appId %>",
     appKey: "<%- page.appKey %>" || "<%- config.comment.waline.appKey %>",
     login: "disable",
