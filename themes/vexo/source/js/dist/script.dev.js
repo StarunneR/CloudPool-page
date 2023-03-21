@@ -72,7 +72,8 @@
   });
   $('.arrow-down').on('click', function () {
     $('html, body').animate({
-      scrollTop: banner.offsetHeight - header.height()
+      scrollTop: banner.offsetHeight //scrollTop: banner.offsetHeight - header.height()
+
     }, 500);
   });
   $('.toc-nav a').on('click', function (e) {

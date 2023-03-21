@@ -1,4 +1,4 @@
-<div class="front-parent">
+<div class="front-parent" id="front-parent">
   <div class="front-child" id="front-fontsize">
     <label class="front-label" for="fontsize-range">字体大小</label>
     <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
@@ -52,11 +52,11 @@
       $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
     } else if (this.value == "songti") {
       $(".markdown-content").css({ "font-weight": '400' });
-      $(".markdown-content").css({ "font-family": "'Noto Serif SC',Serif" });
+      $(".markdown-content").css({ "font-family": "'Noto Serif SC',serif" });
       $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
     } else if (this.value == "light-songti") {
       $(".markdown-content").css({ "font-weight": '200' });
-      $(".markdown-content").css({ "font-family": "'Noto Serif SC',Serif" });
+      $(".markdown-content").css({ "font-family": "'Noto Serif SC',serif" });
       $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
     } else if (this.value == "kaiti") {
       $(".markdown-content").css({ "font-weight": 'initial' });
