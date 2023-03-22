@@ -52,6 +52,9 @@
   width: auto !important;
   margin-top: 0;
 }
-.wl-card .wl-reply {
-  width: 2em;
+.wl-comment-actions .wl-like {
+  width: min-content;
+}
+.wl-comment-actions .wl-reply {
+  width: min-content;
 }
