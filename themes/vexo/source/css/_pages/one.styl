@@ -32,23 +32,25 @@
     color: color-white
     margin: 1em auto auto 25%
     line-height: 1.5em
-    .refresh_button
-      width: 1em
-      height: 1em
-      margin-left: 1em
-      cursor: pointer 
-      &:hover
-        transform: scale(1.1)
-      &:active
-        transform: scale(1)
-        box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .2)
-    .copy_button
-      width: 1em
-      height: 1em
-      margin-left: 0.4em
+    .one_buttons
+      display: inline-table
+      vertical-align: middle
       cursor: pointer
-      &:hover
-        transform: scale(1.1)
-      &:active
-        transform: scale(1)
-        box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .2)
+      margin-left: 1em
+      .refresh_button
+        height: 1em
+        width: 1em
+        &:hover
+          transform: scale(1.1)
+        &:active
+          transform: scale(1)
+          box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .2)
+      .copy_button
+        height: 1em
+        width: 1em
+        margin-left: 0.4em
+        &:hover
+          transform: scale(1.1)
+        &:active
+          transform: scale(1)
+          box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .2)
