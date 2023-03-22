@@ -42,3 +42,13 @@
     width: calc(100% - 2em) !important;
   }
 }
+.wl-info {
+  flex: initial !important;
+}
+#wl-emoji-wrapper {
+  height: 24px;
+}
+#wl-emoji-wrapper #wl-emoji {
+  width: auto !important;
+  margin-top: 0;
+}
