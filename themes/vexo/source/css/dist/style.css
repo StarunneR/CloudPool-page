@@ -47,7 +47,7 @@ pre {
   transform: unset !important;
 }
 .app-body {
-  padding: 1em 30px;
+  padding: 0 30px;
   margin: auto;
   height: 100%;
   max-width: 1200px;
@@ -170,7 +170,7 @@ pre {
 .right-list .list-item .item-link:hover {
   font-weight: bold;
 }
-.active {
+.right-list .list-item .active {
   font-weight: bold;
   border-bottom: 3px solid #00bfff;
 }
@@ -724,7 +724,7 @@ li.menu-item.menu-item-search.right-list {
   font-style: oblique;
   font-weight: bold;
   background-color: #87ceeb;
-  color: #fff;
+  color: #fcf5e5;
   border-radius: 4px;
   text-indent: 0.1em;
   padding-left: 2px;
@@ -734,16 +734,6 @@ li.menu-item.menu-item-search.right-list {
   font-family: 'Times New Roman', 'Noto Serif SC', serif !important;
   font-display: swap;
   font-size: smaller;
-}
-#wl-emoji-wrapper {
-  height: 24px;
-}
-#wl-emoji-wrapper #wl-emoji {
-  width: fit-content !important;
-  margin-top: 0;
-}
-.wl-info {
-  flex: initial !important;
 }
 .money-like {
   padding: 2em 0 0.5em;
@@ -1443,9 +1433,6 @@ li.menu-item.menu-item-search.right-list {
 .vmeta {
   display: none;
 }
-.wl-like {
-  display: none !important;
-}
 .wl-card .wl-head {
   line-height: 2;
 }
@@ -1486,8 +1473,25 @@ li.menu-item.menu-item-search.right-list {
     width: calc(100% - 2em) !important;
   }
 }
+.wl-info {
+  flex: initial !important;
+}
+#wl-emoji-wrapper {
+  height: 1.5em;
+}
+#wl-emoji-wrapper #wl-emoji {
+  width: auto !important;
+  margin-top: 0;
+}
+.wl-comment-actions .wl-like {
+  width: min-content;
+}
+.wl-comment-actions .wl-reply {
+  width: min-content;
+}
 .aplayer-list > ol {
   scrollbar-width: thin !important;
+  scrollbar-color: initial;
 }
 @-moz-keyframes shine {
   0%, 100% {
