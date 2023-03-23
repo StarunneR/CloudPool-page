@@ -2,7 +2,7 @@
 title: 【手动置顶】新的开始？
 categories: 浊池
 main: 我们都是年轻人
-date: 2099-01-01
+date: 2099-12-31
 ---
 
 <link rel="stylesheet" href="/css/APlayer.min.css">
@@ -129,6 +129,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
     23.2.23 post页面front部分初步完成，采用flex布局
     23.3.20 又一次修理waline的问题，原因不确定，在更新waline版本并微调代码后问题暂时解决。控制台信息：
             已拦截跨源请求：同源策略禁止读取位于...的远程资源。（原因：CORS 头缺少 'Access-Control-Allow-Origin'）。状态码：504
+    22.3.23 完成waline优化，换用LeanCloud国际版，修改表情源地址为testingcf.jsdelivr.net (CloudFlare)
 ---
 
 <!--    备注：各大静态网站服务对比
