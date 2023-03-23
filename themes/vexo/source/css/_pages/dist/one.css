@@ -47,7 +47,7 @@
   width: 1em;
 }
 .one .one_source .one_buttons .refresh_button:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 .one .one_source .one_buttons .refresh_button:active {
   transform: scale(1);
@@ -59,7 +59,7 @@
   margin-left: 0.4em;
 }
 .one .one_source .one_buttons .copy_button:hover {
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 .one .one_source .one_buttons .copy_button:active {
   transform: scale(1);
