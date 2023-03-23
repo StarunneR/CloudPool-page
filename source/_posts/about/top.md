@@ -36,22 +36,22 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
 
 若网站访问速度慢，可选择以下镜像站点：
 
-[voiiu.com](https://voiiu.com)
-[zhuochi.org](https://zhuochi.org)
+**[voiiu.com](https://voiiu.com)**
+**[zhuochi.org](https://zhuochi.org)**
 
 ---
 
-* A岛颜文字拾取器 <http://emoji.voiiu.com/>
+**A岛颜文字拾取器 <http://emoji.zhuochi.org> or <http://emoji.voiiu.com>**
 
 ---
 
-* 评论头像设定：
+###### 评论头像设定
 
-1. [注册](https://wordpress.com/start/wpcc/oauth2-user/zh-cn)，邮箱与此处登录邮箱一致
-2. 在设置页上传头像
+* 使用QQ邮箱自动匹配QQ头像
 
-* 评论时留下对应邮箱即可
-* 评论可以使用[**Markdown格式**](https://commonmark.org/help/)。    [教程1](https://www.runoob.com/markdown/md-tutorial.html) Or [教程2](https://markdown.tw)
+* 或在[gravatar.org](http://cn.gravatar.org/)注册并上传头像，邮箱与此处评论邮箱一致
+
+*评论可以使用[**Markdown格式**](https://commonmark.org/help/)。    [教程1](https://www.runoob.com/markdown/md-tutorial.html) Or [教程2](https://markdown.tw)*
 
 ---
 
