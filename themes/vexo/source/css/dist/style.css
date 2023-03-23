@@ -58,7 +58,7 @@ pre {
 }
 @media screen and (max-width: 700px) {
   .app-body {
-    padding: 16px 10px;
+    padding: 0 10px;
   }
 }
 .hljs {
@@ -525,8 +525,8 @@ li.menu-item.menu-item-search.right-list {
   flex-flow: row wrap;
 }
 .post-article .front-parent .front-child {
+  margin-top: 1em;
   flex: fit-content;
-  margin-bottom: 0.5em;
 }
 .post-article .front-parent .front-child .front-label {
   font-family: initial;
@@ -542,7 +542,6 @@ li.menu-item.menu-item-search.right-list {
   font-size: 1.5em;
   font-weight: bold;
   color: #808080;
-  line-height: 1em;
 }
 .post-article .article-author .authorlogo {
   width: 1.4em;
@@ -916,7 +915,7 @@ li.menu-item.menu-item-search.right-list {
 }
 #archive:before {
   position: absolute;
-  top: 4em;
+  top: 1em;
   bottom: 0;
   margin-left: 6px;
   width: 4px;
@@ -1111,9 +1110,8 @@ li.menu-item.menu-item-search.right-list {
   background-size: contain;
 }
 .catalog-container .toc-main .toc-nav {
-  padding: 0;
-  margin-top: 1em;
-  margin-right: 0.2em;
+  padding-top: 1em;
+  padding-left: 1em;
 }
 @media screen and (max-width: 700px) {
   .catalog-container .toc-main .toc-nav {
@@ -1388,29 +1386,32 @@ li.menu-item.menu-item-search.right-list {
   margin: 1em auto auto 25%;
   line-height: 1.5em;
 }
-.one .one_source .refresh_button {
-  width: 1em;
-  height: 1em;
-  margin-left: 1em;
+.one .one_source .one_buttons {
+  display: inline-table;
+  vertical-align: middle;
   cursor: pointer;
+  margin-left: 1em;
 }
-.one .one_source .refresh_button:hover {
+.one .one_source .one_buttons .refresh_button {
+  height: 1em;
+  width: 1em;
+}
+.one .one_source .one_buttons .refresh_button:hover {
   transform: scale(1.1);
 }
-.one .one_source .refresh_button:active {
+.one .one_source .one_buttons .refresh_button:active {
   transform: scale(1);
   box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
 }
-.one .one_source .copy_button {
-  width: 1em;
+.one .one_source .one_buttons .copy_button {
   height: 1em;
+  width: 1em;
   margin-left: 0.4em;
-  cursor: pointer;
 }
-.one .one_source .copy_button:hover {
+.one .one_source .one_buttons .copy_button:hover {
   transform: scale(1.1);
 }
-.one .one_source .copy_button:active {
+.one .one_source .one_buttons .copy_button:active {
   transform: scale(1);
   box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
 }
