@@ -131,5 +131,5 @@
     $("div.fold_content").css("display", "none");
   })
 
-  $("a[href*='<emoji>']").attr({href: "//emoji." + window.location.hostname, target: "_blank"})
+  $("a[href*='<emoji>']").attr({href: "//emoji."+window.location.hostname, target: "_blank"})
 })(jQuery)
