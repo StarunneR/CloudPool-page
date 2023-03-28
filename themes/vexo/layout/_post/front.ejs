@@ -4,7 +4,7 @@
     <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
     <span id="fontsize-value"></span>
   </div>
-  
+
   <div class="front-child" id="front-fontselector">
     <label class="front-label" for="font-select">更换字体</label>
     <select name="font" id="font">
@@ -28,50 +28,51 @@
 <h1 class="article-author">
   <% if (page.author !=="m1" ) { %>
     <%- page.author %>
-  <% } else if (page.author=="m1" ) { %>
-    StarunneR
-  <% } %>
+      <% } else if (page.author=="m1" ) { %>
+        StarunneR
+        <% } %>
 </h1>
 
 <script>
-  let FontChanger = function () {
-    if (this.value == "default") {
-      $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
-      $(".markdown-content").css({ "font-weight": 'initial' });
-    } if (this.value == "heiti") {
-      $(".markdown-content").css({ "font-weight": '400' });
-      $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
-      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap rel=stylesheet>");
-    } else if (this.value == "light-heiti") {
-      $(".markdown-content").css({ "font-weight": '300' });
-      $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
-      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap rel=stylesheet>");
-    } else if (this.value == "lighter-heiti") {
-      $(".markdown-content").css({ "font-weight": '100' });
-      $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
-      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
-    } else if (this.value == "songti") {
-      $(".markdown-content").css({ "font-weight": '400' });
-      $(".markdown-content").css({ "font-family": "'Noto Serif SC',serif" });
-      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
-    } else if (this.value == "light-songti") {
-      $(".markdown-content").css({ "font-weight": '200' });
-      $(".markdown-content").css({ "font-family": "'Noto Serif SC',serif" });
-      $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
-    } else if (this.value == "kaiti") {
-      $(".markdown-content").css({ "font-weight": 'initial' });
-      $(".markdown-content").css({ "font-family": "Arial,'STKaiti','KaiTi','FZKai-Z03S',Serif" });
-      $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-kai-z-03-s/font.css rel=stylesheet>");
-    } else if (this.value == "fangsong") {
-      $(".markdown-content").css({ "font-weight": 'initial' });
-      $(".markdown-content").css({ "font-family": "Arial,'STFangsong','FangSong','FangSong_GB2312','FZFangSong-Z02S',Serif" });
-      $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-fang-song-z-02-s/font.css rel=stylesheet>");
-    }
-  };
-  $("#font").on('change', FontChanger);
-  $(function (){
-    $("#font").on('click',FontChanger);
-  });
+  $(document).ready(
+    function () {
+      let FontChanger = function () {
+        if (this.value == "default") {
+          $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
+          $(".markdown-content").css({ "font-weight": 'initial' });
+        } if (this.value == "heiti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-heiti") {
+          $(".markdown-content").css({ "font-weight": '300' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap rel=stylesheet>");
+        } else if (this.value == "lighter-heiti") {
+          $(".markdown-content").css({ "font-weight": '100' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
+        } else if (this.value == "songti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-songti") {
+          $(".markdown-content").css({ "font-weight": '200' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
+        } else if (this.value == "kaiti") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "Arial,'STKaiti','KaiTi','FZKai-Z03S',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-kai-z-03-s/font.css rel=stylesheet>");
+        } else if (this.value == "fangsong") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "Arial,'STFangsong','FangSong','FangSong_GB2312','FZFangSong-Z02S',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-fang-song-z-02-s/font.css rel=stylesheet>");
+        }
+      };
+      $("#font").on('change', FontChanger);
+      $("#font").on('click', FontChanger);
+    })
 
   $("#indent-checkbox").change(function () {
     if (this.checked) {
