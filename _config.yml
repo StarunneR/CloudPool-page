@@ -159,7 +159,7 @@ member:
   
 # Lazyload
 lazyload:
-  enable: false
+  enable: true
   onlypost: true # optional
   loadingImg: /images/loading.gif # optional eg /images/loading.gif
   isSPA: false # optional
