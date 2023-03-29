@@ -75,6 +75,5 @@
   transition: all 0.3s ease-in-out;
 }
 .sub-article {
-  display: none;
-  color: color-shadow;
+  opacity: 0.6;
 }

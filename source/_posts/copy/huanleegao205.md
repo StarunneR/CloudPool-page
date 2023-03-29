@@ -3,7 +3,7 @@ title: 《heart.》
 author: S54vNMZG @huanleegao.com
 date: 2023-03-29
 sub: 1
-catalog: 
+catalog: true
 counting: 
 categories: 小说
 main: 作者： 欢乐恶狗岛 huanleegao.com - S54vNMZG

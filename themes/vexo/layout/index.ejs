@@ -30,14 +30,18 @@
         <a class="more" href="<%- url_for(post.path) %>" target="_blank"><%- theme.excerpt_link %></a>
       </article>
     <% } else { %>
-      <article class="article-card">
+      <article class="article-card sub-article">
         <h2 class="article-head">
           <a href="<%- url_for(post.path) %>" target="_blank"><%- post.title %></a>
         </h2>
         <p class="article-date">
-          <%- date(post.date, "LL") %>
           By <%- post.author %>
         </p>
+        <div class="article-summary">
+          <% if (post.main) { %>
+            <%- post.main %>
+          <% } %>
+        </div>
         <a class="more" href="<%- url_for(post.path) %>" target="_blank"><%- theme.excerpt_link %></a>
       </article>
     <% } %>
