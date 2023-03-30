@@ -42,26 +42,14 @@
   cursor: pointer;
   margin-left: 1em;
 }
-.one .one_source .one_buttons .refresh_button {
+.one .one_source .one_buttons img {
   height: 1em;
-  width: 1em;
+  padding: 0 4px;
 }
-.one .one_source .one_buttons .refresh_button:hover {
+.one .one_source .one_buttons img:hover {
   transform: scale(1.3);
 }
-.one .one_source .one_buttons .refresh_button:active {
-  transform: scale(1);
-  box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
-}
-.one .one_source .one_buttons .copy_button {
-  height: 1em;
-  width: 1em;
-  margin-left: 0.4em;
-}
-.one .one_source .one_buttons .copy_button:hover {
-  transform: scale(1.3);
-}
-.one .one_source .one_buttons .copy_button:active {
+.one .one_source .one_buttons img:active {
   transform: scale(1);
   box-shadow: inset 0 0 10px 1px rgba(0,0,0,0.2);
 }

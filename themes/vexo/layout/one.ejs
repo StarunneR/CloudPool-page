@@ -5,7 +5,9 @@
   <div id="hitokoto" class="one">
     <div class="one_main"><a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a></div>
     <div class="one_source" id="one_source">
-      ——&nbsp;<span id="hitokoto_author"></span>&nbsp;<span id="hitokoto_from"></span><span class="one_buttons"><img class="refresh_button" onclick="getYiju()" src="/css/images/refresh.png"/><img class="copy_button" onclick="copyYiju()" src="/css/images/copy.png"/></span>
+      ——&nbsp;<span id="hitokoto_author"></span>&nbsp;<span id="hitokoto_from"></span><span class="one_buttons"><img id="refresh_button"
+        onclick="getYiju()" ontouchend="buttonTouchEnd()" src="/css/images/refresh.png" /><img id="copy_button"
+        onclick="copyYiju()" ontouchend="buttonTouchEnd()" src="/css/images/copy.png" /></span>
     </div>
   </div>
 </div>
@@ -58,11 +60,18 @@
   }
 </script>
 
+<script>
+  function buttonTouchEnd() {
+    $(".one_buttons img").attr(transform,scale(1))
+    let 
+  }
+</script>
+
 <%- partial('_partial/banner') %>
 
-<main class="app-body">
-  <article class="post-article">
-    <%- partial('_plugin/waline') %>
-    <%- page.content %>
-  </article>
-</main>
+  <main class="app-body">
+    <article class="post-article">
+      <%- partial('_plugin/waline') %>
+        <%- page.content %>
+    </article>
+  </main>
