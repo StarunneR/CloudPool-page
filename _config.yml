@@ -161,7 +161,7 @@ member:
 lazyload:
   enable: true
   onlypost: true # optional
-  loadingImg: /images/loading.gif # optional eg /images/loading.gif
+  loadingImg: /images/loading-small.gif # optional eg /images/loading.gif
   isSPA: false # optional
   preloadRatio: 1 # optional, default is 1
   
