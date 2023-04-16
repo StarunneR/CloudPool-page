@@ -13,28 +13,27 @@
   background-color: color-primary
   border-radius: 1.25em
   transform: translate(4em, 0)
-  transition: all .3s ease 1.5s
-  -webkit-transition: all .3s ease 1.5s
+  transition: all .3s ease 0.5s
+  -webkit-transition: all .3s ease 0.5s
   box-shadow: 0 0 .2em 0 rgba(0,0,0,.12), 0 .2em .2em 0 rgba(0,0,0,.24)
   &:hover
     right: 1em
     transition-delay: 0s
     -webkit-transition-delay: 0s
-
-.scroll-top
-  color: white
-  font-size: 2em
-  width: 0.9em
-  cursor: pointer
-
-.share-icon
-  color: white
-  font-size: 2em
-  width: 1em
-  display: inline
-  .list-icon
-    position: relative
-    display: block
+  .scroll-top
+    color: white
+    font-size: 2em
+    width: 0.9em
+    cursor: pointer
+  .share-icon
+    display: inline
+    color: white
+    font-size: 2em
     width: 1em
-    bottom: 7em
-    left: 1em
+    .list-icon
+      position: relative
+      display: inline-block
+      width: 1em
+      bottom:  em
+      left: 1em
+
