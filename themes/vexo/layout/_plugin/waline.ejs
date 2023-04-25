@@ -1,0 +1,99 @@
+<div id="waline"></div>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/waline/2.15.1/waline.min.css" rel="stylesheet">
+<script src="//cdn.bootcdn.net/ajax/libs/waline/2.15.1/waline.min.js"></script>
+<script defer src="/js/waline-qqavatar.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/waline/2.14.9/waline.min.js"></script>-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/waline/2.14.9/waline.min.css">-->
+
+<script>
+  // 中文默认
+  const locale = {
+    nick: '昵称',
+    nickError: '昵称不能少于3个英文字符或2个中文汉字',
+    mail: '邮箱(可用QQ邮箱)',
+    mailError: '请填写正确的邮件地址',
+    link: '网址',
+    optional: '可选',
+    placeholder: '<%- page.placeholder %>' || '<%- config.comment.waline.placeholder %>',
+    sofa: '来发评论吧~',
+    submit: '提交',
+    like: '喜欢',
+    cancelLike: '取消喜欢',
+    reply: '回复',
+    cancelReply: '取消回复',
+    comment: '评论',
+    refresh: '刷新',
+    more: '加载更多...',
+    preview: '预览',
+    emoji: '表情',
+    uploadImage: '上传图片',
+    seconds: '秒前',
+    minutes: '分钟前',
+    hours: '小时前',
+    days: '天前',
+    now: '刚刚',
+    uploading: '正在上传',
+    login: '登录',
+    logout: '退出',
+    admin: '博主',
+    sticky: '置顶',
+    word: '字',
+    wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    anonymous: '匿名',
+    level0: '潜水',
+    level1: '冒泡',
+    level2: '吐槽',
+    level3: '活跃',
+    level4: '话痨',
+    level5: '传说',
+    gif: '表情包',
+    gifSearchPlaceholder: '搜索表情包',
+    profile: '个人资料',
+    approved: '通过',
+    waiting: '待审核',
+    spam: '垃圾',
+    unsticky: '取消置顶',
+    oldest: '按倒序',
+    latest: '按正序',
+    hottest: '按热度',
+    reactionTitle: '你认为这篇文章怎么样？',
+  };
+
+  Waline.init({
+    el: "#waline",
+    serverURL: "waline.voiiu.com",
+    appId: "<%- page.appId %>" || "<%- config.comment.waline.appId %>",
+    appKey: "<%- page.appKey %>" || "<%- config.comment.waline.appKey %>",
+    login: "disable",
+    avatarCDN: "https://gravatar.loli.top/avatar/",
+    //avatar: '<%- config.comment.waline.avatar %>',
+    placeholder: "<%- page.placeholder %>",
+    meta: ["nick", "mail"],
+    requiredMeta: ["<%- page.required %>"],
+    pageview: "<%- config.comment.waline.counting %>" && "<%- page.counting %>",
+    emoji: [
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+    ],
+    locale,
+  });
+</script>
+<script>
+  // emoji
+  $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=/images/emoji.png class=wl-action id=wl-emoji></a>")
+
+  // Clean TEXTAREA 
+  //$(".wl-cards").change(function () {
+  //  alert('changed')
+    //('#wl-edit').html("")
+  //})
+
+  //$(".primary .wl-btn").click(function () {
+    //document.getElementsByClassName('wl-num')[0].innerHTML ++
+  //})
+</script>

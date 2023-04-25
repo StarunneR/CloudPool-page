@@ -1,0 +1,63 @@
+excerpt_link: 阅读全文
+
+menu:
+  主页: /
+  分类: category/
+  标签: tag/
+  归档: archive/
+  网刊: mag/
+  一言: one/
+  网盘: //pan.zhuochi.org/CloudShare/
+  ( ^ω^): //<emoji>
+# LOFTER: https://cloudpool.lofter.com
+# 关于: /about/
+
+post:
+  comment: true
+  qrcode: true
+  reward: false
+  ad: true
+
+social:
+  email: cloudpool2017@gmail.com
+  sina: https://service.weibo.com/share/share.php?
+  douban: https://www.douban.com/recommend/?
+  tieba: http://tieba.baidu.com/f/commit/share/openShareApi?
+  qzone: https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?
+  qq: https://connect.qq.com/widget/shareqq/index.html?
+
+highlight:
+  tomorrow
+
+# catalog
+catalog: true
+
+baidu_id: 
+
+# MathJax Support
+mathjax:
+  enable: false
+  per_page: false
+  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+# Local Search Support
+local_search:
+  enable: true
+  preload: true
+
+search:
+  ##path: search.xml
+  field: post
+  content: true
+  ##template: ./search.xml
+  ##format: html
+  ##format: striptags
+  placeholder: 今天想看什么w
+
+# Lazyload Image
+lazyload:
+  enable: true
+  onlypost: true # optional
+  loadingImg: /images/loading-small.gif # optional eg /images/loading.gif
+  isSPA: false # optional
+  preloadRatio: 1 # optional, default is 1

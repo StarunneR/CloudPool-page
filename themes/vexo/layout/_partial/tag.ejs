@@ -1,0 +1,6 @@
+<span>标签：</span>
+<% tags.each(function(tag) { %>
+  <a href="<%- url_for(config.root + config.tag_dir) %>#<%= tag.name %>" >
+    <span class="tag-code"><%= tag.name %></span>
+  </a>
+<% }) %>

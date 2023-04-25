@@ -1,0 +1,113 @@
+@import "_config"
+
+html
+  scrollbar-width: thin
+  scrollbar-color: color-vary color-white 
+
+::selection
+  background: color-primary
+  color: color-white 
+
+body
+  font-family: arial, system-ui, -apple-system, sans-serif, "MS PGothic"
+  //font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif
+  //font-family: 'Source Sans 3',/* 'SourceHanSansCN', */ 'STHeiTi',sans-serif,/* 'Noto Sans SC', 'Noto Serif SC',*/ 'Source Serif 4 src1', 'Source Serif 4 src2', system-ui, -apple-system, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: none
+  position: relative
+  height: 100%
+  margin: 0 
+  color: color-dark
+  font-size: 16px
+  @media m-mobile
+    font-size: 15px
+
+ol, ul, form, p
+  margin: 0
+
+a
+  text-decoration: none
+  color: color-primary
+  cursor: pointer
+
+p
+  word-spacing: 0.05em
+
+pre
+  overflow-x: auto
+
+.flex-box
+  display: flex
+  display: -ms-flexbox
+  display: -webkit-box
+  display: -webkit-flex
+  transform: unset !important
+
+.app-body
+  padding: 0 30px
+  margin: auto
+  height: 100%
+  max-width: 1200px
+  position: relative
+  opacity: 0
+  transform: translateY(-20px)
+  transition: all 0.4s
+  @media m-mobile
+    padding: 0 10px
+
+.hljs
+  background: none !important
+
+.wrap-active
+  background-color: rgba(255, 255, 255, .9)
+
+.small-icon
+  width: 16px
+  margin-right: 2px
+  border-radius: 100%
+
+.article-card .article-summary
+  font-family: system-ui, -apple-system, Arial, 'Helvetica Neue'
+
+
+::-webkit-scrollbar
+  width: 10px
+  background-color: color-white
+
+::-webkit-scrollbar-thumb
+  background-color: color-vary
+  //background-image: -webkit-linear-gradient(90deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+  -webkit-border-radius: 5em
+  -moz-border-radius: 5em
+  border-radius: 5em
+
+::-webkit-scrollbar-track
+  background-color: transparent
+
+@keyframes shine
+  0%, 100%
+    opacity: .1
+  25%, 75%
+    opacity: .2
+  50%
+    opacity: 1
+
+@import "_partial/header"
+@import "_partial/footer"
+@import "_partial/pager"
+@import "_partial/layout"
+
+@import "_pages/post"
+@import "_pages/archive"
+@import "_pages/index"
+//@import "_pages/about"
+@import "_pages/catalog"
+@import "_pages/category"
+@import "_pages/tag"
+@import "_pages/cloudpoolmag"
+@import "_pages/one"
+@import "_plugin/search"
+@import "_plugin/busuanzi"
+@import "_plugin/waline"
+@import "_plugin/aplayer"

@@ -1,0 +1,70 @@
+.wl-meta, .vmeta
+    display: none
+//meta: IP归属 浏览器 OS
+
+//.wl-like
+//    display: none !important
+//点赞按钮
+
+.wl-card .wl-head
+    line-height: 2
+//原css line-height会导致第一行右侧被按钮挤压
+
+//.wl-header .item3
+//    border-bottom: none
+
+.wl-content p
+    padding-bottom: 0.5em
+
+.wl-input
+    autocomplete: true
+
+.wl-btn.primary
+    background: color-primary !important
+    border-color: color-primary !important
+
+.wl-tabs
+    scrollbar-width: none
+
+.wl-tab-wrapper
+    scrollbar-width: thin
+    &::-webkit-scrollbar
+        width: 6px
+        background-color: #eee
+    &::-webkit-scrollbar-thumb
+        background-color: #c1c1c1
+        &:hover 
+            background-color: #a8a8a8
+    &:active 
+        background-color: #787878
+
+.wl-content .wl-emoji
+    height: 2.5em !important
+
+.wl-editor
+    @media m-mobile
+        width: calc(100% - 2em) !important
+
+.wl-info
+  flex: initial !important
+
+#wl-emoji-wrapper
+  height: 1.5em
+  #wl-emoji
+    width: auto !important
+    margin-top: 0
+
+.wl-comment-actions
+  .wl-like
+    width: min-content
+  .wl-reply
+    width: min-content
+//选择class="wl-header item3"的元素
+//.wl-card
+//.wl-content
+//.p
+//    white-space: pre-wrap !important
+//.vcontent
+//.p
+//    white-space: pre-wrap
+//保留评论换行

@@ -1,0 +1,41 @@
+<div id="article-banner">
+  <h2 class="page-title">标签检索</h2>
+  <p class="page-subtitle">高能注意：很快这一页就会变得又杂又乱</p>
+</div>
+<main class="app-body">
+  <div id="tag-cloud">
+    <% site.tags.map(function(tag, index) { %>
+      <a class="tag<%= Math.round(Math.random() * 3) %>" data-name="tag-<%= tag.name %>">
+        <%= tag.name %>
+      </a>
+    <% }) %>
+  </div>
+  <% site.tags.map(function(tag, index){ %>
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-<%= tag.name %>">
+        <%= tag.name %>
+      </h3>
+      <% tag.posts.map(function(post) { %>
+        <ul class="tag-preview">
+          <li>
+            <a href="<%- config.root %><%- post.path %>" target="_blank"><%- post.title || "Untitled" %></a>
+          </li>
+        </ul>
+        <% }) %>
+    </div>
+  <% }) %>
+</main>
+
+<%- partial('_partial/banner') %>
+
+<script>
+  (function () {
+    var tag = location.hash.replace('#', '')
+    if (tag) {
+      var tagId = "#tag-" + tag;
+      $("html, body").animate({
+        scrollTop: $(tagId).offset().top
+      }, 400)
+    }
+  })();
+</script>

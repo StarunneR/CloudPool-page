@@ -1,0 +1,65 @@
+.catalog-container
+  display: block
+  flex-basis: 150px
+  -webkit-flex-basis: 150px
+  flex-shrink: 0
+  -webkit-flex-shrink: 0
+  @media m-mobile
+    display: inline-block
+    flex-basis: 25px
+    -webkit-flex-basis: 25px
+  @media m-pad
+    display: inline-block
+    flex-basis: 25px
+    -webkit-flex-basis: 25px
+  .toc-main
+    padding-top: 1em
+    padding-left: 0.5em
+    border-left: 1px solid color-border
+    width: 145px 
+    white-space: nowrap
+    overflow: auto
+    scrollbar-width: thin
+    box-sizing: border-box
+    position: absolute
+    max-height: 550px
+    @media m-mobile
+      padding-left: 0.3em
+      //width: auto
+      position: static 
+    @media m-pad
+      padding-left: 0.3em
+      //width: auto
+      position: static
+    .toc-title
+      font-size: 1.2em
+      position: relative
+      padding-left: 28px
+      &:before
+        content: ''
+        position: absolute
+        width: 22px
+        height: 22px
+        left: 0
+        top: 2px
+        background: url(catalog-url) no-repeat
+        background-size: contain
+    .toc-nav
+      padding-top: 1em
+      padding-left: 1em
+      @media m-mobile
+        max-height: 200px
+      @media m-pad
+        max-height: 200px
+    ol
+      padding-left: 8px
+    li
+      list-style-type: none
+      line-height: 1.5
+  .fixed-toc
+    position: fixed
+    top: 60px // ! modify in js
+    @media m-mobile
+      position: static
+    @media m-pad
+      position: static

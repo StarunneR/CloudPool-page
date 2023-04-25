@@ -1,0 +1,24 @@
+<div class="qrcode">
+    <img id="share-qrcode" class="qrcode-image"/>
+    <div class="qrcode-notice">保存二维码，分享此文章</div>
+</div>
+
+<!--<script type="text/javascript" src="/js/qrious.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/qrious/4.0.2/qrious.min.js" ></script>
+<script>
+    // qrcode
+    let qr = new QRious({
+        element: document.getElementById('share-qrcode'),
+        value: document.location.href
+    })
+
+    $("#share-qrcode").click(function () {
+        let img = document.getElementById('share-qrcode')
+        let url = img.src
+        let a = document.createElement('a')
+        let down_event = new MouseEvent('click')
+        a.download = '<%= config.title %>-<%= page.title %>'
+        a.href = url
+        a.dispatchEvent(down_event)
+    })
+</script>

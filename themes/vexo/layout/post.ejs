@@ -1,0 +1,56 @@
+<div id="article-banner">
+  <h2 class="post-title"><%- page.title %></h2>
+  <% if (page.subtitle) { %>
+    <h3 class="post-subtitle"><%- page.subtitle %></h3>
+  <% } %>
+  <% if (!page.nodate) { %> 
+    <p class="post-date"><%- date(page.date, "YYYY-MM-DD") %></p>
+  <% } %>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<% if (page.catalog == true) { %>
+  <%- partial('_post/catalog') %>
+<% } %>
+<main class="app-body flex-box">
+  <article class="post-article">
+    <% if (page.content) { %>
+      <%- partial('_post/front') %>
+      <section class="markdown-content" id="content">
+        <%- page.content %>
+      </section>
+      <% if (page.tags && page.tags.length) { %>
+        <div class="tags">
+          <%- partial('_partial/tag', { tags: page.tags }) %>
+        </div>
+      <% } %> 
+    <% } %>
+    <%- partial('_post/nav') %>
+    <% if (theme.post.ad == true && page.ad != false && page.content) { %>
+      <div class="advertisement">
+        <p> 广告：快速学习 Crash Course十分钟速成课 <a href="https://crashcourse.club/">字幕组网站</a></p>
+      </div>
+    <% } %>
+    <% if (theme.post.comment == true && page.comment != false) { %>
+      <%- partial('_plugin/waline') %>
+    <% } %>
+    <% if (theme.post.reward == true && page.reward == true && page.content) { %>
+      <%- partial('_post/reward') %>
+    <% } %>
+    <% if (theme.post.comment == true && page.qrcode != false && page.content) { %>
+      <%- partial('_post/qrcode') %>
+    <% } %>
+  </article>
+</main>
+
+<%- partial('_partial/banner') %>
+<%- partial('_partial/title_hider') %>
+
+<script>
+  // error image
+  $(".markdown-content img").on("error", function () {
+    $(this).attr("src", "/images/error.png");
+    $(this).css({cursor: "default",});
+  });
+</script>
