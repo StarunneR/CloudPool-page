@@ -2,17 +2,9 @@
 
 ### 目前的模型列表(自己修改的)
 
-potion maker的pio与tia(可换装)
+hijiki
 
-小埋
-
-埃罗芒阿老师里的和泉纱雾
-
-点兔的香风智乃(可惜没有:rabbit2::older_adult:)
-
-unity娘
-
-龙女仆里的康娜
+tororo
 
 ### 食用教程
 
@@ -200,4 +192,4 @@ model_list.json
 
 **API 内所有模型 版权均属于原作者，仅供研究学习，不得用于商业用途**  
 
-MIT © FGHRSH
+MIT © StarunneR
