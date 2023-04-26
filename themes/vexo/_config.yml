@@ -52,7 +52,7 @@ search:
   ##template: ./search.xml
   ##format: html
   ##format: striptags
-  placeholder: 今天想看什么w
+  placeholder: Anything...  今天想看什么w
 
 # Lazyload Image
 lazyload:
