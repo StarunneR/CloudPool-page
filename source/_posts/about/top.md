@@ -41,7 +41,7 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
 
 ---
 
-###### A岛颜文字拾取器 <emoji.zhuochi.org> or <emoji.voiiu.com>
+###### A岛颜文字拾取器 <https://emoji.zhuochi.org> or <https://emoji.voiiu.com>
 
 ---
 
