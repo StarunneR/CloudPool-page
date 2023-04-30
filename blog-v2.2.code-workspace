@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../hexo-helper-live2d"
+		},
+		{
+			"path": "../cloudpool-live2d-api"
+		}
+	],
+	"settings": {}
+}

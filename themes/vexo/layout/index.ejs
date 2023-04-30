@@ -14,7 +14,9 @@
           <% } %>
         </p>
         <% if (post.tags && post.tags.length) { %>
-        <%- partial('_partial/tag', { tags: post.tags }) %>
+          <div class="post-tags">
+            <%- partial('_partial/tag', { tags: post.tags }) %>
+          </div>
         <% } %>
     
         <div class="article-summary">

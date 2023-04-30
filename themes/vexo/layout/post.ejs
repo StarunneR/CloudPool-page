@@ -21,7 +21,8 @@
         <%- page.content %>
       </section>
       <% if (page.tags && page.tags.length) { %>
-        <div class="tags">
+        <div class="post-tags">
+          <span>标签：</span>
           <%- partial('_partial/tag', { tags: page.tags }) %>
         </div>
       <% } %> 
