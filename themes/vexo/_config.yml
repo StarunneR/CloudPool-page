@@ -45,16 +45,21 @@ mathjax:
 # Local Search Support
 local_search:
   enable: true
-  preload: true
+  ##preload: true
+  root: ''
+  trigger: auto
+  placeholder: Anything...  今天想看什么w
 
+# hexo-generator-search
 search:
-  ##path: search.xml
+  path: search.xml
   field: post
+  format: html
+  ##limit: 10000
   content: true
   ##template: ./search.xml
   ##format: html
   ##format: striptags
-  placeholder: Anything...  今天想看什么w
 
 # Lazyload Image
 lazyload:
