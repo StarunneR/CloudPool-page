@@ -1,14 +1,20 @@
 {
 	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "../hexo-helper-live2d"
-		},
-		{
-			"path": "../cloudpool-live2d-api"
-		}
-	],
+    {
+      "path": "."
+    },
+    {
+      "path": "../hexo-helper-live2d"
+    },
+    {
+      "path": "../cloudpool-live2d-api"
+    },
+    {
+      "path": "../纯CSS3漂亮的单选框和复选框样式"
+    },
+    {
+      "path": "../icheck-material-1.0.1"
+    }
+  ],
 	"settings": {}
 }

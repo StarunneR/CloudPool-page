@@ -1,20 +1,81 @@
-<link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap" rel="stylesheet">
+</head>
 
 <div id="article-banner">
   <div id="hitokoto" class="one">
     <div class="one_main"><a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a></div>
     <div class="one_source" id="one_source">
-      ——&nbsp;<span id="hitokoto_author"></span>&nbsp;<span id="hitokoto_from"></span><span class="one_buttons"><img id="refresh_button"
-        onclick="getYiju()" ontouchend="buttonTouchEnd()" src="/css/images/refresh.png" /><img id="copy_button"
-        onclick="copyYiju()" ontouchend="buttonTouchEnd()" src="/css/images/copy.png" /></span>
+      ——&nbsp;<span id="hitokoto_author"></span>&nbsp;<span id="hitokoto_from"></span><span class="one_buttons"><img
+          id="refresh_button" onclick="getYiju()" ontouchend="buttonTouchEnd()" src="/css/images/refresh.png" /><img
+          id="copy_button" onclick="copyYiju()" ontouchend="buttonTouchEnd()" src="/css/images/copy.png" /></span>
+    </div>
+  </div>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+  <div class="options_container">
+    <input type="checkbox" class="checkbox" value="a" name="hijikoto_type" checked /><label><span></span>动画</label>
+    <input type="checkbox" class="checkbox" value="b" name="hijikoto_type" checked /><label><span></span>漫画</label>
+    <input type="checkbox" class="checkbox" value="c" name="hijikoto_type" checked /><label><span></span>游戏</label>
+    <input type="checkbox" class="checkbox" value="d" name="hijikoto_type" checked /><label><span></span>文学</label>
+    <input type="checkbox" class="checkbox" value="h" name="hijikoto_type" checked /><label><span></span>影视</label>
+    <input type="checkbox" class="checkbox" value="i" name="hijikoto_type" checked /><label><span></span>诗词</label>
+    <input type="checkbox" class="checkbox" value="k" name="hijikoto_type" checked /><label><span></span>哲学</label>
+    <input type="checkbox" class="checkbox" value="e" name="hijikoto_type" checked /><label><span></span>原创</label>
+    <input type="checkbox" class="checkbox" value="l" name="hijikoto_type" checked /><label><span></span>抖机灵</label>
+    <input type="checkbox" class="checkbox" value="j" name="hijikoto_type" checked /><label><span></span>网易云</label>
+    <input type="checkbox" class="checkbox" value="f" name="hijikoto_type" checked /><label><span></span>来自网络</label>
+    <input type="checkbox" class="checkbox" value="g" name="hijikoto_type" checked /><label><span></span>其他</label>
+    <div class="options_control">
+      <input type="button" id="checkall" value="全选" />
+      <input type="button" id="othercheck" value="反选" />
     </div>
   </div>
 </div>
 
+<%- partial('_partial/banner') %>
+
+<main class="app-body">
+  <article class="post-article">
+    <%- partial('_plugin/waline') %>
+    <%- page.content %>
+  </article>
+</main>
+
 <script>
   function getYiju() {
-    fetch("https://v1.hitokoto.cn")
+    let osource = "https://v1.hitokoto.cn?";
+    let source1 = ""
+    let htypes = document.getElementsByName("hijikoto_type");
+    for (var i = 0; i < htypes.length; i++) {
+      if (htypes[i].checked === true) {
+        source1 = source1 + "c=" + htypes[i].value + "&";
+      }
+    }
+    console.log(osource + source1);
+
+    var CheckAll=document.getElementById('checkall');
+    var UnCheck=document.getElementById('uncheck');
+    var OtherCheck=document.getElementById('othercheck');
+    CheckAll.onclick=function(){
+      for(i=0;i<htypes.length;i++){
+        htypes[i].checked=true;
+      };
+    };
+    OtherCheck.onclick=function(){
+      for(i=0;i<htypes.length;i++){
+        if(htypes[i].checked==true){
+          htypes[i].checked=false;
+        }
+        else{
+          htypes[i].checked=true
+        }         
+      };
+    }
+
+    fetch(osource + source1)
       .then((response) => response.json())
       .then((data) => {
         const hitokoto = document.getElementById("hitokoto_text");
@@ -62,15 +123,11 @@
 
 <script>
   function buttonTouchEnd() {
-    $(this).attr(transform,scale(1))
+    $(this).attr(transform, scale(1))
+  };
+
+  function highlight() {
+    var ozy = document.querySelector("#ozymandius");
+    ozy.style.border = "2px solid red";
   }
 </script>
-
-<%- partial('_partial/banner') %>
-
-  <main class="app-body">
-    <article class="post-article">
-      <%- partial('_plugin/waline') %>
-        <%- page.content %>
-    </article>
-  </main>
