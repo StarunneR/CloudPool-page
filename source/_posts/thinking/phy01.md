@@ -3,7 +3,7 @@ title: 当我们在学物理的时候我们在学什么
 date: 2018-05-13
 author: 绝叫
 tags: [学术,杂谈]
-categories: 浊物理
+categories: 浊思
 main: 如果我没有半路极大跑题或者直接懒得写了让这玩意胎死腹中的话，这应该是一篇讲物理的文章。
 indent: 2em
 ---
