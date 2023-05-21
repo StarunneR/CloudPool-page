@@ -159,7 +159,8 @@ CAJ 转 PDF 转换器，写论文必备
     来自 https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287 -->
 
 [垃圾清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
-可在[AppNee](https://appnee.com/fl-studio/)找到破解版下载链接。
+~~可在[AppNee](https://appnee.com/fl-studio/)找到破解版下载链接。~~
+注册机：[CCleaner Pro 6.12.10490 + crack](https://rsload.net/download?a%3AaHR0cHM6Ly9mMy4xcnNsb2FkLnJ1L2xvYWQyLzA3NC9DQ2xlYW5lclByby5yYXI%3D)  来自 [rsload.net](https://rsload.net/soft/cleaner-disk/8306-ccleaner.html) [备份](https://pan.zhuochi.org/CloudShare/Software/cc612Patch22.rar)
 
 ---
 
