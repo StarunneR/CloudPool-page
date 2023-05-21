@@ -5,7 +5,7 @@
 	}],
 	"click": [{
 		"selector": "#live2d",
-		"text": []
+		"text": ["咕噜咕噜"]
 	}, {
 		"selector": ".veditor",
 		"text": []
