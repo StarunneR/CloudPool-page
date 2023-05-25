@@ -1,6 +1,7 @@
-@media (any-hover: hover)
+/*@media (any-hover: hover)
   .one_buttons img:hover
     transform: scale(1.1)
+*/
 
 .one
   margin: 10px 0 20px 0
@@ -44,6 +45,10 @@
       img 
         height: 1.2em
         padding: 0 4px
+        transition-property: all;
+        transition-duration: 0.2s;
+        &:hover
+          transform: scale(1.2)
         &:active
           transform: scale(0.9)
           -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -105,19 +110,35 @@ height: 200px;
   .options_control
     margin-top: 0.5em
     input
-      font-size: 14px!important;
-      height: 30px;
-      line-height: 18px!important;
-      padding: 3px 18px;
+      background-color: color-background;
+      border: none;
+      color: color-dark;
+      padding: 6px 15px;
+      margin: 0.5em 0.5em;
+      border-radius: 10%;
+      text-align: center;
+      font-size: 16px;
+      opacity: 0.6;
+      transition: 0.3s;
       display: inline-block;
-      vertical-align: middle;
-      font-weight: normal;
-      border-radius: 3px;
-      margin: 0 8px 0 3px;
-      border: 3px solid color-vary;
-      color: #ffffff;
-      background-color: color-darker;
+      text-decoration: none;
       cursor: pointer;
+      transition-duration: 0.2s;
+      //line-height: 18px!important;
+      //margin: 0 8px 0 4px;
+      //padding: 0.5em 1em;
+      //display: inline-block;
+      //border-radius: 10%;
+      //border: 4px solid color-vary;
+      //color: color-dark;
+      //background-color: color-lighter;
+      //cursor: pointer;
+      &:hover
+        background-color: #008CBA;
+        color: white;
+        opacity: 1;
+        font-weight: bold;
+        border: none;
 
 .hijikoto_options
   line-height: 2em
