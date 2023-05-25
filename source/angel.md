@@ -8,5 +8,5 @@ required:
 ---
 
 <script language="javascript" type="text/javascript">
-window.location.href="./bxxxx";
+window.location.href="./nothing";
 </script>
