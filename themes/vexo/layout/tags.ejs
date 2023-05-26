@@ -5,7 +5,7 @@
 <main class="app-body">
   <div id="tag-cloud">
     <% site.tags.map(function(tag, index) { %>
-      <a class="tag<%= Math.round(Math.random() * 3) %>" data-name="tag-<%= tag.name %>">
+      <a class="tag<%= Math.floor(Math.random() * 4) %>" data-name="tag-<%= tag.name %>">
         <%= tag.name %>
       </a>
     <% }) %>

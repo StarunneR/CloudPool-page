@@ -5,7 +5,7 @@
 <main class="app-body">
     <div id="category-cloud">
         <% site.categories.map(function(category, index) { %>
-        <a class="category<%= Math.round(Math.random() * 4) %>"
+        <a class="category<%= Math.floor(Math.random() * 3) %>"
             data-name="category-<%= category.name %>"><%= category.name %></a>
         <% }) %>
     </div>
