@@ -1,7 +1,8 @@
 ---
 title: 常用软件推荐
 author: m1
-date: 2022-12-12
+date: 2023-05-29
+date5: 2022-12-12
 date4: 2022-10-16 
 date3: 2022-09-01
 date2: 2022-03-23
@@ -79,6 +80,19 @@ qrcode:
 3. **[Bandizip](http://www.bandisoft.com/bandizip/)** & [v6.x旧版本](http://www.bandisoft.com/bandizip/old/6/)
 
     老牌压缩软件。可使用 v6.x 版本，最新版本 v7.x 含有广告。
+
+#### 下载工具
+
+1. **[Internet Download Manager (IDM)](https://www.internetdownloadmanager.com/)**
+
+    非常好用的下载工具，有浏览器网页视频嗅探与一键下载功能
+    收费软件，30天试用期，虽然网上有破解版，但还是建议购买，因为更新频繁，视频嗅探功能可能失效
+
+    淘宝搜素 Internet Download Manager 即可，哪家便宜买哪家。一年许可：约35元，三年更新+
+
+2. **[Motrix](https://motrix.app/)**
+
+    另一款非常好用的下载工具，可用于下载磁力链接，替代渣雷，还免费
 
 #### [截图工具 Snipaste](https://zh.snipaste.com/)
 
