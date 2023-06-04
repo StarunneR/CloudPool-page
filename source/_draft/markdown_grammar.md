@@ -30,12 +30,10 @@
 
     code  黑色小字，分段，行前加入制表符 Tab
 
-
 * Unordered List1  
 * Unordered List2  
 可以改 * 为 + 或 -
 需前空行
-
 
 1. Ordered List1
 2. Ordered List2

@@ -15,6 +15,12 @@ qrcode:
 ---
 ## 电脑
 
+> 软件包名称后缀说明：
+> AMD64 = x86_64 = x86-64 = x64 : 常见64位处理器（Windows）（兼容32位程序）
+> IA-32 = x86 : 32位处理器
+> ARM64 = AArch64 = ARMv8/ARMv9 : 常见64位移动端处理器
+> ARM = ARM32 = ARMv7 : 32位移动端处理器
+
 ### 浏览器
 
 * [Chrome 浏览器 google.cn](https://www.google.cn/intl/zh-CN/chrome/) 或 [google.com](https://www.google.com/intl/zh-CN/chrome/)
@@ -63,11 +69,11 @@ qrcode:
 
 #### 压缩软件
 
-1. **[7-zip](https://sparanoid.com/lab/7z/)**
+1. **[7-zip](https://sparanoid.com/lab/7z/)** (推荐)
 
     老牌开源压缩软件，带有CRC SHA校验功能。
 
-    **[7-Zip zstd](https://github.com/mcmilk/7-Zip-zstd)**
+    **[7-Zip zstd](https://github.com/mcmilk/7-Zip-zstd)** (推荐)
 
     7-zip增强版，更多的压缩算法，增加了MD5及更多的校验功能。
 
