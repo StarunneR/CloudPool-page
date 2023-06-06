@@ -1,6 +1,6 @@
 <% if (theme.local_search.enable == true) { %>
     <%- partial('_plugin/search/localsearch_view.ejs') %>
-    <link rel="preload" as="fetch" href="<%- '/' + theme.search.path %>" crossorigin="anonymous">
+    <link prefetch rel="preconnect" as="fetch" href="<%- '/' + theme.search.path %>" crossorigin="anonymous">
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         // Popup Window

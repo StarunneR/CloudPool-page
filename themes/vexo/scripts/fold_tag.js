@@ -1,7 +1,10 @@
 /* global hexo */
-// Usage: {% fold Title %} Content {% endfold %}
+// Usage: {% fold ['TitleWord1','TitleWord2'] %} or {% fold ['TitleWord1 TitleWord2'] %}
+//        Content 
+//        {% endfold %}
 function fold(args, content) {
-  let title = args.join(' ');
+  let title = args.join(' '); 
+  // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join
   if (!title) {title = "点击显示/隐藏"};
   return '<div class="fold"><div class="fold_hider"><div class="close hider_title">' +
     hexo.render.renderSync({
