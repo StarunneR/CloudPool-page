@@ -5,25 +5,13 @@ main: 我们都是年轻人
 date: 2099-12-31
 ---
 
-<link rel="stylesheet" href="/css/APlayer.min.css">
-<div id="aplayer"></div>
-<script src="/js/APlayer.min.js"></script>
-<script>
-    const ap = new APlayer({
-    container: document.getElementById('aplayer'),
-    lrcType: 3,
-    loop: 'none',
-    audio: [{
-        name: 'What Would I Change It To',
-        artist: 'Avicii (feat. AlunaGeorge)',
-        url: 'What_Would_I_Change_It_To.m4a',
-        // url: 'https://lc-gluttony.s3.amazonaws.com/M2JD6yGQhefh/mcUHVphKl4kAj0B2gtvW3WEGfJ2RXm18/05_What_Would_I_Change_It_To_%28feat._AlunaGeorge%29.m4a',
-        // url: 'http://pan.zhuochi.org/CloudShare/Music/05_What_Would_I_Change_It_To_(feat._AlunaGeorge).m4a',
-        cover: 'What_Would_I_Change_It_To.jpg',
-        lrc: 'What_Would_I_Change_It_To.lrc',
-    }]
-});
-</script>
+{% aplayer %}
+name: 'What Would I Change It To',
+artist: 'Avicii (feat. AlunaGeorge)',
+url: 'What_Would_I_Change_It_To.m4a',
+cover: 'What_Would_I_Change_It_To.jpg',
+lrc: 'What_Would_I_Change_It_To.lrc',
+{% endaplayer %}
 
 ---
 
@@ -134,6 +122,8 @@ CloudPool浊池是由年轻人管理的博客，十分感谢你的关注。使�
     23.4.22 改善搜索相关CSS样式，改善页面CSS,JS加载顺序，更新waline至2.15.1，优化config.yml
     23.4.26 猫猫带着他的女朋友回来了，他还会说话了
     23.5.15 one页面加入句子类型选择功能
+    23.6.5 搜索功能完善，加入任意页面回车跳转功能
+    23.6.6 aplayer相关代码初步优化，使用hexo.extend.tag.register功能
 ---
 
 <!--    备注：各大静态网站服务对比

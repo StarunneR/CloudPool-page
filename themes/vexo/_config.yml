@@ -48,7 +48,10 @@ local_search:
   ##preload: true
   root: ''
   trigger: auto
+  unescape: false
   placeholder: Anything...  今天想看什么w
+  top_n_per_article: 1
+
 
 # hexo-generator-search
 search:

@@ -1,9 +1,9 @@
 function tag() {
-    var tag = location.hash.replace('#', '');
-    if (tag) {
-        var tagId = "#tag-" + tag;
-        $("html, body").animate({
-            scrollTop: $(tagId).offset().top
-        }, 400);
-    }
+  var tag = location.hash.replace('#', '');
+  if (tag) {
+    var tagId = "#tag-" + tag;
+    $("html, body").animate({
+        scrollTop: $(tagId).offset().top
+    }, 400);
+  }
 }
