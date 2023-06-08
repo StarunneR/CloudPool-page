@@ -64,7 +64,7 @@ search:
   ##format: html
   ##format: striptags
 
-# Lazyload Image
+# hexo-lazyload-image
 lazyload:
   enable: true
   onlypost: true # optional
