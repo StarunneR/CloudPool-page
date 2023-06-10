@@ -9,7 +9,14 @@
     // qrcode
     let qr = new QRious({
         element: document.getElementById('share-qrcode'),
-        value: document.location.href
+        value: document.location.href,
+        background: '#E5E4E2',
+        backgroundAlpha: 0.8,
+        foreground: '#0096FF',
+        foregroundAlpha: 0.8,
+        level: 'L',
+        padding: 12, // pixels
+        //size: 500,
     })
 
     $("#share-qrcode").click(function () {
@@ -17,7 +24,7 @@
         let url = img.src
         let a = document.createElement('a')
         let down_event = new MouseEvent('click')
-        a.download = '<%= config.title %>-<%= page.title %>'
+        a.download = '<%- config.title %>-<%= page.title %>'
         a.href = url
         a.dispatchEvent(down_event)
     })
