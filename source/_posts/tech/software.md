@@ -15,11 +15,13 @@ qrcode:
 ---
 ## 电脑
 
+{% fold %}
 > 软件包名称后缀说明：
 > AMD64 = x86_64 = x86-64 = x64 : 常见64位处理器（Windows）（兼容32位程序）
 > IA-32 = x86 : 32位处理器
 > ARM64 = AArch64 = ARMv8/ARMv9 : 常见64位移动端处理器
 > ARM = ARM32 = ARMv7 : 32位移动端处理器
+{% endfold %}
 
 ### 浏览器
 
@@ -138,7 +140,7 @@ CAJ 转 PDF 转换器，写论文必备
 
 #### [PandaOCR](https://github.com/miaomiaosoft/PandaOCR.Pro)
 
-[OCR](https://baike.baidu.com/item/%E5%85%89%E5%AD%A6%E5%AD%97%E7%AC%A6%E8%AF%86%E5%88%AB)识别侬晓得伐啦
+[OCR](https://baike.baidu.com/item/%E5%85%89%E5%AD%A6%E5%AD%97%E7%AC%A6%E8%AF%86%E5%88%AB)侬晓得伐啦
 
 #### Office 365
 
@@ -181,6 +183,25 @@ CAJ 转 PDF 转换器，写论文必备
 [垃圾清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
 ~~可在[AppNee](https://appnee.com/fl-studio/)找到破解版下载链接。~~
 注册机：[CCleaner Pro 6.12.10490 + crack](https://rsload.net/download?a%3AaHR0cHM6Ly9mMy4xcnNsb2FkLnJ1L2xvYWQyLzA3NC9DQ2xlYW5lclByby5yYXI%3D)  来自 [rsload.net](https://rsload.net/soft/cleaner-disk/8306-ccleaner.html) [备份](https://pan.zhuochi.org/CloudShare/Software/cc612Patch22.rar)
+
+[驱动更新工具Driver Booster](https://www.iobit.com/en/driver-booster.php) [下载直链](https://cdn.iobit.com/dl/driver_booster_setup.exe)
+
+    Driver Booster（驱动加速器）是IObit公司推出的一款针对Windows操作系统的电脑的驱动程序更新工具。更新驱动可以提升电脑硬件性能，减少系统崩溃降低硬件冲突。该驱动加速器软件可以通过智能的检测引擎有效识别电脑上过期的驱动程式（如，显卡驱动，声卡驱动，网卡驱动，打印机驱动等），并将结果呈现出来供查看。您可以选择要更新的驱动，然后点击更新按钮，程序就会自动下载安装最新驱动。 —— Driver Booster  百度百科
+
+    注册码：
+    7A4A7-27FA2-BBDDB-CBE40 (328 Days) [OR] 3326C-4EAD0-A9290-EB740 (328 Days) [OR] EC714-E8FD8-CCB79-19140 (328 Days) [OR] 19AF0-E05BA-7613D-A2F40 (328 Days) [OR] 07CB7-C38C6-5B122-05440 (335 Days) [OR] 75B6C-62FB7-3A9A3-69740 (285 Days) [OR] 633AE-5926A-BB504-ED840 (256 Days) [OR] N5EB2-985MQ-WKPAU-PFKVS 
+
+    若下载驱动无网速，三种解决办法：
+    1. 设置本地代理服务器：菜单-设置-网络-自定义代{过}{滤}理设置-主机：填入 140.227.10.189 端口：3128
+    2. 改hosts：
+       127.0.0.1 asc55.iobit.com
+       127.0.0.1 is360.iobit.com
+       127.0.0.1 asc.iobit.com
+       127.0.0.1 pf.iobit.com
+    3. (推荐)修改DNS：1.0.0.1、1.1.1.1
+
+    Ref: https://theipfire.com/driver-booster-pro-9-free-license-key/
+         https://www.52pojie.cn/thread-1756715-1-1.html
 
 ---
 
