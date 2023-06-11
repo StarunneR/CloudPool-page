@@ -183,7 +183,7 @@ CAJ 转 PDF 转换器，写论文必备
 
 [垃圾清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
 ~~可在[AppNee](https://appnee.com/fl-studio/)找到破解版下载链接。~~
-注册机：[CCleaner Pro 6.12.10490 + crack](https://rsload.net/download?a%3AaHR0cHM6Ly9mMy4xcnNsb2FkLnJ1L2xvYWQyLzA3NC9DQ2xlYW5lclByby5yYXI%3D)  来自 [rsload.net](https://rsload.net/soft/cleaner-disk/8306-ccleaner.html) [备份](https://pan.zhuochi.org/CloudShare/Software/cc612Patch22.rar)
+注册机：[CCleaner Pro 6.12.10490 + crack下载](https://rsload.net/download?a%3AaHR0cHM6Ly9mMy4xcnNsb2FkLnJ1L2xvYWQyLzA3NC9DQ2xlYW5lclByby5yYXI%3D)  来自 [rsload.net](https://rsload.net/soft/cleaner-disk/8306-ccleaner.html) [备份](https://pan.zhuochi.org/CloudShare/Software/cc612Patch22.rar)
 
 [驱动更新工具Driver Booster](https://www.iobit.com/en/driver-booster.php) [下载直链](https://cdn.iobit.com/dl/driver_booster_setup.exe)
 
@@ -195,10 +195,10 @@ CAJ 转 PDF 转换器，写论文必备
     若下载驱动无网速，三种解决办法：
     1. 设置本地代理服务器：菜单-设置-网络-自定义代{过}{滤}理设置-主机：填入 140.227.10.189 端口：3128
     2. 改hosts：
-       127.0.0.1 asc55.iobit.com
-       127.0.0.1 is360.iobit.com
-       127.0.0.1 asc.iobit.com
-       127.0.0.1 pf.iobit.com
+      127.0.0.1 asc55.iobit.com
+      127.0.0.1 is360.iobit.com
+      127.0.0.1 asc.iobit.com
+      127.0.0.1 pf.iobit.com
     3. (推荐)修改DNS：1.0.0.1、1.1.1.1
 
     Ref: https://theipfire.com/driver-booster-pro-9-free-license-key/
