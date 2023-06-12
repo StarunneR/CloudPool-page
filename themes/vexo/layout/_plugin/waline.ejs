@@ -15,7 +15,7 @@
     mailError: '请填写正确的邮件地址',
     link: '网址',
     optional: '可选',
-    placeholder: '<%- page.placeholder %>' || '<%- config.comment.waline.placeholder %>',
+    placeholder: '<%- page.placeholder %>' || '<%- theme.comment.waline.placeholder %>',
     sofa: '来发评论吧~',
     submit: '提交',
     like: '喜欢',
@@ -62,16 +62,18 @@
 
   Waline.init({
     el: "#waline",
-    serverURL: "waline.voiiu.com",
-    appId: "<%- page.appId %>" || "<%- config.comment.waline.appId %>",
-    appKey: "<%- page.appKey %>" || "<%- config.comment.waline.appKey %>",
-    login: "disable",
+    serverURL: "<%- theme.comment.waline.serverURL %>",
+    appId: "<%- page.appId %>" || "<%- theme.comment.waline.appId %>",
+    appKey: "<%- page.appKey %>" || "<%- theme.comment.waline.appKey %>",
+    path:  "<%- page.pathname %>" || window.location.pathname,  // window.location.pathname.replace(/\/$/,''),
+    login: "disable",  // 'enable' || 'disable' || 'force'
     avatarCDN: "https://gravatar.loli.top/avatar/",
-    //avatar: '<%- config.comment.waline.avatar %>',
+    //avatar: '<%- theme.comment.waline.avatar %>',
     placeholder: "<%- page.placeholder %>",
+    pageSize: 10,
     meta: ["nick", "mail"],
     requiredMeta: ["<%- page.required %>"],
-    pageview: "<%- config.comment.waline.counting %>" && "<%- page.counting %>",
+    pageview: "<%- theme.comment.waline.counting %>" && "<%- page.counting %>",
     emoji: [
       "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
       "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
