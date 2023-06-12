@@ -52,7 +52,7 @@ qrcode:
 
 #### [火绒](https://www.huorong.cn/)
 
-很不错的一款**杀毒软件**
+很不错的一款~~杀毒软件~~**安全软件**
 ~~曾经看到有小道消息说最早是金山(?)的某员工看不惯母公司的行为，一气之下跑出来做了一个良心杀软~~
 
 #### [视频播放器 PotPlayer](http://potplayer.daum.net/?lang=zh_CN) + [皮肤](modern_x_for_potplayer_update_by_illequal_d9a1sdy.zip)
