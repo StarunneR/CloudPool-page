@@ -63,10 +63,12 @@ height: 200px;
 }
 */
 
-.checkbox:checked {
-    background:color-adja3;
-}
-.checkbox {
+.options_container
+  font-weight: bold
+  color: color-white
+  opacity: 0.8 !important
+  .checkbox 
+    padding: initial
     -webkit-appearance:none;
     -moz-appearance:none;
     outline: none;
@@ -75,34 +77,24 @@ height: 200px;
     background-color:#ffffff;
     border:solid 2px #dddddd;
     border-radius:50%;
-    margin:0;
-    padding:0;
     position:relative;
     display:inline-block;
     /*文字对齐方式*/
     vertical-align:middle;
     transition:background-color ease 0.1s;
-}
-.checkbox:checked::after {
-    content:'';
-    top:3px;
-    left:2.5px;
-    position:absolute;
-    border:#fff solid 3px;
-    border-top:none;
-    border-right:none;
-    height:6px;
-    width:10px;
-    transform:rotate(-45deg);
-}
-
-.options_container
-  font-weight: bold
-  color: color-white
-  line-height: 2em
-  opacity: 0.8 !important
-  .checkbox 
-    padding: initial
+    &:checked
+      background-color: color-adja3;
+      &::after
+        content:'';
+        top:3px;
+        left:2.5px;
+        position:absolute;
+        border:#fff solid 3px;
+        border-top:none;
+        border-right:none;
+        height:6px;
+        width:10px;
+        transform:rotate(-45deg);
   label
     padding: 0 1em 0 0.5em
   .options_control
@@ -112,7 +104,7 @@ height: 200px;
       border: none;
       color: color-dark;
       padding: 6px 15px;
-      margin: 0.5em 0.5em;
+      margin: 16px;
       border-radius: 10%;
       text-align: center;
       font-size: 16px;
@@ -136,6 +128,20 @@ height: 200px;
         color: white;
         opacity: 1;
         font-weight: bold;
-        border: none;
+  .checkbox {
+      -webkit-appearance:none;
+      -moz-appearance:none;
+      outline: none;
+      width:20px;
+      height:20px;
+      background-color:#ffffff;
+      border:solid 2px #dddddd;
+      border-radius:50%;
+      position:relative;
+      display:inline-block;
+      /*文字对齐方式*/
+      vertical-align:middle;
+      transition:background-color ease 0.1s;
+  }
 
 
