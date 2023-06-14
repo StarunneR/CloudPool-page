@@ -166,7 +166,7 @@ CAJ 转 PDF 转换器，写论文必备
 
 ### 其他工具
 
-<!-- - [Dism++](https://www.chuyu.me/zh-Hans/index.html) 实用系统管理小工具集合-->
+[Dism++](https://github.com/Chuyu-Team/Dism-Multi-language/releases) 实用系统管理小工具集合
 
 [图吧工具箱](http://www.tbtool.cn/) DIY爱好者的必备工具合集
 
@@ -178,8 +178,8 @@ CAJ 转 PDF 转换器，写论文必备
 
 <!-- - [AgentNEO](https://neoladder.org/) + [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg)-->
 
-<!-- - [ChipGenius v4.20.1107](ChipGenius_v4_20_1107_fix.rar)  可用于查看各接口协议版本（如判断是否正常运行USB3.1）  
-    来自 https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287 -->
+[ChipGenius v4.20.1107](ChipGenius_v4_20_1107_fix.rar)  可用于查看各接口协议版本（如判断是否正常运行USB3.1）  
+Ref: <https://www.mydigit.cn/forum.php?mod=viewthread&tid=209287>
 
 [垃圾清理工具 CCleaner](https://www.ccleaner.com/ccleaner/download)
 ~~可在[AppNee](https://appnee.com/fl-studio/)找到破解版下载链接。~~
@@ -203,6 +203,10 @@ CAJ 转 PDF 转换器，写论文必备
 
     Ref: https://theipfire.com/driver-booster-pro-9-free-license-key/
          https://www.52pojie.cn/thread-1756715-1-1.html
+
+[Wi-Fi Scanner](https://lizardsystems.com/wi-fi-scanner/)  一款功能强大的WIFI扫描工具，能够帮助用户轻松完成各种信号的扫描。可用于获取WiFi详细参数、信号强度等信息
+注册名：任意
+注册码：000GQ8-2BC30B-YF5W1N-K0Q3Q8-4MZ2N5-R88EKC
 
 ---
 
