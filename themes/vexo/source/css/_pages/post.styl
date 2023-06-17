@@ -102,6 +102,7 @@
     .authorlogo
       width: 1.4em
       border-radius: 100%
+  // Markdown CSS
   .markdown-content
     overflow-y: auto
     overflow-x: hidden
@@ -261,6 +262,8 @@
         a
           transition:color .13s linear
           color: lightblue
+  .post-tags
+    margin-top: 1em
   .nav-container
     width: 100%
     padding-top: 1.5em
@@ -387,22 +390,22 @@
       color: $main-color
       transform: rotate(-360deg)
 
-.aplayer.aplayer-withlrc
-  .aplayer-info
-    height: 106px !important
-    margin-left: 106px !important
-  .aplayer-pic
-    height: 106px !important
-    width: 106px !important
-
-.aplayer .aplayer-lrc
-  height: 48px !important
-  .aplayer-lrc-contents
-    margin-top: 12px !important
-    p
-      opacity: .5 !important
-    .aplayer-lrc-current
-      opacity: 1 !important
+.aplayer
+  &.aplayer-withlrc
+    .aplayer-info
+      height: 106px !important
+      margin-left: 106px !important
+    .aplayer-pic
+      height: 106px !important
+      width: 106px !important
+  .aplayer-lrc
+    height: 48px !important
+    .aplayer-lrc-contents
+      margin-top: 12px !important
+      p
+        opacity: .5 !important
+      .aplayer-lrc-current
+        opacity: 1 !important
 
 
 
