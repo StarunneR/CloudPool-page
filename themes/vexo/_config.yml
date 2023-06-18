@@ -71,7 +71,7 @@ search:
   format: html
   ##limit: 10000
   content: true
-  ##template: ./search.xml
+  template: ./search.xml
   ##format: html
   ##format: striptags
 
