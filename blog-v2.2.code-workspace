@@ -11,6 +11,12 @@
     },
     {
       "path": "../live2d-widget"
+    },
+    {
+      "path": "../hexo-theme-butterfly"
+    },
+    {
+      "path": "../hexo-theme-vexo"
     }
   ],
 	"settings": {}
