@@ -9,11 +9,13 @@ main: Songs
 ---
 
 {% aplayer %}
-name: 'What Would I Change It To',
-artist: 'Avicii (feat. AlunaGeorge)',
-url: 'What_Would_I_Change_It_To.m4a',
-cover: 'What_Would_I_Change_It_To.jpg',
-lrc: 'What_Would_I_Change_It_To.lrc',
+{
+name: '',
+artist: '',
+url: '',
+cover: '',
+lrc: '',
+},
 {% endaplayer %}
 
 ---

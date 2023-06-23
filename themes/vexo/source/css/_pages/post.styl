@@ -129,16 +129,42 @@
         border-radius: 2px
         white-space: nowrap
     h1
-      font-size: 2.0em
+      font-size: 2.5em
+      padding: 1em 0 0 0
+      border-bottom: 2px solid color-contrast2
+      &::first-letter
+        color: #333
+        font-size: 1.5em
+        float: left;
+        text-transform: capitalize
     h2
-      font-size: 1.7em
+      font-size: 1.8em
+      background: linear-gradient( 90deg, rgba(125, 249, 255, 0.6) , rgba(255, 255, 255, 0.6))
+      border-left:20px color-vary2 solid
+      color: #444
+      line-height: 28px
+      padding: 15px 0px 15px 20px
+      &::first-letter
+        color: #333
+        font-size: 1.5em
+        float:left
+        text-transform: capitalize
     h3
-      margin: 1em 0
+      padding: 1em 0
+      color: color-dark
       font-size: 1.5em
-      padding-bottom: .3em
+      padding: 10px 0px 10px 10px
       border-bottom: 1px solid color-border
+      border-left: 12px color-vary3 solid
+      &:before
+        background: linear-gradient( 90deg, rgba(246, 114, 128, 0.6) , rgba(255, 255, 255, 0.6))
+        color: color-darker
+        margin-right: 5px
+        //font-size: 1.2em
+        font-weight: 700
+
     h4
-      margin: 1em 0
+      padding: 1em 0
       font-size: 1.2em
       &:before
         content: "#";
@@ -148,7 +174,6 @@
         font-weight: 700
     h5
       font-size: 1.2em
-      margin: .8em 0
     h6
       font-size: 1.0em
     a
@@ -389,27 +414,6 @@
       border: 1px solid $main-color
       color: $main-color
       transform: rotate(-360deg)
-
-.aplayer
-  margin-bottom: 20px !important
-  font-size: initial
-  font-family: initial
-  font-weight: initial
-  &.aplayer-withlrc
-    .aplayer-info
-      height: 106px !important
-      margin-left: 106px !important
-    .aplayer-pic
-      height: 106px !important
-      width: 106px !important
-  .aplayer-lrc
-    height: 48px !important
-    .aplayer-lrc-contents
-      margin-top: 12px !important
-      p
-        opacity: .5 !important
-      .aplayer-lrc-current
-        opacity: 1 !important
 
 
 

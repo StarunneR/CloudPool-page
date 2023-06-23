@@ -96,6 +96,22 @@ lrc: 'cne/情歌.lrc',
 }
 {% endaplayer %}
 
+草東沒有派對首張錄音室專輯，於2016年2月發行。
+
+##### 如常  2020
+
+{% aplayer 3 %}
+{
+name: '如常 SAME OLD, SAME OLD',
+artist: '草東沒有派對',
+url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/cdmypd/EP/如常.m4a',
+cover: 'EP/cover.jpg',
+lrc: 'EP/如常.lrc',
+}
+{% endaplayer %}
+
+祝謹守的那些許美好一切如常，願所有不忍與不堪有天止於無常。
+
 ##### 瓦合 THE CLOD  2023
 
 {% aplayer 2 %}
@@ -132,14 +148,14 @@ name: '孑 Interlude',
 artist: '草東沒有派對',
 url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/cdmypd/wh/孑.m4a',
 cover: 'wh/cover.jpg',
-lrc: 'wh/孑.lrc',
+lrc: '',
 },
 {
 name: '白日夢 Daydream',
 artist: '草東沒有派對',
 url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/cdmypd/wh/白日梦.m4a',
 cover: 'wh/cover.jpg',
-lrc: 'wh/白日梦.lrc',
+lrc: '',
 },
 {
 name: '床 Lie',
@@ -177,6 +193,8 @@ cover: 'wh/cover.jpg',
 lrc: 'wh/但.lrc',
 }
 {% endaplayer %}
+
+草東沒有派對第二張錄音室專輯，於2023年5月發行。
 
 ---
 
