@@ -8,13 +8,15 @@ main: Songs
 ---
 
 {% aplayer %}
+
 {
 name: '',
 artist: '',
-url: '',
-cover: '',
-lrc: '',
+url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/.m4a',
+cover: '.jpg',
+lrc: '.lrc',
 },
+
 {% endaplayer %}
 
 ---
