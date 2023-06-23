@@ -4,7 +4,7 @@ date: 2023-06-21
 author: m1
 tags: 音乐
 categories: 浊音
-main: 2 Albums, 12 + 11 songs
+main: 2 albums, 12 + 11 songs & 1 EP
 ---
 
 ##### 醜奴兒(丑奴儿)  2016
