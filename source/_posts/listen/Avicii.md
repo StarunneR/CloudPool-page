@@ -4,7 +4,7 @@ date: 2023-06-24
 author: m1
 tags: 音乐
 categories: 浊音
-main: 5 albums, 12 + 11 songs & 1 EP
+main: 5 albums, 15 + 8 + 16 + 6 + 12 songs
 ---
 
 ### True 2013
