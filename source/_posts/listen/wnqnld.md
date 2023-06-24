@@ -4,7 +4,7 @@ date: 2023-06-23
 author: m1
 tags: 音乐
 categories: 浊音
-main: 2 albums, 9 + 8 Songs
+main: 2 Albums, 9 + 8 Songs
 ---
 
 #### 万年青年旅店 2010

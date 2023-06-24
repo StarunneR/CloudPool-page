@@ -4,7 +4,7 @@ date: 2023-06-17
 author: m1
 tags: 音乐
 categories: 浊音
-main: Full Album, 18 songs
+main: Full Album, 18 Songs
 ---
 
 {% aplayer %}
