@@ -7,123 +7,123 @@ categories: 浊音
 main: 2 Albums, 9 + 8 Songs
 ---
 
-#### 万年青年旅店 2010
+### 万年青年旅店 2010
 
 {% aplayer 1 %}
 {
 name: '狗尿馆',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/狗尿馆.m4a',
+url: 'HOST/wnqnld/wnqnld/狗尿馆.m4a',
 cover: 'wnqnld/cover.png',
 lrc: '',
 },
 {
 name: '不万能的喜剧',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/不万能的喜剧.m4a',
+url: 'HOST/wnqnld/wnqnld/不万能的喜剧.m4a',
 cover: 'wnqnld/cover.png',
 lrc: 'wnqnld/不万能的喜剧.lrc',
 },
 {
 name: '揪心的玩笑与漫长的白日梦',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/揪心的玩笑与漫长的白日梦.m4a',
+url: 'HOST/wnqnld/wnqnld/揪心的玩笑与漫长的白日梦.m4a',
 cover: 'wnqnld/cover.png',
 lrc: 'wnqnld/揪心的玩笑与漫长的白日梦.lrc',
 },
 {
 name: '大石碎胸口',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/大石碎胸口.m4a',
+url: 'HOST/wnqnld/wnqnld/大石碎胸口.m4a',
 cover: 'wnqnld/cover.png',
 lrc: 'wnqnld/大石碎胸口.lrc',
 },
 {
 name: '洋鸟消夏录',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/洋鸟消夏录.m4a',
+url: 'HOST/wnqnld/wnqnld/洋鸟消夏录.m4a',
 cover: 'wnqnld/cover.png',
 lrc: 'wnqnld/洋鸟消夏录.lrc',
 },
 {
 name: '秦皇岛',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/秦皇岛.m4a',
+url: 'HOST/wnqnld/wnqnld/秦皇岛.m4a',
 cover: 'wnqnld/cover.png',
 lrc: 'wnqnld/秦皇岛.lrc',
 },
 {
 name: '十万嬉皮',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/十万嬉皮.m4a',
+url: 'HOST/wnqnld/wnqnld/十万嬉皮.m4a',
 cover: 'wnqnld/cover.png',
 lrc: 'wnqnld/十万嬉皮.lrc',
 },
 {
 name: '杀死那个石家庄人',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/wnqnld/杀死那个石家庄人.m4a',
+url: 'HOST/wnqnld/wnqnld/杀死那个石家庄人.m4a',
 cover: 'wnqnld/cover.png',
 lrc: 'wnqnld/杀死那个石家庄人.lrc',
 }
 {% endaplayer %}
 
-#### 冀西南林路行 2020
+### 冀西南林路行 2020
 
 {% aplayer 2 %}
 {
 name: '早',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/早.m4a',
+url: 'HOST/wnqnld/jxnllx/早.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/早.lrc',
 },
 {
 name: '泥河',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/泥河.m4a',
+url: 'HOST/wnqnld/jxnllx/泥河.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/泥河.lrc',
 },
 {
 name: '平等云雾',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/平等云雾.m4a',
+url: 'HOST/wnqnld/jxnllx/平等云雾.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/平等云雾.lrc',
 },
 {
 name: '采石',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/采石.m4a',
+url: 'HOST/wnqnld/jxnllx/采石.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/采石.lrc',
 },
 {
 name: '山雀',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/山雀.m4a',
+url: 'HOST/wnqnld/jxnllx/山雀.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/山雀.lrc',
 },
 {
 name: '绕越',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/绕越.m4a',
+url: 'HOST/wnqnld/jxnllx/绕越.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/绕越.lrc',
 },
 {
 name: '河北墨麒麟',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/河北墨麒麟.m4a',
+url: 'HOST/wnqnld/jxnllx/河北墨麒麟.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/河北墨麒麟.lrc',
 },
 {
 name: '郊眠寺',
 artist: '万能青年旅店',
-url: 'https://cps3storage.s3.ap-southeast-1.amazonaws.com/wnqnld/jxnllx/郊眠寺.m4a',
+url: 'HOST/wnqnld/jxnllx/郊眠寺.m4a',
 cover: 'jxnllx/cover.png',
 lrc: 'jxnllx/郊眠寺.lrc',
 }
@@ -131,7 +131,7 @@ lrc: 'jxnllx/郊眠寺.lrc',
 
 ---
 
-### Wiki：
+### Wiki
 
 万能青年旅店，是中国石家庄的一支独立摇滚乐队，主要由董亚千、史立、姬赓和冯江等多名成员组成，其成员流动性较大。乐队成立时叫做The Nico，在2002年时更改为现名称。2010年出版首张同名专辑《万能青年旅店》。时隔十年后，在2020年出版第二张专辑《冀西南林路行》。
 
@@ -146,7 +146,7 @@ lrc: 'jxnllx/郊眠寺.lrc',
 2020年12月22日，乐队发行第二张录音室专辑《冀西南林路行》。专辑线上发售21分钟后即突破五万张销量。
 2021年9月，成员姬赓入选石家庄市政府特殊津贴专家。
 
-### Baidu：
+### Baidu
 
 万能青年旅店，中国内地摇滚乐队，由主唱兼吉他手董亚千、贝斯手姬赓、小号手史立以及鼓手杨友耕组成
 。

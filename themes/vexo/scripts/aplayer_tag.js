@@ -4,7 +4,7 @@ function aplayer(aplayerId, content) {
   hexo.render.renderSync({
     text: content,
     engine: ''
-  }).replace(/<-HOST->/g, hexo.theme.config.aplayer.host) +
+  }).replace(/HOST/g, hexo.theme.config.aplayer.host) +
   ']});</script>'
 }
 hexo.extend.tag.register('aplayer', aplayer, {ends:true,async:true});
