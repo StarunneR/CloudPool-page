@@ -223,7 +223,11 @@
         height: 15px
         font-weight: 500
     > table
-      width: 100%
+      width 100%
+      @media m-mobile
+        width 100%
+        //display: inline-flex
+        overflow: scroll
       thead
         background-color: color-primary
         border-top-width: 1px
