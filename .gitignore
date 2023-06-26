@@ -6,4 +6,4 @@ db.json
 public/
 * - 副本.*
 .DS_Store
-dist
+dist/
