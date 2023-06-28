@@ -1,15 +1,17 @@
 ---
 title: Imagine Dragons
-date: 2023-06-26
+date: 2023-06-28
 author: m1
 tags: 音乐
 categories: 浊音
-main: Songs
+main: 5 Albums, 131 Songs
 ---
 
 ### Night Visions 2012
 
-{% aplayer 1 %}
+#### CD1
+
+{% aplayer 1_1 %}
 {
 name: 'Radioactive',
 artist: 'Imagine Dragons',
@@ -48,9 +50,9 @@ lrc: 'Night_Visions/On Top Of The World.lrc',
 {
 name: 'Amsterdam',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/Night_Visions/.m4a',
+url: 'HOST/Imagine_Dragons/Night_Visions/Amsterdam.m4a',
 cover: 'Night_Visions/cover.jpg',
-lrc: 'Night_Visions/.lrc',
+lrc: 'Night_Visions/Amsterdam.lrc',
 },
 {
 name: 'Hear Me',
@@ -83,9 +85,9 @@ lrc: 'Night_Visions/Underdog.lrc',
 {
 name: 'Underdog',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/Night_Visions/.m4a',
+url: 'HOST/Imagine_Dragons/Night_Visions/Underdog.m4a',
 cover: 'Night_Visions/cover.jpg',
-lrc: 'Night_Visions/.lrc',
+lrc: 'Night_Visions/Underdog.lrc',
 },
 {
 name: 'Nothing Left To Say / Rocks (Medley)',
@@ -93,7 +95,12 @@ artist: 'Imagine Dragons',
 url: 'HOST/Imagine_Dragons/Night_Visions/Nothing Left To Say - Rocks (Medley).m4a',
 cover: 'Night_Visions/cover.jpg',
 lrc: 'Night_Visions/Nothing Left To Say - Rocks (Medley).lrc',
-},
+}
+{% endaplayer %}
+
+#### CD2
+
+{% aplayer 1_2 %}
 {
 name: 'Cha-Ching (Till We Grow Older)',
 artist: 'Imagine Dragons',
@@ -126,35 +133,35 @@ lrc: 'Night_Visions/Round And Round.lrc',
 name: 'The River',
 artist: 'Imagine Dragons',
 url: 'HOST/Imagine_Dragons/Night_Visions/The River.m4a',
-cover: 'cover.jpg',
+cover: 'Night_Visions/cover.jpg',
 lrc: 'Night_Visions/The River.lrc',
 },
 {
 name: 'America',
 artist: 'Imagine Dragons',
 url: 'HOST/Imagine_Dragons/Night_Visions/America.m4a',
-cover: 'cover.jpg',
+cover: 'Night_Visions/cover.jpg',
 lrc: 'Night_Visions/America.lrc',
 },
 {
 name: 'Selene',
 artist: 'Imagine Dragons',
 url: 'HOST/Imagine_Dragons/Night_Visions/Selene.m4a',
-cover: 'cover.jpg',
+cover: 'Night_Visions/cover.jpg',
 lrc: 'Night_Visions/Selene.lrc',
 },
 {
 name: 'Cover Up',
 artist: 'Imagine Dragons',
 url: 'HOST/Imagine_Dragons/Night_Visions/Cover Up.m4a',
-cover: 'cover.jpg',
+cover: 'Night_Visions/cover.jpg',
 lrc: 'Night_Visions/Cover Up.lrc',
 },
 {
 name: 'I Don\'t Mind',
 artist: 'Imagine Dragons',
 url: 'HOST/Imagine_Dragons/Night_Visions/I Don\'t Mind.m4a',
-cover: 'cover.jpg',
+cover: 'Night_Visions/cover.jpg',
 lrc: 'Night_Visions/I Don\'t Mind.lrc',
 }
 {% endaplayer %}
@@ -311,378 +318,499 @@ lrc: 'Smoke_And_Mirrors/Who We Are.lrc',
 }
 {% endaplayer %}
 
-<!--
 ### Evolve 2017
 
 {% aplayer 3 %}
 {
-name: '',
+name: 'I Don\'t Know Why',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/I Don\'t Know Why.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/I Don\'t Know Why.lrc',
 },
 {
-name: '',
+name: 'Whatever It Takes',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Whatever It Takes.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Whatever It Takes.lrc',
 },
 {
-name: '',
+name: 'Believer',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Believer.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Believer.lrc',
 },
 {
-name: '',
+name: 'Walking The Wire',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Walking The Wire.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Walking The Wire.lrc',
 },
 {
-name: '',
+name: 'Rise Up',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Rise Up.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Rise Up.lrc',
 },
 {
-name: '',
+name: 'I\'ll Make It Up To You',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/I\'ll Make It Up To You.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/I\'ll Make It Up To You.lrc',
 },
 {
-name: '',
+name: 'Yesterday',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Yesterday.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Yesterday.lrc',
 },
 {
-name: '',
+name: 'Mouth Of The River',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Mouth Of The River.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Mouth Of The River.lrc',
 },
 {
-name: '',
+name: 'Thunder',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Thunder.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Thunder.lrc',
 },
 {
-name: '',
+name: 'Start Over',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Start Over.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Start Over.lrc',
 },
 {
-name: '',
+name: 'Dancing In The Dark',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Evolve/Dancing In The Dark.m4a',
+cover: 'Evolve/cover.jpg',
+lrc: 'Evolve/Dancing In The Dark.lrc',
 }
 {% endaplayer %}
 
-### Origin 2018
+### Origins 2018
 
 {% aplayer 4 %}
 {
-name: '',
+name: 'Natural',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Natural.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Natural.lrc',
+},
+{
+name: 'Boomerang',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Origins/Boomerang.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Boomerang.lrc',
+},
+{
+name: 'Machine',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Origins/Machine.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Machine.lrc',
+},
+{
+name: 'Cool Out',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Origins/Cool Out.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Cool Out.lrc',
+},
+{
+name: 'Bad Liar',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Origins/Bad Liar.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Bad Liar.lrc',
 },
 {
 name: '',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/.lrc',
 },
 {
-name: '',
+name: 'West Coast',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/West Coast.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/West Coast.lrc',
 },
 {
-name: '',
+name: 'Zero (From the Original Motion Picture "Ralph Breaks The Internet")',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Zero (From the Original Motion Picture \'\'Ralph Breaks The Internet\'\').m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Zero (From the Original Motion Picture \'\'Ralph Breaks The Internet\'\').lrc',
 },
 {
-name: '',
+name: 'Bullet In A Gun',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Bullet In A Gun.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Bullet In A Gun.lrc',
 },
 {
-name: '',
+name: 'Digital',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Digital.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Digital.lrc',
 },
 {
-name: '',
+name: 'Only',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Only.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Only.lrc',
 },
 {
-name: '',
+name: 'Stuck',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Stuck.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Stuck.lrc',
 },
 {
-name: '',
+name: 'Love',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Love.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Love.lrc',
 },
 {
-name: '',
+name: 'Birds',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Birds.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Birds.lrc',
 },
 {
-name: '',
+name: 'Burn Out',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Burn Out.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Burn Out.lrc',
 },
 {
-name: '',
+name: 'Real Life',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Origins/Real Life.m4a',
+cover: 'Origins/cover.jpg',
+lrc: 'Origins/Real Life.lrc',
 }
 {% endaplayer %}
 
 ### Mercury - Acts 1 & 2 2022
 
-{% aplayer 5 %}
+#### CD1
+
+{% aplayer 5_1 %}
 {
-name: '',
+name: 'Enemy (from the series Arcane League of Legends)',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Enemy (from the series Arcane League of Legends).m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Enemy (from the series Arcane League of Legends).lrc',
 },
 {
-name: '',
+name: 'My Life',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/My Life.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/My Life.lrc',
 },
 {
-name: '',
+name: 'Lonely',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Lonely.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Lonely.lrc',
 },
 {
-name: '',
+name: 'Wrecked',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Wrecked.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Wrecked.lrc',
 },
 {
-name: '',
+name: 'Monday',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Monday.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Monday.lrc',
 },
 {
-name: '',
+name: '#1',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/#1.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/#1.lrc',
 },
 {
-name: '',
+name: 'Easy Come Easy Go',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Easy Come Easy Go.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Easy Come Easy Go.lrc',
 },
 {
-name: '',
+name: 'Giants',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Giants.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Giants.lrc',
 },
 {
-name: '',
+name: 'It\'s Ok',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/It\'s Ok.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/It\'s Ok.lrc',
 },
 {
-name: '',
+name: 'Dull Knives',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Dull Knives.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Dull Knives.lrc',
 },
 {
-name: '',
+name: 'Follow You',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Follow You.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Follow You.lrc',
 },
 {
-name: '',
+name: 'Cutthroat',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Cutthroat.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Cutthroat.lrc',
 },
 {
-name: '',
+name: 'No Time For Toxic People',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/No Time For Toxic People.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/No Time For Toxic People.lrc',
 },
 {
-name: '',
+name: 'One Day',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
-},
-{
-name: '',
-artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/.m4a',
-cover: 'cover.jpg',
-lrc: '.lrc',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/One Day.lrc',
 }
 {% endaplayer %}
--->
+
+### CD2
+
+{% aplayer 5_2 %}
+{
+name: 'Bones',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Bones.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Bones.lrc',
+},
+{
+name: 'Symphony',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Symphony.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Symphony.lrc',
+},
+{
+name: 'Sharks',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Sharks.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Sharks.lrc',
+},
+{
+name: 'I Don\'t Like Myself',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/I Don\'t Like Myself.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/I Don\'t Like Myself.lrc',
+},
+{
+name: 'Blur',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Blur.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Blur.lrc',
+},
+{
+name: 'Higher Ground',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Higher Ground.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Higher Ground.lrc',
+},
+{
+name: 'Crushed',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Crushed.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Crushed.lrc',
+},
+{
+name: 'Take It Easy',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Take It Easy.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Take It Easy.lrc',
+},
+{
+name: 'Waves',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Waves.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Waves.lrc',
+},
+{
+name: 'I\'m Happy',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/I\'m Happy.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/I\'m Happy.lrc',
+},
+{
+name: 'Ferris Wheel',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Ferris Wheel.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Ferris Wheel.lrc',
+},
+{
+name: 'Peace Of Mind',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Peace Of Mind.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Peace Of Mind.lrc',
+},
+{
+name: 'Sirens',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Sirens.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Sirens.lrc',
+},
+{
+name: 'Tied',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Tied.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Tied.lrc',
+},
+{
+name: 'Younger',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Younger.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Younger.lrc',
+},
+{
+name: 'I Wish',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/I Wish.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/I Wish.lrc',
+},
+{
+name: 'Continual',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/Continual.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/Continual.lrc',
+},
+{
+name: 'They Don\'t Know You Like I Do',
+artist: 'Imagine Dragons',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/They Don\'t Know You Like I Do.m4a',
+cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
+lrc: 'Mercury_-_Acts_1_&_2/They Don\'t Know You Like I Do.lrc',
+}
+{% endaplayer %}
 
 ---
+
+### Baidu
+
+Imagine Dragons，美国独立摇滚乐队，由主唱丹·雷诺斯、贝斯手本·麦基、吉他手韦恩·瑟蒙和鼓手丹尼尔·普拉兹曼组成。
+2008年，该乐队在拉斯维加斯成立 [1]。2012年，发行首张录音室专辑《Night Visions》，专辑内的单曲《Radioactive》在公告牌百强单曲榜创下了87周的在榜纪录 [2] 。2014年，凭借歌曲《Radioactive》获得第56届格莱美奖最佳摇滚表演奖 [3] 。2015年，发行第二张录音室专辑《Smoke + Mirrors》 [5] 。2017年，发行第三张录音室专辑《Evolve》 [6] ，该专辑入围了第60届格莱美奖最佳流行专辑奖 [7] 。2018年，凭借歌曲《Thunder》入围第60届格莱美奖最佳流行团体或组合表演奖 [7] ；同年，发行第四张录音室专辑《Origins》 [10] 。2021年，推出第五张录音室专辑《Mercury - Act 1》 [50] 。2022年，发行第六张录音室专辑《Mercury – Act 2》 [52] 。
+
+#### 早年经历
+
+Imagine Dragons主唱丹·雷诺斯是拉斯维加斯人，2008年在犹他州遇到吉他手韦恩·瑟蒙。当时主唱丹正在上学，而韦恩则已经从伯克利音乐学院毕业。在经历过数次团队阵容变化之后，乐队在拉斯维加斯正式成立 [12]。
+
+#### 乐团成员
+
+丹·雷诺斯（Dan Reynolds） - 鼓手、主唱（2008年至今） [13-14]
+2022年9月，美国梦龙Imagine Dragons摇滚乐队主唱宣布离婚。 [53]
+本·麦基（Ben McKee） - 贝斯、合声（2009年至今）
+韦恩·瑟蒙（Wayne Sermon） - 吉他手、合声（2009年至今）
+丹尼尔·普拉兹曼（Daniel Platzman） - 鼓手、中提琴、合声（2011年至今）
+
+#### 演艺经历
+
+##### 2008年至2011年：创立早期
+
+2008年，发行首张EP《Speak to Me》。2009年9月，发行EP《Imagine Dragons》。2010年，发行EP《Hell and Silence》。
+2011年，发布了第四张EP《It's Time》；7月，Imagine Dragons早期成员安德鲁和布里特妮离开乐队，鼓手丹尼尔·普拉兹曼加入 [16]
+；11月，与新视镜唱片公司签约 [17]
+。
+2012年至2014年：《Night Visions》
+2012年，发行EP《Continued Silence》，专辑中的单曲《It’s Time》获得了双白金单曲认证 [18]
+；9月，Imagine Dragons发行了他们的首张录音室专辑《Night Visions》，该专辑发行首周以8.3万张的销量排到公告牌专辑榜第二位，同时还获得了公告牌另类专辑榜和摇滚专辑榜的双榜冠军以及美国、英国、澳大利亚等多个国家的双白金认证；专辑内的单曲《Radioactive》在美国公告牌百强单曲榜创下了87周的在榜纪录 [2] ，并获得了美国的钻石单曲销量认证 [19] ；Imagine Dragons凭借该歌曲获得了第56届格莱美奖最佳摇滚表演奖 [3]；11月，发行EP《Hear Me》。
+
+2013年2月，发行EP《The Archive》；4月，发行现场专辑《Live at Independent Records》；7月，发行现场专辑《Imagine Dragons Live： London Sessions》；11月，获得第41届全美音乐奖最受欢迎另类摇滚艺人奖 [20]
+；同年，Imagine Dragons还献唱了科幻动作电影《饥饿游戏2：星火燎原》的主题曲《Who We Are》，以及漫威电影《钢铁侠3》的插曲《Ready Aim Fire》 [21] ；同年，发行单曲《Demons》，电影《九层妖塔》选用了该歌曲作为主题曲 [22]。
+
+2014年2月，发行现场专辑《Night Visions Live》；5月，在公告牌音乐奖中获得了最佳组合或乐队奖、最佳摇滚艺人奖等五个奖项 [23] ；6月，为《变形金刚4》献唱电影主题曲《Battle Cry》 [4] ；8月，获得第16届青少年选择奖最佳摇滚乐队奖 [24] ；9月，为英雄联盟全球总决赛演唱主题曲《Warriors》 [1] ；11月，获得第42届全美音乐奖最受欢迎另类摇滚艺人奖 [25]。
+
+##### 2015年至2016年：《Smoke + Mirrors》
+
+2015年2月，发行第二张录音室专辑《Smoke + Mirrors》，收录了《I Bet My Life》、《Smoke And Mirrors》等歌曲，该专辑首周在美国卖出了19.5万张，取得美国公告牌专辑榜冠军 [5]；8月，Imagine Dragons的迷雾幻境巡回演唱会来到上海，这是他们中国内地的首演 [2] ；10月，发行公益单曲《I Was Me》 [26]。
+
+2016年6月，Imagine Dragons联手李尔·韦恩、维兹·卡利法、Logic、Ty Dolla Sign以及X Ambassadors献唱科幻电影《自杀小队》的插曲《Sucker for Pain》 [27]；同月，发行现场专辑《Smoke + Mirrors Live》；11月，为科幻电影《太空旅客》献唱主题曲《Levitate》 [28]。
+
+##### 2017年至2018年：《Evolve》
+
+2017年1月，发行另类摇滚风格单曲《Believer》 [29] ，该曲获得了第25届公告牌音乐奖最佳摇滚歌曲奖 [9] ；6月，发行第三张录音室专辑《Evolve》，收录了《Thunder》、《Whatever It Takes》等歌曲 [6] ，该专辑首周以14.7万的销量取得公告牌专辑榜亚军 [30] ，并获得第25届公告牌音乐奖最佳摇滚专辑奖 [9] ；11月，获得第45届全美音乐奖最受欢迎流行或摇滚组合奖 [8]。
+
+2018年1月17日，Imagine Dragons的进化之旅世界巡回演唱会来到上海站 [31]；1月28日，凭借专辑《Evolve》和歌曲《Thunder》分别入围第60届格莱美奖最佳流行专辑奖和最佳流行团体或组合表演奖 [7] ；同月，Imagine Dragons相关纪录片《信仰者》在第34届圣丹斯电影节首映，该片由唐·阿格特执导、汉斯·季默配乐 [32] ；2月28日，发行以“爱情”为主题的单曲《Next To Me》，被收录在专辑《Evolve》的改版中 [33] ；5月，获得第25届公告牌音乐奖最佳组合或乐队奖、最佳摇滚艺人等四个奖项 [9] ；6月，发行由Kygo制作的单曲《Born to Be Yours》 [34] 。
+
+##### 2018年至2020年：《Origins》
+
+2018年7月，发行为2018年ESPN大学足球联赛献唱的主题曲《Natural》 [35]；8月12月，获得第20届青少年选择奖最佳摇滚艺人奖 [36] ；9月18日，发行为动画电影《无敌破坏王2：大闹互联网》献唱的主题曲《Zero》 [37] ；10月31日，《Origins》的第三主打单曲《Machine》发行 [38] ；11月6日，发行《Origins》的第四主打单曲《Bad Liar》 [39] ；11月9日，发行第四张录音室专辑《Origins》 [10]。
+
+2019年1月7日，乐队在大学橄榄球季后赛全国锦标赛中场秀上带来了表演 [40]；5月1日，获得公告牌音乐奖最佳摇滚艺人奖 [11] ；6月1日，在2018-2019赛季欧洲冠军联赛总决赛开幕式上带来表演 [41]。
+
+##### 2021年至今：《Mercury - Act》
+
+2021年3月12日，发行收录了两首歌曲的EP《Follow You/Cutthroat》 [51]；9月3日，发行第五张录音室专辑《Mercury - Act 1》 [50] ；10月28日，联手说唱歌手JID献唱的英雄联盟首部动画剧集《英雄联盟：双城之战》全球主题曲《Enemy》（宿敌）发行 [49]。
+
+2022年6月1日，发行第六张录音室专辑《Mercury – Act 2》 [52]；同时，发行合辑《Mercury – Acts 1 & 2》 [52] 。
+
+[网易云音乐](https://music.163.com/#/artist?id=94779)

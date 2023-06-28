@@ -14,7 +14,7 @@ catalog:
 main: Windows软件
 qrcode: 
 ---
-## 电脑
+## Windows
 
 {% fold %}
 > 软件包名称后缀说明：

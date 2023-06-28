@@ -1,6 +1,6 @@
 function aplayer(aplayerId, content) {
-  return '<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css"><div id="aplayer' + aplayerId + '"></div><script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>' +
-  '<script>const ap' + aplayerId + ' = new APlayer({container: document.getElementById("aplayer' + aplayerId + '"),lrcType: 3,loop: "all",mutex: true,preload:"auto",audio: [' +
+  return '<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css"><div id="aplayer' + String(aplayerId) + '"></div><script src="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>' +
+  '<script>const ap' + String(aplayerId) + ' = new APlayer({container: document.getElementById("aplayer' + String(aplayerId) + '"),lrcType: 3,loop: "all",mutex: true,preload:"auto",audio: [' +
   hexo.render.renderSync({
     text: content,
     engine: ''
