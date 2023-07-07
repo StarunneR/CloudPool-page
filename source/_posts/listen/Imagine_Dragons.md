@@ -553,9 +553,9 @@ lrc: 'Mercury_-_Acts_1_&_2/Monday.lrc',
 {
 name: '\#1',
 artist: 'Imagine Dragons',
-url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/\#1.m4a',
+url: 'HOST/Imagine_Dragons/Mercury_-_Acts_1_&_2/%231.m4a',
 cover: 'Mercury_-_Acts_1_&_2/cover.jpg',
-lrc: 'Mercury_-_Acts_1_&_2/#1.lrc',
+lrc: 'Mercury_-_Acts_1_&_2/%231.lrc',
 },
 {
 name: 'Easy Come Easy Go',
