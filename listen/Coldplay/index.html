@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="CloudPool浊池是由年轻人管理的博客">
+  <meta name="keyword" content="浊池, CloudPool, CloudPool浊池">
+  
+  <link rel="shortcut icon" type="image/ico" href="/images/cloudpool-favicon.ico">
+  
+  <title>
+    
+      Coldplay
+    
+  </title>
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />-->
+  <link href="//cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+  <!--<link href="//cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"/>-->
+  <link href="//cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+  <!--<link href="//cdn.bootcdn.net/ajax/libs/waline/2.15.6/waline.min.css" rel="stylesheet">-->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <!-- JS -->
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <!--<script type="text/javascript" src="//cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>-->
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" maxlength="80"
+                    placeholder="Anything...  今天想看什么w" spellcheck="false"
+                    type="" class="search-input">
+            </div>
+            <span class="popup-btn-go">
+                <i class="fa-solid fa-arrow-circle-right"></i>
+            </span>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+        </div>
+        <div id="search-result" class="search-result-container">
+            <div id="no-result" class="no-result">
+                <i class="fa-solid fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+  <link rel="prefetch" href="/search.xml" crossorigin="anonymous"> 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Popup Window
+      let isfetched = false;
+      let datas;
+      let isXml = true;
+      // Search DB path
+      let searchPath = 'search.xml'; //CONFIG.search.path
+      if (searchPath.length === 0) {
+        searchPath = 'search.xml';
+      } else if (searchPath.endsWith('json')) {
+        isXml = false;
+      }
+      const input = document.querySelector('.search-input');
+      const resultContent = document.getElementById('search-result');
+
+      const getIndexByWord = (word, text, caseSensitive) => {
+        if ('false' == false) { // CONFIG.localsearch.unescape = false
+          let div = document.createElement('div');
+          div.innerText = word;
+          word = div.innerHTML;
+        }
+        let wordLen = word.length;
+        if (wordLen === 0) return [];
+        let startPosition = 0;
+        let position = [];
+        let index = [];
+        if (!caseSensitive) {
+          text = text.toLowerCase();
+          word = word.toLowerCase();
+        }
+        while ((position = text.indexOf(word, startPosition)) > -1) {
+          index.push({ position, word });
+          startPosition = position + wordLen;
+        }
+        return index;
+      };
+
+      // Merge hits into slices
+      const mergeIntoSlice = (start, end, index, searchText) => {
+        let item = index[index.length - 1];
+        let { position, word } = item;
+        let hits = [];
+        let searchTextCountInSlice = 0;
+        while (position + word.length <= end && index.length !== 0) {
+          if (word === searchText) {
+            searchTextCountInSlice++;
+          }
+          hits.push({
+            position,
+            length: word.length
+          });
+          let wordEnd = position + word.length;
+
+          // Move to next position of hit
+          index.pop();
+          while (index.length !== 0) {
+            item = index[index.length - 1];
+            position = item.position;
+            word = item.word;
+            if (wordEnd > position) {
+              index.pop();
+            } else {
+              break;
+            }
+          }
+        }
+        return {
+          hits,
+          start,
+          end,
+          searchTextCount: searchTextCountInSlice
+        };
+      };
+
+      // Highlight title and content
+      const highlightKeyword = (text, slice) => {
+        let result = '';
+        let prevEnd = slice.start;
+        slice.hits.forEach(hit => {
+          result += text.substring(prevEnd, hit.position);
+          let end = hit.position + hit.length;
+          result += `<b class="search-keyword">${text.substring(hit.position, end)}</b>`;
+          prevEnd = end;
+        });
+        result += text.substring(prevEnd, slice.end);
+        return result;
+      };
+
+      const inputEventFunction = () => {
+        if (!isfetched) return;
+        let searchText = input.value.trim().toLowerCase();
+        let keywords = searchText.split(/[-\s]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        let resultItems = [];
+        if (searchText.length > 0) {
+          // Perform local searching
+          datas.forEach(({ title, content, url }) => {
+            let titleInLowerCase = title.toLowerCase();
+            let contentInLowerCase = content.toLowerCase();
+            let indexOfTitle = [];
+            let indexOfContent = [];
+            let searchTextCount = 0;
+            keywords.forEach(keyword => {
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+
+            // Show search results
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              let hitCount = indexOfTitle.length + indexOfContent.length;
+              // Sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(index => {
+                index.sort((itemLeft, itemRight) => {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  }
+                  return itemLeft.word.length - itemRight.word.length;
+                });
+              });
+
+              let slicesOfTitle = [];
+              if (indexOfTitle.length !== 0) {
+                let tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
+                searchTextCount += tmp.searchTextCountInSlice;
+                slicesOfTitle.push(tmp);
+              }
+
+              let slicesOfContent = [];
+              while (indexOfContent.length !== 0) {
+                let item = indexOfContent[indexOfContent.length - 1];
+                let { position, word } = item;
+                // Cut out 100 characters
+                let start = position - 20;
+                let end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                let tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
+                searchTextCount += tmp.searchTextCountInSlice;
+                slicesOfContent.push(tmp);
+              }
+
+              // Sort slices in content by search text's count and hits' count
+              slicesOfContent.sort((sliceLeft, sliceRight) => {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                }
+                return sliceLeft.start - sliceRight.start;
+              });
+
+              // Select top N slices in content
+              let upperBound = parseInt('1', 10); // CONFIG.localsearch.top_n_per_article: 1
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              let resultItem = '';
+
+              if (slicesOfTitle.length !== 0) {
+                resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title" target="_blank">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
+              } else {
+                resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title" target="_blank">${title}</a>`;
+              }
+
+              slicesOfContent.forEach(slice => {
+                resultItem += `<a href="${url}" target="_blank"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
+              });
+
+              resultItem += '</li>';
+              resultItems.push({
+                item: resultItem,
+                id: resultItems.length,
+                hitCount,
+                searchTextCount
+              });
+            }
+          });
+        }
+        if (keywords.length === 1 && keywords[0] === '') {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa-sharp fa-regular fa-circle-check fa-5x"></i></div>';
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa-regular fa-face-frown-open fa-5x"></i></div>';
+        } else {
+          resultItems.sort((resultLeft, resultRight) => {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            }
+            return resultRight.id - resultLeft.id;
+          });
+          resultContent.innerHTML = `<ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
+          window.pjax && window.pjax.refresh(resultContent);
+        }
+      };
+
+      const fetchData = () => {
+        fetch('/' + searchPath) // CONFIG.root = ''
+          .then(response => response.text())
+          .then(res => {
+            // Get the contents from search data
+            isfetched = true;
+            datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
+              return {
+                title: element.querySelector('title').textContent,
+                content: element.querySelector('content').textContent,
+                url: element.querySelector('url').textContent
+              };
+            }) : JSON.parse(res);
+            // Only match articles with not empty titles
+            datas = datas.filter(data => data.title).map(data => {
+              data.title = data.title.trim();
+              data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+              data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+              return data;
+            });
+            // Remove loading animation
+            document.getElementById('no-result').innerHTML = '<i class="fa-sharp fa-regular fa-circle-check fa-5x"></i></i>';
+            inputEventFunction();
+          });
+      };
+
+      if (false) { // CONFIG.localsearch.preload: false
+        fetchData();
+      }
+
+      if ('auto' === 'auto') { // CONFIG.localsearch.trigger: 'auto' / 'manual'
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+        input.addEventListener('keypress', event => {
+          if (event.key === 'Enter') {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // Handle and trigger popup window
+      document.querySelectorAll('.popup-trigger').forEach(element => {
+        element.addEventListener('click', () => {
+          document.body.style.overflow = 'hidden';
+          document.querySelector('.search-pop-overlay').classList.add('search-active');
+          input.focus();
+          if (!isfetched) fetchData();
+        });
+      });
+
+      // Monitor main search box
+      const onPopupClose = () => {
+        document.body.style.overflow = '';
+        document.querySelector('.search-pop-overlay').classList.remove('search-active');
+      };
+
+      document.querySelector('.search-pop-overlay').addEventListener('click', event => {
+        if (event.target === document.querySelector('.search-pop-overlay')) {
+          onPopupClose();
+        }
+      });
+      document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+      window.addEventListener('pjax:success', onPopupClose);
+      window.addEventListener('keyup', event => {
+        if (event.key === 'Escape') {
+          onPopupClose();
+        }
+      });
+
+      // PageJumper button
+      let onJumpPage = () => {
+        window.location = window.location.origin + '/' + input.value
+      };
+      document.querySelector('.popup-btn-go').addEventListener('click', onJumpPage);
+      document.querySelector('.search-input').addEventListener('keydown', event => {
+        if (event.keyCode === 13) {
+          onJumpPage();
+          return;
+        }
+      });
+      
+      // Search Preload
+      let head = document.head || document.getElementsByTagName('head')[0];
+      let searchlink = document.createElement('link');
+        searchlink.rel="search";
+        searchlink.href="/search.xml";
+        searchlink.crossOrigin="anonymous";
+      head.appendChild(searchlink);
+    });
+  </script>
+
+  <!--
+<script src="/js/local-search.js"></script>
+--> 
+
+  <script src="/live2d-widget/autoload.js"></script>
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+  <!--<script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/waline/2.15.6/waline.min.js"></script>-->
+  <!-- Fonts -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <header class="header fixed-header">
+  <nav class="header-container">
+    <a class="home-link" href="/">
+      <img class="logo" src="/images/logo.png" alt="logo"/>
+      <span class="eng_mark">CloudPool</span><span class="chn_mark">浊池</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">主页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/categories/" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archive/" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/mag/" class="item-link">网刊</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/one/" class="item-link">一言</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/" class="item-link">网盘</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="//<emoji>" class="item-link">( ^ω^)</a>
+          
+        </li>
+      
+      
+        <li class="list-item">
+    <a role="button" class="item-link popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">主页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/categories/" class="menu-link">分类</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archive/" class="menu-link">归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/mag/" class="menu-link">网刊</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/one/" class="menu-link">一言</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/" class="menu-link">网盘</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="//<emoji>" class="menu-link">( ^ω^)</a>
+            
+          </li>
+        
+        
+          <li class="menu-item">
+    <a role="button" class="item-link popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <div id="article-banner">
+  <h2 class="post-title">Coldplay</h2>
+  
+   
+    <p class="post-date">2024-01-02</p>
+  
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+
+
+  <aside class="catalog-container" id="catalog">
+  <div class="toc-main">
+    <div class="toc-title">目录</div>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Parachutes-2000"><span class="toc-nav-text">Parachutes 2000</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#A-Rush-Of-Blood-To-The-Head-2002"><span class="toc-nav-text">A Rush Of Blood To The Head 2002</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#X-amp-Y-2005"><span class="toc-nav-text">X&amp;Y 2005</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Viva-La-Vida-or-Death-And-All-His-Friends-2008"><span class="toc-nav-text">Viva La Vida or Death And All His Friends 2008</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mylo-Xyloto-2011"><span class="toc-nav-text">Mylo Xyloto 2011</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Ghost-Stories-2014"><span class="toc-nav-text">Ghost Stories 2014</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#A-Head-Full-of-Dreams-2015"><span class="toc-nav-text">A Head Full of Dreams 2015</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Kaleidoscope-EP-2017"><span class="toc-nav-text">Kaleidoscope EP 2017</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Everyday-Life-2019"><span class="toc-nav-text">Everyday Life 2019</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CD-1"><span class="toc-nav-text">CD 1</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CD-2"><span class="toc-nav-text">CD 2</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Music-Of-The-Spheres-2021"><span class="toc-nav-text">Music Of The Spheres 2021</span></a></li></ol>
+    
+  </div>
+</aside>
+
+<main class="app-body flex-box">
+  <article class="post-article">
+    
+      <div class="front-parent" id="front-parent">
+  <div class="front-child" id="front-fontsize">
+    <label class="front-label" for="fontsize-range">字体大小</label>
+    <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
+    <span id="fontsize-value"></span>
+  </div>
+
+  <div class="front-child" id="front-fontselector">
+    <label class="front-label" for="font-select">更换字体</label>
+    <select name="font" id="font">
+      <option value="default">默认</option>
+      <option value="heiti">黑体</option>
+      <option value="light-heiti">黑体（细体）</option>
+      <option value="lighter-heiti">黑体（极细）</option>
+      <option value="songti">宋体</option>
+      <option value="light-songti">宋体（细体）</option>
+      <option value="kaiti">楷体</option>
+      <option value="fangsong">仿宋</option>
+    </select>
+  </div>
+
+  <div class="front-child" id="front-indent">
+    <label class="front-label" for="TextIndent">段首缩进</label>
+    <input type="checkbox" id="indent-checkbox" name="text-indent" value="" />
+  </div>
+</div>
+
+<h1 class="article-author">
+  
+        StʌrunneR
+        
+</h1>
+
+<script>
+  $(document).ready(
+    function () {
+      let FontChanger = function () {
+        if (this.value == "default") {
+          $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
+          $(".markdown-content").css({ "font-weight": 'initial' });
+        } if (this.value == "heiti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-heiti") {
+          $(".markdown-content").css({ "font-weight": '300' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap rel=stylesheet>");
+        } else if (this.value == "lighter-heiti") {
+          $(".markdown-content").css({ "font-weight": '100' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
+        } else if (this.value == "songti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-songti") {
+          $(".markdown-content").css({ "font-weight": '200' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
+        } else if (this.value == "kaiti") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZKai-Z03S','STKaiti','KaiTi',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-kai-z-03-s/font.css rel=stylesheet>");
+        } else if (this.value == "fangsong") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZFangSong-Z02S','STFangsong','FangSong','FangSong_GB2312',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-fang-song-z-02-s/font.css rel=stylesheet>");
+        }
+      };
+      $("#font").on('change', FontChanger);
+      $("#font").on('click', FontChanger);
+    });
+
+  $("#indent-checkbox").change(function () {
+    if (this.checked) {
+      $(".markdown-content > p").css({ "text-indent": "2em" });
+    } else {
+      $(".markdown-content > p").css({ "text-indent": "0" });
+    }
+  });
+
+  $("#fontsize-value").html("100%");
+  let rangeSwitch = function () {
+    let fontsizePercent = $("#fontsize-slider").val();
+    $(".markdown-content").css("font-size", fontsizePercent + "%")
+    $("#fontsize-value").html(fontsizePercent + "%")
+  }
+  $("#fontsize-slider").on("input", rangeSwitch)
+</script>
+      <section class="markdown-content" id="content">
+        <h3 id="Parachutes-2000"><a href="#Parachutes-2000" class="headerlink" title="Parachutes 2000"></a>Parachutes 2000</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Don\'t Panic',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/01 Don\'t Panic.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/01 Don\'t Panic.lrc',
+},{
+name: 'Shiver',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/02 Shiver.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/02 Shiver.lrc',
+},{
+name: 'Spies',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/03 Spies.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/03 Spies.lrc',
+},{
+name: 'Sparks',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/04 Sparks.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/04 Sparks.lrc',
+},{
+name: 'Yellow',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/05 Yellow.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/05 Yellow.lrc',
+},{
+name: 'Trouble',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/06 Trouble.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/06 Trouble.lrc',
+},{
+name: 'Parachutes',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/07 Parachutes.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/07 Parachutes.lrc',
+},{
+name: 'High Speed',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/08 High Speed.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/08 High Speed.lrc',
+},{
+name: 'We Never Change',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/09 We Never Change.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/09 We Never Change.lrc',
+},{
+name: 'Everything\'s Not Lost',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2000_Pa/10 Everything\'s Not Lost.m4a',
+cover: '2000_Pa/cover.webp',
+lrc: '2000_Pa/10 Everything\'s Not Lost.lrc',
+},
+]});ap1.on("playing",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("abort",()=>{event.target.play();});ap1.on("error",()=>{console.log("error");});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>Coldplay 首张专辑结构紧凑，色彩动人，令他们一举成名。摇滚抒情经典《Yellow》收录在其中，《Don’t Panic》拉开了英式摇滚清新、忧郁、唯美中的引人入胜。他们将独立态度与英伦摇滚风格融合，创造出改写流行摇滚乐趋向的动人之作。轻快的鼓点伴随着 Chris Martin 质感极佳的嗓音，吉他点到为止美丽细腻。整张专辑结构完整，色彩温暖，浪漫而小小忧郁的气质异常迷人，专辑在销量与乐评上均获得了巨大成功，是千禧年摇滚乐值得纪念的佳作。</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="A-Rush-Of-Blood-To-The-Head-2002"><a href="#A-Rush-Of-Blood-To-The-Head-2002" class="headerlink" title="A Rush Of Blood To The Head 2002"></a>A Rush Of Blood To The Head 2002</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Politik',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/01 Politik.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/01 Politik.lrc',
+},{
+name: 'In My Place',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/02 In My Place.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/02 In My Place.lrc',
+},{
+name: 'God Put A Smile Upon Your Face',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/03 God Put A Smile Upon Your Face.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/03 God Put A Smile Upon Your Face.lrc',
+},{
+name: 'The Scientist',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/04 The Scientist.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/04 The Scientist.lrc',
+},{
+name: 'Clocks',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/05 Clocks.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/05 Clocks.lrc',
+},{
+name: 'Daylight',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/06 Daylight.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/06 Daylight.lrc',
+},{
+name: 'Green Eyes',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/07 Green Eyes.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/07 Green Eyes.lrc',
+},{
+name: 'Warning Sign',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/08 Warning Sign.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/08 Warning Sign.lrc',
+},{
+name: 'A Whisper',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/09 A Whisper.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/09 A Whisper.lrc',
+},{
+name: 'A Rush Of Blood To The Head',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/10 A Rush Of Blood To The Head.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/10 A Rush Of Blood To The Head.lrc',
+},{
+name: 'Amsterdam',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2002_AR/11 Amsterdam.m4a',
+cover: '2002_AR/cover.webp',
+lrc: '2002_AR/11 Amsterdam.lrc',
+},
+]});ap2.on("playing",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("abort",()=>{event.target.play();});ap2.on("error",()=>{console.log("error");});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>乘胜追击并再次大获全胜，第二张录音室专辑继续扩散着 Coldplay 的热力。从钢琴浪潮缓缓引出深入灵魂的吟唱的《The Scientist》，到从吉他低迷气息中盘旋而出的《God Put a Smile Upon Your Face》，细腻、华丽而富有张力，不按常规出牌的旋律创意令人惊艳。这张纯正的英伦摇滚乐专辑，每一首歌都透出真诚的热情。</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="X-amp-Y-2005"><a href="#X-amp-Y-2005" class="headerlink" title="X&amp;Y 2005"></a>X&amp;Y 2005</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Square One',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/01 Square One.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/01 Square One.lrc',
+},{
+name: 'What If',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/02 What If.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/02 What If.lrc',
+},{
+name: 'White Shadows',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/03 White Shadows.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/03 White Shadows.lrc',
+},{
+name: 'Fix You',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/04 Fix You.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/04 Fix You.lrc',
+},{
+name: 'Talk',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/05 Talk.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/05 Talk.lrc',
+},{
+name: 'X&Y',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/06 X&Y.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/06 X&Y.lrc',
+},{
+name: 'Speed Of Sound',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/07 Speed Of Sound.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/07 Speed Of Sound.lrc',
+},{
+name: 'A Message',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/08 A Message.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/08 A Message.lrc',
+},{
+name: 'Low',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/09 Low.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/09 Low.lrc',
+},{
+name: 'The Hardest Part',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/10 The Hardest Part.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/10 The Hardest Part.lrc',
+},{
+name: 'Swallowed In The Sea',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/11 Swallowed In The Sea.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/11 Swallowed In The Sea.lrc',
+},{
+name: 'Twisted Logic',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/12 Twisted Logic.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/12 Twisted Logic.lrc',
+},{
+name: 'Til Kingdom Come',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2005_XY/13 Til Kingdom Come.m4a',
+cover: '2005_XY/cover.webp',
+lrc: '2005_XY/13 Til Kingdom Come.lrc',
+},
+]});ap3.on("playing",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("abort",()=>{event.target.play();});ap3.on("error",()=>{console.log("error");});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
+
+<h3 id="Viva-La-Vida-or-Death-And-All-His-Friends-2008"><a href="#Viva-La-Vida-or-Death-And-All-His-Friends-2008" class="headerlink" title="Viva La Vida or Death And All His Friends 2008"></a>Viva La Vida or Death And All His Friends 2008</h3><div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Life In Technicolor',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/01 Life In Technicolor.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '',
+},{
+name: 'Cemeteries Of London',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/02 Cemeteries Of London.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/02 Cemeteries Of London.lrc',
+},{
+name: 'Lost!',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/03 Lost!.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/03 Lost!.lrc',
+},{
+name: '42',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/04 42.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/04 42.lrc',
+},{
+name: 'Lovers In Japan-Reign Of Love',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/05 Lovers In Japan-Reign Of Love.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/05 Lovers In Japan-Reign Of Love.lrc',
+},{
+name: 'Yes',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/06 Yes.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/06 Yes.lrc',
+},{
+name: 'Viva La Vida',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/07 Viva La Vida.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/07 Viva La Vida.lrc',
+},{
+name: 'Violet Hill',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/08 Violet Hill.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/08 Violet Hill.lrc',
+},{
+name: 'Strawberry Swing',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/09 Strawberry Swing.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/09 Strawberry Swing.lrc',
+},{
+name: 'Death And All His Friends',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/10 Death And All His Friends.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/10 Death And All His Friends.lrc',
+},{
+name: 'Lost?',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2008_VL/11 Lost.m4a',
+cover: '2008_VL/cover.webp',
+lrc: '2008_VL/11 Lost.lrc',
+},
+]});ap4.on("playing",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("abort",()=>{event.target.play();});ap4.on("error",()=>{console.log("error");});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
+
+<h3 id="Mylo-Xyloto-2011"><a href="#Mylo-Xyloto-2011" class="headerlink" title="Mylo Xyloto 2011"></a>Mylo Xyloto 2011</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Mylo Xyloto',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/01 Mylo Xyloto.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '',
+},{
+name: 'Hurts Like Heaven',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/02 Hurts Like Heaven.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/02 Hurts Like Heaven.lrc',
+},{
+name: 'Paradise',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/03 Paradise.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/03 Paradise.lrc',
+},{
+name: 'Charlie Brown',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/04 Charlie Brown.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/04 Charlie Brown.lrc',
+},{
+name: 'Us Against the World',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/05 Us Against the World.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/05 Us Against the World.lrc',
+},{
+name: 'M.M.I.X.',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/06 M.M.I.X..m4a',
+cover: '2011_MX/cover.webp',
+lrc: '',
+},{
+name: 'Every Teardrop Is A Waterfall',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/07 Every Teardrop Is A Waterfall.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/07 Every Teardrop Is A Waterfall.lrc',
+},{
+name: 'Major Minus',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/08 Major Minus.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/08 Major Minus.lrc',
+},{
+name: 'U.F.O.',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/09 U.F.O..m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/09 U.F.O..lrc',
+},{
+name: 'Princess of China',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/10 Princess of China.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/10 Princess of China.lrc',
+},{
+name: 'Up In Flames',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/11 Up In Flames.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/11 Up In Flames.lrc',
+},{
+name: 'A Hopeful Transmission',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/12 A Hopeful Transmission.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '',
+},{
+name: 'Don\'t Let It Break Your Heart',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/13 Don\'t Let It Break Your Heart.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/13 Don\'t Let It Break Your Heart.lrc',
+},{
+name: 'Up With The Birds',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2011_MX/14 Up With The Birds.m4a',
+cover: '2011_MX/cover.webp',
+lrc: '2011_MX/14 Up With The Birds.lrc',
+},
+]});ap5.on("playing",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("abort",()=>{event.target.play();});ap5.on("error",()=>{console.log("error");});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
+
+<h3 id="Ghost-Stories-2014"><a href="#Ghost-Stories-2014" class="headerlink" title="Ghost Stories 2014"></a>Ghost Stories 2014</h3><div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Always in My Head',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/01 Always in My Head.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/01 Always in My Head.lrc',
+},{
+name: 'Magic',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/02 Magic.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/02 Magic.lrc',
+},{
+name: 'Ink',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/03 Ink.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/03 Ink.lrc',
+},{
+name: 'True Love',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/04 True Love.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/04 True Love.lrc',
+},{
+name: 'Midnight',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/05 Midnight.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/05 Midnight.lrc',
+},{
+name: 'Another\'s Arms',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/06 Another\'s Arms.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/06 Another\'s Arms.lrc',
+},{
+name: 'Oceans',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/07 Oceans.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/07 Oceans.lrc',
+},{
+name: 'A Sky Full of Stars',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/08 A Sky Full of Stars.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/08 A Sky Full of Stars.lrc',
+},{
+name: 'O',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/09 O.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/09 O.lrc',
+},{
+name: 'All Your Friends',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/10 All Your Friends.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/10 All Your Friends.lrc',
+},{
+name: 'Ghost Story',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/11 Ghost Story.m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/11 Ghost Story.lrc',
+},{
+name: 'O (Part 2-Reprise)',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2014_GS/12 O (Part 2-Reprise).m4a',
+cover: '2014_GS/cover.webp',
+lrc: '2014_GS/12 O (Part 2-Reprise).lrc',
+},
+]});ap6.on("playing",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("abort",()=>{event.target.play();});ap6.on("error",()=>{console.log("error");});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
+
+<h3 id="A-Head-Full-of-Dreams-2015"><a href="#A-Head-Full-of-Dreams-2015" class="headerlink" title="A Head Full of Dreams 2015"></a>A Head Full of Dreams 2015</h3><div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'A Head Full of Dreams',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/01 A Head Full Of Dreams.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/01 A Head Full Of Dreams.lrc',
+},{
+name: 'Birds',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/02 Birds.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/02 Birds.lrc',
+},{
+name: 'Hymn for the Weekend',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/03 Hymn For The Weekend.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/03 Hymn For The Weekend.lrc',
+},{
+name: 'Everglow',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/04 Everglow.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/04 Everglow.lrc',
+},{
+name: 'Adventure of a Lifetime',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/05 Adventure Of A Lifetime.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/05 Adventure Of A Lifetime.lrc',
+},{
+name: 'Fun',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/06 Fun.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/06 Fun.lrc',
+},{
+name: 'Kaleidoscope',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/07 Kaleidoscope.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/07 Kaleidoscope.lrc',
+},{
+name: 'Army of One',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/08 Army Of One.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/08 Army Of One.lrc',
+},{
+name: 'Amazing Day',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/09 Amazing Day.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/09 Amazing Day.lrc',
+},{
+name: 'Colour Spectrum',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/10 Colour Spectrum.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '',
+},{
+name: 'Up&Up',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2015_AH/11 Up&Up.m4a',
+cover: '2015_AH/cover.webp',
+lrc: '2015_AH/11 Up&Up.lrc',
+},
+]});ap7.on("playing",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("abort",()=>{event.target.play();});ap7.on("error",()=>{console.log("error");});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>Coldplay 的第七张专辑曲风多变, 充满霓虹感的流行乐令人耳目一新。开场单曲短短 20 秒即引爆狂欢气氛, 让人情不自禁随节拍起舞。嘉宾阵容华丽强大, 更有奥巴马总统的演唱片段助阵。乐队彻底挣脱传统束缚, 邀来 Beyoncé 在欢快的“Hymn for the Weekend”中展现动人歌喉; Tove Lo 在“Fun”慵懒的假日情歌中轻诉甜蜜情话; Noel Gallagher 还将“(What’s The Story) Morning Glory?”中标志性的吉他独奏融入悠扬清远的“Up&amp;Up”。</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Kaleidoscope-EP-2017"><a href="#Kaleidoscope-EP-2017" class="headerlink" title="Kaleidoscope EP 2017"></a>Kaleidoscope EP 2017</h3><div id="aplayer8" class="aplayerJS"></div><script>const ap8 = new APlayer({container: document.getElementById("aplayer8"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'All I Can Think About Is You',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2017_KE/01 All I Can Think About Is You.m4a',
+cover: '2017_KE/cover.webp',
+lrc: '2017_KE/01 All I Can Think About Is You.lrc',
+},{
+name: 'Miracles (Someone Special)',
+artist: 'Coldplay & Big Sean',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2017_KE/02 Miracles (Someone Special).m4a',
+cover: '2017_KE/cover.webp',
+lrc: '2017_KE/02 Miracles (Someone Special).lrc',
+},{
+name: 'A L I E N S',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2017_KE/03 A L I E N S.m4a',
+cover: '2017_KE/cover.webp',
+lrc: '2017_KE/03 A L I E N S.lrc',
+},{
+name: 'Something Just Like This (Tokyo Remix)',
+artist: 'Coldplay & The Chainsmokers',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2017_KE/04 Something Just Like This (Tokyo Remix).m4a',
+cover: '2017_KE/cover.webp',
+lrc: '2017_KE/04 Something Just Like This (Tokyo Remix).lrc',
+},{
+name: 'Hypnotised',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2017_KE/05 Hypnotised.m4a',
+cover: '2017_KE/cover.webp',
+lrc: '2017_KE/05 Hypnotised.lrc',
+},
+]});ap8.on("playing",()=>{document.title=document.getElementById("aplayer8").getElementsByClassName("aplayer-music")[0].innerText;});ap8.on("abort",()=>{event.target.play();});ap8.on("error",()=>{console.log("error");});ap8.on("stalled",()=>{console.log("stalled");});ap8.on("ended",()=>{console.log("ended");});ap8.on("abort",()=>{console.log("abort");});ap8.on("emptied",()=>{console.log("emptied");});</script>
+
+<h3 id="Everyday-Life-2019"><a href="#Everyday-Life-2019" class="headerlink" title="Everyday Life 2019"></a>Everyday Life 2019</h3><h4 id="CD-1"><a href="#CD-1" class="headerlink" title="CD 1"></a>CD 1</h4><div id="aplayer9a" class="aplayerJS"></div><script>const ap9a = new APlayer({container: document.getElementById("aplayer9a"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Sunrise',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.01 Sunrise.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '',
+},{
+name: 'Church',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.02 Church.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/1.02 Church.lrc',
+},{
+name: 'Trouble In Town',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.03 Trouble In Town.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/1.03 Trouble In Town.lrc',
+},{
+name: 'BrokEn',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.04 BrokEn.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/1.04 BrokEn.lrc',
+},{
+name: 'Daddy',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.05 Daddy.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/1.05 Daddy.lrc',
+},{
+name: 'WOTW / POTP',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.06 WOTW - POTP.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/1.06 WOTW - POTP.lrc',
+},{
+name: 'Arabesque',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.07 Arabesque.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/1.07 Arabesque.lrc',
+},{
+name: 'When I Need A Friend',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/1.08 When I Need A Friend.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/1.08 When I Need A Friend.lrc',
+},
+]});ap9a.on("playing",()=>{document.title=document.getElementById("aplayer9a").getElementsByClassName("aplayer-music")[0].innerText;});ap9a.on("abort",()=>{event.target.play();});ap9a.on("error",()=>{console.log("error");});ap9a.on("stalled",()=>{console.log("stalled");});ap9a.on("ended",()=>{console.log("ended");});ap9a.on("abort",()=>{console.log("abort");});ap9a.on("emptied",()=>{console.log("emptied");});</script>
+
+<h4 id="CD-2"><a href="#CD-2" class="headerlink" title="CD 2"></a>CD 2</h4><div id="aplayer9b" class="aplayerJS"></div><script>const ap9b = new APlayer({container: document.getElementById("aplayer9b"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: 'Guns',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.01 Guns.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.01 Guns.lrc',
+},{
+name: 'Orphans',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.02 Orphans.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.02 Orphans.lrc',
+},{
+name: 'Èkó',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.03 Èkó.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.03 Èkó.lrc',
+},{
+name: 'Cry Cry Cry',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.04 Cry Cry Cry.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.04 Cry Cry Cry.lrc',
+},{
+name: 'Old Friends',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.05 Old Friends.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.05 Old Friends.lrc',
+},{
+name: 'بنی آدم',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.06 بنی آدم.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.06 بنی آدم.lrc',
+},{
+name: 'Champion Of The World',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.07 Champion Of The World.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.07 Champion Of The World.lrc',
+},{
+name: 'Everyday Life',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2019_EL/2.08 Everyday Life.m4a',
+cover: '2019_EL/cover.webp',
+lrc: '2019_EL/2.08 Everyday Life.lrc',
+},
+]});ap9b.on("playing",()=>{document.title=document.getElementById("aplayer9b").getElementsByClassName("aplayer-music")[0].innerText;});ap9b.on("abort",()=>{event.target.play();});ap9b.on("error",()=>{console.log("error");});ap9b.on("stalled",()=>{console.log("stalled");});ap9b.on("ended",()=>{console.log("ended");});ap9b.on("abort",()=>{console.log("abort");});ap9b.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>如果说 2015 年的专辑《A Head Full of Dreams》中的多彩欢乐已经成为了遥远的回忆，那也并不奇怪——因为彼时的情境与今已大不相同。在 Coldplay 发布那张专辑后的四年里，世界变得更加混乱了。乐队主唱 Chris Martin 告诉 Apple Music：“疯狂的现象一直都有，但是现在它不断扑面而来，让你觉得你必须唱出正在发生的事，无论结果如何。”于是《Everyday Life》这张双专辑就此诞生。Coldplay 正试图用这张专辑唤起人们的团结意识，作为本世纪最成功的乐队之一，这样做无疑有不小的代价与风险。Martin 说：“我只知道，这是我们的真心话。”</p>
+<p>这是一张概念专辑，前半部分的主题是“日出”，以忧伤但充满希望的弦乐开启序幕。Martin 解释道：“这代表了我们与其他许多人生活中所面临的挑战。”后半部则以“日落”为主题，“比较像是‘你会如何面对这些挑战？该如何走下去？’”后半部分的开场曲是《Guns》，Martin 在这首原声吉他伴奏的歌曲中引用了 Bob Dylan，谈及美国的枪支暴力问题：“熔化所有的小号、长号和鼓&#x2F;谁需要教育或者灿烂千阳？“这首歌是他们在“911”事件过去后不久写成、2002 年发表的歌曲《Politik》之后，最具政治意味的表达。</p>
+<p>虽然专辑大部分歌曲都十分低调克制，但也有一些华丽宏大的作品。在《Arabesque》中，乐队与尼日利亚音乐人 Femi Kuti 的乐队 Positive Force 一同投入了狂热的非洲 Afrobeat 律动，围绕着重复吟唱的中心主旨：“We share the same blood. （我们流着同样的血液）”这个信息也贯穿在《Everyday Life》的始终，从敞开怀抱的《Orphans》，到《بنیآدم》中的念白，再到最后两首曲目《Champion of the World》与《Everyday Life》。Martin 在最后一曲中唱道：“人人都会受伤，人人都会哭泣，人人都会对彼此说谎。人人都会跌倒，人人都有梦想与怀疑&#x2F;纵使灯光熄灭，也要继续跳舞。”</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Music-Of-The-Spheres-2021"><a href="#Music-Of-The-Spheres-2021" class="headerlink" title="Music Of The Spheres 2021"></a>Music Of The Spheres 2021</h3><div id="aplayer10" class="aplayerJS"></div><script>const ap10 = new APlayer({container: document.getElementById("aplayer10"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [{
+name: '⦵',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/01 ⦵.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/01 ⦵.lrc',
+},{
+name: 'Higher Power',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/02 Higher Power.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/02 Higher Power.lrc',
+},{
+name: 'Humankind',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/03 Humankind.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/03 Humankind.lrc',
+},{
+name: '*✧',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/04 x✧.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '',
+},{
+name: 'Let Somebody Go',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/05 Let Somebody Go.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/05 Let Somebody Go.lrc',
+},{
+name: '♡',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/06 ♡.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/06 ♡.lrc',
+},{
+name: 'People of The Pride',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/07 People of The Pride.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/07 People of The Pride.lrc',
+},{
+name: 'Biutyful',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/08 Biutyful.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/08 Biutyful.lrc',
+},{
+name: '❍',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/09 ❍.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/09 ❍.lrc',
+},{
+name: 'My Universe',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/10 My Universe.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/10 My Universe.lrc',
+},{
+name: '∞',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/11 ∞.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/11 ∞.lrc',
+},{
+name: 'Coloratura',
+artist: 'Coldplay',
+url: 'https://cps3storage.s3-accelerate.amazonaws.com/Coldplay/2021_MO/12 Coloratura.m4a',
+cover: '2021_MO/cover.webp',
+lrc: '2021_MO/12 Coloratura.lrc',
+},
+]});ap10.on("playing",()=>{document.title=document.getElementById("aplayer10").getElementsByClassName("aplayer-music")[0].innerText;});ap10.on("abort",()=>{event.target.play();});ap10.on("error",()=>{console.log("error");});ap10.on("stalled",()=>{console.log("stalled");});ap10.on("ended",()=>{console.log("ended");});ap10.on("abort",()=>{console.log("abort");});ap10.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>2021 年 4 月 18 日，浩瀚的网络世界里忽然冒出一个名叫“Alien Radio FM”的社群帐号，发布了它的首则动态：“Transmission incoming. Standby.”（传输中，请待命）随后，这个账号开始陆续展示一些如密语般的紫色霓虹图腾，它们以某种序列的形式出现在世界各地的商场、球场、户外显示屏上，颇似外星人入侵的前兆。半个月后人们才知道，原来这些图腾是 Coldplay 为新单曲《Higher Power》特别设计的外星文字“Kaotican”，将其“翻译”为英文便是“Coldplay Higher Power May Seven”（Coldplay《Higher Power》5 月 7 日）。原来，这是玩心不灭的 Coldplay 每次发行专辑都不会迟到的那个“热身操作”呀。</p>
+<p>这首与瑞典制作人 Max Martin 共同打造的先行曲目早在五月初便先一步传送至太空，当时身处空间站的法国宇航员 Thomas Pesquet 有幸成为它的首位听众（或许你还记得巴黎奥运会 8 分钟宣传片在太空空间站吹奏萨克斯风的惊艳一幕？那位演奏家就是 Thomas）——或者说——太空早在地球之前就听到了这首受《星球大战》启发的流行歌。其实，十多年前 Coldplay 便已开始酝酿以宇宙为命题的相关作品。2010 年，乐团官方网站上由匿名巡演人员“Roadie #42”写的巡演日记中，提及主唱 Chris Martin 希望能在未来“打造一座迷人的太阳系”的愿景。而新专辑的样貌其实早在上张专辑的唱片内页就已初露端倪——在一张 1930 年代黑白照片中，广告看板左下角正写着“Music of the Spheres”和“Coldplay coming soon”的字样。可见，Coldplay 成员在脑海中构想这张蓝图已经不是一天两天了：“这让我们在录音棚有法可循，知道自己想构建什么。”Coldplay 贝斯手 Guy Berryman 告诉 Apple Music。</p>
+<p>想象中的星系“The Spheres”借由庞大完整的概念设计成为现实，专辑中的每首歌都对应一颗天体，每颗天体都拥有自己的一套语言（“Kaotican”便是“Kaotica”星球的文字）；Coldplay 带领歌迷搭上一座太空船，尽情拓荒，探索未知。纵观专辑，用抽象符号命名的歌曲就像宇宙的浪漫秘语，Coldplay 大量使用不同色彩的合成器音色和弦乐，营造太空异想感。开场曲《⦵》发射的讯号电波，与“Alien Radio FM”发布的首则动态相呼应，而《Higher Power》在欢愉的复古电子节拍中，使人则接收到无远弗届的能量，“我们想让这张专辑的一切都充满积极和乐观精神。”Berryman 解释道。“我活着，我快乐／因与你活在同个年代，而快乐”（I’m so happy that I’m alive &#x2F; Happy I’m alive at the same time as you），《Higher Power》的歌词不仅承接《A Head Full of Dreams》的希望话语，也在世界被打乱脚步之际，重新将人联结起来。 《People of the Pride》有着 Hans Zimmer 式的开篇，Coldplay 在自己擅长的 Arena Pop-Rock 里，继续讲述关于“人”的故事。</p>
+<p>“联结”这一隐藏的专辑核心概念，除了体现在以浩瀚太空和外星生物隐喻疫情造成的“疏离”与陌生感，也以合作的形式呈现出来。对于 Coldplay 来说，如今的他们对合作的态度更加开放了，其实这正是他们在亲身实践专辑的“联结”主题。Berryman 向我们揭示道：“这张专辑的很多主题都是让人类彼此团结，打破界限和壁垒，打破人类亲手制造的、分隔人类的一切事物。”首度与防弹少年团跨国合作碰撞出的《My Universe》，即是通过理解彼此的差异，缩短心与心的距离。《♡》是一首纯人声的“当代福音歌曲”，由 R&amp;B 三人组 We Are KING 和爵士音乐人 Jacob Collier 助阵。Berryman 放下了演奏者的自尊，没有加任何器乐，让歌曲维持原样， “这才会让它前后的歌曲听起来更宏大、更饱满。”</p>
+<p>长达十分钟的史诗终曲《Coloratura》以致敬 Pink Floyd《The Dark Side of the Moon》狂想曲式的前卫摇滚氛围贯穿，犹如饱览一片星际风光。满是奇思异想的歌词，仍旧饱含 Coldplay 渴望透过音乐传递的真挚讯息：“团结一心／这就是我们度过难关的方式。”（Together, that’s how we’ll make it through）在被不确定性重重包围的年代，《Music of the Spheres》开启一场心灵的探勘，在这虚构的宇宙空间里，Coldplay 仍然在为人类唱赞歌。</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<hr>
+<p><a target="_blank" rel="noopener" href="https://music.apple.com/cn/artist/coldplay/471744">Apple Music - Coldplay</a></p>
+
+      </section>
+      
+        <div class="post-tags">
+  <span>标签：</span>
+  
+    <a href="/tags#音乐">
+      <span class="tag-code">
+        音乐
+      </span>
+    </a>
+    
+</div>
+       
+    
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/daily/daily2024/" target="_blank">
+        <span class="nav-arrow">← </span>
+        
+          每日一句2024
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/listen/ASI/" target="_blank">
+        
+          阿肆
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    
+      <div class="advertisement">
+        <p> 广告：快速学习 Crash Course十分钟速成课 <a target="_blank" rel="noopener" href="https://crashcourse.club/">字幕组网站</a></p>
+      </div>
+    
+    
+      
+
+<div id="waline"></div>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/waline/2.15.8/waline.min.css" rel="stylesheet"/>
+<script src="https://cdn.bootcdn.net/ajax/libs/waline/2.15.8/waline.min.js"></script>
+<script defer src="/js/waline-qqavatar.js"></script>
+
+<script type="module">
+
+  const locale = {
+    nick: '昵称',
+    nickError: '昵称不能少于3个英文字符或2个中文汉字',
+    mail: '邮箱(可用QQ邮箱获取头像)',
+    mailError: '请填写正确的邮件地址',
+    link: '网址',
+    optional: '可选',
+    placeholder: '' || '说、什么8 \n\n可使用QQ邮箱获取QQ头像，或在gravatar.com注册后使用邮箱绑定头像 \n\n支持Markdown语法：*斜体*, **粗体**, \# - ###### 1-6级标题, *** 或 --- = 水平分割线, ~~删除线~~, > 引用内容, `代码块`, 1. 序号列表, * 无序列表, ^上角标^, ~下角标~, <br> = 空行, [链接文字](链接地址), ![图片名称](图片地址.png), ',
+    sofa: '来发评论吧~',
+    submit: '提交',
+    like: '喜欢',
+    cancelLike: '取消喜欢',
+    reply: '回复',
+    cancelReply: '取消回复',
+    comment: '评论',
+    refresh: '刷新',
+    more: '加载更多...',
+    preview: '预览',
+    emoji: '表情',
+    uploadImage: '上传图片',
+    seconds: '秒前',
+    minutes: '分钟前',
+    hours: '小时前',
+    days: '天前',
+    now: '刚刚',
+    uploading: '正在上传',
+    login: '登录',
+    logout: '退出',
+    admin: '博主',
+    sticky: '置顶',
+    word: '字',
+    wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    anonymous: '匿名',
+    level0: '潜水',
+    level1: '冒泡',
+    level2: '吐槽',
+    level3: '活跃',
+    level4: '话痨',
+    level5: '传说',
+    gif: '表情包',
+    gifSearchPlaceholder: '搜索表情包',
+    profile: '个人资料',
+    approved: '通过',
+    waiting: '待审核',
+    spam: '垃圾',
+    unsticky: '取消置顶',
+    oldest: '按倒序',
+    latest: '按正序',
+    hottest: '按热度',
+    reactionTitle: '你认为这篇文章怎么样？',
+  };
+
+  Waline.init({
+    el: "#waline",
+    serverURL: "" || "walinecf.zhuochi.org",
+    appId: "" || "M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI",
+    appKey: "" || "arEPHdbMnKwMjQgiWsLgw34N",
+    path:  "" || window.location.pathname,  // window.location.pathname.replace(/\/$/,''),
+    login: "disable",  // 'enable' || 'disable' || 'force'
+    avatarCDN: "https://gravatar.loli.top/avatar/",
+    //avatar: '',
+    placeholder: "",
+    pageSize: 10,
+    meta: ["nick", "mail"],
+    requiredMeta: [""],
+    pageview: "true" && "",
+    emoji: [
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+    ],
+    locale,
+  });
+
+  $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=/images/emoji.png class=wl-action id=wl-emoji></a>")
+
+//// Clean TEXTAREA 
+//$(".wl-cards").change(function () {
+//  alert('changed')
+  //('#wl-edit').html("")
+//})
+
+//! Not functional
+//$(".primary .wl-btn").click(function () {
+  //document.getElementsByClassName('wl-num')[0].innerHTML ++
+//})
+</script>
+
+<!--
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.6/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.6/waline.min.css">
+-->
+    
+    
+    
+      <div class="qrcode" id="qr-box">
+    <img id="share-qrcode" class="qrcode-image" src=""/>
+    <div class="qrcode-notice">保存二维码，分享此文章</div>
+</div>
+
+<!--<script type="text/javascript" src="/js/qrious.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/qrious/4.0.2/qrious.min.js" ></script>
+<script>
+    // qrcode
+    let qr = new QRious({
+        background: '#F0FFFF',
+        backgroundAlpha: 1,
+        foreground: '#0096FF',
+        foregroundAlpha: 0.8,
+        level: 'L',
+        mime: "image/gif",
+        padding: null, // pixels
+        size: 100,
+        element: document.getElementById('share-qrcode'),
+        value: document.location.href,
+    })
+
+    $("#share-qrcode").click(function () {
+        let img = document.getElementById('share-qrcode')
+        let imgurl = img.src
+        let a = document.createElement('a')
+        let down_event = new MouseEvent('click')
+        a.download = 'Coldplay-CloudPool浊池'
+        a.href = imgurl
+        a.dispatchEvent(down_event)
+    })
+</script>
+
+
+    
+  </article>
+</main>
+
+<script>
+  // error image
+  $(".markdown-content img").on("error", function () {
+    $(this).attr("src", "/images/error.png");
+    $(this).css({cursor: "default",});
+  });
+
+  // zoom image
+  $(".markdown-content img").on('click', function() {
+    var src = $(this).attr('src')
+    if (src !== '/css/images/error.png') {
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    }
+  })
+</script>
+
+<script>
+  (function () {
+    var url = "https://zhuochi.org/listen/Coldplay/";
+    var banner = "";
+    if (banner !== "" && banner !== "undefined" && banner !== "null") {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+  })();
+</script>
+ 
+    <aside class="sidebar">
+  <span class="scroll-top fa fa-arrow-up"></span>
+  <span class="fa fa-share-alt share-icon">
+    <span class="list-icon">
+      
+        <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zhuochi.org/listen/Coldplay/index.html&title=Coldplay&pics=https://zhuochi.org/images/logo.svg&desc=10 Albums, 115 Songs&summary=CloudPool浊池是由年轻人管理的博客" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659969569042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1231"><path d="M1023.210667 395.690667c-2.005333-6.08-7.381333-10.410667-13.781333-10.944l-347.114667-29.802667L526.634667 33.984C524.117333 28.096 518.4 24.256 512 24.256s-12.181333 3.861333-14.677333 9.749333l-135.616 320.938667L14.570667 384.746667c-6.357333 0.533333-11.797333 4.864-13.781333 10.944-1.941333 6.101333-0.106667 12.778667 4.714667 16.96l263.338667 228.138667L189.888 980.16c-1.429333 6.208 1.002667 12.757333 6.122667 16.512 5.205333 3.733333 12.117333 4.010667 17.642667 0.682667L512 817.450667l298.282667 179.946667c2.581333 1.557333 5.418667 2.346667 8.32 2.346667 3.221333 0 6.528-1.002667 9.344-3.008 5.162667-3.84 7.594667-10.368 6.122667-16.576l-62.442667-268.352c26.730667-13.482667 56.277333-36.245333 56.277333-36.245333s-116.864 57.066667-536.341333 29.205333L595.626667 484.437333c0 0-11.968-18.581333-392.981333-31.872-25.408-0.917333 310.677333-63.722667 558.933333-10.645333L456.298667 660.906667c0 0 122.453333 18.197333 307.328 16.085333l-8.448-36.181333 263.36-228.16C1023.381333 408.469333 1025.216 401.792 1023.210667 395.690667z" p-id="1232" fill="#04b2f1"></path></svg>
+        </a> 
+      
+      
+        <a href="https://service.weibo.com/share/share.php?url=https://zhuochi.org/listen/Coldplay/index.html&title=Coldplay&pic=https://zhuochi.org/images/logo.svg&summary=10 Albums, 115 Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659970330786" class="icon" viewBox="0 0 1138 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3639" fill="#04b2f1"><path d="M914.432 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM656.384 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM522.24 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM359.424 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM778.24 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM778.24 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z" p-id="3640"></path></svg>
+        </a>
+      
+      
+        <a href="https://www.douban.com/recommend/?url=https://zhuochi.org/listen/Coldplay/index.html&title=Coldplay&pic=https://zhuochi.org/images/logo.svg&summary=10 Albums, 115 Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659970941550" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1055"><path d="M88 72.9h848v95.5H88z" p-id="1056" fill="#04b2f1"></path><path d="M88 72.9h848v95.5H88zM862.3 641.5V268H161.7v373.5h700.6zM263.4 363.4h498.4v182.5H263.4V363.4z" p-id="1057" fill="#04b2f1"></path><path d="M862.3 641.5V268H161.7v373.5h700.6zM263.4 363.4h498.4v182.5H263.4V363.4zM710.8 856.7c30.5-46.7 59.3-100.8 85.9-162.2l-102-37.2c-26.5 72.8-57.4 139.4-92.5 199.4H424.9c-29.4-77.8-62.6-144.3-99.8-199.4l-93.8 37.2c38.6 58 69.9 111.9 93.8 162.2H64v94.5h896v-94.5H710.8z" p-id="1058" fill="#04b2f1"></path><path d="M710.8 856.7c30.5-46.7 59.3-100.8 85.9-162.2l-102-37.2c-26.5 72.8-57.4 139.4-92.5 199.4H424.9c-29.4-77.8-62.6-144.3-99.8-199.4l-93.8 37.2c38.6 58 69.9 111.9 93.8 162.2H64v94.5h896v-94.5H710.8z" p-id="1059" fill="#04b2f1"></path></svg>
+        </a>
+      
+      
+        <a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=https://zhuochi.org/listen/Coldplay/index.html&title=Coldplay&pic=https://zhuochi.org/images/logo.svg&desc=10 Albums, 115 Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659968685554" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1659"><path d="M1024 862.826667a161.152 161.152 0 0 1-161.173333 161.173333h-701.632a161.152 161.152 0 0 1-161.173334-161.173333v-701.632a161.194667 161.194667 0 0 1 161.173334-161.173334h701.632a161.194667 161.194667 0 0 1 161.173333 161.173334v701.632z" fill="#04b2f1" p-id="1660"></path><path d="M828.842667 250.261333h-173.461334v-36.522666a17.066667 17.066667 0 0 0-17.066666-17.066667h-41.941334a17.045333 17.045333 0 0 0-17.045333 17.066667v263.296h-24.896a17.066667 17.066667 0 0 0-17.045333 17.066666V810.218667a17.066667 17.066667 0 0 0 17.045333 17.088h257.365333a17.066667 17.066667 0 0 0 17.066667-17.088v-58.986667h-0.256v-198.144h0.256v-58.986667a17.066667 17.066667 0 0 0-17.066667-17.066666H655.381333v-150.72h173.461334a17.066667 17.066667 0 0 0 17.066666-17.066667v-41.941333a17.066667 17.066667 0 0 0-17.066666-17.045334z m-93.376 302.848c9.429333 0 17.045333 7.637333 17.045333 17.066667v164.010667a17.066667 17.066667 0 0 1-17.045333 17.066666h-104.981334a17.045333 17.045333 0 0 1-17.045333-17.066666v-164.010667a17.066667 17.066667 0 0 1 17.045333-17.066667h104.981334zM197.909333 657.408h41.941334a17.088 17.088 0 0 0 17.088-17.088v-358.741333h174.528v358.741333a17.066667 17.066667 0 0 0 17.045333 17.088h41.941333a17.088 17.088 0 0 0 17.088-17.088v-417.749333c0-9.408-7.658667-17.066667-17.088-17.066667h-292.522666a17.066667 17.066667 0 0 0-17.045334 17.066667v417.749333a17.024 17.024 0 0 0 17.024 17.088z" fill="#FFFFFF" p-id="1661"></path><path d="M492.970667 739.2v-0.170667a110.656 110.656 0 0 1-110.656-110.656h-0.106667v-296.042666a17.066667 17.066667 0 0 0-17.066667-17.045334h-41.941333a17.045333 17.045333 0 0 0-17.045333 17.045334v296.042666h-0.362667a110.677333 110.677333 0 0 1-110.677333 110.656v0.170667a17.045333 17.045333 0 0 0-17.045334 17.066667v42.112a17.066667 17.066667 0 0 0 17.045334 17.066666 186.602667 186.602667 0 0 0 148.928-74.176 186.624 186.624 0 0 0 148.928 74.176 17.045333 17.045333 0 0 0 17.045333-17.066666v-42.112a17.024 17.024 0 0 0-17.045333-17.066667z" fill="#FFFFFF" p-id="1662"></path><path d="M865.450667 873.685333c17.664-3.797333 15.253333-24.896 14.741333-29.504-0.874667-7.125333-9.237333-19.541333-20.586667-18.581333-14.293333 1.28-16.362667 21.930667-16.362666 21.930667-1.962667 9.557333 4.608 29.952 22.208 26.154666z m18.752 36.693334c-0.533333 1.493333-1.664 5.290667-0.682667 8.597333 1.962667 7.402667 8.405333 7.744 8.405333 7.744h9.258667v-22.613333h-9.898667a10.837333 10.837333 0 0 0-7.082666 6.272z m14.037333-72.085334c9.749333 0 17.621333-11.221333 17.621333-25.109333 0-13.866667-7.872-25.088-17.621333-25.088-9.728 0-17.642667 11.221333-17.642667 25.088 0 13.888 7.893333 25.109333 17.642667 25.109333z m41.984 1.664c13.034667 1.706667 21.418667-12.202667 23.082667-22.762666 1.706667-10.538667-6.698667-22.762667-15.936-24.853334-9.258667-2.112-20.778667 12.672-21.845334 22.357334-1.258667 11.797333 1.685333 23.573333 14.698667 25.258666z m31.936 61.973334s-20.16-15.594667-31.936-32.448c-15.957333-24.874667-38.634667-14.762667-46.208-2.112-7.552 12.650667-19.328 20.629333-20.992 22.741333-1.685333 2.090667-24.362667 14.336-19.328 36.672 5.034667 22.336 22.72 21.909333 22.72 21.909333s13.013333 1.28 28.138667-2.112c15.104-3.349333 28.117333 0.832 28.117333 0.832s35.306667 11.818667 44.970667-10.944c9.621333-22.72-5.482667-34.538667-5.482667-34.538666z m-60.394667 33.877333h-22.954666c-9.92-1.984-13.866667-8.746667-14.357334-9.898667-0.490667-1.173333-3.306667-6.613333-1.813333-15.850666 4.288-13.866667 16.490667-14.848 16.490667-14.848h12.224v-15.04l10.410666 0.149333v55.488z m42.752-0.170667h-26.410666c-10.24-2.624-10.709333-9.92-10.709334-9.92v-29.205333l10.709334-0.170667v26.261334c0.64 2.794667 4.117333 3.306667 4.117333 3.306666h10.88v-29.397333h11.413333v39.125333z m37.376-77.994666c0-5.034667-4.181333-20.224-19.733333-20.224-15.552 0-17.642667 14.336-17.642667 24.469333 0 9.685333 0.810667 23.189333 20.16 22.741333 19.328-0.426667 17.216-21.909333 17.216-26.986666z" fill="#FFFFFF" p-id="1663"></path></svg>
+        </a>
+      
+      
+        <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://zhuochi.org/listen/Coldplay/index.html&title=Coldplay&pic=https://zhuochi.org/images/logo.svg&desc=10 Albums, 115 Songs&summary=CloudPool浊池是由年轻人管理的博客" aria-hidden="true" target="_blank">
+        <svg t="1659969969936" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2714"><path d="M866.991 707.772c0 0-25.341 69.55-71.877 132.071 0 0 83.050 28.439 76.137 102.196 0 0 2.709 82.331-177.613 76.685 0 0-126.817-9.898-164.88-63.85h-33.53c-38.018 54.006-164.834 63.85-164.834 63.85-180.431 5.7-177.556-76.685-177.556-76.685-7.025-73.756 76.081-102.196 76.081-102.196-46.475-62.519-71.875-132.071-71.875-132.071-112.759 183.141-101.477-25.567-101.477-25.567 21.141-123.495 109.949-204.384 109.949-204.384-12.677-112.157 33.805-132.078 33.805-132.078 9.68-346.979 306.473-340.887 312.675-340.722 6.249-0.163 302.931-6.256 312.72 340.723 0 0 46.538 19.866 33.812 132.078 0 0 88.751 80.89 109.886 204.384 0.055-0.001 11.285 208.707-101.421 25.566v0 0z" p-id="2715" fill="#04b2f1"></path></svg>
+        </a>
+      
+    </span>
+  </span>
+</aside>
+    <footer class="app-footer">
+  <p class="copyright">
+    Copyright &copy; 2017 - 2024, CloudPool浊池, All Rights Reserved. <a href="https://zhuochi.org" target="_blank">zhuochi.org</a> || <a href="https://voiiu.com" target="_blank">voiiu.com</a><br/> 本站为基于<a href="https://hexo.io" target="_blank">Hexo</a>的静态博客，<span id="busuanzi_container_site_pv">总访问量 <span id="busuanzi_value_site_pv"></span> 次</span><!--，来自 <span id="busuanzi_value_site_uv"></span> 个 IP--><br/> 主题源自 <a target="_blank" rel="noopener" href="https://github.com/yanm1ng/hexo-theme-vexo">Vexo</a> by yanm1ng，感谢 <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer">APlayer</a> by DIYgod，感谢 <a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">Live2D Widget</a> by stevenjoezhang & <a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">live2d-widget-models</a> by xiazeyu<br/>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+
+<script src="/js/script.js"></script>
+ <!--无法移至head.js中，原因不明-->
+<script type="text/javascript" src="/js/busuanzi.min.js" async></script>
+
+  </body>
+</html>
