@@ -456,6 +456,7 @@ header:hover .chn_mark {
 .post-article .markdown-content code {
   font-family: 'Roboto Mono', Monaco, courier, monospace;
   font-size: 13px;
+  padding-bottom: 1em;
   scrollbar-width: thin;
 }
 @media screen and (max-width: 768px) {
