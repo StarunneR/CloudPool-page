@@ -132,7 +132,7 @@
     $("div.fold_content").css("display", "none");
   })
 
-  $("a[href*='<emoji>']").attr({href: "//emoji."+window.location.hostname, target: "_blank",}).addClass("emoji")
+  $("a[href*='<emoji>']").attr({href: "//a-emoji."+window.location.hostname, target: "_blank",}).addClass("emoji")
 
   /*
   var toggle = document.getElementById('toggle');
