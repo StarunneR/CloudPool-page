@@ -607,101 +607,103 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="幽霊東京-EP-2019"><a href="#幽霊東京-EP-2019" class="headerlink" title="幽霊東京 - EP 2019"></a>幽霊東京 - EP 2019</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+        <h3 id="幽霊東京-EP-2019"><a href="#幽霊東京-EP-2019" class="headerlink" title="幽霊東京 - EP 2019"></a>幽霊東京 - EP 2019</h3><p>GENRE: ANIME</p>
+<div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
 {
 name: 'ハッピーエンダー',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/01 ハッピーエンダー.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/01 ハッピーエンダー.m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/01 ハッピーエンダー.lrc',
 },{
 name: 'フィクションブルー',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/02 フィクションブルー.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/02 フィクションブルー.m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/02 フィクションブルー.lrc',
 },{
 name: 'ラストリゾート',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/03 ラストリゾート.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/03 ラストリゾート.m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/03 ラストリゾート.lrc',
 },{
 name: 'キラークイーン',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/04 キラークイーン.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/04 キラークイーン.m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/04 キラークイーン.lrc',
 },{
 name: 'ヴァイオレッタ',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/05 ヴァイオレッタ.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/05 ヴァイオレッタ.m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/05 ヴァイオレッタ.lrc',
 },{
 name: '幽霊東京',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/06 幽霊東京.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/06 幽霊東京.m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/06 幽霊東京.lrc',
 },{
 name: '夜に駆ける (初音ミク ver.)',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/07 夜に駆ける(初音ミク ver.).m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/07 夜に駆ける(初音ミク ver.).m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/07 夜に駆ける(初音ミク ver.).lrc',
 },{
 name: '夜撫でるメノウ (Ayase ver.)',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/08 夜撫でるメノウ (Ayase ver.).m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2019_GC/08 夜撫でるメノウ (Ayase ver.).m4a',
 cover: '2019_GC/cover.webp',
 lrc: '2019_GC/08 夜撫でるメノウ (Ayase ver.).lrc',
 },
 ]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("abort",()=>{event.target.pause();event.target.play();});ap1.on("play",()=>{console.log("** "+document.title+" **")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
 
-<h3 id="MIKUNOYOASOBI-feat-初音ミク-E-P-2021"><a href="#MIKUNOYOASOBI-feat-初音ミク-E-P-2021" class="headerlink" title="MIKUNOYOASOBI feat. 初音ミク (E.P.) 2021"></a>MIKUNOYOASOBI feat. 初音ミク (E.P.) 2021</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+<h3 id="MIKUNOYOASOBI-feat-初音ミク-E-P-2021"><a href="#MIKUNOYOASOBI-feat-初音ミク-E-P-2021" class="headerlink" title="MIKUNOYOASOBI feat. 初音ミク (E.P.) 2021"></a>MIKUNOYOASOBI feat. 初音ミク (E.P.) 2021</h3><p>GENRE: J-POP</p>
+<div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
 {
 name: '夜に駆ける',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/01 夜に駆ける.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/01 夜に駆ける.m4a',
 cover: '2021_MI/cover.webp',
 lrc: '2021_MI/01 夜に駆ける.lrc',
 },{
 name: 'あの夢をなぞって',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/02 あの夢をなぞって.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/02 あの夢をなぞって.m4a',
 cover: '2021_MI/cover.webp',
 lrc: '2021_MI/02 あの夢をなぞって.lrc',
 },{
 name: 'ハルジオン',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/03 ハルジオン.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/03 ハルジオン.m4a',
 cover: '2021_MI/cover.webp',
 lrc: '2021_MI/03 ハルジオン.lrc',
 },{
 name: 'たぶん',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/04 たぶん.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/04 たぶん.m4a',
 cover: '2021_MI/cover.webp',
 lrc: '2021_MI/04 たぶん.lrc',
 },
 {
 name: '群青',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/05 群青.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/05 群青.m4a',
 cover: '2021_MI/cover.webp',
 lrc: '2021_MI/05 群青.lrc',
 },{
 name: 'ハルカ',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/06 ハルカ.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/06 ハルカ.m4a',
 cover: '2021_MI/cover.webp',
 lrc: '2021_MI/06 ハルカ.lrc',
 },
 {
 name: 'アンコール',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/07 アンコール.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/2021_MI/07 アンコール.m4a',
 cover: '2021_MI/cover.webp',
 lrc: '2021_MI/07 アンコール.lrc',
 },
@@ -711,31 +713,31 @@ lrc: '2021_MI/07 アンコール.lrc',
 {
 name: '飽和',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/01 飽和.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/01 飽和.m4a',
 cover: 'Single/飽和-シネマ.webp',
 lrc: 'Single/01 飽和.lrc',
 },{
 name: 'シネマ',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/02 シネマ.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/02 シネマ.m4a',
 cover: 'Single/飽和-シネマ.webp',
 lrc: 'Single/02 シネマ.lrc',
 },{
 name: 'SHOCK!',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/SHOCK!.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/SHOCK!.m4a',
 cover: 'Single/SHOCK!.webp',
 lrc: 'Single/SHOCK!.lrc',
 },{
 name: '飛天',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/飛天.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/飛天.m4a',
 cover: 'Single/飛天.webp',
 lrc: 'Single/飛天.lrc',
 },{
 name: 'キラキラキラ',
 artist: 'Ayase',
-url: 'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/キラキラキラ.m4a',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/ayase/Single/キラキラキラ.m4a',
 cover: 'Single/キラキラキラ.webp',
 lrc: 'Single/キラキラキラ.lrc',
 },
