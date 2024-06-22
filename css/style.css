@@ -1607,8 +1607,7 @@ header:hover .chn_mark {
   width: min-content;
 }
 .aplayer {
-  font-size: initial;
-  font-family: initial;
+  font-family: Verdana, Geneva, sans-serif;
   font-weight: initial;
 }
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-pic {
