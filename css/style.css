@@ -1629,6 +1629,7 @@ header:hover .chn_mark {
   height: 48px !important;
 }
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-lrc .aplayer-lrc-contents {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 17px !important;
 }
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-lrc .aplayer-lrc-contents p {
