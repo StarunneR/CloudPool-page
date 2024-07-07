@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="CloudPool浊池是由年轻人管理的博客">
+  <meta name="keyword" content="浊池, CloudPool, CloudPool浊池">
+  
+  <link rel="shortcut icon" type="image/ico" href="/images/cloudpool-favicon.ico">
+  
+  <title>
+    
+      Dua Lipa
+    
+  </title>
+  <!-- CSS -->
+  <!--<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />-->
+  <link href="//cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />-->
+  <!--<link href="//cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"/>-->
+  <link href="//cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="//cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css"/>
+  <!--<link href="//cdn.bootcdn.net/ajax/libs/waline/2.15.6/waline.min.css" rel="stylesheet">-->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <!-- JS -->
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <!--<script type="text/javascript" src="//cdn.staticfile.org/nprogress/0.2.0/nprogress.min.js"></script>-->
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" maxlength="80"
+                    placeholder="Anything...  今天想看什么w" spellcheck="false"
+                    type="" class="search-input">
+            </div>
+            <span class="popup-btn-go">
+                <i class="fa-solid fa-arrow-circle-right"></i>
+            </span>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+        </div>
+        <div id="search-result" class="search-result-container">
+            <div id="no-result" class="no-result">
+                <i class="fa-solid fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+  <link rel="prefetch" href="/search.xml" crossorigin="anonymous"> 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Popup Window
+      let isfetched = false;
+      let datas;
+      let isXml = true;
+      // Search DB path
+      let searchPath = 'search.xml'; //CONFIG.search.path
+      if (searchPath.length === 0) {
+        searchPath = 'search.xml';
+      } else if (searchPath.endsWith('json')) {
+        isXml = false;
+      }
+      const input = document.querySelector('.search-input');
+      const resultContent = document.getElementById('search-result');
+
+      const getIndexByWord = (word, text, caseSensitive) => {
+        if ('false' == false) { // CONFIG.localsearch.unescape = false
+          let div = document.createElement('div');
+          div.innerText = word;
+          word = div.innerHTML;
+        }
+        let wordLen = word.length;
+        if (wordLen === 0) return [];
+        let startPosition = 0;
+        let position = [];
+        let index = [];
+        if (!caseSensitive) {
+          text = text.toLowerCase();
+          word = word.toLowerCase();
+        }
+        while ((position = text.indexOf(word, startPosition)) > -1) {
+          index.push({ position, word });
+          startPosition = position + wordLen;
+        }
+        return index;
+      };
+
+      // Merge hits into slices
+      const mergeIntoSlice = (start, end, index, searchText) => {
+        let item = index[index.length - 1];
+        let { position, word } = item;
+        let hits = [];
+        let searchTextCountInSlice = 0;
+        while (position + word.length <= end && index.length !== 0) {
+          if (word === searchText) {
+            searchTextCountInSlice++;
+          }
+          hits.push({
+            position,
+            length: word.length
+          });
+          let wordEnd = position + word.length;
+
+          // Move to next position of hit
+          index.pop();
+          while (index.length !== 0) {
+            item = index[index.length - 1];
+            position = item.position;
+            word = item.word;
+            if (wordEnd > position) {
+              index.pop();
+            } else {
+              break;
+            }
+          }
+        }
+        return {
+          hits,
+          start,
+          end,
+          searchTextCount: searchTextCountInSlice
+        };
+      };
+
+      // Highlight title and content
+      const highlightKeyword = (text, slice) => {
+        let result = '';
+        let prevEnd = slice.start;
+        slice.hits.forEach(hit => {
+          result += text.substring(prevEnd, hit.position);
+          let end = hit.position + hit.length;
+          result += `<b class="search-keyword">${text.substring(hit.position, end)}</b>`;
+          prevEnd = end;
+        });
+        result += text.substring(prevEnd, slice.end);
+        return result;
+      };
+
+      const inputEventFunction = () => {
+        if (!isfetched) return;
+        let searchText = input.value.trim().toLowerCase();
+        let keywords = searchText.split(/[-\s]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        let resultItems = [];
+        if (searchText.length > 0) {
+          // Perform local searching
+          datas.forEach(({ title, content, url }) => {
+            let titleInLowerCase = title.toLowerCase();
+            let contentInLowerCase = content.toLowerCase();
+            let indexOfTitle = [];
+            let indexOfContent = [];
+            let searchTextCount = 0;
+            keywords.forEach(keyword => {
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+
+            // Show search results
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              let hitCount = indexOfTitle.length + indexOfContent.length;
+              // Sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(index => {
+                index.sort((itemLeft, itemRight) => {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  }
+                  return itemLeft.word.length - itemRight.word.length;
+                });
+              });
+
+              let slicesOfTitle = [];
+              if (indexOfTitle.length !== 0) {
+                let tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
+                searchTextCount += tmp.searchTextCountInSlice;
+                slicesOfTitle.push(tmp);
+              }
+
+              let slicesOfContent = [];
+              while (indexOfContent.length !== 0) {
+                let item = indexOfContent[indexOfContent.length - 1];
+                let { position, word } = item;
+                // Cut out 100 characters
+                let start = position - 20;
+                let end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                let tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
+                searchTextCount += tmp.searchTextCountInSlice;
+                slicesOfContent.push(tmp);
+              }
+
+              // Sort slices in content by search text's count and hits' count
+              slicesOfContent.sort((sliceLeft, sliceRight) => {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                }
+                return sliceLeft.start - sliceRight.start;
+              });
+
+              // Select top N slices in content
+              let upperBound = parseInt('1', 10); // CONFIG.localsearch.top_n_per_article: 1
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              let resultItem = '';
+
+              if (slicesOfTitle.length !== 0) {
+                resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title" target="_blank">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
+              } else {
+                resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title" target="_blank">${title}</a>`;
+              }
+
+              slicesOfContent.forEach(slice => {
+                resultItem += `<a href="${url}" target="_blank"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
+              });
+
+              resultItem += '</li>';
+              resultItems.push({
+                item: resultItem,
+                id: resultItems.length,
+                hitCount,
+                searchTextCount
+              });
+            }
+          });
+        }
+        if (keywords.length === 1 && keywords[0] === '') {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa-sharp fa-regular fa-circle-check fa-5x"></i></div>';
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa-regular fa-face-frown-open fa-5x"></i></div>';
+        } else {
+          resultItems.sort((resultLeft, resultRight) => {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            }
+            return resultRight.id - resultLeft.id;
+          });
+          resultContent.innerHTML = `<ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
+          window.pjax && window.pjax.refresh(resultContent);
+        }
+      };
+
+      const fetchData = () => {
+        fetch('/' + searchPath) // CONFIG.root = ''
+          .then(response => response.text())
+          .then(res => {
+            // Get the contents from search data
+            isfetched = true;
+            datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
+              return {
+                title: element.querySelector('title').textContent,
+                content: element.querySelector('content').textContent,
+                url: element.querySelector('url').textContent
+              };
+            }) : JSON.parse(res);
+            // Only match articles with not empty titles
+            datas = datas.filter(data => data.title).map(data => {
+              data.title = data.title.trim();
+              data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+              data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+              return data;
+            });
+            // Remove loading animation
+            document.getElementById('no-result').innerHTML = '<i class="fa-sharp fa-regular fa-circle-check fa-5x"></i></i>';
+            inputEventFunction();
+          });
+      };
+
+      if (false) { // CONFIG.localsearch.preload: false
+        fetchData();
+      }
+
+      if ('auto' === 'auto') { // CONFIG.localsearch.trigger: 'auto' / 'manual'
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+        input.addEventListener('keypress', event => {
+          if (event.key === 'Enter') {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // Handle and trigger popup window
+      document.querySelectorAll('.popup-trigger').forEach(element => {
+        element.addEventListener('click', () => {
+          document.body.style.overflow = 'hidden';
+          document.querySelector('.search-pop-overlay').classList.add('search-active');
+          input.focus();
+          if (!isfetched) fetchData();
+        });
+      });
+
+      // Monitor main search box
+      const onPopupClose = () => {
+        document.body.style.overflow = '';
+        document.querySelector('.search-pop-overlay').classList.remove('search-active');
+      };
+
+      document.querySelector('.search-pop-overlay').addEventListener('click', event => {
+        if (event.target === document.querySelector('.search-pop-overlay')) {
+          onPopupClose();
+        }
+      });
+      document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+      window.addEventListener('pjax:success', onPopupClose);
+      window.addEventListener('keyup', event => {
+        if (event.key === 'Escape') {
+          onPopupClose();
+        }
+      });
+
+      // PageJumper button
+      let onJumpPage = () => {
+        window.location = window.location.origin + '/' + input.value
+      };
+      document.querySelector('.popup-btn-go').addEventListener('click', onJumpPage);
+      document.querySelector('.search-input').addEventListener('keydown', event => {
+        if (event.keyCode === 13) {
+          onJumpPage();
+          return;
+        }
+      });
+      
+      // Search Preload
+      let head = document.head || document.getElementsByTagName('head')[0];
+      let searchlink = document.createElement('link');
+        searchlink.rel="search";
+        searchlink.href="/search.xml";
+        searchlink.crossOrigin="anonymous";
+      head.appendChild(searchlink);
+    });
+  </script>
+
+  <!--
+<script src="/js/local-search.js"></script>
+--> 
+
+  <script src="/live2d-widget/autoload.js"></script>
+  <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+  <!--<script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/waline/2.15.6/waline.min.js"></script>-->
+  <!-- Fonts -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <header class="header fixed-header">
+  <nav class="header-container">
+    <a class="home-link" href="/">
+      <img class="logo" src="/images/logo.png" alt="logo"/>
+      <span class="eng_mark">CloudPool</span><span class="chn_mark">浊池</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">主页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/categories/" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archive/" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/mag/" class="item-link">网刊</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/one/" class="item-link">一言</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/" class="item-link">网盘</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="//<emoji>" class="item-link">( ^ω^)</a>
+          
+        </li>
+      
+      
+        <li class="list-item">
+    <a role="button" class="item-link popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">主页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/categories/" class="menu-link">分类</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archive/" class="menu-link">归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/mag/" class="menu-link">网刊</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/one/" class="menu-link">一言</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/" class="menu-link">网盘</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="//<emoji>" class="menu-link">( ^ω^)</a>
+            
+          </li>
+        
+        
+          <li class="menu-item">
+    <a role="button" class="item-link popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <div id="article-banner">
+  <h2 class="post-title" id="post-title">Dua Lipa</h2>
+  
+   
+    <p class="post-date" id="post-date">2024-07-07</p>
+  
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+
+
+<main class="app-body flex-box">
+  <article class="post-article">
+    
+      <div class="front-parent" id="front-parent">
+  <div class="front-child" id="front-fontsize">
+    <label class="front-label" for="fontsize-range">字体大小</label>
+    <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
+    <span id="fontsize-value"></span>
+  </div>
+
+  <div class="front-child" id="front-fontselector">
+    <label class="front-label" for="font-select">更换字体</label>
+    <select name="font" id="font">
+      <option value="default">默认</option>
+      <option value="heiti">黑体</option>
+      <option value="light-heiti">黑体（细体）</option>
+      <option value="lighter-heiti">黑体（极细）</option>
+      <option value="songti">宋体</option>
+      <option value="light-songti">宋体（细体）</option>
+      <option value="kaiti">楷体</option>
+      <option value="fangsong">仿宋</option>
+    </select>
+  </div>
+
+  <div class="front-child" id="front-indent">
+    <label class="front-label" for="TextIndent">段首缩进</label>
+    <input type="checkbox" id="indent-checkbox" name="text-indent" value="" />
+  </div>
+</div>
+
+<h1 class="article-author">
+  
+        StʌrunneR
+        
+</h1>
+
+<script>
+  $(document).ready(
+    function () {
+      let FontChanger = function () {
+        if (this.value == "default") {
+          $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
+          $(".markdown-content").css({ "font-weight": 'initial' });
+        } if (this.value == "heiti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-heiti") {
+          $(".markdown-content").css({ "font-weight": '300' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap rel=stylesheet>");
+        } else if (this.value == "lighter-heiti") {
+          $(".markdown-content").css({ "font-weight": '100' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
+        } else if (this.value == "songti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-songti") {
+          $(".markdown-content").css({ "font-weight": '200' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
+        } else if (this.value == "kaiti") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZKai-Z03S','STKaiti','KaiTi',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-kai-z-03-s/font.css rel=stylesheet>");
+        } else if (this.value == "fangsong") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZFangSong-Z02S','STFangsong','FangSong','FangSong_GB2312',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-fang-song-z-02-s/font.css rel=stylesheet>");
+        }
+      };
+      $("#font").on('change', FontChanger);
+      $("#font").on('click', FontChanger);
+    });
+
+  $("#indent-checkbox").change(function () {
+    if (this.checked) {
+      $(".markdown-content > p").css({ "text-indent": "2em" });
+    } else {
+      $(".markdown-content > p").css({ "text-indent": "0" });
+    }
+  });
+
+  $("#fontsize-value").html("100%");
+  let rangeSwitch = function () {
+    let fontsizePercent = $("#fontsize-slider").val();
+    $(".markdown-content").css("font-size", fontsizePercent + "%")
+    $("#fontsize-value").html(fontsizePercent + "%")
+  }
+  $("#fontsize-slider").on("input", rangeSwitch)
+</script>
+      <section class="markdown-content" id="content">
+        <h3 id="Dua-Lipa-2017"><a href="#Dua-Lipa-2017" class="headerlink" title="Dua Lipa 2017"></a>Dua Lipa 2017</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Genesis',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/01 Genesis.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/01 Genesis.lrc',
+},{
+name: 'Lost in Your Light (feat. Miguel)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/02 Lost in Your Light (feat. Miguel).m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/02 Lost in Your Light (feat. Miguel).lrc',
+},{
+name: 'Hotter Than Hell',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/03 Hotter Than Hell.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/03 Hotter Than Hell.lrc',
+},{
+name: 'Be the One',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/04 Be the One.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/04 Be the One.lrc',
+},{
+name: 'IDGAF',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/05 IDGAF.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/05 IDGAF.lrc',
+},{
+name: 'Blow Your Mind (Mwah)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/06 Blow Your Mind (Mwah).m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/06 Blow Your Mind (Mwah).lrc',
+},{
+name: 'Garden',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/07 Garden.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/07 Garden.lrc',
+},{
+name: 'No Goodbyes',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/08 No Goodbyes.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/08 No Goodbyes.lrc',
+},{
+name: 'Thinking \'Bout You',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/09 Thinking \'Bout You.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/09 Thinking \'Bout You.lrc',
+},{
+name: 'New Rules',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/10 New Rules.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/10 New Rules.lrc',
+},{
+name: 'Begging',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/11 Begging.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/11 Begging.lrc',
+},{
+name: 'Homesick',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/12 Homesick.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/12 Homesick.lrc',
+},{
+name: 'Dreams',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/13 Dreams.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/13 Dreams.lrc',
+},{
+name: 'Room for 2',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/14 Room for 2.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/14 Room for 2.lrc',
+},{
+name: 'New Love',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/15 New Love.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/15 New Love.lrc',
+},{
+name: 'Bad Together',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/16 Bad Together.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/16 Bad Together.lrc',
+},{
+name: 'Last Dance',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2017_DL/17 Last Dance.m4a',
+cover: '2017_DL/cover.webp',
+lrc: '2017_DL/17 Last Dance.lrc',
+},
+]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("abort",()=>{event.target.pause();event.target.play();});ap1.on("play",()=>{console.log("** "+document.title+" **")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>即使 Dua Lipa 早在 2015 年就通过单曲《New Love》走红，但她的首张专辑在正式发行后依然带给听众一份意外的惊喜。这张专辑既有《New Rules》这种可以嗨翻派对的电子舞曲，动感十足的合成器音色震撼双耳；也不乏《Homesick》这种娓娓道来的抒情佳作，在简单的编曲中诉说心事。95 年出生的她用温厚的嗓音，传达出新一代女性的独立态度：《New Rules》提出实用的失恋法则，手把手教女孩们自我保护；《IDGAF》呼吁女性潇洒独立，比起依赖别人不如依靠自己。这是一次成功的首秀，也将是 Dua Lipa 登上流行之巅的开端。</p>
+<p>With hindsight, it’s hard to imagine that Dua Lipa’s globe-conquering success was ever anything other than a foregone conclusion. But her breakout smash, “New Rules,” was preceded by seven singles and her debut album was twice delayed, arriving several months after originally planned. Even then, Dua Lipa was something of a sleeper hit, reaching its UK chart peak 38 weeks after release. </p>
+<p>While her debut LP’s rollout may have been shaky, Lipa herself has never appeared anything less than assured, with a vocal style so cool it borders on aloof. Her rich, sultry stylings here anchor a collection that isn’t afraid to genre-hop, brooding over the tropical pop of “Hotter than Hell” as it boils to its euphoric climax. “Be the One” is similarly summery, with a persistent chorus that drips yearning over a Europop beat—evoking all the wistfulness of a holiday romance—and even “Thinking ’Bout You” morphs from a laidback acoustic jam into something more full-throated. The pace only slows on the closing track “Homesick,” a piano ballad co-written with Chris Martin about those you leave behind when your pop-star dreams come true. </p>
+<p>MNEK co-write “IDGAF” lambasts a good-for-nothing-ex over a military drum line (“You say you’re sorry&#x2F;But it’s too late now&#x2F;So save it, get gone, shut up”) and definitively establishes that Dua knows her way around an anthemic chorus. In that regard, it’s a perfect companion track to the album’s centerpiece “New Rules.” Over a shimmering tropical beat, Dua dispenses breakup wisdom with the firm hand of a no-nonsense agony aunt (“One: Don’t pick up the phone&#x2F;You know he’s only callin’ ’cause he’s drunk and alone”). It effortlessly marks the precise moment of her rise to the upper echelons of the pop stratosphere. Indeed, if anything is to be gleaned from the album’s staccato ascent, it’s that good things come to those who wait. </p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Future-Nostalgia-The-Moonlight-Edition-2020-2021"><a href="#Future-Nostalgia-The-Moonlight-Edition-2020-2021" class="headerlink" title="Future Nostalgia (The Moonlight Edition) 2020, 2021"></a>Future Nostalgia (The Moonlight Edition) 2020, 2021</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Future Nostalgia',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/01 Future Nostalgia.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/01 Future Nostalgia.lrc',
+},{
+name: 'Don\'t Start Now',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/02 Don\'t Start Now.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/02 Don\'t Start Now.lrc',
+},{
+name: 'Cool',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/03 Cool.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/03 Cool.lrc',
+},{
+name: 'Physical',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/04 Physical.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/04 Physical.lrc',
+},{
+name: 'Levitating',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/05 Levitating.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/05 Levitating.lrc',
+},{
+name: 'Pretty Please',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/06 Pretty Please.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/06 Pretty Please.lrc',
+},{
+name: 'Hallucinate',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/07 Hallucinate.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/07 Hallucinate.lrc',
+},{
+name: 'Love Again',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/08 Love Again.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/08 Love Again.lrc',
+},{
+name: 'Break My Heart',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/09 Break My Heart.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/09 Break My Heart.lrc',
+},{
+name: 'Good In Bed',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/10 Good In Bed.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/10 Good In Bed.lrc',
+},{
+name: 'Boys Will Be Boys',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_FN/11 Boys Will Be Boys.m4a',
+cover: '2020_FN/cover.webp',
+lrc: '2020_FN/11 Boys Will Be Boys.lrc',
+},{
+name: 'Fever',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/12 Fever.m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/12 Fever.lrc',
+},{
+name: 'We\'re Good',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/13 We\'re Good.m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/13 We\'re Good.lrc',
+},{
+name: 'Prisoner (feat. Dua Lipa)',
+artist: 'Miley Cyrus',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/14 Prisoner (feat. Dua Lipa).m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/14 Prisoner (feat. Dua Lipa).lrc',
+},{
+name: 'If It Ain’t Me',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/15 If It Ain’t Me.m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/15 If It Ain’t Me.lrc',
+},{
+name: 'That Kind Of Woman',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/16 That Kind Of Woman.m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/16 That Kind Of Woman.lrc',
+},{
+name: 'Not My Problem (feat. JID)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/17 Not My Problem (feat. JID).m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/17 Not My Problem (feat. JID).lrc',
+},{
+name: 'Levitating (feat. DaBaby)',
+artist: 'DaBaby',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/18 Levitating (feat. DaBaby).m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/18 Levitating (feat. DaBaby).lrc',
+},{
+name: 'Un Día (One Day)',
+artist: 'J. Balvin',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2021_FT/19 Un Día (One Day).m4a',
+cover: '2021_FT/cover.webp',
+lrc: '2021_FT/19 Un Día (One Day).lrc',
+},
+]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("abort",()=>{event.target.pause();event.target.play();});ap2.on("play",()=>{console.log("** "+document.title+" **")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<ul>
+<li>Future Nostalgia (The Moonlight Edition):</li>
+</ul>
+<p>2020 年 3 月，Dua Lipa 发行专辑《Future Nostalgia》时，明白自己是在冒险——当时在社交媒体上的一段视频中，这位英国歌手含泪表示，自己也不知道在全球疫情流行时发这样一张充满喜悦的专辑“是否合适”。然而，这次冒险成功了。《Future Nostalgia》是探索流行乐未来的一次欢乐历险，其灵感则来自流行乐从前的深夜之音。事实证明，它也正是深陷危机的世界亟需的一剂良药。“我在制作这张专辑时，希望它帮助人暂时逃离现实。”Lipa 告诉 Apple Music，“在这样的时期，它确实让我感觉逃离了现实。专辑得到的反响让我非常开心，很多人都说：‘它帮我度过了封城。’”发行这张专辑后，Lipa 再接再厉，又推出了一张星光熠熠的 remix 专辑并获得了一项水星奖（Mercury Prize）提名和六项格莱美奖项提名。几乎整整一年后，她又带来了这张《The Moonlight Edition》。在这里你不但能找到原专辑中 11 首振奋人心的歌，还会听到 Lipa 在那之后推出的一系列热歌：与 Angèle 合作的《Fever》，DaBaby 客串的 remix《Levitating》，以及他与 Miley Cyrus 合作的大热单曲《Prisoner》。此外，专辑还收录了此前未公开的曲目，包括与《Future Nostalgia》中 Disco 曲风大相径庭的《We’re Good》。《The Moonlight Edition》是对一张“生逢其时”的专辑的纪念，也在帮助 Lipa 继续征服世界。</p>
+<p>When Dua Lipa released <em>Future Nostalgia</em> in March 2020, she knew she was taking a risk (in a tearful social media video at the time, the British singer wondered whether releasing an album so laced with joy was “the right thing to do” just as a global pandemic hit). Her gamble, of course, paid off. <em>Future Nostalgia</em>—a celebratory odyssey into pop’s future, influenced by the late-night sounds of its past—proved to be just the tonic a world in crisis needed. “When I was creating this record, I wanted it to feel like a form of escapism,” Lipa tells Apple Music. “And it felt like, during this time, it did serve as a form of escapism for me. And I was so happy with the response that the record got, and people [who] were like, ‘This got me through lockdown.’” Almost exactly a year later—and following an exhilarating, star-studded remix album, a Mercury Prize nomination, and six Grammy Award nods—comes <em>The Moonlight Edition</em>. Here, you’ll find the original record’s 11 uplifting tracks and the stream of hits Lipa served up in its wake (“Fever” with Angèle, a DaBaby-featuring remix of “Levitating,” and “Prisoner,” Lipa’s inescapable Miley Cyrus collab) plus previously unreleased tracks, including “We’re Good,” on which Lipa departs from <em>Future Nostalgia</em>’s iridescent, disco-indebted sounds. <em>The Moonlight Edition</em> celebrates an album that met the moment—and allowed its creator to conquer the world.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Club-Future-Nostalgia-DJ-Mix-2020"><a href="#Club-Future-Nostalgia-DJ-Mix-2020" class="headerlink" title="Club Future Nostalgia (DJ Mix) 2020"></a>Club Future Nostalgia (DJ Mix) 2020</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Future Nostalgia (Joe Goddard Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/01 Future Nostalgia (Joe Goddard Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/01 Future Nostalgia (Joe Goddard Remix) [Mixed].lrc',
+},{
+name: 'Cool (Jayda G Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/02 Cool (Jayda G Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/02 Cool (Jayda G Remix) [Mixed].lrc',
+},{
+name: 'Good In Bed (Zach Witness & Gen Hoshino Remixes) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/03 Good In Bed (Zach Witness & Gen Hoshino Remixes) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/03 Good In Bed (Zach Witness & Gen Hoshino Remixes) [Mixed].lrc',
+},{
+name: 'Pretty Please (Midland Refix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/04 Pretty Please (Midland Refix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/04 Pretty Please (Midland Refix) [Mixed].lrc',
+},{
+name: 'Pretty Please (Masters at Work Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/05 Pretty Please (Masters at Work Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/05 Pretty Please (Masters at Work Remix) [Mixed].lrc',
+},{
+name: 'Boys Will Be Boys (Zach Witness Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/06 Boys Will Be Boys (Zach Witness Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/06 Boys Will Be Boys (Zach Witness Remix) [Mixed].lrc',
+},{
+name: 'Love Again (Horse Meat Disco Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/07 Love Again (Horse Meat Disco Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/07 Love Again (Horse Meat Disco Remix) [Mixed].lrc',
+},{
+name: 'Break My Heart - Cosmic Girl (Dimitri From Paris Edit) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/08 Break My Heart - Cosmic Girl (Dimitri From Paris Edit) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/08 Break My Heart - Cosmic Girl (Dimitri From Paris Edit) [Mixed].lrc',
+},{
+name: 'Levitating (feat. Madonna and Missy Elliott) [The Blessed Madonna Remix] [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/09 Levitating (feat. Madonna and Missy Elliott) [The Blessed Madonna Remix] [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/09 Levitating (feat. Madonna and Missy Elliott) [The Blessed Madonna Remix] [Mixed].lrc',
+},{
+name: 'Hallucinate (Mr Fingers deep stripped mix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/10 Hallucinate (Mr Fingers deep stripped mix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/10 Hallucinate (Mr Fingers deep stripped mix) [Mixed].lrc',
+},{
+name: 'Hallucinate (Paul Woolford Remix) [Extended] [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/11 Hallucinate (Paul Woolford Remix) [Extended] [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/11 Hallucinate (Paul Woolford Remix) [Extended] [Mixed].lrc',
+},{
+name: 'Love Is Religion (The Blessed Madonna Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/12 Love Is Religion (The Blessed Madonna Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/12 Love Is Religion (The Blessed Madonna Remix) [Mixed].lrc',
+},{
+name: 'Don\'t Start Now (Yaeji Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/13 Don\'t Start Now (Yaeji Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/13 Don\'t Start Now (Yaeji Remix) [Mixed].lrc',
+},{
+name: 'Physical (feat. Gwen Stefani) [Mark Ronson Remix] [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/14 Physical (feat. Gwen Stefani) [Mark Ronson Remix] [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/14 Physical (feat. Gwen Stefani) [Mark Ronson Remix] [Mixed].lrc',
+},{
+name: 'Kiss and Make Up (Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/15 Kiss and Make Up (Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/15 Kiss and Make Up (Remix) [Mixed].lrc',
+},{
+name: 'That Kind Of Woman (Jacques Lu Cont Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/16 That Kind Of Woman (Jacques Lu Cont Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/16 That Kind Of Woman (Jacques Lu Cont Remix) [Mixed].lrc',
+},{
+name: 'Break My Heart (Moodymann Remix) [Mixed]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2020_CF/17 Break My Heart (Moodymann Remix) [Mixed].m4a',
+cover: '2020_CF/cover.webp',
+lrc: '2020_CF/17 Break My Heart (Moodymann Remix) [Mixed].lrc',
+},
+]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("abort",()=>{event.target.pause();event.target.play();});ap3.on("play",()=>{console.log("** "+document.title+" **")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
+
+<h3 id="Radical-Optimism-Explicit-2024"><a href="#Radical-Optimism-Explicit-2024" class="headerlink" title="Radical Optimism [Explicit] 2024"></a>Radical Optimism [Explicit] 2024</h3><div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'End Of An Era',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/01 End Of An Era.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/01 End Of An Era.lrc',
+},{
+name: 'Houdini',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/02 Houdini.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/02 Houdini.lrc',
+},{
+name: 'Training Season',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/03 Training Season.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/03 Training Season.lrc',
+},{
+name: 'These Walls [Explicit]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/04 These Walls [Explicit].m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/04 These Walls [Explicit].lrc',
+},{
+name: 'Whatcha Doing',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/05 Whatcha Doing.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/05 Whatcha Doing.lrc',
+},{
+name: 'French Exit',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/06 French Exit.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/06 French Exit.lrc',
+},{
+name: 'Illusion [Explicit]',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/07 Illusion [Explicit].m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/07 Illusion [Explicit].lrc',
+},{
+name: 'Falling Forever',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/08 Falling Forever.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/08 Falling Forever.lrc',
+},{
+name: 'Anything For Love',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/09 Anything For Love.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/09 Anything For Love.lrc',
+},{
+name: 'Maria',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/10 Maria.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/10 Maria.lrc',
+},{
+name: 'Happy For You',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RO/11 Happy For You.m4a',
+cover: '2024_RO/cover.webp',
+lrc: '2024_RO/11 Happy For You.lrc',
+},
+]});ap4.on("play",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("abort",()=>{event.target.pause();event.target.play();});ap4.on("play",()=>{console.log("** "+document.title+" **")});ap4.on("loadstart",()=>{console.log("loadstart")});ap4.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4.on("loadeddata",()=>{console.log("loadeddata")});ap4.on("canplay",()=>{console.log("canplay")});ap4.on("canplaythrough",()=>{console.log("canplaythrough")});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("suspend",()=>{console.log("suspend")});ap4.on("play",()=>{console.log("play")});ap4.on("pause",()=>{console.log("pause")});ap4.on("waiting",()=>{console.log("waiting")});ap4.on("playing",()=>{console.log("playing")});ap4.on("seeking",()=>{console.log("seeking")});ap4.on("seeked",()=>{console.log("seeked")});ap4.on("error",()=>{console.log("error");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>Dua Lipa 深信“心想事成”的力量，对此她抱有充分的理由：“我知道这听上去很疯狂，但我在写第一张专辑的时候，就已经在想第三张专辑的事了。”Dua Lipa 告诉 Apple Music，“当时我就在想，到第三张专辑的时候，我也许就有资格和 Tame Impala 合作了。（2015 年 Tame Impala 里程碑式的杰作）《Currents》曾彻底震撼到我。”2020 年，Dua Lipa 凭借专辑《Future Nostalgia》一举奠定巨星地位，2023 年又为为电影《Barbie》演唱了主题曲《Dance the Night》，而今释出的《Radical Optimism》终于帮她圆了自己一个梦。</p>
+<p>专辑共收录 11 首歌曲，参与创作的包括 Tame Impala 主脑 Kevin Parker，Adele 的“秘密武器”、唱作歌手 Tobias Jesso Jr.，OG PC Music 旗下艺人，PinkPantheress、Caroline Polachek 的爱将 Danny L Harle，以及 Lipa 的老搭档、与她一起创作《New Rules》的 Caroline Ailin。对于 Lipa 这种在排行榜上呼风唤雨的艺人，这样的创作阵容或许有些出人意料，但 Lipa 对这支团队信心满满，他们共创的第一首歌便证明这种乐观并非盲目：情绪大开大合的劲歌《Illusion》如同《Future Nostalgia》中佳作《Hallucinate》的姊妹篇，仿佛是为 Lipa 即将登上的 Glastonbury 舞台量身定制，而这，恰好是第三张专辑帮她实现的又一个心愿。Lipa 回忆道：“最开始我们手足无措：‘待在同一个屋檐下的这群人要怎么合作呢？我们真的能行吗？’但《Illusion》开了个好头，写完这首歌，我们这支团队的默契便整合完成了。”</p>
+<p>和《Future Nostalgia》一样，《Radical Optimism》也从过去寻找灵感，你会从中听到华丽的合成器、律动丰富的 bassline、迷幻音乐，以及大量 80 年代风格的制作元素。Lipa 认为，英伦摇滚和 Massive Attack 的冒险精神也影响了专辑的气质。除此之外，她还想“做点实验性的、不一样的东西”。在《Radical Optimism》之中，明亮的原声吉他、钢琴、声场开阔的鼓点、拍掌声，还有不时出现的排箫，营造出自然的流行风格，取代了《Future Nostalgia》中精雕细琢的 Nu-Disco。Lipa 还在《Falling Forever》中尽兴地飙了一把高音，苛责她演唱“漫不经心”的人想必也无话可说。 她在整张专辑中咀嚼心碎，回忆单身状态，遇到意中人的怦然心动、发觉曾经深爱的人已经放下过去等私人情绪，也被一一记录下来。</p>
+<p>“在这张专辑里，我以一种前所未有的诚实态度袒露心扉。”而这来自于身边团队的帮助。“不必担惊受怕的感觉真的很好，走进房间和朋友待在一起，很自然就会讲出真心话。”Lipa 表示，“我们放下了所有戒备，大家对一切都心照不宣，也不会刻薄地评价任何事。所有人都能自由表达，于是我们营造出了一种非常美好的能量。”</p>
+<p>这样一位倾注整个生涯打造分手情歌、鼓舞人心的唱作歌手，对如何用流行歌曲诠释心碎自然有着非比寻常的理解。她招牌式的直白，便出现在《Training Season》之中——“你能和我走下去吗？&#x2F;因为我不想教你怎么做”（Are you somebody who can go there?&#x2F;’Cause I don’t wanna have to show ya”）。同时，Lipa 也表达了对恋情结束的接受和振奋人心的希望：专辑最动人的时刻出现在结尾的《Happy for You》，Lipa 发现自己的前任已经放下了过去，也有了新的感触，为对方的快乐而快乐。“感觉就像转了个 180 度的弯。”她承认，只有到了现在的阶段，她才能写出这样的歌。“我长大了，能用超脱的角度看待过去的自己：‘曾经的经历让我换了个角度看待问题，越来越成熟。我要学会原谅、成长，我要从中学习、放下过去，才能继续前行。’对我来说，《Happy for You》是一首美好而快乐的歌，因为它反映了我的成长历程。”《Maria》同样如此，Lipa 在这首歌中感谢新伴侣的前任，谢谢对方让他变成了现在的样子。她在歌里唱道：“因为失去的那些人，我也变成了更好的人&#x2F;现在他是我想要的一切&#x2F;我要感谢你所做的一切”（I’m better, too, from the ones that I’ve lost&#x2F;Now he is everything I’d ever want&#x2F;I wanna thank you for all that you’ve done）。</p>
+<p>讲述这些故事对 Lipa 来说就像“一场心灵疗愈”，她也始终谨记着这些歌对他人而言的意义，还有，在她心目中堪称“巅峰体验”的 Glastonbury 音乐节上，她要怎么演绎这些歌。“我会考虑情绪、感受和想法等种种因素。这些歌让我有什么感觉？别人听到这些歌的时候，他们会有什么感觉？我想传达怎样的能量，怎样的情感，怎么展现我所处的生命阶段？”对 Lipa 来说，答案就在专辑的标题里。“（这张专辑）真正的主题就是‘极端乐观主义’（radical optimism），也就是见招拆招、不要因为任何事而消沉太久的意思。无论生活中发生什么，无论是友情还是恋情让我心碎，我一向能看到事物积极的一面，也擅长换个角度看问题，我总会成长，向前看。我觉得，所谓成熟就是这么回事吧。”</p>
+<p>2020 年发布《Future Nostalgia》时，新冠疫情正在全球蔓延，专辑以 Lipa 无法预见的方式呼应了时代的需求。它成了逃避现实的出口，在封锁的世界里提供了另一种极端的乐观情绪。对于 Lipa 而言，《Radical Optimism》呼应了她个人的时代阶段：她开始与梦寐以求的搭档合作，打造即将在她一生所求的舞台上表演的歌曲。而现在，她可以和这张专辑治愈过的一切说再见了：“现在我已经翻篇了，这一章已经结束了。我成长了很多，我觉得我的驱魔仪式已经完成了。”</p>
+<p>When it comes to manifesting, Dua Lipa is, well, radically optimistic about its power. And with good reason. “I know this is going to sound mad, but when I was writing my first album, I was having thoughts about my third album,” she tells Apple Music’s Zane Lowe. “I thought by the third album, I would maybe be deserving of working with Tame Impala. Currents [Tame Impala’s career-defining 2015 album] was the record that completely shook me.” With <em>Radical Optimism</em>—the follow-up to 2020’s impeccable, superstar-confirming <em>Future Nostalgia</em>, and the next note after her 2023 Barbie smash “Dance the Night”—Lipa got her wish. </p>
+<p>The 11 tracks here were made with Tame Impala’s Kevin Parker, as well as Tobias Jesso Jr. (the singer-songwriter Adele has labeled her “secret weapon”), OG PC Music artist Danny L Harle (PinkPantheress, Caroline Polachek), and Lipa’s long-term collaborator Caroline Ailin, co-writer of “New Rules.” It’s not the most obvious team for a chart-dominating name like Lipa to recruit, but maybe there was radical optimism in that, too. Plus, the proof came in the first song they wrote together: A moodier sister to <em>Future Nostalgia</em> standout “Hallucinate,” “Illusion” is an indisputable banger that feels tailor-made for Lipa’s 2024 Glastonbury headline set (something else she manifested for her third album). “It was like, ‘OK, how are we all going to connect together in the room? How is it all going to work?’” says Lipa. “[‘Illusion’] really kicked us off. When we wrote that song, it just gave us confidence as a group.” </p>
+<p>Like <em>Future Nostalgia</em>, <em>Radical Optimism</em> pulls from the past, so you can expect shimmering synths, groove-laden basslines, nods to psychedelia, and plenty of ’80s production (Lipa has also cited the adventurousness of both Britpop and Massive Attack among the album’s spiritual influences). But the singer-songwriter wanted to “experiment and do something different” as well, and in place of Future Nostalgia’s polished nu-disco, <em>Radical Optimism</em> often embraces an organic, golden-pop feeling with bright acoustic guitars, pianos, roomy drums, handclaps, and the occasional panpipe, plus some skyscraping vocals that should stop anyone describing Lipa’s vocal style as “nonchalant” again (see: “Falling Forever”). All of which is set against Lipa’s most personal writing to date, fueled by reflections on heartbreak, singledom, the arresting experience of meeting someone you might just give your heart to, and realizing the person you once loved has moved on. </p>
+<p>“With this album, I feel like I’ve managed to put so much more honesty out there and be really open in a way that I don’t think I’ve ever had the chance to,” she says. “It was a beautiful experience to not be afraid.” That was helped, again, by the team around her. “You come into the room, you’re hanging out with your friends, and you’re just having a tell-all,” she says. “There was absolutely no holds barred. They knew everything that was happening. There was no judgment. The fact that everyone felt free to just be themselves is what, I think, created such a beautiful energy in the room.” </p>
+<p>The singer-songwriter gets heartbreak pop; after all, she’s made a whole career out of crafting sharp, post-breakup empowerment anthems (and you’ll hear her trademark up-front lyricism here, such as on “Training Season,” in which she declares, “Are you somebody who can go there?&#x2F;’Cause I don’t wanna have to show ya”). But here, Lipa also favors acceptance and a heartening sense of hope. Perhaps the album’s most powerful moment comes at its end, when Lipa realizes her ex has moved on and experiences an unfamiliar feeling: just happiness that they’re happy. “It feels like a full 180,” she says of closing track “Happy for You,” a song she admits she couldn’t have written until this point in her career. “Maturing, seeing almost my ghost on the other side and being like, ‘Wow, you’ve grown so much from an experience to be able to see things from that perspective. You have to be in the act of forgiveness and growing and learning and being OK with the past in order to move on. For me, ‘Happy for You’ is a beautiful, happy song because it’s so reflective of my journey.” You might say the same about “Maria,” in which Lipa salutes a new partner’s ex for making them who they are today. “I’m better, too, from the ones that I’ve lost&#x2F;Now he is everything I’d ever want,” she sings. “I wanna thank you for all that you’ve done.” </p>
+<p>Working through these stories has been “a form of therapy” for Lipa, but she always kept two things in mind: what her songs mean to other people and how they might land at Glastonbury, which the singer-songwriter calls “the pinnacle.” “I think about emotions and feelings and thoughts. How does this make me feel? How will this make someone else feel when they hear it? What is the energy and the emotion and the thing that I’m trying to convey at this point in my life?” For Lipa, the answer seems to be in this album’s title. “What [this album] was really about was the theme, which was ‘radical optimism,’” she says. “It’s this idea of rolling with the punches, of not letting anything get you down for too long. I’ve always seen the positive side of things, of being able to grow and move forward and change your perspective regardless of what’s happening in your life—whether it’s heartbreak, whether it’s a friendship, whether it’s a relationship, whether it’s just growing and seeing things differently. I think it’s a big part of maturing.”</p>
+<p>When <em>Future Nostalgia</em> came out in 2020, just as the global pandemic set in, the album met the moment in a way Lipa could never have foreseen. It became a vehicle for escapism—another kind of radical optimism in a locked-down world. It seems that, for Lipa, <em>Radical Optimism</em> was about meeting her moment—the point she began working with the collaborators she’d always dreamed of, on songs made to perform on the most important stage she can think of. And now, she can draw a line under everything she needed this album to help heal. “Now, I’m done. This chapter is done,” she says. “I did so much growing. I feel like that is my exorcism.”</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Radical-Optimism-Extended-Versions-2024"><a href="#Radical-Optimism-Extended-Versions-2024" class="headerlink" title="Radical Optimism  (Extended Versions) 2024"></a>Radical Optimism  (Extended Versions) 2024</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'End Of An Era (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/01 End Of An Era (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/01 End Of An Era (Extended).lrc',
+},{
+name: 'Houdini (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/02 Houdini (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/02 Houdini (Extended).lrc',
+},{
+name: 'Training Season (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/03 Training Season (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/03 Training Season (Extended).lrc',
+},{
+name: 'These Walls (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/04 These Walls (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/04 These Walls (Extended).lrc',
+},{
+name: 'Whatcha Doing (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/05 Whatcha Doing (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/05 Whatcha Doing (Extended).lrc',
+},{
+name: 'French Exit (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/06 French Exit (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/06 French Exit (Extended).lrc',
+},{
+name: 'Illusion (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/07 Illusion (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/07 Illusion (Extended).lrc',
+},{
+name: 'Falling Forever (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/08 Falling Forever (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/08 Falling Forever (Extended).lrc',
+},{
+name: 'Anything For Love (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/09 Anything For Love (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/09 Anything For Love (Extended).lrc',
+},{
+name: 'Maria (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/10 Maria (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/10 Maria (Extended).lrc',
+},{
+name: 'Happy For You (Extended)',
+artist: 'Dua Lipa',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Dua_Lipa/2024_RE/11 Happy For You (Extended).m4a',
+cover: '2024_RE/cover.webp',
+lrc: '2024_RE/11 Happy For You (Extended).lrc',
+},
+]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("abort",()=>{event.target.pause();event.target.play();});ap5.on("play",()=>{console.log("** "+document.title+" **")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
+
+<hr>
+<p><a target="_blank" rel="noopener" href="https://music.apple.com/cn/artist/dua-lipa/1031397873">Apple Music - Dua Lipa</a><br><a target="_blank" rel="noopener" href="https://music.163.com/artist?id=1135086">网易云音乐 - Dua Lipa</a></p>
+
+      </section>
+      
+        <div class="post-tags">
+  <span>标签：</span>
+  
+    <a href="/tags/#tag-音乐" target="_blank">
+      <span class="tag-code">
+        音乐
+      </span>
+    </a>
+    
+    <a href="/tags/#tag-Pop" target="_blank">
+      <span class="tag-code">
+        Pop
+      </span>
+    </a>
+    
+</div>
+       
+    
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/listen/X_Ambassadors/" target="_blank">
+        <span class="nav-arrow">← </span>
+        
+          X Ambassadors
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/about/top/" target="_blank">
+        
+          【手动置顶】新的开始？
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    
+      <div class="advertisement">
+        <p> 广告：快速学习 Crash Course十分钟速成课 <a target="_blank" rel="noopener" href="https://crashcourse.club/">字幕组网站</a></p>
+      </div>
+    
+    
+      
+
+<div id="waline"></div>
+
+<link href="https://cdn.bootcdn.net/ajax/libs/waline/2.15.8/waline.min.css" rel="stylesheet"/>
+<script src="https://cdn.bootcdn.net/ajax/libs/waline/2.15.8/waline.min.js"></script>
+<script defer src="/js/waline-qqavatar.js"></script>
+
+<script type="module">
+
+  const locale = {
+    nick: '昵称',
+    nickError: '昵称不能少于3个英文字符或2个中文汉字',
+    mail: '邮箱(可用QQ邮箱获取头像)',
+    mailError: '请填写正确的邮件地址',
+    link: '网址',
+    optional: '可选',
+    placeholder: '' || '说、什么8 \n\n可使用QQ邮箱获取QQ头像，或在gravatar.com注册后使用邮箱绑定头像 \n\n支持Markdown语法：*斜体*, **粗体**, \# - ###### 1-6级标题, *** 或 --- = 水平分割线, ~~删除线~~, > 引用内容, `代码块`, 1. 序号列表, * 无序列表, ^上角标^, ~下角标~, <br> = 空行, [链接文字](链接地址), ![图片名称](图片地址.png), ',
+    sofa: '来发评论吧~',
+    submit: '提交',
+    like: '喜欢',
+    cancelLike: '取消喜欢',
+    reply: '回复',
+    cancelReply: '取消回复',
+    comment: '评论',
+    refresh: '刷新',
+    more: '加载更多...',
+    preview: '预览',
+    emoji: '表情',
+    uploadImage: '上传图片',
+    seconds: '秒前',
+    minutes: '分钟前',
+    hours: '小时前',
+    days: '天前',
+    now: '刚刚',
+    uploading: '正在上传',
+    login: '登录',
+    logout: '退出',
+    admin: '博主',
+    sticky: '置顶',
+    word: '字',
+    wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    anonymous: '匿名',
+    level0: '潜水',
+    level1: '冒泡',
+    level2: '吐槽',
+    level3: '活跃',
+    level4: '话痨',
+    level5: '传说',
+    gif: '表情包',
+    gifSearchPlaceholder: '搜索表情包',
+    profile: '个人资料',
+    approved: '通过',
+    waiting: '待审核',
+    spam: '垃圾',
+    unsticky: '取消置顶',
+    oldest: '按倒序',
+    latest: '按正序',
+    hottest: '按热度',
+    reactionTitle: '你认为这篇文章怎么样？',
+  };
+
+  Waline.init({
+    el: "#waline",
+    serverURL: "" || "walinecf.zhuochi.org",
+    appId: "" || "M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI",
+    appKey: "" || "arEPHdbMnKwMjQgiWsLgw34N",
+    path:  "" || window.location.pathname,  // window.location.pathname.replace(/\/$/,''),
+    login: "disable",  // 'enable' || 'disable' || 'force'
+    avatarCDN: "https://gravatar.loli.top/avatar/",
+    //avatar: '',
+    placeholder: "",
+    pageSize: 10,
+    meta: ["nick", "mail"],
+    requiredMeta: [""],
+    pageview: "true" && "",
+    emoji: [
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+    ],
+    locale,
+  });
+
+  $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=/images/emoji.png class=wl-action id=wl-emoji></a>")
+
+//// Clean TEXTAREA 
+//$(".wl-cards").change(function () {
+//  alert('changed')
+  //('#wl-edit').html("")
+//})
+
+//! Not functional
+//$(".primary .wl-btn").click(function () {
+  //document.getElementsByClassName('wl-num')[0].innerHTML ++
+//})
+</script>
+
+<!--
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.6/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.6/waline.min.css">
+-->
+    
+    
+    
+      <div class="qrcode" id="qr-box">
+    <img id="share-qrcode" class="qrcode-image" src=""/>
+    <div class="qrcode-notice">保存二维码，分享此文章</div>
+</div>
+
+<!--<script type="text/javascript" src="/js/qrious.min.js"></script>-->
+<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/qrious/4.0.2/qrious.min.js" ></script>
+<script>
+    // qrcode
+    let qr = new QRious({
+        background: '#F0FFFF',
+        backgroundAlpha: 1,
+        foreground: '#0096FF',
+        foregroundAlpha: 0.8,
+        level: 'L',
+        mime: "image/gif",
+        padding: null, // pixels
+        size: 100,
+        element: document.getElementById('share-qrcode'),
+        value: document.location.href,
+    })
+
+    $("#share-qrcode").click(function () {
+        let img = document.getElementById('share-qrcode')
+        let imgurl = img.src
+        let a = document.createElement('a')
+        let down_event = new MouseEvent('click')
+        a.download = 'Dua Lipa-CloudPool浊池'
+        a.href = imgurl
+        a.dispatchEvent(down_event)
+    })
+</script>
+
+
+    
+  </article>
+</main>
+
+<script>
+  // error image
+  $(".markdown-content img").on("error", function () {
+    $(this).attr("src", "/images/error.png");
+    $(this).css({cursor: "default",});
+  });
+
+  // zoom image
+  $(".markdown-content img").on('click', function() {
+    var src = $(this).attr('src')
+    if (src !== '/css/images/error.png') {
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    }
+  })
+</script>
+
+<script>
+  (function () {
+    var url = "https://zhuochi.org/listen/Dua_Lipa/";
+    var banner = "";
+    if (banner !== "" && banner !== "undefined" && banner !== "null") {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+  })();
+</script>
+ 
+    <aside class="sidebar">
+  <span class="scroll-top fa fa-arrow-up"></span>
+  <span class="fa fa-share-alt share-icon">
+    <span class="list-icon">
+      
+        <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zhuochi.org/listen/Dua_Lipa/index.html&title=Dua Lipa&pics=https://zhuochi.org/images/logo.svg&desc=5 Albums, 75 Songs&summary=CloudPool浊池是由年轻人管理的博客" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659969569042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1231"><path d="M1023.210667 395.690667c-2.005333-6.08-7.381333-10.410667-13.781333-10.944l-347.114667-29.802667L526.634667 33.984C524.117333 28.096 518.4 24.256 512 24.256s-12.181333 3.861333-14.677333 9.749333l-135.616 320.938667L14.570667 384.746667c-6.357333 0.533333-11.797333 4.864-13.781333 10.944-1.941333 6.101333-0.106667 12.778667 4.714667 16.96l263.338667 228.138667L189.888 980.16c-1.429333 6.208 1.002667 12.757333 6.122667 16.512 5.205333 3.733333 12.117333 4.010667 17.642667 0.682667L512 817.450667l298.282667 179.946667c2.581333 1.557333 5.418667 2.346667 8.32 2.346667 3.221333 0 6.528-1.002667 9.344-3.008 5.162667-3.84 7.594667-10.368 6.122667-16.576l-62.442667-268.352c26.730667-13.482667 56.277333-36.245333 56.277333-36.245333s-116.864 57.066667-536.341333 29.205333L595.626667 484.437333c0 0-11.968-18.581333-392.981333-31.872-25.408-0.917333 310.677333-63.722667 558.933333-10.645333L456.298667 660.906667c0 0 122.453333 18.197333 307.328 16.085333l-8.448-36.181333 263.36-228.16C1023.381333 408.469333 1025.216 401.792 1023.210667 395.690667z" p-id="1232" fill="#04b2f1"></path></svg>
+        </a> 
+      
+      
+        <a href="https://service.weibo.com/share/share.php?url=https://zhuochi.org/listen/Dua_Lipa/index.html&title=Dua Lipa&pic=https://zhuochi.org/images/logo.svg&summary=5 Albums, 75 Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659970330786" class="icon" viewBox="0 0 1138 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3639" fill="#04b2f1"><path d="M914.432 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM656.384 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM522.24 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM359.424 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM778.24 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM778.24 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z" p-id="3640"></path></svg>
+        </a>
+      
+      
+        <a href="https://www.douban.com/recommend/?url=https://zhuochi.org/listen/Dua_Lipa/index.html&title=Dua Lipa&pic=https://zhuochi.org/images/logo.svg&summary=5 Albums, 75 Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659970941550" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1055"><path d="M88 72.9h848v95.5H88z" p-id="1056" fill="#04b2f1"></path><path d="M88 72.9h848v95.5H88zM862.3 641.5V268H161.7v373.5h700.6zM263.4 363.4h498.4v182.5H263.4V363.4z" p-id="1057" fill="#04b2f1"></path><path d="M862.3 641.5V268H161.7v373.5h700.6zM263.4 363.4h498.4v182.5H263.4V363.4zM710.8 856.7c30.5-46.7 59.3-100.8 85.9-162.2l-102-37.2c-26.5 72.8-57.4 139.4-92.5 199.4H424.9c-29.4-77.8-62.6-144.3-99.8-199.4l-93.8 37.2c38.6 58 69.9 111.9 93.8 162.2H64v94.5h896v-94.5H710.8z" p-id="1058" fill="#04b2f1"></path><path d="M710.8 856.7c30.5-46.7 59.3-100.8 85.9-162.2l-102-37.2c-26.5 72.8-57.4 139.4-92.5 199.4H424.9c-29.4-77.8-62.6-144.3-99.8-199.4l-93.8 37.2c38.6 58 69.9 111.9 93.8 162.2H64v94.5h896v-94.5H710.8z" p-id="1059" fill="#04b2f1"></path></svg>
+        </a>
+      
+      
+        <a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=https://zhuochi.org/listen/Dua_Lipa/index.html&title=Dua Lipa&pic=https://zhuochi.org/images/logo.svg&desc=5 Albums, 75 Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659968685554" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1659"><path d="M1024 862.826667a161.152 161.152 0 0 1-161.173333 161.173333h-701.632a161.152 161.152 0 0 1-161.173334-161.173333v-701.632a161.194667 161.194667 0 0 1 161.173334-161.173334h701.632a161.194667 161.194667 0 0 1 161.173333 161.173334v701.632z" fill="#04b2f1" p-id="1660"></path><path d="M828.842667 250.261333h-173.461334v-36.522666a17.066667 17.066667 0 0 0-17.066666-17.066667h-41.941334a17.045333 17.045333 0 0 0-17.045333 17.066667v263.296h-24.896a17.066667 17.066667 0 0 0-17.045333 17.066666V810.218667a17.066667 17.066667 0 0 0 17.045333 17.088h257.365333a17.066667 17.066667 0 0 0 17.066667-17.088v-58.986667h-0.256v-198.144h0.256v-58.986667a17.066667 17.066667 0 0 0-17.066667-17.066666H655.381333v-150.72h173.461334a17.066667 17.066667 0 0 0 17.066666-17.066667v-41.941333a17.066667 17.066667 0 0 0-17.066666-17.045334z m-93.376 302.848c9.429333 0 17.045333 7.637333 17.045333 17.066667v164.010667a17.066667 17.066667 0 0 1-17.045333 17.066666h-104.981334a17.045333 17.045333 0 0 1-17.045333-17.066666v-164.010667a17.066667 17.066667 0 0 1 17.045333-17.066667h104.981334zM197.909333 657.408h41.941334a17.088 17.088 0 0 0 17.088-17.088v-358.741333h174.528v358.741333a17.066667 17.066667 0 0 0 17.045333 17.088h41.941333a17.088 17.088 0 0 0 17.088-17.088v-417.749333c0-9.408-7.658667-17.066667-17.088-17.066667h-292.522666a17.066667 17.066667 0 0 0-17.045334 17.066667v417.749333a17.024 17.024 0 0 0 17.024 17.088z" fill="#FFFFFF" p-id="1661"></path><path d="M492.970667 739.2v-0.170667a110.656 110.656 0 0 1-110.656-110.656h-0.106667v-296.042666a17.066667 17.066667 0 0 0-17.066667-17.045334h-41.941333a17.045333 17.045333 0 0 0-17.045333 17.045334v296.042666h-0.362667a110.677333 110.677333 0 0 1-110.677333 110.656v0.170667a17.045333 17.045333 0 0 0-17.045334 17.066667v42.112a17.066667 17.066667 0 0 0 17.045334 17.066666 186.602667 186.602667 0 0 0 148.928-74.176 186.624 186.624 0 0 0 148.928 74.176 17.045333 17.045333 0 0 0 17.045333-17.066666v-42.112a17.024 17.024 0 0 0-17.045333-17.066667z" fill="#FFFFFF" p-id="1662"></path><path d="M865.450667 873.685333c17.664-3.797333 15.253333-24.896 14.741333-29.504-0.874667-7.125333-9.237333-19.541333-20.586667-18.581333-14.293333 1.28-16.362667 21.930667-16.362666 21.930667-1.962667 9.557333 4.608 29.952 22.208 26.154666z m18.752 36.693334c-0.533333 1.493333-1.664 5.290667-0.682667 8.597333 1.962667 7.402667 8.405333 7.744 8.405333 7.744h9.258667v-22.613333h-9.898667a10.837333 10.837333 0 0 0-7.082666 6.272z m14.037333-72.085334c9.749333 0 17.621333-11.221333 17.621333-25.109333 0-13.866667-7.872-25.088-17.621333-25.088-9.728 0-17.642667 11.221333-17.642667 25.088 0 13.888 7.893333 25.109333 17.642667 25.109333z m41.984 1.664c13.034667 1.706667 21.418667-12.202667 23.082667-22.762666 1.706667-10.538667-6.698667-22.762667-15.936-24.853334-9.258667-2.112-20.778667 12.672-21.845334 22.357334-1.258667 11.797333 1.685333 23.573333 14.698667 25.258666z m31.936 61.973334s-20.16-15.594667-31.936-32.448c-15.957333-24.874667-38.634667-14.762667-46.208-2.112-7.552 12.650667-19.328 20.629333-20.992 22.741333-1.685333 2.090667-24.362667 14.336-19.328 36.672 5.034667 22.336 22.72 21.909333 22.72 21.909333s13.013333 1.28 28.138667-2.112c15.104-3.349333 28.117333 0.832 28.117333 0.832s35.306667 11.818667 44.970667-10.944c9.621333-22.72-5.482667-34.538667-5.482667-34.538666z m-60.394667 33.877333h-22.954666c-9.92-1.984-13.866667-8.746667-14.357334-9.898667-0.490667-1.173333-3.306667-6.613333-1.813333-15.850666 4.288-13.866667 16.490667-14.848 16.490667-14.848h12.224v-15.04l10.410666 0.149333v55.488z m42.752-0.170667h-26.410666c-10.24-2.624-10.709333-9.92-10.709334-9.92v-29.205333l10.709334-0.170667v26.261334c0.64 2.794667 4.117333 3.306667 4.117333 3.306666h10.88v-29.397333h11.413333v39.125333z m37.376-77.994666c0-5.034667-4.181333-20.224-19.733333-20.224-15.552 0-17.642667 14.336-17.642667 24.469333 0 9.685333 0.810667 23.189333 20.16 22.741333 19.328-0.426667 17.216-21.909333 17.216-26.986666z" fill="#FFFFFF" p-id="1663"></path></svg>
+        </a>
+      
+      
+        <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://zhuochi.org/listen/Dua_Lipa/index.html&title=Dua Lipa&pic=https://zhuochi.org/images/logo.svg&desc=5 Albums, 75 Songs&summary=CloudPool浊池是由年轻人管理的博客" aria-hidden="true" target="_blank">
+        <svg t="1659969969936" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2714"><path d="M866.991 707.772c0 0-25.341 69.55-71.877 132.071 0 0 83.050 28.439 76.137 102.196 0 0 2.709 82.331-177.613 76.685 0 0-126.817-9.898-164.88-63.85h-33.53c-38.018 54.006-164.834 63.85-164.834 63.85-180.431 5.7-177.556-76.685-177.556-76.685-7.025-73.756 76.081-102.196 76.081-102.196-46.475-62.519-71.875-132.071-71.875-132.071-112.759 183.141-101.477-25.567-101.477-25.567 21.141-123.495 109.949-204.384 109.949-204.384-12.677-112.157 33.805-132.078 33.805-132.078 9.68-346.979 306.473-340.887 312.675-340.722 6.249-0.163 302.931-6.256 312.72 340.723 0 0 46.538 19.866 33.812 132.078 0 0 88.751 80.89 109.886 204.384 0.055-0.001 11.285 208.707-101.421 25.566v0 0z" p-id="2715" fill="#04b2f1"></path></svg>
+        </a>
+      
+    </span>
+  </span>
+</aside>
+    <footer class="app-footer">
+  <p class="copyright">
+    Copyright &copy; 2017 - 2024, CloudPool浊池, All Rights Reserved. <a href="https://zhuochi.org" target="_blank">zhuochi.org</a> || <a href="https://voiiu.com" target="_blank">voiiu.com</a><br/> 本站为基于<a href="https://hexo.io" target="_blank">Hexo</a>的静态博客，<span id="busuanzi_container_site_pv">总访问量 <span id="busuanzi_value_site_pv"></span> 次</span><!--，来自 <span id="busuanzi_value_site_uv"></span> 个 IP--><br/> 主题源自 <a target="_blank" rel="noopener" href="https://github.com/yanm1ng/hexo-theme-vexo">Vexo</a> by yanm1ng，感谢 <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer">APlayer</a> by DIYgod，感谢 <a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">Live2D Widget</a> by stevenjoezhang & <a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">live2d-widget-models</a> by xiazeyu<br/>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+
+<script src="/js/script.js"></script>
+ <!--无法移至head.js中，原因不明-->
+<script type="text/javascript" src="/js/busuanzi.min.js" async></script>
+
+  </body>
+</html>
