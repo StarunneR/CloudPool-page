@@ -517,7 +517,7 @@
   <div class="toc-main">
     <div class="toc-title">目录</div>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2011"><span class="toc-nav-text">+ 2011</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#x-2014"><span class="toc-nav-text">x 2014</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-2015"><span class="toc-nav-text">5 2015</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CD1"><span class="toc-nav-text">CD1</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CD2"><span class="toc-nav-text">CD2</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CD3"><span class="toc-nav-text">CD3</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CD4"><span class="toc-nav-text">CD4</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CD5"><span class="toc-nav-text">CD5</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%C3%B7-2017"><span class="toc-nav-text">÷ 2017</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#x3D-2021"><span class="toc-nav-text">&#x3D; 2021</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2023"><span class="toc-nav-text">- 2023</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Autumn-Variations-2023"><span class="toc-nav-text">Autumn Variations 2023</span></a></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2011"><span class="toc-nav-text">+ 2011</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#x-2014"><span class="toc-nav-text">x 2014</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-2015"><span class="toc-nav-text">5 2015</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%C3%B7-2017"><span class="toc-nav-text">÷ 2017</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#x3D-2021"><span class="toc-nav-text">&#x3D; 2021</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2023"><span class="toc-nav-text">- 2023</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Autumn-Variations-2023"><span class="toc-nav-text">Autumn Variations 2023</span></a></li></ol>
     
   </div>
 </aside>
@@ -822,9 +822,9 @@ lrc: '2014_Mu/17 All of The Stars.lrc',
 },
 ]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("abort",()=>{event.target.pause();event.target.play();});ap2.on("play",()=>{console.log("** "+document.title+" **")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
 
-<h3 id="5-2015"><a href="#5-2015" class="headerlink" title="5 2015"></a>5 2015</h3><h4 id="CD1"><a href="#CD1" class="headerlink" title="CD1"></a>CD1</h4><div id="aplayer3a" class="aplayerJS"></div><script>const ap3a = new APlayer({container: document.getElementById("aplayer3a"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+<h3 id="5-2015"><a href="#5-2015" class="headerlink" title="5 2015"></a>5 2015</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
 {
-name: 'You Need Me, I Don\'t Need You',
+name: 'CD1 - You Need Me, I Don\'t Need You',
 artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/1\.01 You Need Me, I Don\'t Need You.m4a',
 cover: '2015_fi/cover.webp',
@@ -853,12 +853,8 @@ artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/1\.05 Sunburn.m4a',
 cover: '2015_fi/cover.webp',
 lrc: '2015_fi/1\.05 Sunburn.lrc',
-},
-]});ap3a.on("play",()=>{document.title=document.getElementById("aplayer3a").getElementsByClassName("aplayer-music")[0].innerText;});ap3a.on("abort",()=>{event.target.pause();event.target.play();});ap3a.on("play",()=>{console.log("** "+document.title+" **")});ap3a.on("loadstart",()=>{console.log("loadstart")});ap3a.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3a.on("loadeddata",()=>{console.log("loadeddata")});ap3a.on("canplay",()=>{console.log("canplay")});ap3a.on("canplaythrough",()=>{console.log("canplaythrough")});ap3a.on("stalled",()=>{console.log("stalled");});ap3a.on("suspend",()=>{console.log("suspend")});ap3a.on("play",()=>{console.log("play")});ap3a.on("pause",()=>{console.log("pause")});ap3a.on("waiting",()=>{console.log("waiting")});ap3a.on("playing",()=>{console.log("playing")});ap3a.on("seeking",()=>{console.log("seeking")});ap3a.on("seeked",()=>{console.log("seeked")});ap3a.on("error",()=>{console.log("error");});ap3a.on("ended",()=>{console.log("ended");});ap3a.on("abort",()=>{console.log("abort");});ap3a.on("emptied",()=>{console.log("emptied");});</script>
-
-<h4 id="CD2"><a href="#CD2" class="headerlink" title="CD2"></a>CD2</h4><div id="aplayer3b" class="aplayerJS"></div><script>const ap3b = new APlayer({container: document.getElementById("aplayer3b"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
-{
-name: 'Let It Out',
+},{
+name: 'CD2 - Let It Out',
 artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/2\.01 Let It Out.m4a',
 cover: '2015_fi/cover.webp',
@@ -905,12 +901,8 @@ artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/2\.08 Firefly (Bravado Dubstep Remix) (Bonus Track).m4a',
 cover: '2015_fi/cover.webp',
 lrc: '2015_fi/2\.08 Firefly (Bravado Dubstep Remix) (Bonus Track).lrc',
-},
-]});ap3b.on("play",()=>{document.title=document.getElementById("aplayer3b").getElementsByClassName("aplayer-music")[0].innerText;});ap3b.on("abort",()=>{event.target.pause();event.target.play();});ap3b.on("play",()=>{console.log("** "+document.title+" **")});ap3b.on("loadstart",()=>{console.log("loadstart")});ap3b.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3b.on("loadeddata",()=>{console.log("loadeddata")});ap3b.on("canplay",()=>{console.log("canplay")});ap3b.on("canplaythrough",()=>{console.log("canplaythrough")});ap3b.on("stalled",()=>{console.log("stalled");});ap3b.on("suspend",()=>{console.log("suspend")});ap3b.on("play",()=>{console.log("play")});ap3b.on("pause",()=>{console.log("pause")});ap3b.on("waiting",()=>{console.log("waiting")});ap3b.on("playing",()=>{console.log("playing")});ap3b.on("seeking",()=>{console.log("seeking")});ap3b.on("seeked",()=>{console.log("seeked")});ap3b.on("error",()=>{console.log("error");});ap3b.on("ended",()=>{console.log("ended");});ap3b.on("abort",()=>{console.log("abort");});ap3b.on("emptied",()=>{console.log("emptied");});</script>
-
-<h4 id="CD3"><a href="#CD3" class="headerlink" title="CD3"></a>CD3</h4><div id="aplayer3c" class="aplayerJS"></div><script>const ap3c = new APlayer({container: document.getElementById("aplayer3c"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
-{
-name: 'Fall (Featuring Leddra Chapman)',
+},{
+name: 'CD3 - Fall (Featuring Leddra Chapman)',
 artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/3\.01 Fall (Featuring Leddra Chapman).m4a',
 cover: '2015_fi/cover.webp',
@@ -939,12 +931,8 @@ artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/3\.05 She (Featuring Leddra Chapman).m4a',
 cover: '2015_fi/cover.webp',
 lrc: '2015_fi/3\.05 She (Featuring Leddra Chapman).lrc',
-},
-]});ap3c.on("play",()=>{document.title=document.getElementById("aplayer3c").getElementsByClassName("aplayer-music")[0].innerText;});ap3c.on("abort",()=>{event.target.pause();event.target.play();});ap3c.on("play",()=>{console.log("** "+document.title+" **")});ap3c.on("loadstart",()=>{console.log("loadstart")});ap3c.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3c.on("loadeddata",()=>{console.log("loadeddata")});ap3c.on("canplay",()=>{console.log("canplay")});ap3c.on("canplaythrough",()=>{console.log("canplaythrough")});ap3c.on("stalled",()=>{console.log("stalled");});ap3c.on("suspend",()=>{console.log("suspend")});ap3c.on("play",()=>{console.log("play")});ap3c.on("pause",()=>{console.log("pause")});ap3c.on("waiting",()=>{console.log("waiting")});ap3c.on("playing",()=>{console.log("playing")});ap3c.on("seeking",()=>{console.log("seeking")});ap3c.on("seeked",()=>{console.log("seeked")});ap3c.on("error",()=>{console.log("error");});ap3c.on("ended",()=>{console.log("ended");});ap3c.on("abort",()=>{console.log("abort");});ap3c.on("emptied",()=>{console.log("emptied");});</script>
-
-<h4 id="CD4"><a href="#CD4" class="headerlink" title="CD4"></a>CD4</h4><div id="aplayer3d" class="aplayerJS"></div><script>const ap3d = new APlayer({container: document.getElementById("aplayer3d"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
-{
-name: 'The A Team (Live At The Bedford)',
+},{
+name: 'CD4 - The A Team (Live At The Bedford)',
 artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/4\.01 The A Team (Live At The Bedford).m4a',
 cover: '2015_fi/cover.webp',
@@ -979,12 +967,8 @@ artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/4\.06 You Need Me, I Don\'t Need You (Live At The Bedford).m4a',
 cover: '2015_fi/cover.webp',
 lrc: '2015_fi/4\.06 You Need Me, I Don\'t Need You (Live At The Bedford).lrc',
-},
-]});ap3d.on("play",()=>{document.title=document.getElementById("aplayer3d").getElementsByClassName("aplayer-music")[0].innerText;});ap3d.on("abort",()=>{event.target.pause();event.target.play();});ap3d.on("play",()=>{console.log("** "+document.title+" **")});ap3d.on("loadstart",()=>{console.log("loadstart")});ap3d.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3d.on("loadeddata",()=>{console.log("loadeddata")});ap3d.on("canplay",()=>{console.log("canplay")});ap3d.on("canplaythrough",()=>{console.log("canplaythrough")});ap3d.on("stalled",()=>{console.log("stalled");});ap3d.on("suspend",()=>{console.log("suspend")});ap3d.on("play",()=>{console.log("play")});ap3d.on("pause",()=>{console.log("pause")});ap3d.on("waiting",()=>{console.log("waiting")});ap3d.on("playing",()=>{console.log("playing")});ap3d.on("seeking",()=>{console.log("seeking")});ap3d.on("seeked",()=>{console.log("seeked")});ap3d.on("error",()=>{console.log("error");});ap3d.on("ended",()=>{console.log("ended");});ap3d.on("abort",()=>{console.log("abort");});ap3d.on("emptied",()=>{console.log("emptied");});</script>
-
-<h4 id="CD5"><a href="#CD5" class="headerlink" title="CD5"></a>CD5</h4><div id="aplayer3e" class="aplayerJS"></div><script>const ap3e = new APlayer({container: document.getElementById("aplayer3e"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
-{
-name: 'Lately (feat\. Devlin)',
+},{
+name: 'CD5 - Lately (feat\. Devlin)',
 artist: 'Ed Sheeran',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/5\.01 Lately (Devlin).m4a',
 cover: '2015_fi/cover.webp',
@@ -1032,7 +1016,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Ed_Sheeran/2015_fi/5\.08 Go
 cover: '2015_fi/cover.webp',
 lrc: '2015_fi/5\.08 Goodbye To You (%2B Dot Rotten).lrc',
 },
-]});ap3e.on("play",()=>{document.title=document.getElementById("aplayer3e").getElementsByClassName("aplayer-music")[0].innerText;});ap3e.on("abort",()=>{event.target.pause();event.target.play();});ap3e.on("play",()=>{console.log("** "+document.title+" **")});ap3e.on("loadstart",()=>{console.log("loadstart")});ap3e.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3e.on("loadeddata",()=>{console.log("loadeddata")});ap3e.on("canplay",()=>{console.log("canplay")});ap3e.on("canplaythrough",()=>{console.log("canplaythrough")});ap3e.on("stalled",()=>{console.log("stalled");});ap3e.on("suspend",()=>{console.log("suspend")});ap3e.on("play",()=>{console.log("play")});ap3e.on("pause",()=>{console.log("pause")});ap3e.on("waiting",()=>{console.log("waiting")});ap3e.on("playing",()=>{console.log("playing")});ap3e.on("seeking",()=>{console.log("seeking")});ap3e.on("seeked",()=>{console.log("seeked")});ap3e.on("error",()=>{console.log("error");});ap3e.on("ended",()=>{console.log("ended");});ap3e.on("abort",()=>{console.log("abort");});ap3e.on("emptied",()=>{console.log("emptied");});</script>
+]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("abort",()=>{event.target.pause();event.target.play();});ap3.on("play",()=>{console.log("** "+document.title+" **")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
 
 <h3 id="÷-2017"><a href="#÷-2017" class="headerlink" title="÷ 2017"></a>÷ 2017</h3><div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
 {
