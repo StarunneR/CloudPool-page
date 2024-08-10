@@ -652,10 +652,12 @@ header:hover .chn_mark {
   cursor: pointer;
 }
 .post-article .markdown-content .fold .fold_content {
-  background-color: #e5e4e2;
+  padding: 1em 0.5em 0.5em 0.5em;
+  background-color: #fcf5e5;
   font-family: 'Times New Roman', 'Noto Serif SC', serif;
   font-display: swap;
   font-size: smaller;
+  border-radius: 4px;
 }
 .post-article .markdown-content .heimu {
   background-color: #000;
