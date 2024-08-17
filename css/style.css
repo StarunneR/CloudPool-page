@@ -659,6 +659,9 @@ header:hover .chn_mark {
   font-size: smaller;
   border-radius: 4px;
 }
+.post-article .markdown-content .fold .fold_content p {
+  line-height: 1.3em;
+}
 .post-article .markdown-content .heimu {
   background-color: #000;
   color: #000;
