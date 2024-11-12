@@ -38,7 +38,7 @@
     }, 200)
   }
 
-  $('.menu').on('click', function () {
+  $('.menu').on('hover', function () {
     if (!header.hasClass('fixed-header') || isOpen) {
       header.toggleClass('fixed-header')
       isOpen = !isOpen
