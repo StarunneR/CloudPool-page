@@ -508,7 +508,7 @@
   <h2 class="post-title" id="post-title">每日一句2024</h2>
   
    
-    <p class="post-date" id="post-date">2024-01-01</p>
+    <p class="post-date" id="post-date">2024-12-31</p>
   
   <div class="arrow-down">
     <a href="javascript:;"></a>
@@ -519,27 +519,213 @@
 <main class="app-body flex-box">
   <article class="post-article">
     
+      <div class="front-parent" id="front-parent">
+  <div class="front-child" id="front-fontsize">
+    <label class="front-label" for="fontsize-range">字体大小</label>
+    <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
+    <span id="fontsize-value"></span>
+  </div>
+
+  <div class="front-child" id="front-fontselector">
+    <label class="front-label" for="font-select">更换字体</label>
+    <select name="font" id="font">
+      <option value="default">默认</option>
+      <option value="heiti">黑体</option>
+      <option value="light-heiti">黑体（细体）</option>
+      <option value="lighter-heiti">黑体（极细）</option>
+      <option value="songti">宋体</option>
+      <option value="light-songti">宋体（细体）</option>
+      <option value="kaiti">楷体</option>
+      <option value="fangsong">仿宋</option>
+    </select>
+  </div>
+
+  <div class="front-child" id="front-indent">
+    <label class="front-label" for="TextIndent">段首缩进</label>
+    <input type="checkbox" id="indent-checkbox" name="text-indent" value="" />
+  </div>
+</div>
+
+<h1 class="article-author">
+  
+        StʌrunneR
+        
+</h1>
+
+<script>
+  $(document).ready(
+    function () {
+      let FontChanger = function () {
+        if (this.value == "default") {
+          $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
+          $(".markdown-content").css({ "font-weight": 'initial' });
+        } if (this.value == "heiti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-heiti") {
+          $(".markdown-content").css({ "font-weight": '300' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap rel=stylesheet>");
+        } else if (this.value == "lighter-heiti") {
+          $(".markdown-content").css({ "font-weight": '100' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
+        } else if (this.value == "songti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-songti") {
+          $(".markdown-content").css({ "font-weight": '200' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
+        } else if (this.value == "kaiti") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZKai-Z03S','STKaiti','KaiTi',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-kai-z-03-s/font.css rel=stylesheet>");
+        } else if (this.value == "fangsong") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZFangSong-Z02S','STFangsong','FangSong','FangSong_GB2312',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-fang-song-z-02-s/font.css rel=stylesheet>");
+        }
+      };
+      $("#font").on('change', FontChanger);
+      $("#font").on('click', FontChanger);
+    });
+
+  $("#indent-checkbox").change(function () {
+    if (this.checked) {
+      $(".markdown-content > p").css({ "text-indent": "2em" });
+    } else {
+      $(".markdown-content > p").css({ "text-indent": "0" });
+    }
+  });
+
+  $("#fontsize-value").html("100%");
+  let rangeSwitch = function () {
+    let fontsizePercent = $("#fontsize-slider").val();
+    $(".markdown-content").css("font-size", fontsizePercent + "%")
+    $("#fontsize-value").html(fontsizePercent + "%")
+  }
+  $("#fontsize-slider").on("input", rangeSwitch)
+</script>
+      <section class="markdown-content" id="content">
+        <p><strong>1.03</strong><br>City Walk Day 68:<br>逃将回府<br>想吃樱桃蓝莓苹果梨</p>
+<p>波光粼粼的菜田</p>
+<p>Forgive, forget, frog.</p>
+<p><strong>1.04</strong><br>阳出，anyway.</p>
+<p><strong>1.10</strong><br>Too cozy to cool</p>
+<p><strong>1.13</strong><br>“但是生活不可避免的向我袭来”<br>But, inevitably, my life crushes on me.</p>
+<p><strong>1.16</strong><br>忙于对付生活的同时，不要忘了说谢谢</p>
+<p><strong>1.17</strong><br>( ｣ﾟДﾟ)｣＜咳咳咳咳咳咳</p>
+<p><strong>1.21</strong><br>aac vbr 256kbps : aac vbr 320kbps体积比约为0.8:1</p>
+<p>不要忽视感觉，请好好体会。</p>
+<p><strong>1.22</strong><br>Moving, moving, moving forward.</p>
+<p><strong>1.27</strong><br>又到了红色鞭炮的季节了呢</p>
+<p><strong>1.31</strong><br>Hard and cruel</p>
+<p><strong>2.07</strong><br>音频播放bug修不好不会修呜呜呜呜呜呜<br>部分音频播放完成时不会触发js音频播放完成后的ended事件，正常音频播放完成后依次触发pause-ended-abort-emptied-waiting-loadstart-loadedmetadata-loadeddata-suspend，问题音频触发pause-abort-emptied-loadstart-loadedmetadata-loadeddata-suspend</p>
+<p><strong>2.15</strong><br>真的全是樟树啊<br>B for bi(rt)h</p>
+<p><strong>2.17</strong><br>廉价一点的固态存储啊<br>失去电源<br>以后几个月就没了<br>片甲不留</p>
+<p><strong>2.19</strong><br>NB for New Birth<br>不过256:320&#x3D;0.8:1 (</p>
+<p><strong>2.27</strong><br>无论如何，多一天赚一天，要努力赚下去<br>And don’t be so mean.</p>
+<p><strong>2.28</strong><br>The world is made of injustice, thus it counts to keep your own balance.</p>
+<p><strong>2.29</strong><br>破碎-脱瘾-内(化)拒(绝)-愤怒-提升</p>
+<p><strong>3.02</strong><br>树立的呆毛揭示愚钝的残想<br>“这个事情，提起来就是千斤，撂地下就只四两。”</p>
+<p><strong>3.03</strong><br>火车头<br>孤独<br>地跨过江面<br>没有留下烟<br>失落的七芒星<br>觉得我像那个什么PP踢</p>
+<p><strong>3.04</strong><br>修辞是系统奖励的遮羞布</p>
+<p><strong>3.05</strong><br>Humility is not thinking less of yourself, but thinking yourself less.</p>
+<p><strong>3.07</strong><br>“你喜欢打拳不？”<br>“还行”</p>
+<p><strong>3.08</strong><br>Easy↘️Come➡️Easy↘️Go↗️🎶🎶🎶<br>“即使痛，我也在剧烈地呼吸空气，一口又一口。”<br>“上不能八面玲珑，下不能厚颜无耻；左不能才高八斗，右不能无才是德——雄心里带几分怯懦，豁达下藏三成算计，狠毒中留三分天良；上不去下不来，浑浑噩噩一凡人耳”<br>必须努出二两小力</p>
+<p><strong>3.09</strong><br>As smart as hell<br>杀猪刀一把，醉己酒两钱</p>
+<p><strong>3.12</strong><br>想做什么就做什么 不过做之前总要先想<br>其中之一 不是全部 不当执念 会记住的</p>
+<p><strong>3.15</strong><br>“我曾七次鄙视自己的灵魂：<br>第一次，当它本可进取时，却故作谦卑；<br>第二次，当它在空虚时，用爱欲来填充；<br>第三次，在困难和容易之间，它选择了容易；<br>第四次，它犯了错，却借由别人也会犯错来宽慰自己；<br>第五次，它自由软弱，却把它认为是生命的坚韧；<br>第六次，当它鄙夷一张丑恶的嘴脸时，却不知那正是自己面具中的一副；<br>第七次，它侧身于生活的污泥中，虽不甘心，却又畏首畏尾。”</p>
+<p><strong>3.16</strong><br>所有人都是无辜的，你说是吧？</p>
+<p><strong>3.18</strong><br>If wished, I would have ev’rything done.</p>
+<p><strong>3.20</strong><br>能力越汏，责任越揩。<br>“你的一切都是你自找的。”</p>
+<p><strong>3.21</strong><br>“混入脑中的熟悉的玉米味”<br>“因广东浙江多家皮鞋厂倒闭”</p>
+<p><strong>3.23</strong><br>19191次访问</p>
+<p><strong>4.01</strong><br>“春天了大家都活过来了”</p>
+<p><strong>4.03</strong><br>“谢谢 但是飞机要逆风飞”</p>
+<p><strong>4.04</strong><br>纵然堕落浪子，也想逆风起飞。<br>    你说现在中二还有用吗（<br>        还请努力面对你自己</p>
+<p><strong>4.07</strong><br>Learn to be, learn to care.</p>
+<p><strong>4.09</strong><br>‘Been a long time coming for the working man’</p>
+<p><strong>4.12</strong><br>“有钱能买豆浆机”</p>
+<p><strong>4.16</strong><br>善于忘记并不是一件坏事<br>擅长忘记并不是一块优点</p>
+<p><strong>4.17</strong><br>半死之人固需两倍努力</p>
+<p><strong>4.18</strong><br>“也许是月亮的冷凝水”</p>
+<p><strong>4.24</strong><br>仍无法完美修复aplayer切歌问题<br>也许由于歌曲ended事件无法触发<br>目前的解决方案是在abort事件后<br>强行加pause与play使播放器激活<br>不过这也导致了强制性专辑循环<br>最好的解决方案大概会是：在那<br>Prettier格式化后的 Aplayer.js 内<br>的2488, 2493, 2499, 2505行的<br>左括号 ( 后面加入e.play(), 作为<br>激活ended事件的引信 确保正常<br>但是这样的话我不知道如何继续<br>使用cdn加速修改后的新js加载（<br>我不太敢也不太会给DIYgod大神<br>提一个 Pull request 所以我只能<br>修成这样果咩有没有人能帮帮我<br>或者教教我如何正常地在gayhub</p>
+<p>Intelligence is the smartest wisdom.</p>
+<p><strong>4.25</strong><br>‘earth to earth, ashes to ashes, dust to dust; in sure and certain hope of the Resurrection to eternal life, …’\n’for out of it wast thou taken: for dust thou [art], and unto dust shalt thou return.’</p>
+<p><strong>4.28</strong><br>白fu蝶hui啊hui，看着已经开始有点热了<br>不过离七中好像还有点远8（</p>
+<p><strong>5.19</strong><br>RAM &#x3D; Roughly Abandoned Memories</p>
+<p><strong>6.13</strong><br>热浪无声无息地席卷了一切的我</p>
+<p><strong>6.17</strong><br>“我只是一个小后端”</p>
+<p><strong>6.30</strong><br>别再自我分裂，可以尝尝减数</p>
+<p><strong>7.03</strong><br>别再乱说狗p话<br>早点睡吧</p>
+<p><strong>7.08</strong><br>“Or did these songs simply make the world feel a little bit bigger than it did the day before? Maybe they did. Maybe that’s enough.”</p>
+<p>– Chris Richards on Washington Post</p>
+<p><strong>7.14</strong><br>No ovrclvr.</p>
+<p><strong>7.15</strong><br>打死一只吸很多血飞不动的蚊子。不过那是我的血🤔</p>
+<p><strong>7.24</strong><br>相信与抓住<br>i.e. To believe and to achieve.</p>
+<p><strong>7.30</strong><br>Basically, people are like the ladybugs-Never happy.</p>
+<p><strong>8.04</strong><br>没有贴贴的弱冠年华&lt;img class&#x3D;&quot;wl-emoji&quot; src&#x3D;&quot;<a target="_blank" rel="noopener" href="https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq/qq_cry.gif/">https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq/qq_cry.gif\</a>“ alt&#x3D;&quot;qq_cry&quot;&gt;</p>
+<p><strong>8.27</strong><br>突然很想过个节。用来庆祝我的惶恐(　^ω^)</p>
+<p><strong>9.08</strong><br>专心，就是说去简化我的一颗心</p>
+<p><strong>9.18</strong><br>生如戏，没演完，不能倒下。</p>
+<p><strong>10.11</strong><br>：“矛盾是进步之源”</p>
+<p><strong>10.14</strong><br>gpt也说了A2奶对正常成年人可能还不如普通奶，但是我有什么办法A2奶只比普通奶贵两块钱它的日期还新两天而且最最最最最重要的是它是金色的诶！<br>新朋友你好1 dbqwoshiftjiananchengfnjianle(</p>
+<p><strong>11.05</strong><br>容许诚实，但不要懒惰。</p>
+<p><strong>11.10</strong><br>记住，3.6g的牛奶是精饲料喂出来的，影响因素有饲养方式，奶牛品种，生产方式等等。<br>gpt：已更新记忆（</p>
+<p><strong>11.16</strong><br>是什么东西的味道挺好闻呢？(　ˇωˇ )◕∀◕｡)^ω^)</p>
+<p><strong>12.11</strong><br>可以使用新宋体+Verdana字体，因为网上说Verdana是唯一的多数系统内置的非常容易区分1，l，I，i的无衬线的字体。gpt说Tahoma也可以，我觉得我分不清l和I（<br>    <strong>2025.1.03</strong><br>    不过已知bug：π字符显示有问题</p>
+<p><strong>12.22</strong><br>没有奇迹，加油。</p>
+<p><strong>12.23</strong><br>不该有资格指责任何东西，不该有资格强行增加责任。那么闭嘴吧。</p>
+
+      </section>
+      
+        <div class="post-tags">
+  <span>标签：</span>
+  
+    <a href="/tags/#tag-BB" target="_blank">
+      <span class="tag-code">
+        BB
+      </span>
+    </a>
+    
+    <a href="/tags/#tag-Daily" target="_blank">
+      <span class="tag-code">
+        Daily
+      </span>
+    </a>
+    
+</div>
+       
+    
     
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/daily/daily2023/" target="_blank">
+      <a class="nav-left" href="/listen/ZJL/" target="_blank">
         <span class="nav-arrow">← </span>
         
-          每日一句2023
+          周董
         
       </a>
     
     
-      <a class="nav-right" href="/listen/Vance_Joy/" target="_blank">
+      <a class="nav-right" href="/about/top/" target="_blank">
         
-          Vance Joy
+          【手动置顶】新的开始？
         
         <span class="nav-arrow"> →</span>
       </a>
     
   </div>
 
+    
+      <div class="advertisement">
+        <p> 广告：快速学习 Crash Course十分钟速成课 <a target="_blank" rel="noopener" href="https://crashcourse.club/">字幕组网站</a></p>
+      </div>
     
     
       
@@ -644,6 +830,40 @@
 -->
     
     
+    
+      <div class="qrcode" id="qr-box">
+    <img id="share-qrcode" class="qrcode-image" src=""/>
+    <div class="qrcode-notice">保存二维码，分享此文章</div>
+</div>
+
+<!--<script type="text/javascript" src="/js/qrious.min.js"></script>-->
+<script>
+    // qrcode
+    let qr = new QRious({
+        background: '#F0FFFF',
+        backgroundAlpha: 1,
+        foreground: '#0096FF',
+        foregroundAlpha: 0.8,
+        level: 'L',
+        mime: "image/gif",
+        padding: null, // pixels
+        size: 100,
+        element: document.getElementById('share-qrcode'),
+        value: document.location.href,
+    })
+
+    $("#share-qrcode").click(function () {
+        let img = document.getElementById('share-qrcode')
+        let imgurl = img.src
+        let a = document.createElement('a')
+        let down_event = new MouseEvent('click')
+        a.download = '每日一句2024-CloudPool浊池'
+        a.href = imgurl
+        a.dispatchEvent(down_event)
+    })
+</script>
+
+
     
   </article>
 </main>
