@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="description" content="CloudPool浊池是由年轻人管理的博客">
+  <meta name="keyword" content="浊池, CloudPool, CloudPool浊池">
+  
+  <link rel="shortcut icon" type="image/ico" href="/images/cloudpool-favicon.ico">
+  
+  <title>
+    
+      Taylor Swift
+    
+  </title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" integrity="sha512-5hw529N/tMFlWDowrrfVe3TW+FZzHxoxOpugMZOQrx4dH6sIH07aSuYZAJ1EGWJthW7uYUiM3oyO8KocF1W3Fg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha256-XfA0ppGOANs88Ds+9FqVLy3xIGzT/25K/VLmRRxE9ow=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha256-uqQQGnDcmRKvhKwc5Vm4XT1GQ2oV6t1U0NR2N9tV+BQ=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.min.css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  <!-- JS -->
+  <script src="https://s4.zstatic.net/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'"></script>
+  <script src="https://s4.zstatic.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js" integrity="sha512-c7Y6KfJjhBQFWf05axoxmqAnU0tFH0LC6rr0baLOizCaOE0MI5tsFli83DJpOe3b36MLXVgAaQ7Q4eD1T+U5vQ==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/geopattern@1.2.3/geopattern.min.js'"></script>
+  <script src="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" integrity="sha512-bUg5gaqBVaXIJNuebamJ6uex//mjxPk8kljQTdM1SwkNrQD7pjS+PerntUSD+QRWPNJ0tq54/x4zRV8bLrLhZg==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'"></script>
+  <script src="https://s4.zstatic.net/ajax/libs/qrious/4.0.2/qrious.min.js" integrity="sha512-pUhApVQtLbnpLtJn6DuzDD5o2xtmLJnJ7oBoMsBnzOkVkpqofGLGPaBJ6ayD2zQe3lCgCibhJBi4cj5wAxwVKA==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js'"></script>
+  <script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js" integrity="sha512-tJUih4yKic/MAHICtWUHsOMrCl/b4ZC7B3Qe2+2VHLhMSjHcjgN2uOsXJC+PY08YJd00SJ8BK5XBhlT0O/oI+g==" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/legacy.umd.min.js'"></script>
+  
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+            <span class="search-icon">
+                <i class="fa fa-search"></i>
+            </span>
+            <div class="search-input-container">
+                <input autocomplete="off" autocapitalize="off" maxlength="80"
+                    placeholder="Anything...  今天想看什么w" spellcheck="false"
+                    type="" class="search-input">
+            </div>
+            <span class="popup-btn-go">
+                <i class="fa-solid fa-arrow-circle-right"></i>
+            </span>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </span>
+        </div>
+        <div id="search-result" class="search-result-container">
+            <div id="no-result" class="no-result">
+                <i class="fa-solid fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+  <link rel="prefetch" href="/search.xml" crossorigin="anonymous"> 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Popup Window
+      let isfetched = false;
+      let datas;
+      let isXml = true;
+      // Search DB path
+      let searchPath = 'search.xml'; //CONFIG.search.path
+      if (searchPath.length === 0) {
+        searchPath = 'search.xml';
+      } else if (searchPath.endsWith('json')) {
+        isXml = false;
+      }
+      const input = document.querySelector('.search-input');
+      const resultContent = document.getElementById('search-result');
+
+      const getIndexByWord = (word, text, caseSensitive) => {
+        if ('false' == false) { // CONFIG.localsearch.unescape = false
+          let div = document.createElement('div');
+          div.innerText = word;
+          word = div.innerHTML;
+        }
+        let wordLen = word.length;
+        if (wordLen === 0) return [];
+        let startPosition = 0;
+        let position = [];
+        let index = [];
+        if (!caseSensitive) {
+          text = text.toLowerCase();
+          word = word.toLowerCase();
+        }
+        while ((position = text.indexOf(word, startPosition)) > -1) {
+          index.push({ position, word });
+          startPosition = position + wordLen;
+        }
+        return index;
+      };
+
+      // Merge hits into slices
+      const mergeIntoSlice = (start, end, index, searchText) => {
+        let item = index[index.length - 1];
+        let { position, word } = item;
+        let hits = [];
+        let searchTextCountInSlice = 0;
+        while (position + word.length <= end && index.length !== 0) {
+          if (word === searchText) {
+            searchTextCountInSlice++;
+          }
+          hits.push({
+            position,
+            length: word.length
+          });
+          let wordEnd = position + word.length;
+
+          // Move to next position of hit
+          index.pop();
+          while (index.length !== 0) {
+            item = index[index.length - 1];
+            position = item.position;
+            word = item.word;
+            if (wordEnd > position) {
+              index.pop();
+            } else {
+              break;
+            }
+          }
+        }
+        return {
+          hits,
+          start,
+          end,
+          searchTextCount: searchTextCountInSlice
+        };
+      };
+
+      // Highlight title and content
+      const highlightKeyword = (text, slice) => {
+        let result = '';
+        let prevEnd = slice.start;
+        slice.hits.forEach(hit => {
+          result += text.substring(prevEnd, hit.position);
+          let end = hit.position + hit.length;
+          result += `<b class="search-keyword">${text.substring(hit.position, end)}</b>`;
+          prevEnd = end;
+        });
+        result += text.substring(prevEnd, slice.end);
+        return result;
+      };
+
+      const inputEventFunction = () => {
+        if (!isfetched) return;
+        let searchText = input.value.trim().toLowerCase();
+        let keywords = searchText.split(/[-\s]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        let resultItems = [];
+        if (searchText.length > 0) {
+          // Perform local searching
+          datas.forEach(({ title, content, url }) => {
+            let titleInLowerCase = title.toLowerCase();
+            let contentInLowerCase = content.toLowerCase();
+            let indexOfTitle = [];
+            let indexOfContent = [];
+            let searchTextCount = 0;
+            keywords.forEach(keyword => {
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+
+            // Show search results
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              let hitCount = indexOfTitle.length + indexOfContent.length;
+              // Sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(index => {
+                index.sort((itemLeft, itemRight) => {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  }
+                  return itemLeft.word.length - itemRight.word.length;
+                });
+              });
+
+              let slicesOfTitle = [];
+              if (indexOfTitle.length !== 0) {
+                let tmp = mergeIntoSlice(0, title.length, indexOfTitle, searchText);
+                searchTextCount += tmp.searchTextCountInSlice;
+                slicesOfTitle.push(tmp);
+              }
+
+              let slicesOfContent = [];
+              while (indexOfContent.length !== 0) {
+                let item = indexOfContent[indexOfContent.length - 1];
+                let { position, word } = item;
+                // Cut out 100 characters
+                let start = position - 20;
+                let end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                let tmp = mergeIntoSlice(start, end, indexOfContent, searchText);
+                searchTextCount += tmp.searchTextCountInSlice;
+                slicesOfContent.push(tmp);
+              }
+
+              // Sort slices in content by search text's count and hits' count
+              slicesOfContent.sort((sliceLeft, sliceRight) => {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                }
+                return sliceLeft.start - sliceRight.start;
+              });
+
+              // Select top N slices in content
+              let upperBound = parseInt('1', 10); // CONFIG.localsearch.top_n_per_article: 1
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+
+              let resultItem = '';
+
+              if (slicesOfTitle.length !== 0) {
+                resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title" target="_blank">${highlightKeyword(title, slicesOfTitle[0])}</a>`;
+              } else {
+                resultItem += `<li class="search-result-element"><a href="${url}" class="search-result-title" target="_blank">${title}</a>`;
+              }
+
+              slicesOfContent.forEach(slice => {
+                resultItem += `<a href="${url}" target="_blank"><p class="search-result">${highlightKeyword(content, slice)}...</p></a>`;
+              });
+
+              resultItem += '</li>';
+              resultItems.push({
+                item: resultItem,
+                id: resultItems.length,
+                hitCount,
+                searchTextCount
+              });
+            }
+          });
+        }
+        if (keywords.length === 1 && keywords[0] === '') {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa-sharp fa-regular fa-circle-check fa-5x"></i></div>';
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"><i class="fa-regular fa-face-frown-open fa-5x"></i></div>';
+        } else {
+          resultItems.sort((resultLeft, resultRight) => {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            }
+            return resultRight.id - resultLeft.id;
+          });
+          resultContent.innerHTML = `<ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
+          window.pjax && window.pjax.refresh(resultContent);
+        }
+      };
+
+      const fetchData = () => {
+        fetch('/' + searchPath) // CONFIG.root = ''
+          .then(response => response.text())
+          .then(res => {
+            // Get the contents from search data
+            isfetched = true;
+            datas = isXml ? [...new DOMParser().parseFromString(res, 'text/xml').querySelectorAll('entry')].map(element => {
+              return {
+                title: element.querySelector('title').textContent,
+                content: element.querySelector('content').textContent,
+                url: element.querySelector('url').textContent
+              };
+            }) : JSON.parse(res);
+            // Only match articles with not empty titles
+            datas = datas.filter(data => data.title).map(data => {
+              data.title = data.title.trim();
+              data.content = data.content ? data.content.trim().replace(/<[^>]+>/g, '') : '';
+              data.url = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+              return data;
+            });
+            // Remove loading animation
+            document.getElementById('no-result').innerHTML = '<i class="fa-sharp fa-regular fa-circle-check fa-5x"></i></i>';
+            inputEventFunction();
+          });
+      };
+
+      if (false) { // CONFIG.localsearch.preload: false
+        fetchData();
+      }
+
+      if ('auto' === 'auto') { // CONFIG.localsearch.trigger: 'auto' / 'manual'
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        document.querySelector('.search-icon').addEventListener('click', inputEventFunction);
+        input.addEventListener('keypress', event => {
+          if (event.key === 'Enter') {
+            inputEventFunction();
+          }
+        });
+      }
+
+      // Handle and trigger popup window
+      document.querySelectorAll('.popup-trigger').forEach(element => {
+        element.addEventListener('click', () => {
+          document.body.style.overflow = 'hidden';
+          document.querySelector('.search-pop-overlay').classList.add('search-active');
+          input.focus();
+          if (!isfetched) fetchData();
+        });
+      });
+
+      // Monitor main search box
+      const onPopupClose = () => {
+        document.body.style.overflow = '';
+        document.querySelector('.search-pop-overlay').classList.remove('search-active');
+      };
+
+      document.querySelector('.search-pop-overlay').addEventListener('click', event => {
+        if (event.target === document.querySelector('.search-pop-overlay')) {
+          onPopupClose();
+        }
+      });
+      document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+      window.addEventListener('pjax:success', onPopupClose);
+      window.addEventListener('keyup', event => {
+        if (event.key === 'Escape') {
+          onPopupClose();
+        }
+      });
+
+      // PageJumper button
+      let onJumpPage = () => {
+        window.location = window.location.origin + '/' + input.value
+      };
+      document.querySelector('.popup-btn-go').addEventListener('click', onJumpPage);
+      document.querySelector('.search-input').addEventListener('keydown', event => {
+        if (event.keyCode === 13) {
+          onJumpPage();
+          return;
+        }
+      });
+      
+      // Search Preload
+      let head = document.head || document.getElementsByTagName('head')[0];
+      let searchlink = document.createElement('link');
+        searchlink.rel="search";
+        searchlink.href="/search.xml";
+        searchlink.crossOrigin="anonymous";
+      head.appendChild(searchlink);
+    });
+  </script>
+
+  <!--
+<script src="/js/local-search.js"></script>
+--> 
+
+  <script src="/live2d-widget/autoload.js"></script>
+  <script type="text/javascript" src="/js/APlayer.min.js"></script>
+
+  <!-- Fonts -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+  <body>
+    <header class="header fixed-header">
+  <nav class="header-container">
+    <a class="home-link" href="/">
+      <img class="logo" src="/images/logo.png" alt="logo"/>
+      <span class="eng_mark">CloudPool</span><span class="chn_mark">浊池</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">主页</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/categories/" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archive/" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/mag/" class="item-link">网刊</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/one/" class="item-link">一言</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a target="_blank" rel="noopener" href="https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/" class="item-link">网盘</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="//<emoji>" class="item-link">( ^ω^)</a>
+          
+        </li>
+      
+      
+        <li class="list-item">
+    <a role="button" class="item-link popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">主页</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/categories/" class="menu-link">分类</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">标签</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archive/" class="menu-link">归档</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/mag/" class="menu-link">网刊</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/one/" class="menu-link">一言</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a target="_blank" rel="noopener" href="https://dawn-shadow-a17b.cloudpool.workers.dev/CloudShare/" class="menu-link">网盘</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="//<emoji>" class="menu-link">( ^ω^)</a>
+            
+          </li>
+        
+        
+          <li class="menu-item">
+    <a role="button" class="item-link popup-trigger">
+        <i class="fa fa-search fa-fw"></i>
+    </a>
+</li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+    <div id="article-banner">
+  <h2 class="post-title" id="post-title">Taylor Swift</h2>
+  
+   
+    <p class="post-date" id="post-date">2025-01-27</p>
+  
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+
+
+<main class="app-body flex-box">
+  <article class="post-article">
+    
+      <div class="front-parent" id="front-parent">
+  <div class="front-child" id="front-fontsize">
+    <label class="front-label" for="fontsize-range">字体大小</label>
+    <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
+    <span id="fontsize-value"></span>
+  </div>
+
+  <div class="front-child" id="front-fontselector">
+    <label class="front-label" for="font-select">更换字体</label>
+    <select name="font" id="font">
+      <option value="default">默认</option>
+      <option value="heiti">黑体</option>
+      <option value="light-heiti">黑体（细体）</option>
+      <option value="lighter-heiti">黑体（极细）</option>
+      <option value="songti">宋体</option>
+      <option value="light-songti">宋体（细体）</option>
+      <option value="kaiti">楷体</option>
+      <option value="fangsong">仿宋</option>
+    </select>
+  </div>
+
+  <div class="front-child" id="front-indent">
+    <label class="front-label" for="TextIndent">段首缩进</label>
+    <input type="checkbox" id="indent-checkbox" name="text-indent" value="" />
+  </div>
+</div>
+
+<h1 class="article-author">
+  
+        StʌrunneR
+        
+</h1>
+
+<script>
+  $(document).ready(
+    function () {
+      let FontChanger = function () {
+        if (this.value == "default") {
+          $(".markdown-content").css({ "font-family": "Arial, Helvetica, sans-serif" });
+          $(".markdown-content").css({ "font-weight": 'initial' });
+        } if (this.value == "heiti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-heiti") {
+          $(".markdown-content").css({ "font-weight": '300' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap rel=stylesheet>");
+        } else if (this.value == "lighter-heiti") {
+          $(".markdown-content").css({ "font-weight": '100' });
+          $(".markdown-content").css({ "font-family": "'Noto Sans SC',STHeiti,SimHei,sans-serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100&display=swap rel=stylesheet>");
+        } else if (this.value == "songti") {
+          $(".markdown-content").css({ "font-weight": '400' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap rel=stylesheet>");
+        } else if (this.value == "light-songti") {
+          $(".markdown-content").css({ "font-weight": '200' });
+          $(".markdown-content").css({ "font-family": "'Noto Serif SC',STSong,NSimSun,SimSun,serif" });
+          $("head").append("<link href=https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap rel=stylesheet>");
+        } else if (this.value == "kaiti") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZKai-Z03S','STKaiti','KaiTi',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-kai-z-03-s/font.css rel=stylesheet>");
+        } else if (this.value == "fangsong") {
+          $(".markdown-content").css({ "font-weight": 'initial' });
+          $(".markdown-content").css({ "font-family": "'FZFangSong-Z02S','STFangsong','FangSong','FangSong_GB2312',Serif" });
+          $("head").append("<link href=https://cdn.jsdelivr.net/npm/cn-fontsource-fz-fang-song-z-02-s/font.css rel=stylesheet>");
+        }
+      };
+      $("#font").on('change', FontChanger);
+      $("#font").on('click', FontChanger);
+    });
+
+  $("#indent-checkbox").change(function () {
+    if (this.checked) {
+      $(".markdown-content > p").css({ "text-indent": "2em" });
+    } else {
+      $(".markdown-content > p").css({ "text-indent": "0" });
+    }
+  });
+
+  $("#fontsize-value").html("100%");
+  let rangeSwitch = function () {
+    let fontsizePercent = $("#fontsize-slider").val();
+    $(".markdown-content").css("font-size", fontsizePercent + "%")
+    $("#fontsize-value").html(fontsizePercent + "%")
+  }
+  $("#fontsize-slider").on("input", rangeSwitch)
+</script>
+      <section class="markdown-content" id="content">
+        <h3 id="Taylor-Swift-2006"><a href="#Taylor-Swift-2006" class="headerlink" title="Taylor Swift 2006"></a>Taylor Swift 2006</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Tim McGraw',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/01 Tim McGraw.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/01 Tim McGraw.lrc',
+},{
+name: 'Picture to Burn',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/02 Picture to Burn.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/02 Picture to Burn.lrc',
+},{
+name: 'Teardrops on my Guitar',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/03 Teardrops on my Guitar.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/03 Teardrops on my Guitar.lrc',
+},{
+name: 'A Place in This World',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/04 A Place in This World.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/04 A Place in This World.lrc',
+},{
+name: 'Cold As You',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/05 Cold As You.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/05 Cold As You.lrc',
+},{
+name: 'The Outside',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/06 The Outside.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/06 The Outside.lrc',
+},{
+name: 'Tied Together With a Smile',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/07 Tied Together With a Smile.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/07 Tied Together With a Smile.lrc',
+},{
+name: 'Stay Beautiful',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/08 Stay Beautiful.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/08 Stay Beautiful.lrc',
+},{
+name: 'Should\'ve Said No',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/09 Should\'ve Said No.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/09 Should\'ve Said No.lrc',
+},{
+name: 'Mary\'s Song (Oh My My My)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/10 Mary\'s Song (Oh My My My).m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/10 Mary\'s Song (Oh My My My).lrc',
+},{
+name: 'Our Song',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/11 Our Song.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/11 Our Song.lrc',
+},{
+name: 'I\'m Only Me When I\'m With You',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/12 I\'m Only Me When I\'m With You.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/12 I\'m Only Me When I\'m With You.lrc',
+},{
+name: 'Invisible',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/13 Invisible.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/13 Invisible.lrc',
+},{
+name: 'A Perfectly Good Heart',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/14 A Perfectly Good Heart.m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/14 A Perfectly Good Heart.lrc',
+},{
+name: 'Teardrops On My Guitar (pop version)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/15 Teardrops On My Guitar (pop version).m4a',
+cover: '2006-TS/cover.webp',
+lrc: '2006-TS/15 Teardrops On My Guitar (pop version).lrc',
+},
+]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>Taylor Swift’s self-titled debut captures the dreams and desires of a girl on the cusp of womanhood with candor, intelligence and authentic sweetness. Producer Robert Ellis Orrall provides Swift with sympathetic backing, adding banjo-driven twang to “Pictures To Burn” and lending some electric guitar punch to “The Outside.” Swift sings with clarity and conviction, filling tunes like “Tied Together With A Smile” and “Mary’s Song” with a winsome yearning. There are moments here — such as the lovely “Teardrops On My Guitar” — that recall the tenderness of an old Everly Brothers song. Other tracks, like “Picture To Burn,” have a distinctly sarcastic edge. Most of all, Swift keeps things real and true to her own experience on her winning premiere effort.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Fearless-2008"><a href="#Fearless-2008" class="headerlink" title="Fearless 2008"></a>Fearless 2008</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Fearless',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/01 Fearless.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/01 Fearless.lrc',
+},{
+name: 'Fifteen',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/02 Fifteen.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/02 Fifteen.lrc',
+},{
+name: 'Love Story',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/03 Love Story.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/03 Love Story.lrc',
+},{
+name: 'Hey Stephen',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/04 Hey Stephen.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/04 Hey Stephen.lrc',
+},{
+name: 'White Horse',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/05 White Horse.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/05 White Horse.lrc',
+},{
+name: 'You Belong With Me',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/06 You Belong With Me.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/06 You Belong With Me.lrc',
+},{
+name: 'Breathe [feat. Colbie Caillat]',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/07 Breathe [feat. Colbie Caillat].m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/07 Breathe [feat. Colbie Caillat].lrc',
+},{
+name: 'Tell Me Why',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/08 Tell Me Why.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/08 Tell Me Why.lrc',
+},{
+name: 'You\'re Not Sorry',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/09 You\'re Not Sorry.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/09 You\'re Not Sorry.lrc',
+},{
+name: 'The Way I Loved You',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/10 The Way I Loved You.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/10 The Way I Loved You.lrc',
+},{
+name: 'Forever & Always',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/11 Forever & Always.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/11 Forever & Always.lrc',
+},{
+name: 'The Best Day',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/12 The Best Day.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/12 The Best Day.lrc',
+},{
+name: 'Change',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/13 Change.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/13 Change.lrc',
+},{
+name: 'Our Song',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/14 Our Song.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/14 Our Song.lrc',
+},{
+name: 'Teardrops On My Guitar',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/15 Teardrops On My Guitar.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/15 Teardrops On My Guitar.lrc',
+},{
+name: 'Should\'ve Said No',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/16 Should\'ve Said No.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/16 Should\'ve Said No.lrc',
+},{
+name: 'Beautiful Eyes',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/17 Beautiful Eyes.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/17 Beautiful Eyes.lrc',
+},{
+name: 'Picture To Burn',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/18 Picture To Burn.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/18 Picture To Burn.lrc',
+},{
+name: 'I\'m Only Me When I\'m With You',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/19 I\'m Only Me When I\'m With You.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/19 I\'m Only Me When I\'m With You.lrc',
+},{
+name: 'I Heart',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/20 I Heart.m4a',
+cover: '2008-Fe/cover.webp',
+lrc: '2008-Fe/20 I Heart.lrc',
+},
+]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>《Fearless》沿袭了第一张专辑的甜美乡村风，而 Taylor Swift 再次用她过人的创造才华俘获人心。她说专辑的名称“无畏”并不是无所畏惧，而是在受过伤害后，依然一如既往地勇敢去爱。以情爱为主题已经成为她的一大特色，在这张专辑中同样唱着爱情的甜蜜，嫉妒与遗憾。经典大红单曲《Love Story》描绘了一个浪漫的童话爱情故事，《You Belong With Me》则讲述着高中青春爱情的羞涩与猜忌。Taylor Swift 用清新的乡村乐唱着女孩心中的爱恨交织，但鼓舞我们勇于去爱，乐观而无所畏惧地去爱。</p>
+<p>Making the shift from teen sensation to mature artist can be tough, but on her second album, Fearless, an 18-year-old Taylor Swift did it with style. The songs ring out with angst and delight in equal measure. Guitars chime and beats bounce as Swift sails through the title track, “Hey Stephen,” and “You Belong With Me” with boundless joy. These moments glow all the more alongside thoughtful tunes like “Fifteen” (a knowing glance back at high school) and “White Horse” (a snapshot of lost innocence).</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Speak-Now-2010"><a href="#Speak-Now-2010" class="headerlink" title="Speak Now 2010"></a>Speak Now 2010</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Mine (US Version)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/01 Mine (US Version).m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/01 Mine (US Version).lrc',
+},{
+name: 'Sparks Fly',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/02 Sparks Fly.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/02 Sparks Fly.lrc',
+},{
+name: 'Back To December (US Version)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/03 Back To December (US Version).m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/03 Back To December (US Version).lrc',
+},{
+name: 'Speak Now',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/04 Speak Now.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/04 Speak Now.lrc',
+},{
+name: 'Dear John',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/05 Dear John.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/05 Dear John.lrc',
+},{
+name: 'Mean',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/06 Mean.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/06 Mean.lrc',
+},{
+name: 'The Story Of Us (US Version)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/07 The Story Of Us (US Version).m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/07 The Story Of Us (US Version).lrc',
+},{
+name: 'Never Grow Up',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/08 Never Grow Up.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/08 Never Grow Up.lrc',
+},{
+name: 'Enchanted',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/09 Enchanted.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/09 Enchanted.lrc',
+},{
+name: 'Better Than Revenge',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/10 Better Than Revenge.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/10 Better Than Revenge.lrc',
+},{
+name: 'Innocent',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/11 Innocent.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/11 Innocent.lrc',
+},{
+name: 'Haunted',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/12 Haunted.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/12 Haunted.lrc',
+},{
+name: 'Last Kiss',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/13 Last Kiss.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/13 Last Kiss.lrc',
+},{
+name: 'Long Live',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/14 Long Live.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/14 Long Live.lrc',
+},{
+name: 'Ours',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/15 Ours.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/15 Ours.lrc',
+},{
+name: 'If This Was A Movie',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/16 If This Was A Movie.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/16 If This Was A Movie.lrc',
+},{
+name: 'Superman',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/17 Superman.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/17 Superman.lrc',
+},{
+name: 'Back To December (Acoustic)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/18 Back To December (Acoustic).m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/18 Back To December (Acoustic).lrc',
+},{
+name: 'Haunted (Acoustic)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/19 Haunted (Acoustic).m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/19 Haunted (Acoustic).lrc',
+},{
+name: 'Mine',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/20 Mine.m4a',
+cover: '2010-SN/cover.webp',
+lrc: '2010-SN/20 Mine.lrc',
+},
+]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>Taylor Swift 的第三张个人专辑原被她取名为《Enchanted》，但唱片公司认为专辑中大多歌曲都与这个名字类型的题材无关。于是，Taylor 便将专辑重新命名为《Speak Now》，这个名字灵感来源于西方婚礼时，牧师在婚礼结束前说的话：“有异议就现在开口，否则就请永远保持沉默。”专辑中 14 首歌均由她一个人创作完成，写的全是她在该说的时候，却没有说出口的话，每首歌都献给心中特定的人。这张专辑曾获得第 54 届格莱美最佳乡村专辑提名，单曲《Mean》获得“最佳乡村歌曲”，她也凭借这首歌获得“最佳乡村歌手”。这张专辑昭示着 Taylor Swift 不再是一个逃避爱情的年轻女孩，也昭示着她正逐渐从乡村乐向流行乐靠近。</p>
+<p>On <em>Speak Now</em>, Taylor Swift’s growth and assertiveness shines through. Each song is drawn from personal experience, from unpredictable relationships (“Mine”) to a carefully crafted response to a very public dressing-down (“Innocent”). Swift exhibits strength and vulnerability — exposing an artist in creative and personal metamorphosis.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Red-2012"><a href="#Red-2012" class="headerlink" title="Red 2012"></a>Red 2012</h3><div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'State of Grace',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/01 State of Grace.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/01 State of Grace.lrc',
+},{
+name: 'Red',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/02 Red.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/02 Red.lrc',
+},{
+name: 'Treacherous',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/03 Treacherous.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/03 Treacherous.lrc',
+},{
+name: 'I Knew You Were Trouble',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/04 I Knew You Were Trouble.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/04 I Knew You Were Trouble.lrc',
+},{
+name: 'All Too Well',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/05 All Too Well.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/05 All Too Well.lrc',
+},{
+name: '22',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/06 22.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/06 22.lrc',
+},{
+name: 'I Almost Do',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/07 I Almost Do.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/07 I Almost Do.lrc',
+},{
+name: 'We Are Never Ever Getting Back Together',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/08 We Are Never Ever Getting Back Together.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/08 We Are Never Ever Getting Back Together.lrc',
+},{
+name: 'Stay Stay Stay',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/09 Stay Stay Stay.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/09 Stay Stay Stay.lrc',
+},{
+name: 'The Last Time',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/10 The Last Time.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/10 The Last Time.lrc',
+},{
+name: 'Holy Ground',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/11 Holy Ground.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/11 Holy Ground.lrc',
+},{
+name: 'Sad Beautiful Tragic',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/12 Sad Beautiful Tragic.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/12 Sad Beautiful Tragic.lrc',
+},{
+name: 'The Lucky One',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/13 The Lucky One.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/13 The Lucky One.lrc',
+},{
+name: 'Everything Has Changed',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/14 Everything Has Changed.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/14 Everything Has Changed.lrc',
+},{
+name: 'Starlight',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/15 Starlight.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/15 Starlight.lrc',
+},{
+name: 'Begin Again',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/16 Begin Again.m4a',
+cover: '2012-Re/cover.webp',
+lrc: '2012-Re/16 Begin Again.lrc',
+},
+]});ap4.on("play",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("play",()=>{console.log("**"+document.title+"**")});ap4.on("loadstart",()=>{console.log("loadstart")});ap4.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4.on("loadeddata",()=>{console.log("loadeddata")});ap4.on("canplay",()=>{console.log("canplay")});ap4.on("canplaythrough",()=>{console.log("canplaythrough")});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("suspend",()=>{console.log("suspend")});ap4.on("play",()=>{console.log("play")});ap4.on("pause",()=>{console.log("pause")});ap4.on("waiting",()=>{console.log("waiting")});ap4.on("playing",()=>{console.log("playing")});ap4.on("seeking",()=>{console.log("seeking")});ap4.on("seeked",()=>{console.log("seeked")});ap4.on("error",()=>{console.log("error");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>告别以往清纯乡村少女日记体裁，不甩流言蜚语，也无畏展露女性的多变情绪。Taylor Swift 从自己亲身经历的一段并不成功的恋情中得到领悟，并将其描述成“Red Emotion”以此呼应专辑主题，她把真挚却私人的情感倾注到这张专辑中，尽显成长的心路历程。英国摇滚乐队 Snow Patrol 的主唱 Gary Lightbody 担纲这张专辑的制作人，他的加入使《Red》在曲风上拥有了浓郁的英伦摇滚元素，动感的摇滚节拍邂逅甜美清新的乡村音乐，充满新鲜感。《Red》发行首周以 121 万张的销量成为过去十年间在美国销售最快的专辑，不但在全球多个国家和地区都名列排行榜首位，更是在各大颁奖礼上获得诸多褒奖，凭借这张专辑，Taylor Swift 缔造了独属自己的榜单神话，迈出了“红”遍全球的步伐。</p>
+<p>Deluxe Version：《Red》豪华版唱片相较于原版的 16 首歌，另外多收录了 3 首歌曲、两首 Demo 以及一首原音版歌曲。同 Taylor Swift 的前三张专辑一样，《Red》一经发行便收获热烈的市场响应，这张专辑多元的曲风的背后，是过去两年她所经历的各种情绪：火热的爱情、磨人的沮丧、强烈的困惑等等，这些在 Taylor Swift 看来都可以用红色归纳的情绪，都被她写进了这张专辑，用流行乐、英伦摇滚、电子乐等各种不同的方式倾泻出来。她也借此挣脱了经典乡村乐的束缚，让乐迷们见证了自己的成长。所有打不败你的，都会让你变得强大，那些曾经困扰 Taylor 的红色情绪，如今全都变成了她的武装色，让她更加闪耀，也更加鲜艳。</p>
+<p>In a primary color, Taylor Swift captures the essence of her fourth record: it represents her taste for vengeance, her hot-blooded romantic streak, and the neon-lit pulse of a dance floor. The banjo pluck of the title track and acoustic ballad “All Too Well” will resonate with country fans, but glossy singles like “We Are Never Ever Getting Back Together’’ and “I Knew You Were Trouble” seem destined for a broader audience—one that’s just as vivid as the title suggests.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="1989-2014"><a href="#1989-2014" class="headerlink" title="1989 2014"></a>1989 2014</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Welcome To New York',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/01 Welcome To New York.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/01 Welcome To New York.lrc',
+},{
+name: 'Blank Space',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/02 Blank Space.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/02 Blank Space.lrc',
+},{
+name: 'Style',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/03 Style.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/03 Style.lrc',
+},{
+name: 'Out Of The Woods',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/04 Out Of The Woods.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/04 Out Of The Woods.lrc',
+},{
+name: 'All You Had To Do Was Stay',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/05 All You Had To Do Was Stay.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/05 All You Had To Do Was Stay.lrc',
+},{
+name: 'Shake It Off',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/06 Shake It Off.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/06 Shake It Off.lrc',
+},{
+name: 'I Wish You Would',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/07 I Wish You Would.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/07 I Wish You Would.lrc',
+},{
+name: 'Bad Blood',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/08 Bad Blood.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/08 Bad Blood.lrc',
+},{
+name: 'Wildest Dreams',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/09 Wildest Dreams.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/09 Wildest Dreams.lrc',
+},{
+name: 'How You Get The Girl',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/10 How You Get The Girl.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/10 How You Get The Girl.lrc',
+},{
+name: 'This Love',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/11 This Love.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/11 This Love.lrc',
+},{
+name: 'I Know Places',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/12 I Know Places.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/12 I Know Places.lrc',
+},{
+name: 'Clean',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/13 Clean.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/13 Clean.lrc',
+},{
+name: 'Wonderland',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/14 Wonderland.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/14 Wonderland.lrc',
+},{
+name: 'You Are In Love',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/15 You Are In Love.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/15 You Are In Love.lrc',
+},{
+name: 'New Romantics',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/16 New Romantics.m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/16 New Romantics.lrc',
+},{
+name: 'I Know Places (Voice Memo)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/17 I Know Places (Voice Memo).m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/17 I Know Places (Voice Memo).lrc',
+},{
+name: 'I Wish You Would (Voice Memo)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/18 I Wish You Would (Voice Memo).m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/18 I Wish You Would (Voice Memo).lrc',
+},{
+name: 'Blank Space (Voice Memo)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/19 Blank Space (Voice Memo).m4a',
+cover: '2014-19/cover.webp',
+lrc: '2014-19/19 Blank Space (Voice Memo).lrc',
+},
+]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>“这是第一张官方正式流行乐专辑”，从 Taylor Swift 自己对这张专辑的定义就可以看出，她的演绎风格已经从擅长的乡村歌曲扩展到更贴近广阔听众的流行声音。专辑名《1989》的灵感源于她出生那年的音乐，她认为 Annie Lennox 和 Madonna 在那个时期的音乐超出了她们所处的时代，这些音乐也为她的创作提供了诸多灵感。继前张专辑与 Max Martin、Shellback 合作三首歌曲后，Swift 在这张专辑中与他们碰撞出了更多的火花，Max Martin 编写的鼓点和合成器效果，为歌曲注入了激昂的活力。而在歌词的编写上，Martin 与 Shellback 及其余几位作词人让 Swift 的音乐多了几分老练成熟，专辑的音乐仍然不缺少易于得到共鸣的主题——热恋和情侣之间的关系。这张专辑的成功，也标志着 Swift 正在逐步走向自己的事业巅峰。</p>
+<p>Taylor Swift’s ‘80s-inspired fifth studio effort is her first “official pop album,” with heavyweights like Max Martin, Shellback, Ryan Tedder, and Jack Antonoff helping construct a sleeker, glitzier sound. “Shake It Off” mimics “Hey Ya,” OutKast’s own pledge of allegiance to populism, and echoes of Madonna, Cyndi Lauper, and Belinda Carlisle can be heard throughout. <em>1989</em> is a juggernaut, as brash and brilliant as the lights of Times Square.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="reputation-2017"><a href="#reputation-2017" class="headerlink" title="reputation 2017"></a>reputation 2017</h3><div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: '...Ready For It',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/01 ...Ready For It.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/01 ...Ready For It.lrc',
+},{
+name: 'End Game',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/02 End Game.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/02 End Game.lrc',
+},{
+name: 'I Did Something Bad',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/03 I Did Something Bad.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/03 I Did Something Bad.lrc',
+},{
+name: 'Don’t Blame Me',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/04 Don’t Blame Me.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/04 Don’t Blame Me.lrc',
+},{
+name: 'Delicate',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/05 Delicate.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/05 Delicate.lrc',
+},{
+name: 'Look What You Made Me Do',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/06 Look What You Made Me Do.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/06 Look What You Made Me Do.lrc',
+},{
+name: 'So It Goes...',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/07 So It Goes....m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/07 So It Goes....lrc',
+},{
+name: 'Gorgeous',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/08 Gorgeous.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/08 Gorgeous.lrc',
+},{
+name: 'Getaway Car',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/09 Getaway Car.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/09 Getaway Car.lrc',
+},{
+name: 'King Of My Heart',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/10 King Of My Heart.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/10 King Of My Heart.lrc',
+},{
+name: 'Dancing With Our Hands Tied',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/11 Dancing With Our Hands Tied.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/11 Dancing With Our Hands Tied.lrc',
+},{
+name: 'Dress',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/12 Dress.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/12 Dress.lrc',
+},{
+name: 'This Is Why We Can\'t Have Nice Things',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/13 This Is Why We Can\'t Have Nice Things.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/13 This Is Why We Can\'t Have Nice Things.lrc',
+},{
+name: 'Call It What You Want',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/14 Call It What You Want.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/14 Call It What You Want.lrc',
+},{
+name: 'New Year’s Day',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/15 New Year’s Day.m4a',
+cover: '2017-re/cover.webp',
+lrc: '2017-re/15 New Year’s Day.lrc',
+},
+]});ap6.on("play",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("play",()=>{console.log("**"+document.title+"**")});ap6.on("loadstart",()=>{console.log("loadstart")});ap6.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6.on("loadeddata",()=>{console.log("loadeddata")});ap6.on("canplay",()=>{console.log("canplay")});ap6.on("canplaythrough",()=>{console.log("canplaythrough")});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("suspend",()=>{console.log("suspend")});ap6.on("play",()=>{console.log("play")});ap6.on("pause",()=>{console.log("pause")});ap6.on("waiting",()=>{console.log("waiting")});ap6.on("playing",()=>{console.log("playing")});ap6.on("seeking",()=>{console.log("seeking")});ap6.on("seeked",()=>{console.log("seeked")});ap6.on("error",()=>{console.log("error");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>从《Red》到《1989》，再到这张《reputation》，Taylor Swift 始终在尝试新的元素，三年的沉淀过后，她以一张电子流行乐专辑回归，向世人展现了她的内心深刻的一面。专辑以时间为轴，将她从开始创作到专辑发行的生活与内心感受一一呈现。与过去相比，Swift 看待事物的观点更加直接成熟，面对一些问题时也不再迷茫困惑，而是有了自己的看法。以暧昧氛围直抒爱意的《Dress》，将她的性感与感性同时上升到了全新的高度，而《New Year’s Day》中愿意与爱人共同收拾派对残局的心情，则体现出她更成熟的爱情观。在 Max Martin、Shellback、Jack Antonoff 等制作人持续的保驾护航下，Taylor Swift 的光辉变得更加耀眼。</p>
+<p>You don’t need to hear Taylor Swift declare her old self dead—as she does on the incendiary “Look What You Made Me Do”—to know that <em>reputation</em> is both a warning shot to her detractors and a full-scale artistic transformation. There’s a newfound complexity to all these songs: They’re dark and meaningful, catchy and lived-in, pointed and provocative. She’s braggadocious on “End Game,” a languid hip-hop cut with Ed Sheeran and Future, and then sassy and sensual on “…Ready for It?” and “I Did Something Bad.” But songs like “Call It What You Want” and “Delicate” bring Taylor’s many emotional layers together and confront the dynamic between her celebrity and personal life: “My reputation’s never been worse&#x2F;So, you must like me for me,” she offers. It all makes for a boundlessly energetic, soul-baring pop masterpiece—and her boldest statement yet.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Lover-2019"><a href="#Lover-2019" class="headerlink" title="Lover 2019"></a>Lover 2019</h3><div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'I Forgot That You Existed',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/01 I Forgot That You Existed.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/01 I Forgot That You Existed.lrc',
+},{
+name: 'Cruel Summer',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/02 Cruel Summer.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/02 Cruel Summer.lrc',
+},{
+name: 'Lover',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/03 Lover.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/03 Lover.lrc',
+},{
+name: 'The Man',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/04 The Man.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/04 The Man.lrc',
+},{
+name: 'The Archer',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/05 The Archer.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/05 The Archer.lrc',
+},{
+name: 'I Think He Knows',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/06 I Think He Knows.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/06 I Think He Knows.lrc',
+},{
+name: 'Miss Americana & The Heartbreak Prince',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/07 Miss Americana & The Heartbreak Prince.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/07 Miss Americana & The Heartbreak Prince.lrc',
+},{
+name: 'Paper Rings',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/08 Paper Rings.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/08 Paper Rings.lrc',
+},{
+name: 'Cornelia Street',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/09 Cornelia Street.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/09 Cornelia Street.lrc',
+},{
+name: 'Death By A Thousand Cuts',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/10 Death By A Thousand Cuts.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/10 Death By A Thousand Cuts.lrc',
+},{
+name: 'London Boy',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/11 London Boy.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/11 London Boy.lrc',
+},{
+name: 'Soon You’ll Get Better',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/12 Soon You’ll Get Better.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/12 Soon You’ll Get Better.lrc',
+},{
+name: 'False God',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/13 False God.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/13 False God.lrc',
+},{
+name: 'You Need To Calm Down',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/14 You Need To Calm Down.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/14 You Need To Calm Down.lrc',
+},{
+name: 'Afterglow',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/15 Afterglow.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/15 Afterglow.lrc',
+},{
+name: 'ME! (feat. Brendon Urie of Panic! At The Disco)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/16 ME! (feat. Brendon Urie of Panic! At The Disco).m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/16 ME! (feat. Brendon Urie of Panic! At The Disco).lrc',
+},{
+name: 'It’s Nice To Have A Friend',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/17 It’s Nice To Have A Friend.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/17 It’s Nice To Have A Friend.lrc',
+},{
+name: 'Daylight',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/18 Daylight.m4a',
+cover: '2019-Lo/cover.webp',
+lrc: '2019-Lo/18 Daylight.lrc',
+},
+]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>与两年前《reputation》以实验性的黑暗、阴郁风反击舆论刻薄，昭示“没有人能在我的战歌里打败我”不同，Taylor Swift 的声音在《Lover》里更像是于心灵净化中自然回溯与演变，在一派轻松的氛围里显得熟悉又新鲜。在这张专辑中，四位制作人协助 Taylor Swift 用声音搭建起自信而又坚定的气场，接续《reputation》“灾后重建”般，铺设出一条冒着粉色泡泡向光而行的新路途。《Lover》的主要音色来自 Taylor Swift 的长期合作者、制作人 Jack Antonoff，善用的梦幻清新的合成器，辅以八十年代标志性的鼓点，使流行曲调充满低音脉冲音效与混响节拍，这正是逐渐将创作重心由歌词转向旋律的 Taylor 尤为看重的。专辑同名主打作品《Lover》由于将播放场景设置在七八十年代的婚礼现场，呈现出复古又温馨的基调，在从原声吉他、立式钢琴到 Paul McCartney 的提琴贝斯启发出的贝斯旋律线下，这首情歌奔向了永恒。当然，作品中也少不了关于甜蜜爱恋的（《London Boy》），这首自带光晕、直接指向英国演员 Joe Alwyn 的歌，是对唱衰恋情的人的回应。</p>
+<p>由 The Chicks 倾情和声的民谣《Soon You’ll Get Better》在班卓琴弹拨中讲述母亲 Andrea 与癌症的抗争，回到乡村和蓝草，Taylor 虔诚地祈祷“很快你就会好起来的”。虽然整张专辑带劲儿的歌不算多，但跃动的朋克流行《Paper Rings》和合成器流行曲《Cornelia Street》也足够将能量一面全释放，让情绪随着乐段跌宕起伏。</p>
+<p>无论是为边缘群体权益发声（《You Need to Calm Down》）、抨击父权制度（《The Man》），还是直指黑暗时代的偏狭之徒（《Miss Americana &amp; The Heartbreak Prince》），Taylor Swift 都在《Lover》中以更清晰与成熟的视角再一次向光明与爱的主题迈进，这或许，标志着 29 岁的她正准备好拥抱更多的自由意志，进入生活的全新阶段。</p>
+<p>There’s a reason Taylor Swift sounds so confident and cool on <em>Lover</em>, her seventh album and the most free-spirited yet. She’s in love—pure, steady, starry-eyed, shout-it-from-the-rooftops love. Arriving 13 years after her eponymous debut album—and following a string of songs that sometimes felt like battle scars from public breakups and celebrity feuds—this project comes off clear-eyed, thick-skinned, and grown-up. It may be a sign that the 29-year-old has entered a new phase of her life: She’s now impressively private (she and her long-term boyfriend are rarely seen together in public), politically fired up (this album finds her fighting for queer and women’s rights), and eager to see the big picture (fans have speculated that the gut-wrenching “Soon You’ll Get Better” is about her mother’s battles with cancer).</p>
+<p>As a result, she’s never sounded stronger or more in control. She calls out dark-age bigots on the Pride anthem “You Need to Calm Down,” sends up the patriarchy on “The Man,” perfects flippant indifference on “I Forgot That You Existed,” and dares to sing her own praises on “ME!,” a duet with Brendon Urie of Panic! At the Disco. Tonally, these songs couldn’t be more different than 2017’s vengeful and self-conscious Reputation.</p>
+<p>Most of the album is baked in the atmospheric synths and ’80s drums favored by collaborator Jack Antonoff (“The Archer,” “Lover”). And yet some of the best moments are also the most surprising. “It’s Nice to Have a Friend” is daydreamy and delicate, illuminated with laidback strumming, twinkling trumpet, and high-pitched ooh-oohs. And the percussive, playful “I Think He Knows” is a rollercoaster of a song, spiking and dipping from chatty whispers to breathy shout-singing in a matter of seconds.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="folklore-2020"><a href="#folklore-2020" class="headerlink" title="folklore 2020"></a>folklore 2020</h3><div id="aplayer8" class="aplayerJS"></div><script>const ap8 = new APlayer({container: document.getElementById("aplayer8"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'the 1',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/01 the 1.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/01 the 1.lrc',
+},{
+name: 'cardigan',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/02 cardigan.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/02 cardigan.lrc',
+},{
+name: 'the last great american dynasty',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/03 the last great american dynasty.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/03 the last great american dynasty.lrc',
+},{
+name: 'exile',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/04 exile.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/04 exile.lrc',
+},{
+name: 'my tears ricochet',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/05 my tears ricochet.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/05 my tears ricochet.lrc',
+},{
+name: 'mirrorball',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/06 mirrorball.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/06 mirrorball.lrc',
+},{
+name: 'seven',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/07 seven.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/07 seven.lrc',
+},{
+name: 'august',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/08 august.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/08 august.lrc',
+},{
+name: 'this is me trying',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/09 this is me trying.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/09 this is me trying.lrc',
+},{
+name: 'illicit affairs',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/10 illicit affairs.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/10 illicit affairs.lrc',
+},{
+name: 'invisible string',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/11 invisible string.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/11 invisible string.lrc',
+},{
+name: 'mad woman',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/12 mad woman.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/12 mad woman.lrc',
+},{
+name: 'epiphany',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/13 epiphany.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/13 epiphany.lrc',
+},{
+name: 'betty',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/14 betty.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/14 betty.lrc',
+},{
+name: 'peace',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/15 peace.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/15 peace.lrc',
+},{
+name: 'hoax',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/16 hoax.m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/16 hoax.lrc',
+},{
+name: 'the lakes (bonus track)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/17 the lakes (bonus track).m4a',
+cover: '2020-fo/cover.webp',
+lrc: '2020-fo/17 the lakes (bonus track).lrc',
+},
+]});ap8.on("play",()=>{document.title=document.getElementById("aplayer8").getElementsByClassName("aplayer-music")[0].innerText;});ap8.on("play",()=>{console.log("**"+document.title+"**")});ap8.on("loadstart",()=>{console.log("loadstart")});ap8.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8.on("loadeddata",()=>{console.log("loadeddata")});ap8.on("canplay",()=>{console.log("canplay")});ap8.on("canplaythrough",()=>{console.log("canplaythrough")});ap8.on("stalled",()=>{console.log("stalled");});ap8.on("suspend",()=>{console.log("suspend")});ap8.on("play",()=>{console.log("play")});ap8.on("pause",()=>{console.log("pause")});ap8.on("waiting",()=>{console.log("waiting")});ap8.on("playing",()=>{console.log("playing")});ap8.on("seeking",()=>{console.log("seeking")});ap8.on("seeked",()=>{console.log("seeked")});ap8.on("error",()=>{console.log("error");});ap8.on("ended",()=>{console.log("ended");});ap8.on("abort",()=>{console.log("abort");});ap8.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>据上张专辑《Lover》推出仅 11 个月后，我们惊喜地迎来 Taylor Swift 未经宣发便上线的又一全长录音室专辑《folklore》。这 11 个月看似短暂，期间发生的种种，尤其是全球疫情的蔓延，却让人感慨良多，回想起来恍若隔世。Taylor 在居家隔离期间，主动提出要与自己的几位乐坛偶像在线联手创作：美国艺术摇滚领军乐队 The National 的吉他手 Aaron Dessner，隐身于独立民谣乐队 Bon Iver 背后的 Justin Vernon，以及 Taylor 的长期合作对象 Jack Antonoff。他们共同打造了一场如羊毛衫般舒适熨帖，却值得深思回味的沉浸式听觉体验。</p>
+<p>这张专辑与前作大相径庭。《the 1》以一句“我最近过的还好 &#x2F; 正在着手新鲜事（I’m doing good &#x2F; I’m on some new shit）”开场，你若以为这是她在汇报居家隔离的动态，或是交代最近满溢的敏感思绪，那也无可厚非。但事实上，Swift 近期将能量全盘倾注在歌曲写作上，它们化作一篇篇短篇小说和人物速写。其中既有普鲁斯特式的意识流闪回（《cardigan》有 Lana Del Rey 的影子），也描摹为社会所背弃的寡妇形象（《the last great american dynasty》），与 Bon Iver 合作的深沉二重唱《exile》则描绘了一段注定走向毁灭的爱情。这张专辑肌理丰富，充满想象。她在《seven》中唱道：“你长长的辫子像一枚神秘的图案 &#x2F; 对你的爱直至月球和土星亦不分离（Your braids like a pattern&#x2F;Love you to the moon and to Saturn）。”这是在讲述一则两位朋友策划一场逃亡的童话：“爱会像民谣被传唱下去一般 &#x2F; 生生不息（Passed down like folk songs &#x2F; the love lasts so long）。”这位优秀的唱作人，即便时刻生活在公众视线下，亦能挖掘出如此丰富的生活素材，这只能说明，Taylor Swift 的确在隔离期间获得了灵感和热望。</p>
+<p>A mere 11 months passed between the release of <em>Lover</em> and its surprise follow-up, but it feels like a lifetime. Written and recorded remotely during the first few months of the global pandemic, <em>folklore</em> finds the 30-year-old singer-songwriter teaming up with The National’s Aaron Dessner and long-time collaborator Jack Antonoff for a set of ruminative and relatively lo-fi bedroom pop that’s worlds away from its predecessor. When Swift opens “the 1”—a sly hybrid of plaintive piano and her naturally bouncy delivery—with “I’m doing good, I’m on some new st,” you’d be forgiven for thinking it was another update from quarantine, or a comment on her broadening sensibilities. But Swift’s channelled her considerable energies into writing songs here that double as short stories and character studies, from Proustian flashbacks (“cardigan”, which bears shades of Lana Del Rey) to outcast widows (“the last great american dynasty”) and doomed relationships (“exile”, a heavy-hearted duet with Bon Iver’s Justin Vernon). It’s a work of great texture and imagination. “Your braids like a pattern&#x2F;Love you to the moon and to Saturn,” she sings on “seven”, the tale of two friends plotting an escape. “Passed down like folk songs, the love lasts so long.” For a songwriter who has mined such rich detail from a life lived largely in public, it only makes sense that she’d eventually find inspiration in isolation.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="evermore-2020"><a href="#evermore-2020" class="headerlink" title="evermore 2020"></a>evermore 2020</h3><div id="aplayer9" class="aplayerJS"></div><script>const ap9 = new APlayer({container: document.getElementById("aplayer9"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'willow',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/01 willow.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/01 willow.lrc',
+},{
+name: 'champagne problems',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/02 champagne problems.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/02 champagne problems.lrc',
+},{
+name: 'gold rush',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/03 gold rush.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/03 gold rush.lrc',
+},{
+name: '‘tis the damn season',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/04 ‘tis the damn season.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/04 ‘tis the damn season.lrc',
+},{
+name: 'tolerate it',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/05 tolerate it.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/05 tolerate it.lrc',
+},{
+name: 'no body, no crime',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/06 no body, no crime.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/06 no body, no crime.lrc',
+},{
+name: 'happiness',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/07 happiness.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/07 happiness.lrc',
+},{
+name: 'dorothea',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/08 dorothea.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/08 dorothea.lrc',
+},{
+name: 'coney island',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/09 coney island.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/09 coney island.lrc',
+},{
+name: 'ivy',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/10 ivy.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/10 ivy.lrc',
+},{
+name: 'cowboy like me',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/11 cowboy like me.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/11 cowboy like me.lrc',
+},{
+name: 'long story short',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/12 long story short.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/12 long story short.lrc',
+},{
+name: 'marjorie',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/13 marjorie.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/13 marjorie.lrc',
+},{
+name: 'closure',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/14 closure.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/14 closure.lrc',
+},{
+name: 'evermore',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/15 evermore.m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/15 evermore.lrc',
+},{
+name: 'right where you left me (bonus track)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/16 right where you left me (bonus track).m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/16 right where you left me (bonus track).lrc',
+},{
+name: 'it’s time to go (bonus track)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/17 it’s time to go (bonus track).m4a',
+cover: '2020-ev/cover.webp',
+lrc: '2020-ev/17 it’s time to go (bonus track).lrc',
+},
+]});ap9.on("play",()=>{document.title=document.getElementById("aplayer9").getElementsByClassName("aplayer-music")[0].innerText;});ap9.on("play",()=>{console.log("**"+document.title+"**")});ap9.on("loadstart",()=>{console.log("loadstart")});ap9.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap9.on("loadeddata",()=>{console.log("loadeddata")});ap9.on("canplay",()=>{console.log("canplay")});ap9.on("canplaythrough",()=>{console.log("canplaythrough")});ap9.on("stalled",()=>{console.log("stalled");});ap9.on("suspend",()=>{console.log("suspend")});ap9.on("play",()=>{console.log("play")});ap9.on("pause",()=>{console.log("pause")});ap9.on("waiting",()=>{console.log("waiting")});ap9.on("playing",()=>{console.log("playing")});ap9.on("seeking",()=>{console.log("seeking")});ap9.on("seeked",()=>{console.log("seeked")});ap9.on("error",()=>{console.log("error");});ap9.on("ended",()=>{console.log("ended");});ap9.on("abort",()=>{console.log("abort");});ap9.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>在全球陷入瘫痪的疫情期间，出人意料地推出足以重新定义音乐生涯的专辑，无疑叫人钦佩；但在短短五个月后就又做了一次同样的事，Taylor Swift 借此举大胆展现出的自信心与专注力，可以说是令人自惭形秽。和《folklore》一样，Taylor Swift 与 Aaron Dessner、Jack Antonoff 与 Justin Vernon 合作完成了《evermore》。在充分利用家庭录音室舒适氛围的情况下，他们写出更为坦诚的歌词，采用更加简单的编曲，使得歌曲既轻松温馨，又有层次丰富的叙事。</p>
+<p>新专辑的嘉宾阵容更加强大：HAIM 出现在《no body, no crime》里，Este Haim 似乎成了一场小镇谋杀案的核心人物；Dessner 的乐队队友在《coney island》中出场，他们没有偏离专辑的整体节奏，反而顺利地将自己代入歌曲的情绪。（更何况，如果把打击乐贯穿始终的《long story short》放进过去十年间任何一张 The National 的专辑，都不会显得违和。）此外，《’tis the damn season》是一首讲述“回家过节”的哀怨情歌，触动了我们这一年的纷乱心绪。如果说《folklore》让大部分人惊叹的点在于 Swift 在特殊时期解锁了新风格，那么这张《evermore》唯一真正令人意外的其实是它发行的时机。而且，大家因《folklore》而建立起的期待并未落空，因为《evermore》延续了上一张专辑的魅力。《evermore》并非特殊情况催生的新奇作品，而是 Taylor Swift 碰巧会做、而且做得很好的一件事。</p>
+<p>Surprise-dropping a career-redefining album in the midst of a paralyzing global pandemic is an admirable flex; doing it again barely five months later is a display of confidence and concentration so audacious that you’re within your rights to feel personally chastised. Like <em>folklore</em>, evermore is a team-up with Aaron Dessner, Jack Antonoff, and Justin Vernon, making the most of cozy home-studio vibes for more bare-bones arrangements and bared-soul lyrics, casually intimate and narratively rich.</p>
+<p>There is an expanded guest roster here—HAIM appears on “no body, no crime,” which seems to place Este Haim in the center of a small-town murder mystery, while Dessner’s bandmates in The National are on “coney island”—but they fit themselves into the mood rather than distract from it. (The percussive “long story short” sounds like it could have been on any National album in the past decade.) Elsewhere, “’tis the damn season” is the elegaic home-for-the-holidays ballad this busted year didn’t realize it needed. But while so much of <em>folklore</em>’s appeal involved marveling at how this setting seemed to have unlocked something in Swift, the only real shock here is the timing of the release itself. Beyond that, it’s an extension and confirmation of its predecessor’s promises and charms, less a novelty driven by unprecedented circumstances and instead simply a thing she happens to do and do well.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="Midnights-2022"><a href="#Midnights-2022" class="headerlink" title="Midnights 2022"></a>Midnights 2022</h3><div id="aplayer10" class="aplayerJS"></div><script>const ap10 = new APlayer({container: document.getElementById("aplayer10"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Lavender Haze',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/01 Lavender Haze.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/01 Lavender Haze.lrc',
+},{
+name: 'Maroon',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/02 Maroon.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/02 Maroon.lrc',
+},{
+name: 'Anti-Hero',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/03 Anti-Hero.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/03 Anti-Hero.lrc',
+},{
+name: 'Snow On The Beach',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/04 Snow On The Beach.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/04 Snow On The Beach.lrc',
+},{
+name: 'You\'re On Your Own, Kid',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/05 You\'re On Your Own, Kid.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/05 You\'re On Your Own, Kid.lrc',
+},{
+name: 'Midnight Rain',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/06 Midnight Rain.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/06 Midnight Rain.lrc',
+},{
+name: 'Question...',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/07 Question....m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/07 Question....lrc',
+},{
+name: 'Vigilante Shit',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/08 Vigilante Shit.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/08 Vigilante Shit.lrc',
+},{
+name: 'Bejeweled',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/09 Bejeweled.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/09 Bejeweled.lrc',
+},{
+name: 'Labyrinth',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/10 Labyrinth.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/10 Labyrinth.lrc',
+},{
+name: 'Karma',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/11 Karma.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/11 Karma.lrc',
+},{
+name: 'Sweet Nothing',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/12 Sweet Nothing.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/12 Sweet Nothing.lrc',
+},{
+name: 'Mastermind',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/13 Mastermind.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/13 Mastermind.lrc',
+},{
+name: 'The Great War',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/14 The Great War.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/14 The Great War.lrc',
+},{
+name: 'Bigger Than The Whole Sky',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/15 Bigger Than The Whole Sky.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/15 Bigger Than The Whole Sky.lrc',
+},{
+name: 'Paris',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/16 Paris.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/16 Paris.lrc',
+},{
+name: 'High Infidelity',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/17 High Infidelity.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/17 High Infidelity.lrc',
+},{
+name: 'Glitch',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/18 Glitch.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/18 Glitch.lrc',
+},{
+name: 'Would\'ve, Could\'ve, Should\'ve',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/19 Would\'ve, Could\'ve, Should\'ve.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/19 Would\'ve, Could\'ve, Should\'ve.lrc',
+},{
+name: 'Dear Reader',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/20 Dear Reader.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/20 Dear Reader.lrc',
+},{
+name: 'Hits Different',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/21 Hits Different.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/21 Hits Different.lrc',
+},{
+name: 'Snow On The Beach (feat. More Lana Del Rey)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/22 Snow On The Beach (feat. More Lana Del Rey).m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/22 Snow On The Beach (feat. More Lana Del Rey).lrc',
+},{
+name: 'Karma',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/23 Karma.m4a',
+cover: '2022-Mi/cover.webp',
+lrc: '2022-Mi/23 Karma.lrc',
+},
+]});ap10.on("play",()=>{document.title=document.getElementById("aplayer10").getElementsByClassName("aplayer-music")[0].innerText;});ap10.on("play",()=>{console.log("**"+document.title+"**")});ap10.on("loadstart",()=>{console.log("loadstart")});ap10.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap10.on("loadeddata",()=>{console.log("loadeddata")});ap10.on("canplay",()=>{console.log("canplay")});ap10.on("canplaythrough",()=>{console.log("canplaythrough")});ap10.on("stalled",()=>{console.log("stalled");});ap10.on("suspend",()=>{console.log("suspend")});ap10.on("play",()=>{console.log("play")});ap10.on("pause",()=>{console.log("pause")});ap10.on("waiting",()=>{console.log("waiting")});ap10.on("playing",()=>{console.log("playing")});ap10.on("seeking",()=>{console.log("seeking")});ap10.on("seeked",()=>{console.log("seeked")});ap10.on("error",()=>{console.log("error");});ap10.on("ended",()=>{console.log("ended");});ap10.on("abort",()=>{console.log("abort");});ap10.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>一切要从那次“得奖感言”开始说起。2022 年 9 月，Taylor Swift 获颁纳什维尔创作人奖 (Nashville Songwriter Awards) 的“十年最佳唱作歌手”，在上台致词时她首度公开一个秘密：她私底下有一套有点“傻气”的自创分类：“羽毛笔”“钢笔”和“彩色荧光笔”，这些是她“想象”自己创作时拿着的笔，把多年写过的歌词依此归类。而这套“系统”正是吸引广大乐迷对其创作爱不释手的秘密武器。</p>
+<p>然而，当晚更令人印象深刻的，莫过于 Taylor 分享自己从 12 岁写下第一首歌至今的创作信念，到 20 年后的今日始终不变：“能够把喜爱的事情当成工作，我们何其有幸。”Taylor 对着台下其他创作同好说：“写歌是我一生的志业、兴趣，更是我永不厌倦的动力。一首歌可以历久弥新，而一首好歌不但承载你最真实的感受，也能为你诠释这些情感。人会离开、情感会消逝，但一首好歌会一直陪着你。”</p>
+<p>《Midnights》是 Taylor 的第十张专辑，也是这四年来的第四张——这还没算上《Red》《Fearless》两张重新录制、加入十多首未公开曲目的专辑——由此可见 Taylor 真的非常喜欢写歌。而如果我们想给 Taylor 的唱作风格“断代”，那么毫无疑问，《Midnights》已经逐渐偏离《folklore》《evermore》时期的独立民谣，在她与长期合作伙伴 Jack Antonoff 的把控下，走向了混合着摩登与复古的电声 Indie Pop。她不吝从当代其他女性音乐人那儿“取经”：Lana Del Rey 对情绪的把控与戏剧化的描摹影响了 Taylor 近期的创作，Taylor 甚至在《Snow On The Beach》中直接请到了 Del Rey 本人，共同营造出一幅诗意难解的梦之画卷——“不曾见过&#x2F;这样照亮内心深处的人&#x2F;我心灵的边界，也被光芒映照得模糊起来”（I’ve never seen someone lit from within, Blurring out my periphery）。《Vigilante Shit》中极简阴郁的 beat 颇有 Billie Eilish 的风范，在维持自身的唱作歌手身份之余，将舞台让给属于“当下”的曲风与创作思维，显然也是 Taylor 在这张专辑中尝试的平衡。大玩 Auto-Tune 的《Midnight Rain》、鼓机存在感突出的《Question…?》，都能反映出 Taylor 的这一取向。</p>
+<p>如果将目光拉回到唱作的叙事本质上来，《Midnights》可谓一张将内心世界开放给听众的唱片。在为 Apple Music 用户独家录制的消息里，Taylor 说《Midnights》讲述了“人生中 13 个不眠之夜的故事”。我们得以一览 Taylor 脑海中的缠斗（比如《Anti-Hero》自鄙与自恋的心态交错），或是了解到她稳定的情感关系（男友 Joe Alwyn 再次化身“William Bowery”出现在创作名单之上）。但即便 Taylor 目前的感情生活“风平浪静”，《Midnights》却并不缺少深度思考，尤其突出的是对女性角色的反思。</p>
+<p>“他想要安稳，我追求痛苦&#x2F;他想要我做个新娘，而我想闯出自己的名声&#x2F;他想要一成不变&#x2F;而我，像午夜一样反复无常”（He wanted it comfortable &#x2F; I wanted that pain &#x2F; He wanted a bride &#x2F; I was making my own name &#x2F; Chasing that fame &#x2F; He stayed the same &#x2F;All of me changed &#x2F; Like midnight），《Midnight Rain》是一首不到 3 分钟的小歌，却凝练了女性强悍自主的特质，呼应了《You’re On Your Own, Kid》对女性追逐梦想的号召。而《Midnight Rain》对女性角色期望的挑战，在《Karma》《Mastermind》构建的形象里进一步具体化：Taylor 拒做传统两性关系里负责被动回应的女性，对一切都相当笃定，操控着关系的走向，延续了她自专辑《reputation》开始打造的“蛇蝎美人”形象。</p>
+<p>到目前这个阶段，无论是驾驭押韵、旋律，还是玩味歌词、营造叙事层次，Taylor 对创作已然得心应手，也展现出与时代思潮一同进步的成长性。她再次向我们证明，“唱作歌手”与“流行巨星”可以在一个人身上合而为一：“这个女孩准备做什么？”（“What’s a girl gonna do?”）《Bejeweled》中的 Taylor 自问自答道：“她准备像钻石一样闪耀。”（ “A diamond’s gotta shine.”）</p>
+<p>《Midnights》加长版额外收录 7 首歌曲。</p>
+<p>《Midnights》特别加长版新增三首歌曲，通过空间音频聆听。</p>
+<p>Let’s start with that speech. In September 2022, as Taylor Swift accepted Songwriter-Artist of the Decade honors at the Nashville Songwriter Awards, the headline was that Swift had unveiled an admittedly “dorky” system she’d developed for organizing her own songs. Quill Pen, Fountain Pen, Glitter Gel Pen: three categories of lyrics, three imagined tools with which she wrote them, one pretty ingenious way to invite obsessive fans to lovingly obsess all the more.</p>
+<p>And yet, perhaps the real takeaway was the manner in which she spoke about her craft that night, some 20 years after writing her first song at the age of 12. “I love doing this thing we are fortunate enough to call a job,” she said to a room of her peers. “Writing songs is my life’s work and my hobby and my never-ending thrill. A song can defy logic or time. A good song transports you to your truest feelings and translates those feelings for you. A good song stays with you even when people or feelings don’t.”</p>
+<p>On Midnights, her tenth LP and fourth in as many years—if you don’t count the two she’s just rerecorded and buttressed with dozens of additional tracks—Swift sounds like she’s really enjoying her work, playing with language like kids do with gum, thrilling to the texture of every turn of phrase, the charge in every melody and satisfying rhyme. Alongside longtime collaborator Jack Antonoff, she’s set out here to tell “the stories of 13 sleepless nights scattered throughout [her] life,” as she phrased it in a message to Apple Music subscribers. It’s a concept that naturally calls for a nocturnal palette: slower tempos, hushed atmosphere, negative space like night sky. </p>
+<p>The sound is fully modern (synths you’d want to eat or sleep in, low end that sits comfortably on your chest), while the aesthetic (soft focus, wood paneling, tracklist on the cover) is decidedly mid-century, much like the <em>Mad Men</em>-inspired title of its brooding opener, “Lavender Haze”—a song about finding refuge in the glow of intimacy. “Talk your talk and go viral,” she sings, in reference to the maelstrom of outside interest in her six-year relationship with actor Joe Alwyn. “I just want this love spiral.” (A big shout to Antonoff for those spongy backup vocals, btw.) </p>
+<p>In large part, <em>Midnights</em> is a record of interiors, Swift letting us glimpse the chaos inside her head (“Anti-Hero,” wall-to-wall zingers) and the stillness of her relationship (“Sweet Nothing,” co-written by Alwyn under his William Bowery pseudonym). For “Snow on the Beach,” she teams up with Lana Del Rey—an artist whose instinct for mood and theatrical framing seems to have influenced Swift’s recent catalog—recalling the magic of an impossible night over a backdrop of pizzicato violin, sleigh bells, and dreamy Mellotron, like the earliest hours of Christmas morning. “I’ve never seen someone lit from within,” Swift sings. “Blurring out my periphery.” </p>
+<p>But then there’s “Bejeweled,” a late, 1989-like highlight on which she announces to an unappreciative partner, a few seconds in: “And by the way, I’m going out tonight.” And then out Swift goes, striding through the center of the song like she would the room: “I can still make the whole place shimmer,” she sings, relishing that last word. “And when I meet the band, they ask, ‘Do you have a man?’&#x2F;I could still say, ‘I don’t remember.’” There are traces of melancholy layered in (see: “sapphire tears on my face”), but the song feels like a triumph, the sort of unabashed, extroverted fun that would have probably seemed out of place in the lockdown indie of 2020’s <em>folklore</em> and <em>evermore</em>. But here, side by side with songs and scenes of such writerly indulgence, it’s right at home—more proof that the terms “singer-songwriter” and “universal pop star” aren’t mutually exclusive ideas. “What’s a girl gonna do?” Swift asks at its climax. “A diamond’s gotta shine.”</p>
+<p>Midnights (3am Edition): This special expanded version of Midnights includes seven additional songs.</p>
+<p>Midnights (The Til Dawn Edition): This special expanded version of <em>Midnights</em> includes three additional songs.</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<h3 id="THE-TORTURED-POETS-DEPARTMENT-THE-ANTHOLOGY-2024"><a href="#THE-TORTURED-POETS-DEPARTMENT-THE-ANTHOLOGY-2024" class="headerlink" title="THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY 2024"></a>THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY 2024</h3><div id="aplayer11" class="aplayerJS"></div><script>const ap11 = new APlayer({container: document.getElementById("aplayer11"),lrcType:3,loop:"none",mutex:true,preload:"auto",audio: [
+{
+name: 'Fortnight',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/01 Fortnight.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/01 Fortnight.lrc',
+},{
+name: 'The Tortured Poets Department',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/02 The Tortured Poets Department.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/02 The Tortured Poets Department.lrc',
+},{
+name: 'My Boy Only Breaks His Favorite Toys',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/03 My Boy Only Breaks His Favorite Toys.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/03 My Boy Only Breaks His Favorite Toys.lrc',
+},{
+name: 'Down Bad',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/04 Down Bad.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/04 Down Bad.lrc',
+},{
+name: 'So Long, London',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/05 So Long, London.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/05 So Long, London.lrc',
+},{
+name: 'But Daddy I Love Him',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/06 But Daddy I Love Him.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/06 But Daddy I Love Him.lrc',
+},{
+name: 'Fresh Out The Slammer',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/07 Fresh Out The Slammer.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/07 Fresh Out The Slammer.lrc',
+},{
+name: 'Florida!!!',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/08 Florida!!!.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/08 Florida!!!.lrc',
+},{
+name: 'Guilty as Sin',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/09 Guilty as Sin.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/09 Guilty as Sin.lrc',
+},{
+name: 'Who’s Afraid of Little Old Me',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/10 Who’s Afraid of Little Old Me.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/10 Who’s Afraid of Little Old Me.lrc',
+},{
+name: 'I Can Fix Him (No Really I Can)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/11 I Can Fix Him (No Really I Can).m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/11 I Can Fix Him (No Really I Can).lrc',
+},{
+name: 'loml',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/12 loml.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/12 loml.lrc',
+},{
+name: 'I Can Do It With a Broken Heart',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/13 I Can Do It With a Broken Heart.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/13 I Can Do It With a Broken Heart.lrc',
+},{
+name: 'The Smallest Man Who Ever Lived',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/14 The Smallest Man Who Ever Lived.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/14 The Smallest Man Who Ever Lived.lrc',
+},{
+name: 'The Alchemy',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/15 The Alchemy.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/15 The Alchemy.lrc',
+},{
+name: 'Clara Bow',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/16 Clara Bow.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/16 Clara Bow.lrc',
+},{
+name: 'The Black Dog',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/17 The Black Dog.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/17 The Black Dog.lrc',
+},{
+name: 'imgonnagetyouback (Part 2 : THE ANTHOLOGY)',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/18 imgonnagetyouback.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/18 imgonnagetyouback.lrc',
+},{
+name: 'The Albatross',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/19 The Albatross.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/19 The Albatross.lrc',
+},{
+name: 'Chloe or Sam or Sophia or Marcus',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/20 Chloe or Sam or Sophia or Marcus.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/20 Chloe or Sam or Sophia or Marcus.lrc',
+},{
+name: 'How Did It End',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/21 How Did It End.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/21 How Did It End.lrc',
+},{
+name: 'So High School',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/22 So High School.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/22 So High School.lrc',
+},{
+name: 'I Hate It Here',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/23 I Hate It Here.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/23 I Hate It Here.lrc',
+},{
+name: 'thanK you aIMee',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/24 thanK you aIMee.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/24 thanK you aIMee.lrc',
+},{
+name: 'I Look in People\'s Windows',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/25 I Look in People\'s Windows.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/25 I Look in People\'s Windows.lrc',
+},{
+name: 'The Prophecy',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/26 The Prophecy.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/26 The Prophecy.lrc',
+},{
+name: 'Cassandra',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/27 Cassandra.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/27 Cassandra.lrc',
+},{
+name: 'Peter',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/28 Peter.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/28 Peter.lrc',
+},{
+name: 'The Bolter',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/29 The Bolter.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/29 The Bolter.lrc',
+},{
+name: 'Robin',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/30 Robin.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/30 Robin.lrc',
+},{
+name: 'The Manuscript',
+artist: 'Taylor Swift',
+url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/31 The Manuscript.m4a',
+cover: '2024-TT/cover.webp',
+lrc: '2024-TT/31 The Manuscript.lrc',
+},
+]});ap11.on("play",()=>{document.title=document.getElementById("aplayer11").getElementsByClassName("aplayer-music")[0].innerText;});ap11.on("play",()=>{console.log("**"+document.title+"**")});ap11.on("loadstart",()=>{console.log("loadstart")});ap11.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap11.on("loadeddata",()=>{console.log("loadeddata")});ap11.on("canplay",()=>{console.log("canplay")});ap11.on("canplaythrough",()=>{console.log("canplaythrough")});ap11.on("stalled",()=>{console.log("stalled");});ap11.on("suspend",()=>{console.log("suspend")});ap11.on("play",()=>{console.log("play")});ap11.on("pause",()=>{console.log("pause")});ap11.on("waiting",()=>{console.log("waiting")});ap11.on("playing",()=>{console.log("playing")});ap11.on("seeking",()=>{console.log("seeking")});ap11.on("seeked",()=>{console.log("seeked")});ap11.on("error",()=>{console.log("error");});ap11.on("ended",()=>{console.log("ended");});ap11.on("abort",()=>{console.log("abort");});ap11.on("emptied",()=>{console.log("emptied");});</script>
+
+<div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
+</div></div><div class="fold_content">
+<p>发布《Midnights》后的 18 个月里， Taylor 经常给人一种无所不能的感觉：《The Eras Tour》巡演屡破纪录，票房冲破 10 亿美元大关，演唱会电影也创下同类影片的影史票房纪录；她的巡演，所到之处万人空巷媒体轰动，甚至带动当地经济发展。2023 年，Taylor 曾被《时代》杂志评为年度人物，同时当选 Apple Music 的年度艺人。</p>
+<p>今日已经站在世界之巅，这位炙热明星写的歌还能否打动人心？新闻刚一爆出她和 Joe Alwyn 低调的六年恋情告终，粉丝们就开始了“推理”，很快一段视频出现在社交媒体：Eras 巡演初期，Swift 在演唱《champagne problems》时泪洒舞台——那是她和 Alwyn 一起写的歌。尽管现在的 Taylor 浑身散发出超级英雄般的光彩，但她仍然和我们一样会受伤和心痛，不同的是，她把痛苦变成了精彩的流行创作。2024 年初，在又一次荣获格莱美奖时，她宣布自己即将发布第 11 张录音室专辑，这都不让人感到意外。“我需要做这张专辑。”几周后，在澳大利亚墨尔本，Taylor 面对 96,000 名观众介绍《THE TORTURED POETS DEPARTMENT》时说。“我从没像写《TORTURED POETS》这般渴望创作。”这次她依然和老朋友 Jack Antonoff 与 Aaron Dessner 搭档，又回到了《Midnights》那种温柔、舒适的音乐之中，但她倾注的东西比上次要多得多。与其说这是一张分手专辑，不如说它是对 Taylor 一切感受的深度探索，是对情感残骸的一次深海潜航。</p>
+<p>《But Daddy I Love Him》的弦乐和吉他让人依稀想起她的乡村乐根源，在这首歌里，Taylor 痛斥了自己从出道起就被强加的审视和期待，副歌听来格外酣畅痛快：“我宁愿把人生付之一炬&#x2F;也不想再多听一秒这些挖苦和抱怨”（I’ll tell you something right now&#x2F;I’d rather burn my whole life down&#x2F;Than listen to one more second of all this bitching and moaning），在《Florida!!!》里，她和 Florence + the Machine 像电影《末路狂花》中的主角一样共赴逃亡之旅，来到佛罗里达，希望带着新身份重启生活。这张名字全部大写的专辑，用极端的语言和意象探索了极端的情感，时而令人捧腹，时而催人泪下——爱来时让人如饮美酒，爱去时又让人如遭重击。她和 Post Malone 合作的开场曲《Fortnight》里交织着黑色幽默：“你的妻子在给花浇水&#x2F;我真想杀了她”（Your wife waters flowers&#x2F;I wanna kill her）。在自暴自弃的《Down Bad》里，Swift 尝试科幻题材，将恋爱的温暖比作被外星人绑架，最后落得“一无所有&#x2F;回到家乡小镇的空场上”（leave me here naked and alone, in a field in my same old town）的结局。听专辑时，你可能会觉得在读 Taylor 没发出去的邮件，或者旁听到她和别人的对话。专辑歌词中的信息密度、情感强度，把 2012 年的《All Too Well》也比下去了。“你发过誓说你爱我&#x2F;但线索在哪里&#x2F;我等待着证明&#x2F;在圣坛上死去”（You swore that you loved me, but where were the clues? I died on the altar waiting for the proof），她在令人心碎的《So Long, London》里唱道。《loml》中，Taylor 独坐钢琴边，设计急转直下的剧情，告诉某个视她为一生挚爱的人，对方是她一生的遗憾。而专辑的新故事到这儿还没结束：我们在《The Alchemy》的歌词“这种事要几世才会发生一次&#x2F;这些化学反应让我如饮美酒”（This happens once every few lifetimes&#x2F;These chemicals hit me like white wine）中瞥见了新的开始。在《I Can Do It With a Broken Heart》电影闪回式的合成器声景中，她精疲力尽倒在地上，“人们高喊&#x2F;‘继续啊！’”（All the pieces of me shattered as the crowd was chanting, “More!”），而她则用尽全力，喊出“因为我是个坚强的孩子&#x2F;我能管好自己的事”（’Cause I’m a real tough kid and I can handle my shit），这是胜利的意味，与新的和解与接纳一样，都源自 Taylor 发现了看待事物的新视角。</p>
+<p>新专辑标准版的最后一首歌《Clara Bow》，得名于 1920 年代从默片进入有声电影时代的影星 Clara Bow，它站在“永远在期待下一位巨星诞生”的唱片工业角度，审视了小镇女孩一路成长为超级巨星的历程。歌曲中，Taylor 共情“风流韵事”被拿来审视的 Clara Bow，共情从大风大浪里走过的 Stevie Nicks，当她拿第三人称波澜不惊地称呼自己的时候，我们却惊出一身冷汗：原来，无时无刻不站在聚光灯下的 Taylor，永远比场外操心的观众更有自知。嘲讽和污名，通通被她的先发制人化解：“你在这种光线下看起来就像 Taylor Swift&#x2F;我们很满意&#x2F;你有她没有的优势&#x2F;未来一片光明&#x2F;让人目眩”（You look like Taylor Swift in this light, we’re loving it&#x2F;You’ve got edge she never did&#x2F;The future’s bright, dazzling）。她率先从《彗星美人》式的造星工业轮回里跳脱出来，以彻底抽离的姿态，与可怕的清醒，赢得了我们的尊重。</p>
+<p>In the 18 months after Taylor Swift released <em>Midnights</em>, it often felt as though the universe had fully opened up to her. The Eras Tour was breaking records and blowing past the billion-dollar mark; its attendant concert film became the highest-grossing of all time. She generated interest and commerce and headlines everywhere she stepped foot, from tour stops to the tunnels of NFL stadiums. In 2023, she was named both <em>TIME</em> magazine’s Person of the Year and—just as iconic, tbh—Apple Music’s Artist of the Year. </p>
+<p>But do songs about that level of success speak to you? As the news broke that her highly private six-year relationship to Joe Alwyn had ended, Swifties started Swiftie-ing, quickly recirculating a clip on social media of Swift a few weeks earlier, onstage during an early Eras show, in tears as she sang “champagne problems”—a song she and Alwyn had written together. It was a reminder that, despite the superhero-like aura she now radiates, Swift, at her peak, still hurts like the rest of us. What sets her apart is her ability to sublimate that pain into pop. When she announced her 11th studio album in early 2024—while accepting another Grammy, as one does—we probably shouldn’t have been surprised. </p>
+<p>“I needed to make it,” she’d say of <em>THE TORTURED POETS DEPARTMENT</em> a few weeks later, to a crowd of—[rubs eyes]—96,000 in Melbourne, Australia. “I’ve never had an album where I’ve needed songwriting more than I needed it on <em>TORTURED POETS</em>.” Working again with trusted collaborators Jack Antonoff and Aaron Dessner, she returns to the soft, comfortable, bed-like sonics of <em>Midnights</em>. But the stakes feel noticeably higher here: This isn’t so much a breakup album as it is a deep-sea exploration of everything Swift has been feeling, a plunge through emotional debris. </p>
+<p>On “But Daddy I Love Him”—over strings and guitar that faintly recall her country roots—she lashes out at the crush of scrutiny and expectation she’s been subject to from the start. Naturally, catharsis comes after the chorus: “I’ll tell you something right now,” she sings. “I’d rather burn my whole life down than listen to one more second of all this bitching and moaning.” On “Florida!!!” she and Florence + the Machine team up for a pulpy escape fantasy wherein they Thelma and Louise their way down to the Sunshine State in hopes of starting over with new lives and identities: “Love left me like this,” they sing. “And I don’t want to exist.”</p>
+<p>At turns hilarious and heartbreaking, <em>TTPD</em> is a study in extremes, Swift leaning into heightened emotions with heightened, hyperbolic, ALL-CAPS language and imagery—how we think when we’re drunk on love or flattened by its sudden disappearance. Note the dark humor she weaves through the Post Malone-enriched opener “Fortnight” (“Your wife waters flowers&#x2F;I wanna kill her”). Or the thrilling self-deprecation of “Down Bad,” a foray into science fiction wherein Swift likens the warmth of a relationship to being abducted by love-bombing extraterrestrials—only to be left “naked and alone, in a field in my same old town.” </p>
+<p>But this remains her most candid and unsparing work to date: As a listener, you frequently get the feeling that you’ve stumbled across emails she’d written but never sent, or into conversations you were never meant to hear. There’s a density and a specificity and a ferocity to her lyrical work here that makes 2012’s “All Too Well” feel sorta light by comparison. If you’re the kind of Swiftie who likes to live in the details, well, this one might be your Super Bowl. “You swore that you loved me, but where were the clues?” she asks on the devastating “So Long, London,” a high point. “I died on the altar waiting for the proof.” Alone at a piano on the haunting “loml,” she flips the script on someone who’d told her she was the love of their life, by telling them that they were the loss of hers: “I’ll still see it until I die.” </p>
+<p>The story, as you likely know, doesn’t end there. We get a glimpse of new beginnings in “The Alchemy” (“This happens once every few lifetimes&#x2F;These chemicals hit me like white wine”) and something like triumph in the montage-ready synths of “I Can Do It With a Broken Heart,” when Swift, shattered on the floor, “as the crowd was chanting, ‘More!’,” still finds the strength to deliver: “’Cause I’m a real tough kid and I can handle my shit.” </p>
+<p>But we also get a sense of acceptance, of newfound perspective. On “Clara Bow”—named after a 1920s movie star who was able to survive the jump from silent film to sound—Swift reflects on the journey of a small-town girl made good, sung from the vantage of an industry obsessed with the next big thing. She zooms out and out and out until, in the album’s closing seconds, she’s singing about herself in the third person, in past tense, acknowledging that nothing is forever. “You look like Taylor Swift in this light, we’re loving it,” she sings. “You’ve got edge she never did&#x2F;The future’s bright, dazzling.”</p>
+
+</div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+
+<hr>
+<p><a target="_blank" rel="noopener" href="https://music.apple.com/us/artist/taylor-swift/159260351">Apple Music - Taylor Swift</a><br><a target="_blank" rel="noopener" href="https://music.163.com/artist?id=44266">网易云音乐 - Taylor Swift</a></p>
+<script>
+    img1 = new Image();
+    img2 = new Image();
+    img3 = new Image();
+    img4 = new Image();
+    img5 = new Image();
+    img1.src = "2010-SN/cover1.webp";    
+    img2.src = "2012-Re/cover1.webp";
+    img3.src = "2014-19/cover1.webp";
+    img4.src = "2022-Mi/cover1.webp";
+    img5.src = "2024-TT/cover1.webp";
+
+    $('#aplayer3 .aplayer-pic').on("mouseenter", function () {
+        $(this).attr('style','background-image: url("2010-SN/cover1.webp")');
+    });
+    $('#aplayer4 .aplayer-pic').on("mouseenter", function () {
+        $(this).attr('style','background-image: url("2012-Re/cover1.webp")');
+    });
+    $('#aplayer4 .aplayer-pic').on("mouseleave", function () {
+        $(this).attr('style','background-image: url("2012-Re/cover.webp")');
+    });
+    $('#aplayer5 .aplayer-pic').on("mouseenter", function () {
+        $(this).attr('style','background-image: url("2014-19/cover1.webp")');
+    });
+    $('#aplayer10 .aplayer-pic').on("mouseenter", function () {
+        $(this).attr('style','background-image: url("2022-Mi/cover1.webp")');
+    });
+    $('#aplayer11 .aplayer-pic').on("mouseenter", function () {
+        $(this).attr('style','background-image: url("2024-TT/cover1.webp")');
+    });
+</script>
+      </section>
+      
+        <div class="post-tags">
+  <span>标签：</span>
+  
+    <a href="/tags/#tag-音乐" target="_blank">
+      <span class="tag-code">
+        音乐
+      </span>
+    </a>
+    
+    <a href="/tags/#tag-Pop" target="_blank">
+      <span class="tag-code">
+        Pop
+      </span>
+    </a>
+    
+    <a href="/tags/#tag-Country" target="_blank">
+      <span class="tag-code">
+        Country
+      </span>
+    </a>
+    
+</div>
+       
+    
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/listen/Gracie_Abrams/" target="_blank">
+        <span class="nav-arrow">← </span>
+        
+          Gracie Abrams
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/about/top/" target="_blank">
+        
+          【手动置顶】新的开始？
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    
+      <div class="advertisement">
+        <p> 广告：快速学习 Crash Course十分钟速成课 <a target="_blank" rel="noopener" href="https://crashcourse.club/">字幕组网站</a></p>
+      </div>
+    
+    
+      
+
+<div id="waline"></div>
+<script defer src="/js/waline-qqavatar.js"></script>
+<script type="module">
+  const locale = {
+    nick: '昵称',
+    nickError: '昵称不能少于3个英文字符或2个中文汉字',
+    mail: '邮箱(可用QQ邮箱获取头像)',
+    mailError: '请填写正确的邮件地址',
+    link: '网址',
+    optional: '可选',
+    placeholder: '' || '说、什么8 \n\n可使用QQ邮箱获取QQ头像，或在gravatar.com注册后使用邮箱绑定头像 \n\n支持Markdown语法：*斜体*, **粗体**, \# - ###### 1-6级标题, *** 或 --- = 水平分割线, ~~删除线~~, > 引用内容, `代码块`, 1. 序号列表, * 无序列表, ^上角标^, ~下角标~, <br> = 空行, [链接文字](链接地址), ![图片名称](图片地址.png), ',
+    sofa: '来发评论吧~',
+    submit: '提交',
+    like: '喜欢',
+    cancelLike: '取消喜欢',
+    reply: '回复',
+    cancelReply: '取消回复',
+    comment: '评论',
+    refresh: '刷新',
+    more: '加载更多...',
+    preview: '预览',
+    emoji: '表情',
+    uploadImage: '上传图片',
+    seconds: '秒前',
+    minutes: '分钟前',
+    hours: '小时前',
+    days: '天前',
+    now: '刚刚',
+    uploading: '正在上传',
+    login: '登录',
+    logout: '退出',
+    admin: '博主',
+    sticky: '置顶',
+    word: '字',
+    wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
+    anonymous: '匿名',
+    level0: '潜水',
+    level1: '冒泡',
+    level2: '吐槽',
+    level3: '活跃',
+    level4: '话痨',
+    level5: '传说',
+    gif: '表情包',
+    gifSearchPlaceholder: '搜索表情包',
+    profile: '个人资料',
+    approved: '通过',
+    waiting: '待审核',
+    spam: '垃圾',
+    unsticky: '取消置顶',
+    oldest: '按倒序',
+    latest: '按正序',
+    hottest: '按热度',
+    reactionTitle: '你认为这篇文章怎么样？',
+  };
+
+  Waline.init({
+    el: "#waline",
+    serverURL: "" || "walinecf.zhuochi.org",
+    appId: "" || "M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI",
+    appKey: "" || "arEPHdbMnKwMjQgiWsLgw34N",
+    path:  "" || window.location.pathname,  // window.location.pathname.replace(/\/$/,''),
+    login: "disable",  // 'enable' || 'disable' || 'force'
+    avatarCDN: "https://gravatar.loli.top/avatar/",
+    //avatar: '',
+    placeholder: "",
+    pageSize: 10,
+    meta: ["nick", "mail"],
+    requiredMeta: [""],
+    pageview: "true" && "",
+    emoji: [
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+    ],
+    locale,
+  });
+
+  $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=/images/emoji.png class=wl-action id=wl-emoji></a>")
+
+//// Clean TEXTAREA 
+//$(".wl-cards").change(function () {
+//  alert('changed')
+  //('#wl-edit').html("")
+//})
+
+//! Not functional
+//$(".primary .wl-btn").click(function () {
+  //document.getElementsByClassName('wl-num')[0].innerHTML ++
+//})
+</script>
+
+<!--
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.6/waline.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/waline/2.15.6/waline.min.css">
+-->
+    
+    
+    
+      <div class="qrcode" id="qr-box">
+    <img id="share-qrcode" class="qrcode-image" src=""/>
+    <div class="qrcode-notice">保存二维码，分享此文章</div>
+</div>
+
+<!--<script type="text/javascript" src="/js/qrious.min.js"></script>-->
+<script>
+    // qrcode
+    let qr = new QRious({
+        background: '#F0FFFF',
+        backgroundAlpha: 1,
+        foreground: '#0096FF',
+        foregroundAlpha: 0.8,
+        level: 'L',
+        mime: "image/gif",
+        padding: null, // pixels
+        size: 100,
+        element: document.getElementById('share-qrcode'),
+        value: document.location.href,
+    })
+
+    $("#share-qrcode").click(function () {
+        let img = document.getElementById('share-qrcode')
+        let imgurl = img.src
+        let a = document.createElement('a')
+        let down_event = new MouseEvent('click')
+        a.download = 'Taylor Swift-CloudPool浊池'
+        a.href = imgurl
+        a.dispatchEvent(down_event)
+    })
+</script>
+
+
+    
+  </article>
+</main>
+
+<script>
+  // error image
+  $(".markdown-content img").on("error", function () {
+    $(this).attr("src", "/images/error.png");
+    $(this).css({cursor: "default",});
+  });
+
+  // zoom image
+  $(".markdown-content img").on('click', function() {
+    var src = $(this).attr('src')
+    if (src !== '/css/images/error.png') {
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    }
+  })
+</script>
+
+<script>
+  (function () {
+    var url = "https://beta.voiiu.com/listen/Taylor_Swift/";
+    var banner = "";
+    if (banner !== "" && banner !== "undefined" && banner !== "null") {
+      $("#article-banner").css({
+        "background-image": "url(" + banner + ")",
+      });
+    } else {
+      $("#article-banner").geopattern(url);
+    }
+    $(".header").removeClass("fixed-header");
+  })();
+</script>
+ 
+    <aside class="sidebar">
+  <span class="scroll-top fa fa-arrow-up"></span>
+  <span class="fa fa-share-alt share-icon">
+    <span class="list-icon">
+      
+        <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://beta.voiiu.com/listen/Taylor_Swift/index.html&title=Taylor Swift&pics=https://beta.voiiu.com/images/logo.svg&desc=(Full) Album(s), Songs&summary=CloudPool浊池是由年轻人管理的博客" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659969569042" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1231"><path d="M1023.210667 395.690667c-2.005333-6.08-7.381333-10.410667-13.781333-10.944l-347.114667-29.802667L526.634667 33.984C524.117333 28.096 518.4 24.256 512 24.256s-12.181333 3.861333-14.677333 9.749333l-135.616 320.938667L14.570667 384.746667c-6.357333 0.533333-11.797333 4.864-13.781333 10.944-1.941333 6.101333-0.106667 12.778667 4.714667 16.96l263.338667 228.138667L189.888 980.16c-1.429333 6.208 1.002667 12.757333 6.122667 16.512 5.205333 3.733333 12.117333 4.010667 17.642667 0.682667L512 817.450667l298.282667 179.946667c2.581333 1.557333 5.418667 2.346667 8.32 2.346667 3.221333 0 6.528-1.002667 9.344-3.008 5.162667-3.84 7.594667-10.368 6.122667-16.576l-62.442667-268.352c26.730667-13.482667 56.277333-36.245333 56.277333-36.245333s-116.864 57.066667-536.341333 29.205333L595.626667 484.437333c0 0-11.968-18.581333-392.981333-31.872-25.408-0.917333 310.677333-63.722667 558.933333-10.645333L456.298667 660.906667c0 0 122.453333 18.197333 307.328 16.085333l-8.448-36.181333 263.36-228.16C1023.381333 408.469333 1025.216 401.792 1023.210667 395.690667z" p-id="1232" fill="#04b2f1"></path></svg>
+        </a> 
+      
+      
+        <a href="https://service.weibo.com/share/share.php?url=https://beta.voiiu.com/listen/Taylor_Swift/index.html&title=Taylor Swift&pic=https://beta.voiiu.com/images/logo.svg&summary=(Full) Album(s), Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659970330786" class="icon" viewBox="0 0 1138 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3639" fill="#04b2f1"><path d="M914.432 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM656.384 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM522.24 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM359.424 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM778.24 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM778.24 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z" p-id="3640"></path></svg>
+        </a>
+      
+      
+        <a href="https://www.douban.com/recommend/?url=https://beta.voiiu.com/listen/Taylor_Swift/index.html&title=Taylor Swift&pic=https://beta.voiiu.com/images/logo.svg&summary=(Full) Album(s), Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659970941550" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1055"><path d="M88 72.9h848v95.5H88z" p-id="1056" fill="#04b2f1"></path><path d="M88 72.9h848v95.5H88zM862.3 641.5V268H161.7v373.5h700.6zM263.4 363.4h498.4v182.5H263.4V363.4z" p-id="1057" fill="#04b2f1"></path><path d="M862.3 641.5V268H161.7v373.5h700.6zM263.4 363.4h498.4v182.5H263.4V363.4zM710.8 856.7c30.5-46.7 59.3-100.8 85.9-162.2l-102-37.2c-26.5 72.8-57.4 139.4-92.5 199.4H424.9c-29.4-77.8-62.6-144.3-99.8-199.4l-93.8 37.2c38.6 58 69.9 111.9 93.8 162.2H64v94.5h896v-94.5H710.8z" p-id="1058" fill="#04b2f1"></path><path d="M710.8 856.7c30.5-46.7 59.3-100.8 85.9-162.2l-102-37.2c-26.5 72.8-57.4 139.4-92.5 199.4H424.9c-29.4-77.8-62.6-144.3-99.8-199.4l-93.8 37.2c38.6 58 69.9 111.9 93.8 162.2H64v94.5h896v-94.5H710.8z" p-id="1059" fill="#04b2f1"></path></svg>
+        </a>
+      
+      
+        <a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=https://beta.voiiu.com/listen/Taylor_Swift/index.html&title=Taylor Swift&pic=https://beta.voiiu.com/images/logo.svg&desc=(Full) Album(s), Songs" style="position:relative" aria-hidden="true" target="_blank">
+        <svg t="1659968685554" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1659"><path d="M1024 862.826667a161.152 161.152 0 0 1-161.173333 161.173333h-701.632a161.152 161.152 0 0 1-161.173334-161.173333v-701.632a161.194667 161.194667 0 0 1 161.173334-161.173334h701.632a161.194667 161.194667 0 0 1 161.173333 161.173334v701.632z" fill="#04b2f1" p-id="1660"></path><path d="M828.842667 250.261333h-173.461334v-36.522666a17.066667 17.066667 0 0 0-17.066666-17.066667h-41.941334a17.045333 17.045333 0 0 0-17.045333 17.066667v263.296h-24.896a17.066667 17.066667 0 0 0-17.045333 17.066666V810.218667a17.066667 17.066667 0 0 0 17.045333 17.088h257.365333a17.066667 17.066667 0 0 0 17.066667-17.088v-58.986667h-0.256v-198.144h0.256v-58.986667a17.066667 17.066667 0 0 0-17.066667-17.066666H655.381333v-150.72h173.461334a17.066667 17.066667 0 0 0 17.066666-17.066667v-41.941333a17.066667 17.066667 0 0 0-17.066666-17.045334z m-93.376 302.848c9.429333 0 17.045333 7.637333 17.045333 17.066667v164.010667a17.066667 17.066667 0 0 1-17.045333 17.066666h-104.981334a17.045333 17.045333 0 0 1-17.045333-17.066666v-164.010667a17.066667 17.066667 0 0 1 17.045333-17.066667h104.981334zM197.909333 657.408h41.941334a17.088 17.088 0 0 0 17.088-17.088v-358.741333h174.528v358.741333a17.066667 17.066667 0 0 0 17.045333 17.088h41.941333a17.088 17.088 0 0 0 17.088-17.088v-417.749333c0-9.408-7.658667-17.066667-17.088-17.066667h-292.522666a17.066667 17.066667 0 0 0-17.045334 17.066667v417.749333a17.024 17.024 0 0 0 17.024 17.088z" fill="#FFFFFF" p-id="1661"></path><path d="M492.970667 739.2v-0.170667a110.656 110.656 0 0 1-110.656-110.656h-0.106667v-296.042666a17.066667 17.066667 0 0 0-17.066667-17.045334h-41.941333a17.045333 17.045333 0 0 0-17.045333 17.045334v296.042666h-0.362667a110.677333 110.677333 0 0 1-110.677333 110.656v0.170667a17.045333 17.045333 0 0 0-17.045334 17.066667v42.112a17.066667 17.066667 0 0 0 17.045334 17.066666 186.602667 186.602667 0 0 0 148.928-74.176 186.624 186.624 0 0 0 148.928 74.176 17.045333 17.045333 0 0 0 17.045333-17.066666v-42.112a17.024 17.024 0 0 0-17.045333-17.066667z" fill="#FFFFFF" p-id="1662"></path><path d="M865.450667 873.685333c17.664-3.797333 15.253333-24.896 14.741333-29.504-0.874667-7.125333-9.237333-19.541333-20.586667-18.581333-14.293333 1.28-16.362667 21.930667-16.362666 21.930667-1.962667 9.557333 4.608 29.952 22.208 26.154666z m18.752 36.693334c-0.533333 1.493333-1.664 5.290667-0.682667 8.597333 1.962667 7.402667 8.405333 7.744 8.405333 7.744h9.258667v-22.613333h-9.898667a10.837333 10.837333 0 0 0-7.082666 6.272z m14.037333-72.085334c9.749333 0 17.621333-11.221333 17.621333-25.109333 0-13.866667-7.872-25.088-17.621333-25.088-9.728 0-17.642667 11.221333-17.642667 25.088 0 13.888 7.893333 25.109333 17.642667 25.109333z m41.984 1.664c13.034667 1.706667 21.418667-12.202667 23.082667-22.762666 1.706667-10.538667-6.698667-22.762667-15.936-24.853334-9.258667-2.112-20.778667 12.672-21.845334 22.357334-1.258667 11.797333 1.685333 23.573333 14.698667 25.258666z m31.936 61.973334s-20.16-15.594667-31.936-32.448c-15.957333-24.874667-38.634667-14.762667-46.208-2.112-7.552 12.650667-19.328 20.629333-20.992 22.741333-1.685333 2.090667-24.362667 14.336-19.328 36.672 5.034667 22.336 22.72 21.909333 22.72 21.909333s13.013333 1.28 28.138667-2.112c15.104-3.349333 28.117333 0.832 28.117333 0.832s35.306667 11.818667 44.970667-10.944c9.621333-22.72-5.482667-34.538667-5.482667-34.538666z m-60.394667 33.877333h-22.954666c-9.92-1.984-13.866667-8.746667-14.357334-9.898667-0.490667-1.173333-3.306667-6.613333-1.813333-15.850666 4.288-13.866667 16.490667-14.848 16.490667-14.848h12.224v-15.04l10.410666 0.149333v55.488z m42.752-0.170667h-26.410666c-10.24-2.624-10.709333-9.92-10.709334-9.92v-29.205333l10.709334-0.170667v26.261334c0.64 2.794667 4.117333 3.306667 4.117333 3.306666h10.88v-29.397333h11.413333v39.125333z m37.376-77.994666c0-5.034667-4.181333-20.224-19.733333-20.224-15.552 0-17.642667 14.336-17.642667 24.469333 0 9.685333 0.810667 23.189333 20.16 22.741333 19.328-0.426667 17.216-21.909333 17.216-26.986666z" fill="#FFFFFF" p-id="1663"></path></svg>
+        </a>
+      
+      
+        <a href="https://connect.qq.com/widget/shareqq/index.html?url=https://beta.voiiu.com/listen/Taylor_Swift/index.html&title=Taylor Swift&pic=https://beta.voiiu.com/images/logo.svg&desc=(Full) Album(s), Songs&summary=CloudPool浊池是由年轻人管理的博客" aria-hidden="true" target="_blank">
+        <svg t="1659969969936" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2714"><path d="M866.991 707.772c0 0-25.341 69.55-71.877 132.071 0 0 83.050 28.439 76.137 102.196 0 0 2.709 82.331-177.613 76.685 0 0-126.817-9.898-164.88-63.85h-33.53c-38.018 54.006-164.834 63.85-164.834 63.85-180.431 5.7-177.556-76.685-177.556-76.685-7.025-73.756 76.081-102.196 76.081-102.196-46.475-62.519-71.875-132.071-71.875-132.071-112.759 183.141-101.477-25.567-101.477-25.567 21.141-123.495 109.949-204.384 109.949-204.384-12.677-112.157 33.805-132.078 33.805-132.078 9.68-346.979 306.473-340.887 312.675-340.722 6.249-0.163 302.931-6.256 312.72 340.723 0 0 46.538 19.866 33.812 132.078 0 0 88.751 80.89 109.886 204.384 0.055-0.001 11.285 208.707-101.421 25.566v0 0z" p-id="2715" fill="#04b2f1"></path></svg>
+        </a>
+      
+    </span>
+  </span>
+</aside>
+    <footer class="app-footer">
+  <p class="copyright">
+    Copyright &copy; 2017 - 2025, CloudPool浊池, All Rights Reserved. <a href="https://zhuochi.org" target="_blank">zhuochi.org</a> || <a href="https://voiiu.com" target="_blank">voiiu.com</a><br/> 本站为基于<a href="https://hexo.io" target="_blank">Hexo</a>的静态博客，<span id="busuanzi_container_site_pv">总访问量 <span id="busuanzi_value_site_pv"></span> 次</span><!--，来自 <span id="busuanzi_value_site_uv"></span> 个 IP--><br/> 主题源自 <a target="_blank" rel="noopener" href="https://github.com/yanm1ng/hexo-theme-vexo">Vexo</a> by yanm1ng，感谢 <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer">APlayer</a> by DIYgod，感谢 <a target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">Live2D Widget</a> by stevenjoezhang & <a target="_blank" rel="noopener" href="https://github.com/xiazeyu/live2d-widget-models">live2d-widget-models</a> by xiazeyu<br/>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+
+<script src="/js/script.js"></script>
+ <!--无法移至head.js中，原因不明-->
+<script type="text/javascript" src="/js/busuanzi.min.js" async></script>
+
+  </body>
+</html>
