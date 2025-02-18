@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- 由 Microsoft Visio, SVG Export 生成 cloudpool.svg Page-1 -->
+<!-- 由 Microsoft Visio, SVG Export 生成 logo.svg Page-1 -->
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
 		width="11.6929in" height="8.26772in" viewBox="0 0 841.89 595.276" xml:space="preserve" color-interpolation-filters="sRGB"
-		class="st10">
+		class="st12">
 	<style type="text/css">
 	<![CDATA[
 		.st1 {visibility:visible}
 		.st2 {fill:#5b9bd5;fill-opacity:0.22;filter:url(#filter_2)}
 		.st3 {fill:none;filter:url(#filter_2);stroke:#5b9bd5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:0.22}
-		.st4 {fill:#5a9ad7}
+		.st4 {fill:#5b9bd5}
 		.st5 {stroke:#bdd7ee;stroke-linecap:round;stroke-linejoin:round;stroke-width:10}
-		.st6 {fill:#87ceeb;stroke:#bdd7ee;stroke-width:0.1875}
-		.st7 {fill:#04b2f1;stroke:none;stroke-width:0.1125}
-		.st8 {fill:#3c3d3f;stroke:none;stroke-width:0.75}
-		.st9 {fill:#04b2f1;fill-opacity:0.4;stroke:none;stroke-width:0.1125}
-		.st10 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+		.st6 {fill:#fec000;fill-opacity:0.25;filter:url(#filter_2);stroke:#fec000;stroke-opacity:0.25}
+		.st7 {fill:#5b9bd5;stroke:#759fcc;stroke-width:0.1875}
+		.st8 {fill:#fec000;fill-opacity:0.25;filter:url(#filter_2);stroke:none}
+		.st9 {fill:#04b2f1;stroke:none;stroke-width:0.1125}
+		.st10 {fill:#3c3d3f;stroke:none;stroke-width:0.75}
+		.st11 {fill:#04b2f1;fill-opacity:0.4;stroke:none;stroke-width:0.1125}
+		.st12 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
 	]]>
 	</style>
 
@@ -65,65 +67,83 @@
 			<title>椭圆泳池</title>
 			<g id="shape90-22" transform="translate(-8.50394,11.3386)">
 				<title>工作表.90</title>
-				<g id="shadow90-23" transform="matrix(1,0,0,1,2.84217E-14,0)" class="st1"/>
+				<g id="shadow90-23" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1">
+					<path d="M141.73 527.95 L141.73 393.31 C141.73 356.12 110 325.98 70.87 325.98 C31.73 325.98 0 356.12 0 393.31
+								 L0 527.95 C0 565.13 31.73 595.28 70.87 595.28 C110 595.28 141.73 565.13 141.73 527.95 Z"
+							class="st6"/>
+				</g>
 				<path d="M141.73 527.95 L141.73 393.31 C141.73 356.12 110 325.98 70.87 325.98 C31.73 325.98 0 356.12 0 393.31 L0
-							 527.95 C0 565.13 31.73 595.28 70.87 595.28 C110 595.28 141.73 565.13 141.73 527.95 Z" class="st6"/>
+							 527.95 C0 565.13 31.73 595.28 70.87 595.28 C110 595.28 141.73 565.13 141.73 527.95 Z" class="st7"/>
 			</g>
-			<g id="shape91-25" transform="translate(0,-0.000430336)">
+			<g id="shape91-27" transform="translate(0,-0.000430336)">
 				<title>工作表.91</title>
-				<g id="shadow91-26" transform="matrix(1,0,0,1,0,0)" class="st1"/>
+				<g id="shadow91-28" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1">
+					<path d="M123.94 533.31 L123.94 409.37 C123.94 375.15 96.19 347.4 61.97 347.4 C27.74 347.4 0 375.15 0 409.37
+								 L0 533.31 C0 567.53 27.74 595.28 61.97 595.28 C96.19 595.28 123.94 567.53 123.94 533.31 Z"
+							class="st8"/>
+				</g>
 				<path d="M123.94 533.31 L123.94 409.37 C123.94 375.15 96.19 347.4 61.97 347.4 C27.74 347.4 0 375.15 0 409.37 L0 533.31
-							 C0 567.53 27.74 595.28 61.97 595.28 C96.19 595.28 123.94 567.53 123.94 533.31 Z" class="st7"/>
+							 C0 567.53 27.74 595.28 61.97 595.28 C96.19 595.28 123.94 567.53 123.94 533.31 Z" class="st9"/>
 			</g>
-			<g id="shape92-28" transform="translate(0,-0.000430336)">
+			<g id="shape92-32" transform="translate(0,-0.000430336)">
 				<title>工作表.92</title>
-				<g id="shadow92-29" transform="matrix(1,0,0,1,0,0)" class="st1"/>
+				<g id="shadow92-33" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1">
+					<path d="M119.33 531.45 L119.94 411.82 C120.11 378.78 94.43 351.87 62.58 351.71 C30.73 351.54 4.78 378.19 4.61
+								 411.23 L4 530.86 C3.83 563.9 29.51 590.81 61.36 590.97 C93.21 591.13 119.16 564.49 119.33 531.45
+								 ZM61.97 347.4 C96.19 347.4 123.94 375.15 123.94 409.37 L123.94 533.31 C123.94 567.53 96.19 595.28
+								 61.97 595.28 C27.74 595.28 0 567.53 0 533.31 L0 409.37 C0 375.15 27.74 347.4 61.97 347.4 Z"
+							class="st8"/>
+				</g>
 				<path d="M119.33 531.45 L119.94 411.82 C120.11 378.78 94.43 351.87 62.58 351.71 C30.73 351.54 4.78 378.19 4.61 411.23
 							 L4 530.86 C3.83 563.9 29.51 590.81 61.36 590.97 C93.21 591.13 119.16 564.49 119.33 531.45 ZM61.97 347.4
 							 C96.19 347.4 123.94 375.15 123.94 409.37 L123.94 533.31 C123.94 567.53 96.19 595.28 61.97 595.28 C27.74
-							 595.28 0 567.53 0 533.31 L0 409.37 C0 375.15 27.74 347.4 61.97 347.4 Z" class="st8"/>
+							 595.28 0 567.53 0 533.31 L0 409.37 C0 375.15 27.74 347.4 61.97 347.4 Z" class="st10"/>
 			</g>
-			<g id="shape93-31" transform="translate(12.3119,-0.000430336)">
+			<g id="shape93-37" transform="translate(12.3119,-0.000430336)">
 				<title>工作表.93</title>
-				<g id="shadow93-32" transform="matrix(1,0,0,1,0,-1.13687E-13)" class="st1"/>
+				<g id="shadow93-38" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape94-34" transform="translate(14.5738,-0.000430336)">
+			<g id="shape94-42" transform="translate(14.5738,-0.000430336)">
 				<title>工作表.94</title>
-				<g id="shadow94-35" transform="matrix(1,0,0,1,2.84217E-14,0)" class="st1"/>
+				<g id="shadow94-43" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape95-37" transform="translate(20.1794,-0.000430336)">
+			<g id="shape95-47" transform="translate(20.1794,-0.000430336)">
 				<title>工作表.95</title>
-				<g id="shadow95-38" transform="matrix(1,0,0,1,5.68434E-14,0)" class="st1"/>
+				<g id="shadow95-48" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape96-40" transform="translate(22.3155,-0.000430336)">
+			<g id="shape96-52" transform="translate(22.3155,-0.000430336)">
 				<title>工作表.96</title>
-				<g id="shadow96-41" transform="matrix(1,0,0,1,5.68434E-14,0)" class="st1"/>
+				<g id="shadow96-53" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape97-43" transform="translate(31.6384,-0.000430336)">
+			<g id="shape97-57" transform="translate(31.6384,-0.000430336)">
 				<title>工作表.97</title>
-				<g id="shadow97-44" transform="matrix(1,0,0,1,5.68434E-14,0)" class="st1"/>
+				<g id="shadow97-58" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape98-46" transform="translate(33.3304,-0.000430336)">
+			<g id="shape98-62" transform="translate(33.3304,-0.000430336)">
 				<title>工作表.98</title>
-				<g id="shadow98-47" transform="matrix(1,0,0,1,5.68434E-14,0)" class="st1"/>
+				<g id="shadow98-63" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape99-49" transform="translate(117.227,-211.672)">
+			<g id="shape99-67" transform="translate(117.227,-211.672)">
 				<title>工作表.99</title>
-				<g id="shadow99-50" transform="matrix(1,0,0,1,5.68434E-14,0)" class="st1"/>
+				<g id="shadow99-68" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape100-52" transform="translate(117.466,-211.916)">
+			<g id="shape100-72" transform="translate(117.466,-211.916)">
 				<title>工作表.100</title>
-				<g id="shadow100-53" transform="matrix(1,0,0,1,0,-2.27374E-13)" class="st1"/>
+				<g id="shadow100-73" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape101-55" transform="translate(112.149,-209.561)">
+			<g id="shape101-77" transform="translate(112.149,-209.561)">
 				<title>工作表.101</title>
-				<g id="shadow101-56" transform="matrix(1,0,0,1,5.68434E-14,0)" class="st1"/>
+				<g id="shadow101-78" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1"/>
 			</g>
-			<g id="shape102-58" transform="translate(0,-0.000430336)">
+			<g id="shape102-82" transform="translate(0,-0.000430336)">
 				<title>工作表.102</title>
-				<g id="shadow102-59" transform="matrix(1,0,0,1,0,0)" class="st1"/>
+				<g id="shadow102-83" transform="matrix(1,0,0,1,1.97279,-0.345598)" class="st1">
+					<path d="M123.94 533.31 L123.94 409.37 C123.94 375.15 96.19 347.4 61.97 347.4 C27.74 347.4 0 375.15 0 409.37
+								 L0 533.31 C0 567.53 27.74 595.28 61.97 595.28 C96.19 595.28 123.94 567.53 123.94 533.31 Z"
+							class="st8"/>
+				</g>
 				<path d="M123.94 533.31 L123.94 409.37 C123.94 375.15 96.19 347.4 61.97 347.4 C27.74 347.4 0 375.15 0 409.37 L0 533.31
-							 C0 567.53 27.74 595.28 61.97 595.28 C96.19 595.28 123.94 567.53 123.94 533.31 Z" class="st9"/>
+							 C0 567.53 27.74 595.28 61.97 595.28 C96.19 595.28 123.94 567.53 123.94 533.31 Z" class="st11"/>
 			</g>
 		</g>
 	</g>
