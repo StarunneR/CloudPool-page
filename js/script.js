@@ -4,7 +4,6 @@
   var header = $('.header')
   var banner = document.getElementById('article-banner') || false
   var catalog = document.getElementById('catalog') || false
-  var front = document.getElementById('front-parent') || false
   var about = document.getElementById('about-banner') || false
   var top = $('.scroll-top') || false
   var catalog_toc = $('.catalog-container .toc-main') || false
@@ -71,13 +70,6 @@
 
   $('.reward-btn').on('click', function () {
     $('.money-code').fadeToggle()
-  })
-
-  $('.arrow-down').on('click', function () {
-    $('html, body').animate({
-      scrollTop: (banner.offsetHeight - $('.header').height()) + front.offsetHeight + $('.article-author').get(0).offsetTop
-      //scrollTop: banner.offsetHeight - header.height()
-    }, 500)
   })
 
   $('.toc-nav a').on('click', function (e) {
