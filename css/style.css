@@ -1649,12 +1649,15 @@ header:hover .chn_mark {
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-lrc {
   height: 48px !important;
 }
+.aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-lrc::after {
+  height: 25%;
+}
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-lrc .aplayer-lrc-contents {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-top: 17px !important;
+  margin-top: 16px !important;
 }
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-lrc .aplayer-lrc-contents p {
-  opacity: 0.75 !important;
+  opacity: 75% !important;
 }
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-lrc .aplayer-lrc-contents .aplayer-lrc-current {
   opacity: 1 !important;
