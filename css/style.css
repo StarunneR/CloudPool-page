@@ -426,7 +426,7 @@ header:hover .chn_mark {
   flex-flow: row wrap;
 }
 .post-article .front-parent .front-child {
-  margin-top: 1em;
+  margin: 1em 0;
   flex: fit-content;
 }
 .post-article .front-parent .front-child .front-label {
@@ -442,6 +442,7 @@ header:hover .chn_mark {
   font-size: 1.5em;
   font-weight: bold;
   color: #808080;
+  margin: 0;
 }
 .post-article .article-author .authorlogo {
   width: 1.4em;
