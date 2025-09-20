@@ -469,14 +469,18 @@ header:hover .chn_mark {
 .post-article .markdown-content pre .line,
 .post-article .markdown-content code .line {
   min-height: 13px;
-  margin: 2px 0;
+  margin: 2px 8px 2px 0;
+}
+.post-article .markdown-content .gutter {
+  user-select: none;
 }
 .post-article .markdown-content img {
   max-width: 100%;
 }
 .post-article .markdown-content p {
   line-height: 1.6em;
-  margin-bottom: 0.8em;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
 }
 .post-article .markdown-content p code {
   background-color: #fff;
