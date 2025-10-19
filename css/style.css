@@ -993,8 +993,8 @@ header:hover .chn_mark {
 .catalog-container .toc-main {
   padding: 1em 1em 0 0.5em;
   white-space: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: #7df9ff #fcf5e5;
   box-sizing: border-box;
