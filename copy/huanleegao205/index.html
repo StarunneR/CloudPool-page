@@ -15,15 +15,55 @@
     
   </title>
   <!-- CSS -->
+  <!-- head 中尽量靠前放 preconnect -->
+  <link rel="preconnect" href="https://s4.zstatic.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <!--
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" integrity="sha512-5hw529N/tMFlWDowrrfVe3TW+FZzHxoxOpugMZOQrx4dH6sIH07aSuYZAJ1EGWJthW7uYUiM3oyO8KocF1W3Fg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha256-XfA0ppGOANs88Ds+9FqVLy3xIGzT/25K/VLmRRxE9ow=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha256-uqQQGnDcmRKvhKwc5Vm4XT1GQ2oV6t1U0NR2N9tV+BQ=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.min.css">
+  -->
+
+  <!-- 极简并行多源备选加载脚本 -->
+  <script>
+  (function(){
+    function loadCSS(urls){
+      let done = false;
+      urls.forEach(u => {
+        const l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.crossOrigin = 'anonymous';
+        l.href = u;
+        l.onload = () => { if (!done) done = true; };
+        l.onerror = () => { /* 失败由浏览器记录，可选择上报 */ };
+        document.head.appendChild(l);
+      });
+    }
+
+    // 按你列出的资源成对并行加载（先到者生效）
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css",
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css"
+    ]);
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css",
+      "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css"
+    ]);
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/APlayer.min.css",
+      "https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"
+    ]);
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css",
+      "https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.min.css"
+    ]);
+  })();
+  </script>
   
 <link rel="stylesheet" href="/css/style.css">
 
@@ -683,17 +723,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/copy/nmbxd51414457-1/" target="_blank">
+      <a class="nav-left" href="/copy/huanleegao114/" target="_blank">
         <span class="nav-arrow">← </span>
         
-          《兔耳魔王》(一)
+          《Rain.》
         
       </a>
     
     
-      <a class="nav-right" href="/copy/huanleegao114/" target="_blank">
+      <a class="nav-right" href="/listen/ZhouDM/" target="_blank">
         
-          《Rain.》
+          Denon Mastersonic 周璇
         
         <span class="nav-arrow"> →</span>
       </a>

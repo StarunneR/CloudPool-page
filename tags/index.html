@@ -15,15 +15,55 @@
     
   </title>
   <!-- CSS -->
+  <!-- head 中尽量靠前放 preconnect -->
+  <link rel="preconnect" href="https://s4.zstatic.net">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <!--
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" integrity="sha512-CIYsJUa3pr1eoXlZFroEI0mq0UIMUqNouNinjpCkSWo3Bx5NRlQ0OuC6DtEB/bDqUWnzXc1gs2X/g52l36N5iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css" integrity="sha512-5hw529N/tMFlWDowrrfVe3TW+FZzHxoxOpugMZOQrx4dH6sIH07aSuYZAJ1EGWJthW7uYUiM3oyO8KocF1W3Fg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css" integrity="sha256-XfA0ppGOANs88Ds+9FqVLy3xIGzT/25K/VLmRRxE9ow=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" integrity="sha256-uqQQGnDcmRKvhKwc5Vm4XT1GQ2oV6t1U0NR2N9tV+BQ=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.min.css">
+  -->
+
+  <!-- 极简并行多源备选加载脚本 -->
+  <script>
+  (function(){
+    function loadCSS(urls){
+      let done = false;
+      urls.forEach(u => {
+        const l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.crossOrigin = 'anonymous';
+        l.href = u;
+        l.onload = () => { if (!done) done = true; };
+        l.onerror = () => { /* 失败由浏览器记录，可选择上报 */ };
+        document.head.appendChild(l);
+      });
+    }
+
+    // 按你列出的资源成对并行加载（先到者生效）
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css",
+      "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css"
+    ]);
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css",
+      "https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css"
+    ]);
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/aplayer/1.10.1/APlayer.min.css",
+      "https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"
+    ]);
+    loadCSS([
+      "https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css",
+      "https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.min.css"
+    ]);
+  })();
+  </script>
   
 <link rel="stylesheet" href="/css/style.css">
 
@@ -535,83 +575,67 @@
 <main class="app-body">
   <div id="tag-cloud">
     
-      <a class="tag3" data-name="tag-BB">
-        BB
-      </a>
-    
-      <a class="tag2" data-name="tag-Daily">
-        Daily
-      </a>
-    
       <a class="tag0" data-name="tag-音乐">
         音乐
+      </a>
+    
+      <a class="tag3" data-name="tag-Pop">
+        Pop
+      </a>
+    
+      <a class="tag3" data-name="tag-Alternative">
+        Alternative
+      </a>
+    
+      <a class="tag3" data-name="tag-Dance">
+        Dance
       </a>
     
       <a class="tag3" data-name="tag-Electronic">
         Electronic
       </a>
     
-      <a class="tag0" data-name="tag-Soundtrack">
+      <a class="tag1" data-name="tag-Soundtrack">
         Soundtrack
       </a>
     
-      <a class="tag0" data-name="tag-Dance">
-        Dance
-      </a>
-    
-      <a class="tag1" data-name="tag-Pop">
-        Pop
-      </a>
-    
-      <a class="tag2" data-name="tag-Alternative">
-        Alternative
-      </a>
-    
-      <a class="tag2" data-name="tag-Rock">
+      <a class="tag0" data-name="tag-Rock">
         Rock
       </a>
     
-      <a class="tag0" data-name="tag-French house">
+      <a class="tag3" data-name="tag-French house">
         French house
       </a>
     
-      <a class="tag3" data-name="tag-Country">
-        Country
-      </a>
-    
-      <a class="tag3" data-name="tag-Indie">
+      <a class="tag2" data-name="tag-Indie">
         Indie
       </a>
     
-      <a class="tag3" data-name="tag-Hip-Hop/RAP">
+      <a class="tag2" data-name="tag-Country">
+        Country
+      </a>
+    
+      <a class="tag0" data-name="tag-Hip-Hop/RAP">
         Hip-Hop/RAP
       </a>
     
-      <a class="tag3" data-name="tag-民谣">
+      <a class="tag1" data-name="tag-民谣">
         民谣
       </a>
     
-      <a class="tag2" data-name="tag-随笔">
-        随笔
+      <a class="tag0" data-name="tag-BB">
+        BB
       </a>
     
-      <a class="tag3" data-name="tag-游记">
-        游记
+      <a class="tag0" data-name="tag-Daily">
+        Daily
       </a>
     
-      <a class="tag1" data-name="tag-小说">
-        小说
-      </a>
-    
-      <a class="tag1" data-name="tag-很早以前">
-        很早以前
-      </a>
-    
-      <a class="tag1" data-name="tag-视频">
+      <a class="tag0" data-name="tag-视频">
         视频
       </a>
     
-      <a class="tag1" data-name="tag-学习">
+      <a class="tag2" data-name="tag-学习">
         学习
       </a>
     
@@ -619,11 +643,31 @@
         MOOC
       </a>
     
-      <a class="tag3" data-name="tag-技术">
+      <a class="tag3" data-name="tag-随笔">
+        随笔
+      </a>
+    
+      <a class="tag2" data-name="tag-游记">
+        游记
+      </a>
+    
+      <a class="tag0" data-name="tag-Kindle">
+        Kindle
+      </a>
+    
+      <a class="tag0" data-name="tag-电子书">
+        电子书
+      </a>
+    
+      <a class="tag2" data-name="tag-破解">
+        破解
+      </a>
+    
+      <a class="tag0" data-name="tag-技术">
         技术
       </a>
     
-      <a class="tag1" data-name="tag-字体">
+      <a class="tag0" data-name="tag-字体">
         字体
       </a>
     
@@ -631,11 +675,11 @@
         下载
       </a>
     
-      <a class="tag3" data-name="tag-资源">
+      <a class="tag1" data-name="tag-资源">
         资源
       </a>
     
-      <a class="tag2" data-name="tag-电影">
+      <a class="tag1" data-name="tag-电影">
         电影
       </a>
     
@@ -643,23 +687,27 @@
         娱乐
       </a>
     
-      <a class="tag3" data-name="tag-Kindle">
-        Kindle
-      </a>
-    
-      <a class="tag1" data-name="tag-电子书">
-        电子书
-      </a>
-    
-      <a class="tag1" data-name="tag-破解">
-        破解
-      </a>
-    
       <a class="tag2" data-name="tag-网络">
         网络
       </a>
     
-      <a class="tag3" data-name="tag-实用">
+      <a class="tag0" data-name="tag-搜素">
+        搜素
+      </a>
+    
+      <a class="tag2" data-name="tag-Windows">
+        Windows
+      </a>
+    
+      <a class="tag0" data-name="tag-安装">
+        安装
+      </a>
+    
+      <a class="tag3" data-name="tag-激活">
+        激活
+      </a>
+    
+      <a class="tag2" data-name="tag-实用">
         实用
       </a>
     
@@ -667,32 +715,24 @@
         软件
       </a>
     
-      <a class="tag0" data-name="tag-安装">
-        安装
-      </a>
-    
-      <a class="tag1" data-name="tag-搜素">
-        搜素
-      </a>
-    
-      <a class="tag1" data-name="tag-Windows">
-        Windows
-      </a>
-    
-      <a class="tag0" data-name="tag-激活">
-        激活
-      </a>
-    
-      <a class="tag0" data-name="tag-微电影01">
-        微电影01
-      </a>
-    
-      <a class="tag1" data-name="tag-学术">
+      <a class="tag3" data-name="tag-学术">
         学术
       </a>
     
-      <a class="tag3" data-name="tag-杂谈">
+      <a class="tag2" data-name="tag-杂谈">
         杂谈
+      </a>
+    
+      <a class="tag3" data-name="tag-小说">
+        小说
+      </a>
+    
+      <a class="tag0" data-name="tag-很早以前">
+        很早以前
+      </a>
+    
+      <a class="tag3" data-name="tag-微电影01">
+        微电影01
       </a>
     
       <a class="tag1" data-name="tag-都市怪谈">
@@ -702,159 +742,19 @@
   </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-BB">
-        BB
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2019/" target="_blank">每日一句2019</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2017/" target="_blank">每日一句2017</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2018/" target="_blank">每日一句2018</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2020/" target="_blank">偶尔几句2020</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2024/" target="_blank">每日一句2024</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2021/" target="_blank">每日一句2021</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2025/" target="_blank">每日一句2025</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2022/" target="_blank">每日一句2022</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2023/" target="_blank">每日一句2023</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/thinking/令人难过的事情2/" target="_blank">令人难过的事情2</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/thinking/浊喳喳@异类_yasmine,cwtch/" target="_blank">浊喳喳@异类_Yasmine,Cwtch💕</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/thinking/令人难过的事情1/" target="_blank">令人难过的事情1</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Daily">
-        Daily
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2019/" target="_blank">每日一句2019</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2017/" target="_blank">每日一句2017</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2018/" target="_blank">每日一句2018</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2020/" target="_blank">偶尔几句2020</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2024/" target="_blank">每日一句2024</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2021/" target="_blank">每日一句2021</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2025/" target="_blank">每日一句2025</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2022/" target="_blank">每日一句2022</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/daily/daily2023/" target="_blank">每日一句2023</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
       <h3 class="tag-name" id="tag-音乐">
         音乐
       </h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/listen/ASi/" target="_blank">阿肆</a>
+            <a href="/listen/AJR/" target="_blank">AJR</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Adam_Young/" target="_blank">Adam Young / Sky Sailing</a>
+            <a href="/listen/ASi/" target="_blank">阿肆</a>
           </li>
         </ul>
         
@@ -866,7 +766,13 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/AJR/" target="_blank">AJR</a>
+            <a href="/listen/A_R_I_Z_O_N_A/" target="_blank">A R I Z O N A</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Adam_Young/" target="_blank">Adam Young / Sky Sailing</a>
           </li>
         </ul>
         
@@ -878,7 +784,7 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/A_R_I_Z_O_N_A/" target="_blank">A R I Z O N A</a>
+            <a href="/listen/Billie_Eilish/" target="_blank">Billie Eilish</a>
           </li>
         </ul>
         
@@ -896,13 +802,13 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Billie_Eilish/" target="_blank">Billie Eilish</a>
+            <a href="/listen/Coldplay/" target="_blank">Coldplay</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/ESMG/" target="_blank">二手玫瑰</a>
+            <a href="/listen/Daft_Punk/" target="_blank">Daft Punk</a>
           </li>
         </ul>
         
@@ -920,19 +826,25 @@
         
         <ul class="tag-preview">
           <li>
+            <a href="/listen/Ed_Sheeran/" target="_blank">Ed Sheeran</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/ESMG/" target="_blank">二手玫瑰</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
             <a href="/listen/GaoWuRen/" target="_blank">告五人 Accusefive</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Daft_Punk/" target="_blank">Daft Punk</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Ed_Sheeran/" target="_blank">Ed Sheeran</a>
+            <a href="/listen/Gracie_Abrams/" target="_blank">Gracie Abrams</a>
           </li>
         </ul>
         
@@ -944,7 +856,7 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Coldplay/" target="_blank">Coldplay</a>
+            <a href="/listen/Imagine_Dragons/" target="_blank">Imagine Dragons</a>
           </li>
         </ul>
         
@@ -962,31 +874,7 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Gracie_Abrams/" target="_blank">Gracie Abrams</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Imagine_Dragons/" target="_blank">Imagine Dragons</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Madeon/" target="_blank">Madeon</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/OneRepublic/" target="_blank">OneRepublic</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Owl_City/" target="_blank">Owl City</a>
+            <a href="/listen/Myles_Smith/" target="_blank">Myles Smith</a>
           </li>
         </ul>
         
@@ -998,13 +886,19 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Myles_Smith/" target="_blank">Myles Smith</a>
+            <a href="/listen/Madeon/" target="_blank">Madeon</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/PuShu/" target="_blank">朴树</a>
+            <a href="/listen/Owl_City/" target="_blank">Owl City</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Porter_Robinson/" target="_blank">Porter Robinson</a>
           </li>
         </ul>
         
@@ -1016,7 +910,25 @@
         
         <ul class="tag-preview">
           <li>
+            <a href="/listen/OneRepublic/" target="_blank">OneRepublic</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/PuShu/" target="_blank">朴树</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
             <a href="/listen/SRP-SHFXFA/" target="_blank">The Shanghai Restoration Project 上海复兴方案 (SRP)</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Shaboozey/" target="_blank">Shaboozey</a>
           </li>
         </ul>
         
@@ -1028,7 +940,7 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Porter_Robinson/" target="_blank">Porter Robinson</a>
+            <a href="/listen/Teddy_Swims/" target="_blank">Teddy Swims</a>
           </li>
         </ul>
         
@@ -1052,19 +964,7 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Shaboozey/" target="_blank">Shaboozey</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
             <a href="/listen/Taylor_Swift/" target="_blank">Taylor Swift</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/ZJL/" target="_blank">周董</a>
           </li>
         </ul>
         
@@ -1076,43 +976,7 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Teddy_Swims/" target="_blank">Teddy Swims</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/WuBai/" target="_blank">500</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/ZhouDM/" target="_blank">Denon Mastersonic 周璇</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/ayase/" target="_blank">Ayase</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Zedd/" target="_blank">Zedd</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/kaf/" target="_blank">花谱/KAF</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/kessoku_band/" target="_blank">結束バンド - 結束バンド「ぼっち・ざ・ろっく!」</a>
+            <a href="/listen/ZhaoLei/" target="_blank">赵雷</a>
           </li>
         </ul>
         
@@ -1124,100 +988,55 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/never_young_beach/" target="_blank">never young beach</a>
+            <a href="/listen/WuBai/" target="_blank">500</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/yu_takahashi/" target="_blank">高橋優</a>
+            <a href="/listen/ZJL/" target="_blank">周董</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/ZhaoLei/" target="_blank">赵雷</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Electronic">
-        Electronic
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Adam_Young/" target="_blank">Adam Young / Sky Sailing</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Madeon/" target="_blank">Madeon</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Owl_City/" target="_blank">Owl City</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Soundtrack">
-        Soundtrack
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Adam_Young/" target="_blank">Adam Young / Sky Sailing</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Dance">
-        Dance
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Avicii/" target="_blank">Avicii</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/David_Guetta/" target="_blank">David Guetta</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Daft_Punk/" target="_blank">Daft Punk</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Madeon/" target="_blank">Madeon</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Porter_Robinson/" target="_blank">Porter Robinson</a>
+            <a href="/listen/ZhouDM/" target="_blank">Denon Mastersonic 周璇</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
             <a href="/listen/Zedd/" target="_blank">Zedd</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/ayase/" target="_blank">Ayase</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/kessoku_band/" target="_blank">結束バンド - 結束バンド「ぼっち・ざ・ろっく!」</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/never_young_beach/" target="_blank">never young beach</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/kaf/" target="_blank">花谱/KAF</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/yu_takahashi/" target="_blank">高橋優</a>
           </li>
         </ul>
         
@@ -1272,13 +1091,13 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Taylor_Swift/" target="_blank">Taylor Swift</a>
+            <a href="/listen/Teddy_Swims/" target="_blank">Teddy Swims</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Teddy_Swims/" target="_blank">Teddy Swims</a>
+            <a href="/listen/Taylor_Swift/" target="_blank">Taylor Swift</a>
           </li>
         </ul>
         
@@ -1309,13 +1128,13 @@
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Hozier/" target="_blank">Hozier</a>
+            <a href="/listen/Coldplay/" target="_blank">Coldplay</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/listen/Coldplay/" target="_blank">Coldplay</a>
+            <a href="/listen/Hozier/" target="_blank">Hozier</a>
           </li>
         </ul>
         
@@ -1334,6 +1153,87 @@
         <ul class="tag-preview">
           <li>
             <a href="/listen/X_Ambassadors/" target="_blank">X Ambassadors</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-Dance">
+        Dance
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Avicii/" target="_blank">Avicii</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Daft_Punk/" target="_blank">Daft Punk</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/David_Guetta/" target="_blank">David Guetta</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Madeon/" target="_blank">Madeon</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Porter_Robinson/" target="_blank">Porter Robinson</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Zedd/" target="_blank">Zedd</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-Electronic">
+        Electronic
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Adam_Young/" target="_blank">Adam Young / Sky Sailing</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Madeon/" target="_blank">Madeon</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Owl_City/" target="_blank">Owl City</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-Soundtrack">
+        Soundtrack
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Adam_Young/" target="_blank">Adam Young / Sky Sailing</a>
           </li>
         </ul>
         
@@ -1378,6 +1278,19 @@
     </div>
   
     <div class="tag-list">
+      <h3 class="tag-name" id="tag-Indie">
+        Indie
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/listen/Myles_Smith/" target="_blank">Myles Smith</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
       <h3 class="tag-name" id="tag-Country">
         Country
       </h3>
@@ -1403,19 +1316,6 @@
         <ul class="tag-preview">
           <li>
             <a href="/listen/Zach_Bryan/" target="_blank">Zach Bryan</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-Indie">
-        Indie
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/listen/Myles_Smith/" target="_blank">Myles Smith</a>
           </li>
         </ul>
         
@@ -1448,154 +1348,140 @@
     </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-随笔">
-        随笔
+      <h3 class="tag-name" id="tag-BB">
+        BB
       </h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第一天/" target="_blank">在北京第一天</a>
+            <a href="/daily/daily2019/" target="_blank">每日一句2019</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第三天/" target="_blank">在北京第三天</a>
+            <a href="/daily/daily2017/" target="_blank">每日一句2017</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第二天/" target="_blank">在北京第二天</a>
+            <a href="/daily/daily2018/" target="_blank">每日一句2018</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/日记2017.1.15/" target="_blank">日记2017.1.15</a>
+            <a href="/daily/daily2021/" target="_blank">每日一句2021</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/我在考试前去了桂林/" target="_blank">我在考试前去了桂林</a>
+            <a href="/daily/daily2022/" target="_blank">每日一句2022</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第四天/" target="_blank">在北京第四天</a>
+            <a href="/daily/daily2020/" target="_blank">偶尔几句2020</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/thinking/妈的热死了/" target="_blank">长沙的四季</a>
+            <a href="/daily/daily2024/" target="_blank">每日一句2024</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/daily/daily2025/" target="_blank">每日一句2025</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/daily/daily2023/" target="_blank">每日一句2023</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/thinking/令人难过的事情2/" target="_blank">令人难过的事情2</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/thinking/令人难过的事情1/" target="_blank">令人难过的事情1</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/thinking/浊喳喳@异类_yasmine,cwtch/" target="_blank">浊喳喳@异类_Yasmine,Cwtch💕</a>
           </li>
         </ul>
         
     </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-游记">
-        游记
+      <h3 class="tag-name" id="tag-Daily">
+        Daily
       </h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第一天/" target="_blank">在北京第一天</a>
+            <a href="/daily/daily2019/" target="_blank">每日一句2019</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第三天/" target="_blank">在北京第三天</a>
+            <a href="/daily/daily2017/" target="_blank">每日一句2017</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第二天/" target="_blank">在北京第二天</a>
+            <a href="/daily/daily2018/" target="_blank">每日一句2018</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/我在考试前去了桂林/" target="_blank">我在考试前去了桂林</a>
+            <a href="/daily/daily2021/" target="_blank">每日一句2021</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/go/在北京第四天/" target="_blank">在北京第四天</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-小说">
-        小说
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/story/5-20创新作文大赛作品/" target="_blank">5.20创新作文大赛作品</a>
+            <a href="/daily/daily2022/" target="_blank">每日一句2022</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/story/《SECOND LIFE》/" target="_blank">《SECOND LIFE》</a>
+            <a href="/daily/daily2020/" target="_blank">偶尔几句2020</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/story/答案在风中飘/" target="_blank">答案在风中飘</a>
+            <a href="/daily/daily2024/" target="_blank">每日一句2024</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/story/非语文类小说三部曲/" target="_blank">非语文类小说三部曲</a>
+            <a href="/daily/daily2025/" target="_blank">每日一句2025</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/story/上瘾/" target="_blank">上瘾（一）</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/story/云树/" target="_blank">云树</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/story/神眠/" target="_blank">神眠</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-很早以前">
-        很早以前
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/story/答案在风中飘/" target="_blank">答案在风中飘</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/story/云树/" target="_blank">云树</a>
+            <a href="/daily/daily2023/" target="_blank">每日一句2023</a>
           </li>
         </ul>
         
@@ -1635,6 +1521,131 @@
         <ul class="tag-preview">
           <li>
             <a href="/study/ac-dump/" target="_blank">学术垃圾场</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-随笔">
+        随笔
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第一天/" target="_blank">在北京第一天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第三天/" target="_blank">在北京第三天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第二天/" target="_blank">在北京第二天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第四天/" target="_blank">在北京第四天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/我在考试前去了桂林/" target="_blank">我在考试前去了桂林</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/日记2017.1.15/" target="_blank">日记2017.1.15</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/thinking/妈的热死了/" target="_blank">长沙的四季</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-游记">
+        游记
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第一天/" target="_blank">在北京第一天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第三天/" target="_blank">在北京第三天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第二天/" target="_blank">在北京第二天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/在北京第四天/" target="_blank">在北京第四天</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/go/我在考试前去了桂林/" target="_blank">我在考试前去了桂林</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-Kindle">
+        Kindle
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/kindle/" target="_blank">Kindle电子书共享指南</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-电子书">
+        电子书
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/kindle/" target="_blank">Kindle电子书共享指南</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-破解">
+        破解
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/kindle/" target="_blank">Kindle电子书共享指南</a>
           </li>
         </ul>
         
@@ -1725,45 +1736,6 @@
     </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-Kindle">
-        Kindle
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/tech/kindle/" target="_blank">Kindle电子书共享指南</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-电子书">
-        电子书
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/tech/kindle/" target="_blank">Kindle电子书共享指南</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-破解">
-        破解
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/tech/kindle/" target="_blank">Kindle电子书共享指南</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
       <h3 class="tag-name" id="tag-网络">
         网络
       </h3>
@@ -1777,6 +1749,76 @@
         <ul class="tag-preview">
           <li>
             <a href="/tech/phone_num/" target="_blank">临时手机号&邮箱</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-搜素">
+        搜素
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/search/" target="_blank">搜索引擎推荐</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-Windows">
+        Windows
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/windows_to_go/" target="_blank">Windows To Go</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/windows/" target="_blank">Windows安装与激活</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-安装">
+        安装
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/windows_to_go/" target="_blank">Windows To Go</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/windows/" target="_blank">Windows安装与激活</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/software/" target="_blank">常用软件推荐</a>
+          </li>
+        </ul>
+        
+    </div>
+  
+    <div class="tag-list">
+      <h3 class="tag-name" id="tag-激活">
+        激活
+      </h3>
+      
+        <ul class="tag-preview">
+          <li>
+            <a href="/tech/windows/" target="_blank">Windows安装与激活</a>
           </li>
         </ul>
         
@@ -1809,70 +1851,106 @@
     </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-安装">
-        安装
+      <h3 class="tag-name" id="tag-学术">
+        学术
       </h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/tech/software/" target="_blank">常用软件推荐</a>
+            <a href="/thinking/phy02/" target="_blank">奥卡姆上帝</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/tech/windows/" target="_blank">Windows安装与激活</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/tech/windows_to_go/" target="_blank">Windows To Go</a>
+            <a href="/thinking/phy01/" target="_blank">当我们在学物理的时候我们在学什么</a>
           </li>
         </ul>
         
     </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-搜素">
-        搜素
+      <h3 class="tag-name" id="tag-杂谈">
+        杂谈
       </h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/tech/search/" target="_blank">搜索引擎推荐</a>
+            <a href="/thinking/phy02/" target="_blank">奥卡姆上帝</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/thinking/phy01/" target="_blank">当我们在学物理的时候我们在学什么</a>
           </li>
         </ul>
         
     </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-Windows">
-        Windows
+      <h3 class="tag-name" id="tag-小说">
+        小说
       </h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/tech/windows/" target="_blank">Windows安装与激活</a>
+            <a href="/story/上瘾/" target="_blank">上瘾（一）</a>
           </li>
         </ul>
         
         <ul class="tag-preview">
           <li>
-            <a href="/tech/windows_to_go/" target="_blank">Windows To Go</a>
+            <a href="/story/5-20创新作文大赛作品/" target="_blank">5.20创新作文大赛作品</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/story/《SECOND LIFE》/" target="_blank">《SECOND LIFE》</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/story/神眠/" target="_blank">神眠</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/story/云树/" target="_blank">云树</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/story/答案在风中飘/" target="_blank">答案在风中飘</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/story/非语文类小说三部曲/" target="_blank">非语文类小说三部曲</a>
           </li>
         </ul>
         
     </div>
   
     <div class="tag-list">
-      <h3 class="tag-name" id="tag-激活">
-        激活
+      <h3 class="tag-name" id="tag-很早以前">
+        很早以前
       </h3>
       
         <ul class="tag-preview">
           <li>
-            <a href="/tech/windows/" target="_blank">Windows安装与激活</a>
+            <a href="/story/云树/" target="_blank">云树</a>
+          </li>
+        </ul>
+        
+        <ul class="tag-preview">
+          <li>
+            <a href="/story/答案在风中飘/" target="_blank">答案在风中飘</a>
           </li>
         </ul>
         
@@ -1886,44 +1964,6 @@
         <ul class="tag-preview">
           <li>
             <a href="/video/video1/" target="_blank">忘了发出来的微电影（大概算吧）</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-学术">
-        学术
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/thinking/phy01/" target="_blank">当我们在学物理的时候我们在学什么</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/thinking/phy02/" target="_blank">奥卡姆上帝</a>
-          </li>
-        </ul>
-        
-    </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-杂谈">
-        杂谈
-      </h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/thinking/phy01/" target="_blank">当我们在学物理的时候我们在学什么</a>
-          </li>
-        </ul>
-        
-        <ul class="tag-preview">
-          <li>
-            <a href="/thinking/phy02/" target="_blank">奥卡姆上帝</a>
           </li>
         </ul>
         
