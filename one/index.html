@@ -737,7 +737,13 @@
 <script>
   function getYiju() {
     // 直接请求，不带问号和参数
-    fetch('https://v1.hitokoto.cn') 
+    fetch('https://v1.hitokoto.cn', {
+        method: 'GET',
+        // 关键：告诉浏览器不要发送 Referer 头，伪装成直接访问
+        referrerPolicy: 'no-referrer', 
+        // 建议：禁用缓存，防止浏览器缓存了之前的 502 错误响应
+        cache: 'no-cache' 
+      })
       .then(response => response.json())
       .then(data => {
         // 1. 设置内容和链接
