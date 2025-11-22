@@ -577,12 +577,11 @@
   <div id="hitokoto" class="one">
     <div class="one_main"><a href="#" id="hitokoto_text" class="one_text" target="_blank">:D 加载中...</a></div>
     <div class="one_source" id="one_source">
-      ——&nbsp;<span id="hitokoto_author"></span>&nbsp;<span id="hitokoto_from"></span><span class="one_buttons"><!--<img
-      id="refresh_button" onclick="getYiju()" ontouchend="buttonTouchEnd()" src="/css/images/refresh.png" />--><img
+      ——&nbsp;<span id="hitokoto_author"></span>&nbsp;<span id="hitokoto_from"></span><span class="one_buttons"><img
+      id="refresh_button" onclick="getYiju()" ontouchend="buttonTouchEnd()" src="/css/images/refresh.png" /><img
       id="copy_button" onclick="copyYiju()" ontouchend="buttonTouchEnd()" src="/css/images/copy.png" /></span>
     </div>
   </div>
-  <!--
   <div class="options_container">
     <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="a" name="hijikoto_type" checked /><label><span></span>动画</label></span>
     <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="b" name="hijikoto_type" checked /><label><span></span>漫画</label></span>
@@ -594,13 +593,13 @@
     <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="e" name="hijikoto_type" checked /><label><span></span>原创</label></span>
     <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="l" name="hijikoto_type" checked /><label><span></span>抖机灵</label></span>
     <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="j" name="hijikoto_type" checked /><label><span></span>网易云</label></span>
-    <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="f" name="hijikoto_type" checked /><label><span></span>来自网络</label></span>
+    <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="f" name="hijikoto_type" checked /><label><span></span>网络源</label></span>
     <span style="white-space:nowrap"><input type="checkbox" class="checkbox" value="g" name="hijikoto_type" checked /><label><span></span>其他</label></span>
     <div class="options_control">
       <input type="button" id="checkall" value="全选" />
       <input type="button" id="othercheck" value="反选" />
     </div>
-  </div>-->
+  </div>
 </div>
 
 <script>
@@ -736,45 +735,16 @@
 
 <script>
   function getYiju() {
-    // 直接请求，不带问号和参数
-    fetch('https://v1.hitokoto.cn', {
-        method: 'GET',
-        // 关键：告诉浏览器不要发送 Referer 头，伪装成直接访问
-        referrerPolicy: 'no-referrer', 
-        // 建议：禁用缓存，防止浏览器缓存了之前的 502 错误响应
-        cache: 'no-cache' 
-      })
-      .then(response => response.json())
-      .then(data => {
-        // 1. 设置内容和链接
-        const hitokoto = document.getElementById("hitokoto_text");
-        hitokoto.innerText = data.hitokoto;
-        hitokoto.href = `https://hitokoto.cn/?uuid=${data.uuid}`;
-
-        // 2. 设置出处
-        document.getElementById("hitokoto_from").innerText = data.from;
-
-        // 3. 设置作者 (逻辑简化：如果有作者且不等于出处，则显示，否则清空)
-        const authorText = (data.from_who && data.from_who !== data.from) ? data.from_who : "";
-        document.getElementById("hitokoto_author").innerText = authorText;
-      })
-      .catch(console.error); // 简单的错误捕获
-  }
-  getYiju();
-</script>
-
-<!--
-<script>
-  function getYiju() {
-    /*let url = "https://v1.hitokoto.cn?";
-    let path = ""
+    let yijuURL = "https://v1.hitokoto.cn";
+    let path = "?"
     let htypes = document.getElementsByName("hijikoto_type");
-    */
-    /*for (var i = 0; i < htypes.length; i++) {
+    for (var i = 0; i < htypes.length; i++) {
       if (htypes[i].checked === true) {
         path = path + "c=" + htypes[i].value + "&";
       }
     }
+    // 去掉末尾的 &（若有）
+    path = path.replace(/&$/, '');
 
     var CheckAll=document.getElementById('checkall');
     var UnCheck=document.getElementById('uncheck');
@@ -794,9 +764,8 @@
         }         
       };
     }
-    */
 
-    /*fetch(url + path)
+    fetch(yijuURL + path)
       .then((response) => response.json())
       .then((data) => {
         const hitokoto = document.getElementById("hitokoto_text");
@@ -812,11 +781,10 @@
           author.innerText = [];
         }
       })
-      .catch(console.error);*/
+      .catch(console.error);
   }
   getYiju();
 </script>
--->
 
 <script>
   function copyYiju() {
@@ -897,7 +865,9 @@
 
 <script src="/js/script.js"></script>
  <!--无法移至head.js中，原因不明-->
-<script type="text/javascript" src="/js/busuanzi.min.js" async></script>
+<script async src="https://busuanzi.icodeq.com/busuanzi.pure.mini.js"></script>
+<!--<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+<!--<script type="text/javascript" src="/js/busuanzi.min.js" async></script>-->
 
 
   </body>
