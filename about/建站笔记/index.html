@@ -77,7 +77,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/legacy.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
-  <script type="text/javascript" src="/js/APlayer.min.js"></script>
+  <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <div class="search-pop-overlay">
     <div class="popup search-popup">
@@ -104,7 +104,7 @@
         </div>
     </div>
 </div>
-  <link rel="prefetch" href="/search.xml" crossorigin="anonymous"> 
+  <link rel="prefetch" href="/search.json" crossorigin="anonymous"> 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Popup Window
@@ -112,7 +112,7 @@
       let datas;
       let isXml = true;
       // Search DB path
-      let searchPath = 'search.xml'; //CONFIG.search.path
+      let searchPath = 'search.json'; //CONFIG.search.path
       if (searchPath.length === 0) {
         searchPath = 'search.xml';
       } else if (searchPath.endsWith('json')) {
@@ -398,7 +398,7 @@
       let head = document.head || document.getElementsByTagName('head')[0];
       let searchlink = document.createElement('link');
         searchlink.rel="search";
-        searchlink.href="/search.xml";
+        searchlink.href="/search.json";
         searchlink.crossOrigin="anonymous";
       head.appendChild(searchlink);
     });
@@ -729,7 +729,7 @@ cloudpool.me CNAME StarunneR.gitlab.io. --&gt; CloudFlare: Type = CNAME; Name = 
 <li>安装<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>，一直回车，在第三次回车确认前 将default editor设置为Visual Studio Code，打开git bash</li>
 <li>生成公共密钥：<br> $ ssh-keygen -t rsa + 三次回车<br> 查看公共密钥：<br> $ cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br> 并复制以ssh-rsa开头的所有内容</li>
 <li>打开Gitlab网页用户设置中ssh密钥一栏，粘贴ssh-rsa开头的公共密钥，设置用户名，生效时间。</li>
-<li>配置命令：<br> $ git config –global user.name “USERNAME”	(–global代表应用到整个系统)<br> $ git config –global user.email EMAIL<br> $ cd blog<br> $ git remote add gitlab <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#108;&#x61;&#98;&#x2e;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#108;&#x61;&#98;&#x2e;&#99;&#111;&#109;</a>:cloudpool&#x2F;blog.git</li>
+<li>配置命令：<br> $ git config –global user.name “USERNAME”	(–global代表应用到整个系统)<br> $ git config –global user.email EMAIL<br> $ cd blog<br> $ git remote add gitlab <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x6c;&#97;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#x6c;&#97;&#98;&#46;&#x63;&#x6f;&#109;</a>:cloudpool&#x2F;blog.git</li>
 <li>提交<br> $ git add .<br> $ git commit -m “COMMENT”	#暂存文件，暂存附加信息为COMMENT</li>
 <li>推送<br>$ git push gitlab master （推送到远端名gitlab的master分支）<br>$ read -n 1 （暂停运行）</li>
 </ol>
@@ -1041,6 +1041,7 @@ $ hexo s
 <!--<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <!--<script type="text/javascript" src="/js/busuanzi.min.js" async></script>-->
 <script async src="https://events.vercount.one/js"></script>
+
 
 
   </body>

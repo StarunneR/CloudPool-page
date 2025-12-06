@@ -77,7 +77,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/legacy.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
-  <script type="text/javascript" src="/js/APlayer.min.js"></script>
+  <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   
   <div class="search-pop-overlay">
     <div class="popup search-popup">
@@ -104,7 +104,7 @@
         </div>
     </div>
 </div>
-  <link rel="prefetch" href="/search.xml" crossorigin="anonymous"> 
+  <link rel="prefetch" href="/search.json" crossorigin="anonymous"> 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Popup Window
@@ -112,7 +112,7 @@
       let datas;
       let isXml = true;
       // Search DB path
-      let searchPath = 'search.xml'; //CONFIG.search.path
+      let searchPath = 'search.json'; //CONFIG.search.path
       if (searchPath.length === 0) {
         searchPath = 'search.xml';
       } else if (searchPath.endsWith('json')) {
@@ -398,7 +398,7 @@
       let head = document.head || document.getElementsByTagName('head')[0];
       let searchlink = document.createElement('link');
         searchlink.rel="search";
-        searchlink.href="/search.xml";
+        searchlink.href="/search.json";
         searchlink.crossOrigin="anonymous";
       head.appendChild(searchlink);
     });
@@ -968,6 +968,7 @@
 <!--<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
 <!--<script type="text/javascript" src="/js/busuanzi.min.js" async></script>-->
 <script async src="https://events.vercount.one/js"></script>
+
 
 
   </body>
