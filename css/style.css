@@ -1045,6 +1045,11 @@ header:hover .chn_mark {
   padding: 0.7em 0.5em;
   color: #4169e1;
 }
+.catalog-container .toc-main .toc-nav .toc-nav-level-2 > a {
+  font-weight: 700;
+  font-size: larger;
+  text-decoration: underline;
+}
 .catalog-container .toc-main .toc-nav .toc-nav-level-3 > a {
   color: #0096ff;
 }
