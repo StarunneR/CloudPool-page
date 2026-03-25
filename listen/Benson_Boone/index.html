@@ -59,8 +59,8 @@
       "https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"
     ]);
     loadCSS([
-      "https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.css",
-      "https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.min.css"
+      "https://unpkg.com/@waline/client@v3/dist/waline.js",
+      "https://cdn.jsdelivr.net/npm/@waline/client@3.13.0/dist/waline.min.css"
     ]);
   })();
   </script>
@@ -74,7 +74,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/geopattern@1.2.3/geopattern.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/qrious/4.0.2/qrious.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js'"></script>
-  <script src="https://s4.zstatic.net/ajax/libs/waline/2.15.8/waline.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/legacy.umd.min.js'"></script>
+  <script src="https://unpkg.com/@waline/client@3.13.0/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3.13.0/dist/waline.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
   <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -994,70 +994,72 @@ lrc: '/songpack/Benson_Boone/2025_AH/10 Young American Heart.lrc',
       </div>
     
     
-      
-
-<div id="waline"></div>
-<script defer src="/js/waline-qqavatar.js"></script>
+      <div id="waline"></div>
+<!--<script defer src="/js/waline-qqavatar.js"></script>-->
 <script type="module">
+  import {
+    init
+  } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
   const locale = {
-    nick: '昵称',
-    nickError: '昵称不能少于3个英文字符或2个中文汉字',
-    mail: '邮箱(可用QQ邮箱获取头像)',
-    mailError: '请填写正确的邮件地址',
-    link: '网址',
-    optional: '可选',
-    placeholder: '' || '说、什么8 \n\n· 可使用QQ邮箱获取QQ头像，或在gravatar.com注册后使用邮箱绑定头像\n· 支持Markdown语法：*斜体*, **粗体**, \# - ###### 1-6级标题, *** 或 --- = 水平分割线, ~~删除线~~, > 引用内容, `代码块`, 1. 序号列表, * 无序列表, ^上角标^, ~下角标~, <br> = 空行, [链接文字](链接地址), ![图片名称](图片地址.png), ',
-    sofa: '来发评论吧~',
-    submit: '提交',
-    like: '喜欢',
-    cancelLike: '取消喜欢',
-    reply: '回复',
-    cancelReply: '取消回复',
-    comment: '评论',
-    refresh: '刷新',
-    more: '加载更多...',
-    preview: '预览',
-    emoji: '表情',
-    uploadImage: '上传图片',
-    seconds: '秒前',
-    minutes: '分钟前',
-    hours: '小时前',
-    days: '天前',
-    now: '刚刚',
-    uploading: '正在上传',
-    login: '登录',
-    logout: '退出',
-    admin: '博主',
-    sticky: '置顶',
-    word: '字',
-    wordHint: '评论字数应在 $0 到 $1 字之间！\n当前字数：$2',
-    anonymous: '匿名',
-    level0: '潜水',
-    level1: '冒泡',
-    level2: '吐槽',
-    level3: '活跃',
-    level4: '话痨',
-    level5: '传说',
-    gif: '表情包',
-    gifSearchPlaceholder: '搜索表情包',
-    profile: '个人资料',
-    approved: '通过',
-    waiting: '待审核',
-    spam: '垃圾',
-    unsticky: '取消置顶',
-    oldest: '按倒序',
-    latest: '按正序',
-    hottest: '按热度',
-    reactionTitle: '你认为这篇文章怎么样？',
+    nick: "昵称",
+    nickError: "昵称不能少于3个英文字符或2个中文汉字",
+    mail: "邮箱(可用QQ邮箱获取头像)",
+    mailError: "请填写正确的邮件地址",
+    link: "网址",
+    optional: "可选",
+    placeholder: "" ||
+      "说、什么8 \n\n· 可使用QQ邮箱获取QQ头像，或在gravatar.com注册后使用邮箱绑定头像\n· 支持Markdown语法：*斜体*, **粗体**, \# - ###### 1-6级标题, *** 或 --- = 水平分割线, ~~删除线~~, > 引用内容, `代码块`, 1. 序号列表, * 无序列表, ^上角标^, ~下角标~, <br> = 空行, [链接文字](链接地址), ![图片名称](图片地址.png), ",
+    sofa: "来发评论吧~",
+    submit: "提交",
+    like: "喜欢",
+    cancelLike: "取消喜欢",
+    reply: "回复",
+    cancelReply: "取消回复",
+    comment: "评论",
+    refresh: "刷新",
+    more: "加载更多...",
+    preview: "预览",
+    emoji: "表情",
+    uploadImage: "上传图片",
+    seconds: "秒前",
+    minutes: "分钟前",
+    hours: "小时前",
+    days: "天前",
+    now: "刚刚",
+    uploading: "正在上传",
+    login: "登录",
+    logout: "退出",
+    admin: "博主",
+    sticky: "置顶",
+    word: "字",
+    wordHint: "评论字数应在 $0 到 $1 字之间！\n当前字数：$2",
+    anonymous: "匿名",
+    level0: "潜水",
+    level1: "冒泡",
+    level2: "吐槽",
+    level3: "活跃",
+    level4: "话痨",
+    level5: "传说",
+    gif: "表情包",
+    gifSearchPlaceholder: "搜索表情包",
+    profile: "个人资料",
+    approved: "通过",
+    waiting: "待审核",
+    spam: "垃圾",
+    unsticky: "取消置顶",
+    oldest: "按倒序",
+    latest: "按正序",
+    hottest: "按热度",
+    reactionTitle: "你认为这篇文章怎么样？",
   };
 
-  Waline.init({
+  init({
     el: "#waline",
     serverURL: "" || "walinecf.zhuochi.org",
     appId: "" || "M2JD6yGQhefhH2O0aSjFfclc-MdYXbMMI",
     appKey: "" || "arEPHdbMnKwMjQgiWsLgw34N",
-    path:  "" || window.location.pathname,  // window.location.pathname.replace(/\/$/,''),
-    login: "disable",  // 'enable' || 'disable' || 'force'
+    path: "" || window.location.pathname, // window.location.pathname.replace(/\/$/,''),
+    login: "disable", // 'enable' || 'disable' || 'force'
     avatarCDN: "https://gravatar.loli.top/avatar/",
     //avatar: '',
     placeholder: "",
@@ -1076,18 +1078,34 @@ lrc: '/songpack/Benson_Boone/2025_AH/10 Young American Heart.lrc',
     locale,
   });
 
-  $('.wl-actions').append("<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=/images/emoji.png class=wl-action id=wl-emoji></a>")
+  ! function () {
+    const Waline = require('@waline/vercel');
+    module.exports = Waline({
+      async avatarUrl(comment) {
+        const reg = new RegExp('(\\d+)@qq\\.com$', 'i');
+        const cmail = comment.mail;
+        if (reg.test(cmail)) {
+          const q = cmail.replace(/@qq\.com/i, '').toLowerCase();
+          return 'https://q2.qlogo.cn/headimg_dl?dst_uin=' + q + '&spec=4';
+        }
+      },
+    });
+  };
+  
+  $(".wl-actions").append(
+    "<a href=https://emoji.zhuochi.org target=_blank id=wl-emoji-wrapper><img src=/images/emoji.png class=wl-action id=wl-emoji></a>",
+  );
 
-//// Clean TEXTAREA 
-//$(".wl-cards").change(function () {
-//  alert('changed')
+  //// Clean TEXTAREA
+  //$(".wl-cards").change(function () {
+  //  alert('changed')
   //('#wl-edit').html("")
-//})
+  //})
 
-//! Not functional
-//$(".primary .wl-btn").click(function () {
+  //! Not functional
+  //$(".primary .wl-btn").click(function () {
   //document.getElementsByClassName('wl-num')[0].innerHTML ++
-//})
+  //})
 </script>
     
     
