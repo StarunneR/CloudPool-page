@@ -332,6 +332,7 @@ header:hover .chn_mark {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  caret-color: transparent;
 }
 @media screen and (max-width: 768px) {
   #article-banner {
