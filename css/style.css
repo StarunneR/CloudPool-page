@@ -658,7 +658,7 @@ header:hover .chn_mark {
   cursor: pointer;
 }
 .post-article .markdown-content .fold .fold_content {
-  padding: 1em 0.5em 0.5em 0.5em;
+  padding: 0.5em;
   background-color: #fcf5e5;
   font-family: 'Times New Roman', 'Noto Serif SC', serif;
   font-display: swap;
