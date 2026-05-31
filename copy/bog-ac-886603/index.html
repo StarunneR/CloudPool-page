@@ -59,8 +59,8 @@
       "https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css"
     ]);
     loadCSS([
-      "https://unpkg.com/@waline/client@v3/dist/waline.js",
-      "https://cdn.jsdelivr.net/npm/@waline/client@3.13.0/dist/waline.min.css"
+      "https://unpkg.com/@waline/client@v3/dist/waline.css",
+      "https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.min.css"
     ]);
   })();
   </script>
@@ -74,7 +74,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/geopattern@1.2.3/geopattern.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/qrious/4.0.2/qrious.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js'"></script>
-  <script src="https://unpkg.com/@waline/client@3.13.0/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3.13.0/dist/waline.umd.min.js'"></script>
+  <script src="https://unpkg.com/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
   <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -588,14 +588,14 @@
     
       <div class="front-parent" id="front-parent">
   <div class="front-child" id="front-fontsize">
-    <label class="front-label" for="fontsize-range">字体大小</label>
+    <label class="front-label" for="fontsize-slider">字体大小</label>
     <input type="range" min="50" max="200" id="fontsize-slider" step="1" value="100" />
     <span id="fontsize-value"></span>
   </div>
 
   <div class="front-child" id="front-fontselector">
-    <label class="front-label" for="font-select">更换字体</label>
-    <select name="font" id="font">
+    <label class="front-label" for="font-selector">更换字体</label>
+    <select name="font-selector" id="font-selector">
       <option value="default">默认</option>
       <option value="heiti">黑体</option>
       <option value="light-heiti">黑体（细体）</option>
@@ -608,8 +608,8 @@
   </div>
 
   <div class="front-child" id="front-indent">
-    <label class="front-label" for="TextIndent">段首缩进</label>
-    <input type="checkbox" id="indent-checkbox" name="text-indent" value="" />
+    <label class="front-label" for="indent-checkbox">段首缩进</label>
+    <input type="checkbox" id="indent-checkbox" name="indent-checkbox" value="" />
   </div>
 </div>
 
@@ -706,17 +706,17 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/copy/bog-ac-881031/" target="_blank">
+      <a class="nav-left" href="/poem/19/" target="_blank">
         <span class="nav-arrow">← </span>
         
-          《哥谭奇闻》
+          19（矫情）
         
       </a>
     
     
-      <a class="nav-right" href="/poem/19/" target="_blank">
+      <a class="nav-right" href="/copy/bog-ac-893154/" target="_blank">
         
-          19（矫情）
+          《骨头在说话》
         
         <span class="nav-arrow"> →</span>
       </a>
