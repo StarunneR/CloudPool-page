@@ -1653,7 +1653,12 @@ header:hover .chn_mark {
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info {
   height: 106px !important;
   padding-left: 20px !important;
-  padding-top: 6px !important;
+  padding-top: 7px !important;
+}
+@media screen and (max-width: 768px) {
+  .aplayer.aplayer-withlrc .aplayer-body .aplayer-info {
+    padding-top: 3px !important;
+  }
 }
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-info .aplayer-music {
   padding-left: 4px !important;
