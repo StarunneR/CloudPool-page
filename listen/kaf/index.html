@@ -686,7 +686,20 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><h3 id="寓話-Guwa-γ-【寓言γ】-2025"><a href="#寓話-Guwa-γ-【寓言γ】-2025" class="headerlink" title="寓話(Gūwa) γ 【寓言γ】 2025"></a>寓話(Gūwa) γ 【寓言γ】 2025</h3><div id="aplayer12" class="aplayerJS"></div><script>const ap12 = new APlayer({container: document.getElementById("aplayer12"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+        <h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><h3 id="寓話-Guwa-γ-【寓言γ】-2025"><a href="#寓話-Guwa-γ-【寓言γ】-2025" class="headerlink" title="寓話(Gūwa) γ 【寓言γ】 2025"></a>寓話(Gūwa) γ 【寓言γ】 2025</h3>
+<div id="aplayer12" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer12"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'アポカリプスより(瀬名航 Remix)',
 artist: '花譜',
@@ -766,9 +779,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2025-Yg/13 Replaceable 
 cover: '/songpack/kaf/2025-Yg/cover.webp',
 lrc: '/songpack/kaf/2025-Yg/13 Replaceable Goodbye(KAIRUI Remix).lrc',
 },
-]});ap12.on("play",()=>{document.title=document.getElementById("aplayer12").getElementsByClassName("aplayer-music")[0].innerText;});ap12.on("play",()=>{console.log("**"+document.title+"**")});ap12.on("loadstart",()=>{console.log("loadstart")});ap12.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap12.on("loadeddata",()=>{console.log("loadeddata")});ap12.on("canplay",()=>{console.log("canplay")});ap12.on("canplaythrough",()=>{console.log("canplaythrough")});ap12.on("stalled",()=>{console.log("stalled");});ap12.on("suspend",()=>{console.log("suspend")});ap12.on("play",()=>{console.log("play")});ap12.on("pause",()=>{console.log("pause")});ap12.on("waiting",()=>{console.log("waiting")});ap12.on("playing",()=>{console.log("playing")});ap12.on("seeking",()=>{console.log("seeking")});ap12.on("seeked",()=>{console.log("seeked")});ap12.on("error",()=>{console.log("error");});ap12.on("ended",()=>{console.log("ended");});ap12.on("abort",()=>{console.log("abort");});ap12.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="单曲与EP"><a href="#单曲与EP" class="headerlink" title="单曲与EP"></a>单曲与EP</h3><div id="aplayer0" class="aplayerJS"></div><script>const ap0 = new APlayer({container: document.getElementById("aplayer0"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"random",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer12")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="单曲与EP"><a href="#单曲与EP" class="headerlink" title="单曲与EP"></a>单曲与EP</h3>
+<div id="aplayer0" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer0"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "random",
+        audio: [
 {
 name: 'ユーフォーを見にいこう',
 artist: '花譜 & ネクライトーキー',
@@ -872,9 +942,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/SINGLES/抜刀 (feat. �
 cover: '/songpack/kaf/SINGLES/抜刀 (feat. 花譜).webp',
 lrc: '/songpack/kaf/SINGLES/抜刀 (feat. 花譜).lrc',
 },
-]});ap0.on("play",()=>{document.title=document.getElementById("aplayer0").getElementsByClassName("aplayer-music")[0].innerText;});ap0.on("play",()=>{console.log("**"+document.title+"**")});ap0.on("loadstart",()=>{console.log("loadstart")});ap0.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap0.on("loadeddata",()=>{console.log("loadeddata")});ap0.on("canplay",()=>{console.log("canplay")});ap0.on("canplaythrough",()=>{console.log("canplaythrough")});ap0.on("stalled",()=>{console.log("stalled");});ap0.on("suspend",()=>{console.log("suspend")});ap0.on("play",()=>{console.log("play")});ap0.on("pause",()=>{console.log("pause")});ap0.on("waiting",()=>{console.log("waiting")});ap0.on("playing",()=>{console.log("playing")});ap0.on("seeking",()=>{console.log("seeking")});ap0.on("seeked",()=>{console.log("seeked")});ap0.on("error",()=>{console.log("error");});ap0.on("ended",()=>{console.log("ended");});ap0.on("abort",()=>{console.log("abort");});ap0.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h4 id="愛と花-EP-2020"><a href="#愛と花-EP-2020" class="headerlink" title="愛と花 - EP 2020"></a>愛と花 - EP 2020</h4><div id="aplayer0b" class="aplayerJS"></div><script>const ap0b = new APlayer({container: document.getElementById("aplayer0b"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer0")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="愛と花-EP-2020"><a href="#愛と花-EP-2020" class="headerlink" title="愛と花 - EP 2020"></a>愛と花 - EP 2020</h4>
+<div id="aplayer0b" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer0b"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'ラブしい',
 artist: '花譜、Kizuna AI',
@@ -900,9 +1027,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/EP2020/04 かりそめ(
 cover: '/songpack/kaf/EP2020/cover.webp',
 lrc: '',
 },
-]});ap0b.on("play",()=>{document.title=document.getElementById("aplayer0b").getElementsByClassName("aplayer-music")[0].innerText;});ap0b.on("play",()=>{console.log("**"+document.title+"**")});ap0b.on("loadstart",()=>{console.log("loadstart")});ap0b.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap0b.on("loadeddata",()=>{console.log("loadeddata")});ap0b.on("canplay",()=>{console.log("canplay")});ap0b.on("canplaythrough",()=>{console.log("canplaythrough")});ap0b.on("stalled",()=>{console.log("stalled");});ap0b.on("suspend",()=>{console.log("suspend")});ap0b.on("play",()=>{console.log("play")});ap0b.on("pause",()=>{console.log("pause")});ap0b.on("waiting",()=>{console.log("waiting")});ap0b.on("playing",()=>{console.log("playing")});ap0b.on("seeking",()=>{console.log("seeking")});ap0b.on("seeked",()=>{console.log("seeked")});ap0b.on("error",()=>{console.log("error");});ap0b.on("ended",()=>{console.log("ended");});ap0b.on("abort",()=>{console.log("abort");});ap0b.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h4 id="花と心臓-Single-2019"><a href="#花と心臓-Single-2019" class="headerlink" title="花と心臓 - Single 2019"></a>花と心臓 - Single 2019</h4><div id="aplayer0a" class="aplayerJS"></div><script>const ap0a = new APlayer({container: document.getElementById("aplayer0a"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer0b")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="花と心臓-Single-2019"><a href="#花と心臓-Single-2019" class="headerlink" title="花と心臓 - Single 2019"></a>花と心臓 - Single 2019</h4>
+<div id="aplayer0a" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer0a"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '糸',
 artist: '花譜',
@@ -922,9 +1106,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/EP2019/03 心臓と絡�
 cover: '/songpack/kaf/EP2019/cover.webp',
 lrc: '/songpack/kaf/EP2019/03 心臓と絡繰.lrc',
 },
-]});ap0a.on("play",()=>{document.title=document.getElementById("aplayer0a").getElementsByClassName("aplayer-music")[0].innerText;});ap0a.on("play",()=>{console.log("**"+document.title+"**")});ap0a.on("loadstart",()=>{console.log("loadstart")});ap0a.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap0a.on("loadeddata",()=>{console.log("loadeddata")});ap0a.on("canplay",()=>{console.log("canplay")});ap0a.on("canplaythrough",()=>{console.log("canplaythrough")});ap0a.on("stalled",()=>{console.log("stalled");});ap0a.on("suspend",()=>{console.log("suspend")});ap0a.on("play",()=>{console.log("play")});ap0a.on("pause",()=>{console.log("pause")});ap0a.on("waiting",()=>{console.log("waiting")});ap0a.on("playing",()=>{console.log("playing")});ap0a.on("seeking",()=>{console.log("seeking")});ap0a.on("seeked",()=>{console.log("seeked")});ap0a.on("error",()=>{console.log("error");});ap0a.on("ended",()=>{console.log("ended");});ap0a.on("abort",()=>{console.log("abort");});ap0a.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="寓話-Guwa-α／β-2024"><a href="#寓話-Guwa-α／β-2024" class="headerlink" title="寓話(Gūwa) α／β 2024"></a>寓話(Gūwa) α／β 2024</h3><div id="aplayer11" class="aplayerJS"></div><script>const ap11 = new APlayer({container: document.getElementById("aplayer11"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer0a")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="寓話-Guwa-α／β-2024"><a href="#寓話-Guwa-α／β-2024" class="headerlink" title="寓話(Gūwa) α／β 2024"></a>寓話(Gūwa) α／β 2024</h3>
+<div id="aplayer11" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer11"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'かみのいないせかいで（Instrumental）',
 artist: '花譜',
@@ -1016,9 +1257,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2024-YH/15 そしてま
 cover: '/songpack/kaf/2024-YH/cover.webp',
 lrc: '/songpack/kaf/2024-YH/15 そしてまたはじめる（Instrumental）.lrc',
 },
-]});ap11.on("play",()=>{document.title=document.getElementById("aplayer11").getElementsByClassName("aplayer-music")[0].innerText;});ap11.on("play",()=>{console.log("**"+document.title+"**")});ap11.on("loadstart",()=>{console.log("loadstart")});ap11.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap11.on("loadeddata",()=>{console.log("loadeddata")});ap11.on("canplay",()=>{console.log("canplay")});ap11.on("canplaythrough",()=>{console.log("canplaythrough")});ap11.on("stalled",()=>{console.log("stalled");});ap11.on("suspend",()=>{console.log("suspend")});ap11.on("play",()=>{console.log("play")});ap11.on("pause",()=>{console.log("pause")});ap11.on("waiting",()=>{console.log("waiting")});ap11.on("playing",()=>{console.log("playing")});ap11.on("seeking",()=>{console.log("seeking")});ap11.on("seeked",()=>{console.log("seeked")});ap11.on("error",()=>{console.log("error");});ap11.on("ended",()=>{console.log("ended");});ap11.on("abort",()=>{console.log("abort");});ap11.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="I-SCREAM-LIVE3-2024"><a href="#I-SCREAM-LIVE3-2024" class="headerlink" title="I SCREAM LIVE3 2024"></a>I SCREAM LIVE3 2024</h3><div id="aplayer10" class="aplayerJS"></div><script>const ap10 = new APlayer({container: document.getElementById("aplayer10"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer11")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="I-SCREAM-LIVE3-2024"><a href="#I-SCREAM-LIVE3-2024" class="headerlink" title="I SCREAM LIVE3 2024"></a>I SCREAM LIVE3 2024</h3>
+<div id="aplayer10" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer10"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'アイラ at I SCREAM LIVE3 (Cover)',
 artist: '花譜',
@@ -1146,9 +1444,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2024-I3/21 恋は永遠
 cover: '/songpack/kaf/2024-I3/cover.webp',
 lrc: '/songpack/kaf/2024-I3/21 恋は永遠 at I SCREAM LIVE3 (Cover).lrc',
 },
-]});ap10.on("play",()=>{document.title=document.getElementById("aplayer10").getElementsByClassName("aplayer-music")[0].innerText;});ap10.on("play",()=>{console.log("**"+document.title+"**")});ap10.on("loadstart",()=>{console.log("loadstart")});ap10.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap10.on("loadeddata",()=>{console.log("loadeddata")});ap10.on("canplay",()=>{console.log("canplay")});ap10.on("canplaythrough",()=>{console.log("canplaythrough")});ap10.on("stalled",()=>{console.log("stalled");});ap10.on("suspend",()=>{console.log("suspend")});ap10.on("play",()=>{console.log("play")});ap10.on("pause",()=>{console.log("pause")});ap10.on("waiting",()=>{console.log("waiting")});ap10.on("playing",()=>{console.log("playing")});ap10.on("seeking",()=>{console.log("seeking")});ap10.on("seeked",()=>{console.log("seeked")});ap10.on("error",()=>{console.log("error");});ap10.on("ended",()=>{console.log("ended");});ap10.on("abort",()=>{console.log("abort");});ap10.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="狂想-Kyoso-γ-2024"><a href="#狂想-Kyoso-γ-2024" class="headerlink" title="狂想(Kyōsō) γ 2024"></a>狂想(Kyōsō) γ 2024</h3><div id="aplayer9" class="aplayerJS"></div><script>const ap9 = new APlayer({container: document.getElementById("aplayer9"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer10")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="狂想-Kyoso-γ-2024"><a href="#狂想-Kyoso-γ-2024" class="headerlink" title="狂想(Kyōsō) γ 2024"></a>狂想(Kyōsō) γ 2024</h3>
+<div id="aplayer9" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer9"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '海に化ける(他人事 Remix)',
 artist: '花譜',
@@ -1228,9 +1583,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2024-Kg/13 邂逅(ueil 
 cover: '/songpack/kaf/2024-Kg/cover.webp',
 lrc: '/songpack/kaf/2024-Kg/13 邂逅(ueil Remix).lrc',
 },
-]});ap9.on("play",()=>{document.title=document.getElementById("aplayer9").getElementsByClassName("aplayer-music")[0].innerText;});ap9.on("play",()=>{console.log("**"+document.title+"**")});ap9.on("loadstart",()=>{console.log("loadstart")});ap9.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap9.on("loadeddata",()=>{console.log("loadeddata")});ap9.on("canplay",()=>{console.log("canplay")});ap9.on("canplaythrough",()=>{console.log("canplaythrough")});ap9.on("stalled",()=>{console.log("stalled");});ap9.on("suspend",()=>{console.log("suspend")});ap9.on("play",()=>{console.log("play")});ap9.on("pause",()=>{console.log("pause")});ap9.on("waiting",()=>{console.log("waiting")});ap9.on("playing",()=>{console.log("playing")});ap9.on("seeking",()=>{console.log("seeking")});ap9.on("seeked",()=>{console.log("seeked")});ap9.on("error",()=>{console.log("error");});ap9.on("ended",()=>{console.log("ended");});ap9.on("abort",()=>{console.log("abort");});ap9.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="組曲-2024"><a href="#組曲-2024" class="headerlink" title="組曲 2024"></a>組曲 2024</h3><div id="aplayer8" class="aplayerJS"></div><script>const ap8 = new APlayer({container: document.getElementById("aplayer8"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer9")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="組曲-2024"><a href="#組曲-2024" class="headerlink" title="組曲 2024"></a>組曲 2024</h3>
+<div id="aplayer8" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer8"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '鏡よ鏡',
 artist: '花譜×GLIM SPANKY',
@@ -1328,9 +1740,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2024-ZQ/16 ソレカラ
 cover: '/songpack/kaf/2024-ZQ/cover.webp',
 lrc: '/songpack/kaf/2024-ZQ/16 ソレカラ.lrc',
 },
-]});ap8.on("play",()=>{document.title=document.getElementById("aplayer8").getElementsByClassName("aplayer-music")[0].innerText;});ap8.on("play",()=>{console.log("**"+document.title+"**")});ap8.on("loadstart",()=>{console.log("loadstart")});ap8.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8.on("loadeddata",()=>{console.log("loadeddata")});ap8.on("canplay",()=>{console.log("canplay")});ap8.on("canplaythrough",()=>{console.log("canplaythrough")});ap8.on("stalled",()=>{console.log("stalled");});ap8.on("suspend",()=>{console.log("suspend")});ap8.on("play",()=>{console.log("play")});ap8.on("pause",()=>{console.log("pause")});ap8.on("waiting",()=>{console.log("waiting")});ap8.on("playing",()=>{console.log("playing")});ap8.on("seeking",()=>{console.log("seeking")});ap8.on("seeked",()=>{console.log("seeked")});ap8.on("error",()=>{console.log("error");});ap8.on("ended",()=>{console.log("ended");});ap8.on("abort",()=>{console.log("abort");});ap8.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="I-SCREAM-LIVE2-2023"><a href="#I-SCREAM-LIVE2-2023" class="headerlink" title="I SCREAM LIVE2 2023"></a>I SCREAM LIVE2 2023</h3><div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer8")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="I-SCREAM-LIVE2-2023"><a href="#I-SCREAM-LIVE2-2023" class="headerlink" title="I SCREAM LIVE2 2023"></a>I SCREAM LIVE2 2023</h3>
+<div id="aplayer7" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer7"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'MC1 at I SCREAM LIVE2',
 artist: '花譜',
@@ -1518,13 +1987,70 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2023-I2/31 ネトカノ
 cover: '/songpack/kaf/2023-I2/cover.webp',
 lrc: '/songpack/kaf/2023-I2/31 ネトカノ at I SCREAM LIVE2 (Cover).lrc',
 },
-]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer7")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <h3 id="狂想-Kyoso-α／β-2023"><a href="#狂想-Kyoso-α／β-2023" class="headerlink" title="狂想(Kyōsō) α／β 2023"></a>狂想(Kyōsō) α／β 2023</h3><ul>
 <li>狂想α (Dies ist eine Geschichte über das Potenzial eines Mädchens.) (This is a story about a girl’s potential.)<br>Narrative-driven.</li>
 <li>狂想β (Es ist auch die Geschichte der Entwicklung eines jungen Mannes.) (It is also the story of a young man’s development.)<br>Companion piece.</li>
 </ul>
-<div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+
+<div id="aplayer6" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer6"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'そうぞうりょく（Instrumental）',
 artist: '花譜',
@@ -1616,12 +2142,69 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2023-KX/15 あなたを
 cover: '/songpack/kaf/2023-KX/cover.webp',
 lrc: '',
 },
-]});ap6.on("play",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("play",()=>{console.log("**"+document.title+"**")});ap6.on("loadstart",()=>{console.log("loadstart")});ap6.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6.on("loadeddata",()=>{console.log("loadeddata")});ap6.on("canplay",()=>{console.log("canplay")});ap6.on("canplaythrough",()=>{console.log("canplaythrough")});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("suspend",()=>{console.log("suspend")});ap6.on("play",()=>{console.log("play")});ap6.on("pause",()=>{console.log("pause")});ap6.on("waiting",()=>{console.log("waiting")});ap6.on("playing",()=>{console.log("playing")});ap6.on("seeking",()=>{console.log("seeking")});ap6.on("seeked",()=>{console.log("seeked")});ap6.on("error",()=>{console.log("error");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer6")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <h3 id="魔法-Maho-γ-2021"><a href="#魔法-Maho-γ-2021" class="headerlink" title="魔法(Mahō) γ 2021"></a>魔法(Mahō) γ 2021</h3><ul>
 <li>魔法γ (Je stärker wir sind, desto unwahrscheinlicher ist der Krieg.) (The stronger we are, the less likely war is.)<br>Remix extension.</li>
 </ul>
-<div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+
+<div id="aplayer5" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer5"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '危ノーマル(廉 Remix)',
 artist: '花譜',
@@ -1701,9 +2284,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2021-Mg/13 まほう(MI
 cover: '/songpack/kaf/2021-Mg/cover.webp',
 lrc: '/songpack/kaf/2021-Mg/13 まほう(MIMI Remix).lrc',
 },
-]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="I-SCREAM-LIFE-2020"><a href="#I-SCREAM-LIFE-2020" class="headerlink" title="I SCREAM LIFE 2020"></a>I SCREAM LIFE 2020</h3><h4 id="DISC1"><a href="#DISC1" class="headerlink" title="DISC1"></a>DISC1</h4><div id="aplayer3A" class="aplayerJS"></div><script>const ap3A = new APlayer({container: document.getElementById("aplayer3A"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer5")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="I-SCREAM-LIFE-2020"><a href="#I-SCREAM-LIFE-2020" class="headerlink" title="I SCREAM LIFE 2020"></a>I SCREAM LIFE 2020</h3><h4 id="DISC1"><a href="#DISC1" class="headerlink" title="DISC1"></a>DISC1</h4>
+<div id="aplayer3A" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer3A"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'MC1',
 artist: '花譜',
@@ -1795,9 +2435,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2020-IS/1.15 五月雨.
 cover: '/songpack/kaf/2020-IS/cover.webp',
 lrc: '/songpack/kaf/2020-IS/1.15 五月雨.lrc',
 },
-]});ap3A.on("play",()=>{document.title=document.getElementById("aplayer3A").getElementsByClassName("aplayer-music")[0].innerText;});ap3A.on("play",()=>{console.log("**"+document.title+"**")});ap3A.on("loadstart",()=>{console.log("loadstart")});ap3A.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3A.on("loadeddata",()=>{console.log("loadeddata")});ap3A.on("canplay",()=>{console.log("canplay")});ap3A.on("canplaythrough",()=>{console.log("canplaythrough")});ap3A.on("stalled",()=>{console.log("stalled");});ap3A.on("suspend",()=>{console.log("suspend")});ap3A.on("play",()=>{console.log("play")});ap3A.on("pause",()=>{console.log("pause")});ap3A.on("waiting",()=>{console.log("waiting")});ap3A.on("playing",()=>{console.log("playing")});ap3A.on("seeking",()=>{console.log("seeking")});ap3A.on("seeked",()=>{console.log("seeked")});ap3A.on("error",()=>{console.log("error");});ap3A.on("ended",()=>{console.log("ended");});ap3A.on("abort",()=>{console.log("abort");});ap3A.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h4 id="DISC2"><a href="#DISC2" class="headerlink" title="DISC2"></a>DISC2</h4><div id="aplayer3B" class="aplayerJS"></div><script>const ap3B = new APlayer({container: document.getElementById("aplayer3B"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer3A")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="DISC2"><a href="#DISC2" class="headerlink" title="DISC2"></a>DISC2</h4>
+<div id="aplayer3B" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer3B"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'MC5',
 artist: '花譜',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2020-IS/2.01 MC5.m4a',
@@ -1870,9 +2567,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2020-IS/2.12 MC8.m4a',
 cover: '/songpack/kaf/2020-IS/cover.webp',
 lrc: '',
 },
-]});ap3B.on("play",()=>{document.title=document.getElementById("aplayer3B").getElementsByClassName("aplayer-music")[0].innerText;});ap3B.on("play",()=>{console.log("**"+document.title+"**")});ap3B.on("loadstart",()=>{console.log("loadstart")});ap3B.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3B.on("loadeddata",()=>{console.log("loadeddata")});ap3B.on("canplay",()=>{console.log("canplay")});ap3B.on("canplaythrough",()=>{console.log("canplaythrough")});ap3B.on("stalled",()=>{console.log("stalled");});ap3B.on("suspend",()=>{console.log("suspend")});ap3B.on("play",()=>{console.log("play")});ap3B.on("pause",()=>{console.log("pause")});ap3B.on("waiting",()=>{console.log("waiting")});ap3B.on("playing",()=>{console.log("playing")});ap3B.on("seeking",()=>{console.log("seeking")});ap3B.on("seeked",()=>{console.log("seeked")});ap3B.on("error",()=>{console.log("error");});ap3B.on("ended",()=>{console.log("ended");});ap3B.on("abort",()=>{console.log("abort");});ap3B.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h4 id="DISC3"><a href="#DISC3" class="headerlink" title="DISC3"></a>DISC3</h4><div id="aplayer3C" class="aplayerJS"></div><script>const ap3C = new APlayer({container: document.getElementById("aplayer3C"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer3B")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="DISC3"><a href="#DISC3" class="headerlink" title="DISC3"></a>DISC3</h4>
+<div id="aplayer3C" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer3C"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'MC9',
 artist: '花譜',
@@ -1970,13 +2724,70 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2020-IS/3.16 空洞で�
 cover: '/songpack/kaf/2020-IS/cover.webp',
 lrc: '/songpack/kaf/2020-IS/3.16 空洞です.lrc',
 },
-]});ap3C.on("play",()=>{document.title=document.getElementById("aplayer3C").getElementsByClassName("aplayer-music")[0].innerText;});ap3C.on("play",()=>{console.log("**"+document.title+"**")});ap3C.on("loadstart",()=>{console.log("loadstart")});ap3C.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3C.on("loadeddata",()=>{console.log("loadeddata")});ap3C.on("canplay",()=>{console.log("canplay")});ap3C.on("canplaythrough",()=>{console.log("canplaythrough")});ap3C.on("stalled",()=>{console.log("stalled");});ap3C.on("suspend",()=>{console.log("suspend")});ap3C.on("play",()=>{console.log("play")});ap3C.on("pause",()=>{console.log("pause")});ap3C.on("waiting",()=>{console.log("waiting")});ap3C.on("playing",()=>{console.log("playing")});ap3C.on("seeking",()=>{console.log("seeking")});ap3C.on("seeked",()=>{console.log("seeked")});ap3C.on("error",()=>{console.log("error");});ap3C.on("ended",()=>{console.log("ended");});ap3C.on("abort",()=>{console.log("abort");});ap3C.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer3C")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <h3 id="魔法-Maho-α／β-2020"><a href="#魔法-Maho-α／β-2020" class="headerlink" title="魔法(Mahō) α／β 2020"></a>魔法(Mahō) α／β 2020</h3><ul>
 <li>魔法α (Ein Lied, um die Welt zu verändern.) (A song to change the world.)<br>Confirmed in store listing.</li>
 <li>魔法β (Wer schön sein will, muss leiden.) (Who wants to be beautiful must suffer.)<br>Thematic focus on beauty and pain.</li>
 </ul>
-<div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+
+<div id="aplayer4" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer4"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '魔法の無い世界-Instrumental-',
 artist: '花譜',
@@ -2068,12 +2879,69 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2020-MF/15 世界線は
 cover: '/songpack/kaf/2020-MF/cover.webp',
 lrc: '',
 },
-]});ap4.on("play",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("play",()=>{console.log("**"+document.title+"**")});ap4.on("loadstart",()=>{console.log("loadstart")});ap4.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4.on("loadeddata",()=>{console.log("loadeddata")});ap4.on("canplay",()=>{console.log("canplay")});ap4.on("canplaythrough",()=>{console.log("canplaythrough")});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("suspend",()=>{console.log("suspend")});ap4.on("play",()=>{console.log("play")});ap4.on("pause",()=>{console.log("pause")});ap4.on("waiting",()=>{console.log("waiting")});ap4.on("playing",()=>{console.log("playing")});ap4.on("seeking",()=>{console.log("seeking")});ap4.on("seeked",()=>{console.log("seeked")});ap4.on("error",()=>{console.log("error");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer4")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <h3 id="観測-Kansoku-γ-2020"><a href="#観測-Kansoku-γ-2020" class="headerlink" title="観測(Kansoku) γ 2020"></a>観測(Kansoku) γ 2020</h3><ul>
 <li>観測γ (Eine Schwalbe macht noch keinen Sommer!) (One swallow doesn’t make a summer!)<br>Remix variant.</li>
 </ul>
-<div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+
+<div id="aplayer2" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer2"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '糸(大沼パセリ Remix)',
 artist: '花譜',
@@ -2153,13 +3021,70 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2020-Gg/13 そして花
 cover: '/songpack/kaf/2020-Gg/cover.webp',
 lrc: '/songpack/kaf/2020-Gg/13 そして花になる(syudou Remix).lrc',
 },
-]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer2")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <h3 id="観測-Kansoku-α／β-2019"><a href="#観測-Kansoku-α／β-2019" class="headerlink" title="観測(Kansoku) α／β 2019"></a>観測(Kansoku) α／β 2019</h3><ul>
 <li>観測α (Aber das ist erst der Anfang.) (But that’s just the beginning.)<br>Debut album series; composed by Kankzaki Iori.</li>
 <li>観測β (Ich habe kein gutes Gefühl dabei.) (I don’t have a good feeling about it.)<br>Companion to α; includes photo book and poetry CD.</li>
 </ul>
-<div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+
+<div id="aplayer1" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer1"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: '確信 -Instrumental-',
 artist: '花譜',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2019-GC/01 確信 -Instrumental-.m4a',
@@ -2250,7 +3175,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/kaf/2019-GC/15 The end of p
 cover: '/songpack/kaf/2019-GC/cover.webp',
 lrc: '',
 },
-]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer1")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <hr>
 <p><a target="_blank" rel="noopener" href="https://kaf.kamitsubaki.jp/">花譜 Official Website</a><br><a target="_blank" rel="noopener" href="https://music.apple.com/cn/artist/kaf/1503255391">Apple Music - KAF</a><br><a target="_blank" rel="noopener" href="https://music.163.com/artist?id=32062601">网易云音乐 - 花譜</a></p>

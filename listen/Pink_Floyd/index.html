@@ -686,7 +686,20 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="The-Dark-Side-Of-The-Moon-1973"><a href="#The-Dark-Side-Of-The-Moon-1973" class="headerlink" title="The Dark Side Of The Moon 1973"></a>The Dark Side Of The Moon 1973</h3><div id="aplayer8" class="aplayerJS"></div><script>const ap8 = new APlayer({container: document.getElementById("aplayer8"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+        <h3 id="The-Dark-Side-Of-The-Moon-1973"><a href="#The-Dark-Side-Of-The-Moon-1973" class="headerlink" title="The Dark Side Of The Moon 1973"></a>The Dark Side Of The Moon 1973</h3>
+<div id="aplayer8" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer8"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Speak To Me',
 artist: 'Pink Floyd',
@@ -748,7 +761,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1973-TD/10 Eclip
 cover: '/songpack/Pink_Floyd/1973-TD/cover.webp',
 lrc: '/songpack/Pink_Floyd/1973-TD/10 Eclipse.lrc',
 },
-]});ap8.on("play",()=>{document.title=document.getElementById("aplayer8").getElementsByClassName("aplayer-music")[0].innerText;});ap8.on("play",()=>{console.log("**"+document.title+"**")});ap8.on("loadstart",()=>{console.log("loadstart")});ap8.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8.on("loadeddata",()=>{console.log("loadeddata")});ap8.on("canplay",()=>{console.log("canplay")});ap8.on("canplaythrough",()=>{console.log("canplaythrough")});ap8.on("stalled",()=>{console.log("stalled");});ap8.on("suspend",()=>{console.log("suspend")});ap8.on("play",()=>{console.log("play")});ap8.on("pause",()=>{console.log("pause")});ap8.on("waiting",()=>{console.log("waiting")});ap8.on("playing",()=>{console.log("playing")});ap8.on("seeking",()=>{console.log("seeking")});ap8.on("seeked",()=>{console.log("seeked")});ap8.on("error",()=>{console.log("error");});ap8.on("ended",()=>{console.log("ended");});ap8.on("abort",()=>{console.log("abort");});ap8.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer8")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -758,7 +815,20 @@ lrc: '/songpack/Pink_Floyd/1973-TD/10 Eclipse.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="The-Endless-River-2014"><a href="#The-Endless-River-2014" class="headerlink" title="The Endless River 2014"></a>The Endless River 2014</h3><div id="aplayer15" class="aplayerJS"></div><script>const ap15 = new APlayer({container: document.getElementById("aplayer15"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="The-Endless-River-2014"><a href="#The-Endless-River-2014" class="headerlink" title="The Endless River 2014"></a>The Endless River 2014</h3>
+<div id="aplayer15" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer15"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Side 1, Pt. 1: Things Left Unsaid',
 artist: 'Pink Floyd',
@@ -916,7 +986,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/2014-TE/26 Evrik
 cover: '/songpack/Pink_Floyd/2014-TE/cover.webp',
 lrc: '',
 },
-]});ap15.on("play",()=>{document.title=document.getElementById("aplayer15").getElementsByClassName("aplayer-music")[0].innerText;});ap15.on("play",()=>{console.log("**"+document.title+"**")});ap15.on("loadstart",()=>{console.log("loadstart")});ap15.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap15.on("loadeddata",()=>{console.log("loadeddata")});ap15.on("canplay",()=>{console.log("canplay")});ap15.on("canplaythrough",()=>{console.log("canplaythrough")});ap15.on("stalled",()=>{console.log("stalled");});ap15.on("suspend",()=>{console.log("suspend")});ap15.on("play",()=>{console.log("play")});ap15.on("pause",()=>{console.log("pause")});ap15.on("waiting",()=>{console.log("waiting")});ap15.on("playing",()=>{console.log("playing")});ap15.on("seeking",()=>{console.log("seeking")});ap15.on("seeked",()=>{console.log("seeked")});ap15.on("error",()=>{console.log("error");});ap15.on("ended",()=>{console.log("ended");});ap15.on("abort",()=>{console.log("abort");});ap15.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer15")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -924,7 +1038,20 @@ lrc: '',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="The-Division-Bell-1994"><a href="#The-Division-Bell-1994" class="headerlink" title="The Division Bell 1994"></a>The Division Bell 1994</h3><div id="aplayer14" class="aplayerJS"></div><script>const ap14 = new APlayer({container: document.getElementById("aplayer14"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="The-Division-Bell-1994"><a href="#The-Division-Bell-1994" class="headerlink" title="The Division Bell 1994"></a>The Division Bell 1994</h3>
+<div id="aplayer14" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer14"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Cluster One',
 artist: 'Pink Floyd',
@@ -992,7 +1119,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1994-TD/11 High 
 cover: '/songpack/Pink_Floyd/1994-TD/cover.webp',
 lrc: '/songpack/Pink_Floyd/1994-TD/11 High Hopes.lrc',
 },
-]});ap14.on("play",()=>{document.title=document.getElementById("aplayer14").getElementsByClassName("aplayer-music")[0].innerText;});ap14.on("play",()=>{console.log("**"+document.title+"**")});ap14.on("loadstart",()=>{console.log("loadstart")});ap14.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap14.on("loadeddata",()=>{console.log("loadeddata")});ap14.on("canplay",()=>{console.log("canplay")});ap14.on("canplaythrough",()=>{console.log("canplaythrough")});ap14.on("stalled",()=>{console.log("stalled");});ap14.on("suspend",()=>{console.log("suspend")});ap14.on("play",()=>{console.log("play")});ap14.on("pause",()=>{console.log("pause")});ap14.on("waiting",()=>{console.log("waiting")});ap14.on("playing",()=>{console.log("playing")});ap14.on("seeking",()=>{console.log("seeking")});ap14.on("seeked",()=>{console.log("seeked")});ap14.on("error",()=>{console.log("error");});ap14.on("ended",()=>{console.log("ended");});ap14.on("abort",()=>{console.log("abort");});ap14.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer14")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1000,7 +1171,20 @@ lrc: '/songpack/Pink_Floyd/1994-TD/11 High Hopes.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="A-Momentary-Lapse-Of-Reason-1987"><a href="#A-Momentary-Lapse-Of-Reason-1987" class="headerlink" title="A Momentary Lapse Of Reason 1987"></a>A Momentary Lapse Of Reason 1987</h3><div id="aplayer13" class="aplayerJS"></div><script>const ap13 = new APlayer({container: document.getElementById("aplayer13"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="A-Momentary-Lapse-Of-Reason-1987"><a href="#A-Momentary-Lapse-Of-Reason-1987" class="headerlink" title="A Momentary Lapse Of Reason 1987"></a>A Momentary Lapse Of Reason 1987</h3>
+<div id="aplayer13" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer13"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Signs Of Life',
 artist: 'Pink Floyd',
@@ -1068,7 +1252,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1987-AM/11 Sorro
 cover: '/songpack/Pink_Floyd/1987-AM/cover.webp',
 lrc: '/songpack/Pink_Floyd/1987-AM/11 Sorrow.lrc',
 },
-]});ap13.on("play",()=>{document.title=document.getElementById("aplayer13").getElementsByClassName("aplayer-music")[0].innerText;});ap13.on("play",()=>{console.log("**"+document.title+"**")});ap13.on("loadstart",()=>{console.log("loadstart")});ap13.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap13.on("loadeddata",()=>{console.log("loadeddata")});ap13.on("canplay",()=>{console.log("canplay")});ap13.on("canplaythrough",()=>{console.log("canplaythrough")});ap13.on("stalled",()=>{console.log("stalled");});ap13.on("suspend",()=>{console.log("suspend")});ap13.on("play",()=>{console.log("play")});ap13.on("pause",()=>{console.log("pause")});ap13.on("waiting",()=>{console.log("waiting")});ap13.on("playing",()=>{console.log("playing")});ap13.on("seeking",()=>{console.log("seeking")});ap13.on("seeked",()=>{console.log("seeked")});ap13.on("error",()=>{console.log("error");});ap13.on("ended",()=>{console.log("ended");});ap13.on("abort",()=>{console.log("abort");});ap13.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer13")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1076,7 +1304,20 @@ lrc: '/songpack/Pink_Floyd/1987-AM/11 Sorrow.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="The-Final-Cut-1983"><a href="#The-Final-Cut-1983" class="headerlink" title="The Final Cut 1983"></a>The Final Cut 1983</h3><div id="aplayer12" class="aplayerJS"></div><script>const ap12 = new APlayer({container: document.getElementById("aplayer12"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="The-Final-Cut-1983"><a href="#The-Final-Cut-1983" class="headerlink" title="The Final Cut 1983"></a>The Final Cut 1983</h3>
+<div id="aplayer12" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer12"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'The Post War Dream',
 artist: 'Pink Floyd',
@@ -1156,7 +1397,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1983-TF/13 Two S
 cover: '/songpack/Pink_Floyd/1983-TF/cover.webp',
 lrc: '/songpack/Pink_Floyd/1983-TF/13 Two Suns In The Sunset.lrc',
 },
-]});ap12.on("play",()=>{document.title=document.getElementById("aplayer12").getElementsByClassName("aplayer-music")[0].innerText;});ap12.on("play",()=>{console.log("**"+document.title+"**")});ap12.on("loadstart",()=>{console.log("loadstart")});ap12.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap12.on("loadeddata",()=>{console.log("loadeddata")});ap12.on("canplay",()=>{console.log("canplay")});ap12.on("canplaythrough",()=>{console.log("canplaythrough")});ap12.on("stalled",()=>{console.log("stalled");});ap12.on("suspend",()=>{console.log("suspend")});ap12.on("play",()=>{console.log("play")});ap12.on("pause",()=>{console.log("pause")});ap12.on("waiting",()=>{console.log("waiting")});ap12.on("playing",()=>{console.log("playing")});ap12.on("seeking",()=>{console.log("seeking")});ap12.on("seeked",()=>{console.log("seeked")});ap12.on("error",()=>{console.log("error");});ap12.on("ended",()=>{console.log("ended");});ap12.on("abort",()=>{console.log("abort");});ap12.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer12")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1164,7 +1449,20 @@ lrc: '/songpack/Pink_Floyd/1983-TF/13 Two Suns In The Sunset.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="The-Wall-1979"><a href="#The-Wall-1979" class="headerlink" title="The Wall 1979"></a>The Wall 1979</h3><div id="aplayer11" class="aplayerJS"></div><script>const ap11 = new APlayer({container: document.getElementById("aplayer11"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="The-Wall-1979"><a href="#The-Wall-1979" class="headerlink" title="The Wall 1979"></a>The Wall 1979</h3>
+<div id="aplayer11" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer11"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'In the Flesh?',
 artist: 'Pink Floyd',
@@ -1322,7 +1620,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1979-TW/26 Outsi
 cover: '/songpack/Pink_Floyd/1979-TW/cover.webp',
 lrc: '/songpack/Pink_Floyd/1979-TW/26 Outside the Wall.lrc',
 },
-]});ap11.on("play",()=>{document.title=document.getElementById("aplayer11").getElementsByClassName("aplayer-music")[0].innerText;});ap11.on("play",()=>{console.log("**"+document.title+"**")});ap11.on("loadstart",()=>{console.log("loadstart")});ap11.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap11.on("loadeddata",()=>{console.log("loadeddata")});ap11.on("canplay",()=>{console.log("canplay")});ap11.on("canplaythrough",()=>{console.log("canplaythrough")});ap11.on("stalled",()=>{console.log("stalled");});ap11.on("suspend",()=>{console.log("suspend")});ap11.on("play",()=>{console.log("play")});ap11.on("pause",()=>{console.log("pause")});ap11.on("waiting",()=>{console.log("waiting")});ap11.on("playing",()=>{console.log("playing")});ap11.on("seeking",()=>{console.log("seeking")});ap11.on("seeked",()=>{console.log("seeked")});ap11.on("error",()=>{console.log("error");});ap11.on("ended",()=>{console.log("ended");});ap11.on("abort",()=>{console.log("abort");});ap11.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer11")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1331,7 +1673,20 @@ lrc: '/songpack/Pink_Floyd/1979-TW/26 Outside the Wall.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Animals-1977"><a href="#Animals-1977" class="headerlink" title="Animals 1977"></a>Animals 1977</h3><div id="aplayer10" class="aplayerJS"></div><script>const ap10 = new APlayer({container: document.getElementById("aplayer10"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Animals-1977"><a href="#Animals-1977" class="headerlink" title="Animals 1977"></a>Animals 1977</h3>
+<div id="aplayer10" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer10"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Pigs On The Wing (Part One)',
 artist: 'Pink Floyd',
@@ -1363,7 +1718,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1977-An/05 Pigs 
 cover: '/songpack/Pink_Floyd/1977-An/cover.webp',
 lrc: '/songpack/Pink_Floyd/1977-An/05 Pigs On The Wing (Part Two).lrc',
 },
-]});ap10.on("play",()=>{document.title=document.getElementById("aplayer10").getElementsByClassName("aplayer-music")[0].innerText;});ap10.on("play",()=>{console.log("**"+document.title+"**")});ap10.on("loadstart",()=>{console.log("loadstart")});ap10.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap10.on("loadeddata",()=>{console.log("loadeddata")});ap10.on("canplay",()=>{console.log("canplay")});ap10.on("canplaythrough",()=>{console.log("canplaythrough")});ap10.on("stalled",()=>{console.log("stalled");});ap10.on("suspend",()=>{console.log("suspend")});ap10.on("play",()=>{console.log("play")});ap10.on("pause",()=>{console.log("pause")});ap10.on("waiting",()=>{console.log("waiting")});ap10.on("playing",()=>{console.log("playing")});ap10.on("seeking",()=>{console.log("seeking")});ap10.on("seeked",()=>{console.log("seeked")});ap10.on("error",()=>{console.log("error");});ap10.on("ended",()=>{console.log("ended");});ap10.on("abort",()=>{console.log("abort");});ap10.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer10")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1371,7 +1770,20 @@ lrc: '/songpack/Pink_Floyd/1977-An/05 Pigs On The Wing (Part Two).lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Wish-You-Were-Here-1975"><a href="#Wish-You-Were-Here-1975" class="headerlink" title="Wish You Were Here 1975"></a>Wish You Were Here 1975</h3><div id="aplayer9" class="aplayerJS"></div><script>const ap9 = new APlayer({container: document.getElementById("aplayer9"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Wish-You-Were-Here-1975"><a href="#Wish-You-Were-Here-1975" class="headerlink" title="Wish You Were Here 1975"></a>Wish You Were Here 1975</h3>
+<div id="aplayer9" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer9"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Shine On You Crazy Diamond, Pts. 1-5',
 artist: 'Pink Floyd',
@@ -1403,7 +1815,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1975-WY/05 Shine
 cover: '/songpack/Pink_Floyd/1975-WY/cover.webp',
 lrc: '/songpack/Pink_Floyd/1975-WY/05 Shine On You Crazy Diamond, Pts. 6-9.lrc',
 },
-]});ap9.on("play",()=>{document.title=document.getElementById("aplayer9").getElementsByClassName("aplayer-music")[0].innerText;});ap9.on("play",()=>{console.log("**"+document.title+"**")});ap9.on("loadstart",()=>{console.log("loadstart")});ap9.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap9.on("loadeddata",()=>{console.log("loadeddata")});ap9.on("canplay",()=>{console.log("canplay")});ap9.on("canplaythrough",()=>{console.log("canplaythrough")});ap9.on("stalled",()=>{console.log("stalled");});ap9.on("suspend",()=>{console.log("suspend")});ap9.on("play",()=>{console.log("play")});ap9.on("pause",()=>{console.log("pause")});ap9.on("waiting",()=>{console.log("waiting")});ap9.on("playing",()=>{console.log("playing")});ap9.on("seeking",()=>{console.log("seeking")});ap9.on("seeked",()=>{console.log("seeked")});ap9.on("error",()=>{console.log("error");});ap9.on("ended",()=>{console.log("ended");});ap9.on("abort",()=>{console.log("abort");});ap9.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer9")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1412,7 +1868,20 @@ lrc: '/songpack/Pink_Floyd/1975-WY/05 Shine On You Crazy Diamond, Pts. 6-9.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Obscured-by-Clouds-1972"><a href="#Obscured-by-Clouds-1972" class="headerlink" title="Obscured by Clouds 1972"></a>Obscured by Clouds 1972</h3><div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Obscured-by-Clouds-1972"><a href="#Obscured-by-Clouds-1972" class="headerlink" title="Obscured by Clouds 1972"></a>Obscured by Clouds 1972</h3>
+<div id="aplayer7" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer7"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Obscured by Clouds',
 artist: 'Pink Floyd',
@@ -1474,7 +1943,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1972-Ob/10 Absol
 cover: '/songpack/Pink_Floyd/1972-Ob/cover.webp',
 lrc: '',
 },
-]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer7")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1482,7 +1995,20 @@ lrc: '',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Meddle-1971"><a href="#Meddle-1971" class="headerlink" title="Meddle 1971"></a>Meddle 1971</h3><div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Meddle-1971"><a href="#Meddle-1971" class="headerlink" title="Meddle 1971"></a>Meddle 1971</h3>
+<div id="aplayer6" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer6"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '01 One of These Days',
 artist: 'Pink Floyd',
@@ -1520,7 +2046,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1971-Me/06 Echoe
 cover: '/songpack/Pink_Floyd/1971-Me/cover.webp',
 lrc: '/songpack/Pink_Floyd/1971-Me/06 Echoes.lrc',
 },
-]});ap6.on("play",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("play",()=>{console.log("**"+document.title+"**")});ap6.on("loadstart",()=>{console.log("loadstart")});ap6.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6.on("loadeddata",()=>{console.log("loadeddata")});ap6.on("canplay",()=>{console.log("canplay")});ap6.on("canplaythrough",()=>{console.log("canplaythrough")});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("suspend",()=>{console.log("suspend")});ap6.on("play",()=>{console.log("play")});ap6.on("pause",()=>{console.log("pause")});ap6.on("waiting",()=>{console.log("waiting")});ap6.on("playing",()=>{console.log("playing")});ap6.on("seeking",()=>{console.log("seeking")});ap6.on("seeked",()=>{console.log("seeked")});ap6.on("error",()=>{console.log("error");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer6")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1528,7 +2098,20 @@ lrc: '/songpack/Pink_Floyd/1971-Me/06 Echoes.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Atom-Heart-Mother-1970"><a href="#Atom-Heart-Mother-1970" class="headerlink" title="Atom Heart Mother 1970"></a>Atom Heart Mother 1970</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Atom-Heart-Mother-1970"><a href="#Atom-Heart-Mother-1970" class="headerlink" title="Atom Heart Mother 1970"></a>Atom Heart Mother 1970</h3>
+<div id="aplayer5" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer5"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: '01 Atom Heart Mother',
 artist: 'Pink Floyd',
@@ -1560,7 +2143,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1970-AH/05 Alan\
 cover: '/songpack/Pink_Floyd/1970-AH/cover.webp',
 lrc: '/songpack/Pink_Floyd/1970-AH/05 Alan\'s Psychedelic Breakfast.lrc',
 },
-]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer5")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1568,7 +2195,20 @@ lrc: '/songpack/Pink_Floyd/1970-AH/05 Alan\'s Psychedelic Breakfast.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Ummagumma-1969"><a href="#Ummagumma-1969" class="headerlink" title="Ummagumma 1969"></a>Ummagumma 1969</h3><h4 id="CD1-Ummagumma-Live-Album"><a href="#CD1-Ummagumma-Live-Album" class="headerlink" title="CD1 Ummagumma - Live Album"></a>CD1 Ummagumma - Live Album</h4><div id="aplayer4a" class="aplayerJS"></div><script>const ap4a = new APlayer({container: document.getElementById("aplayer4a"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Ummagumma-1969"><a href="#Ummagumma-1969" class="headerlink" title="Ummagumma 1969"></a>Ummagumma 1969</h3><h4 id="CD1-Ummagumma-Live-Album"><a href="#CD1-Ummagumma-Live-Album" class="headerlink" title="CD1 Ummagumma - Live Album"></a>CD1 Ummagumma - Live Album</h4>
+<div id="aplayer4a" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer4a"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Astronomy Domine',
 artist: 'Pink Floyd',
@@ -1594,9 +2234,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1969-UL/04 A Sau
 cover: '/songpack/Pink_Floyd/1969-UL/cover.webp',
 lrc: '',
 },
-]});ap4a.on("play",()=>{document.title=document.getElementById("aplayer4a").getElementsByClassName("aplayer-music")[0].innerText;});ap4a.on("play",()=>{console.log("**"+document.title+"**")});ap4a.on("loadstart",()=>{console.log("loadstart")});ap4a.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4a.on("loadeddata",()=>{console.log("loadeddata")});ap4a.on("canplay",()=>{console.log("canplay")});ap4a.on("canplaythrough",()=>{console.log("canplaythrough")});ap4a.on("stalled",()=>{console.log("stalled");});ap4a.on("suspend",()=>{console.log("suspend")});ap4a.on("play",()=>{console.log("play")});ap4a.on("pause",()=>{console.log("pause")});ap4a.on("waiting",()=>{console.log("waiting")});ap4a.on("playing",()=>{console.log("playing")});ap4a.on("seeking",()=>{console.log("seeking")});ap4a.on("seeked",()=>{console.log("seeked")});ap4a.on("error",()=>{console.log("error");});ap4a.on("ended",()=>{console.log("ended");});ap4a.on("abort",()=>{console.log("abort");});ap4a.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h4 id="CD2-Ummagumma-Studio-Album"><a href="#CD2-Ummagumma-Studio-Album" class="headerlink" title="CD2 Ummagumma - Studio Album"></a>CD2 Ummagumma - Studio Album</h4><div id="aplayer4b" class="aplayerJS"></div><script>const ap4b = new APlayer({container: document.getElementById("aplayer4b"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer4a")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="CD2-Ummagumma-Studio-Album"><a href="#CD2-Ummagumma-Studio-Album" class="headerlink" title="CD2 Ummagumma - Studio Album"></a>CD2 Ummagumma - Studio Album</h4>
+<div id="aplayer4b" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer4b"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Sysyphus [Part One]',
 artist: 'Pink Floyd',
@@ -1670,7 +2367,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1969-US/12 The g
 cover: '/songpack/Pink_Floyd/1969-US/cover.webp',
 lrc: '',
 },
-]});ap4b.on("play",()=>{document.title=document.getElementById("aplayer4b").getElementsByClassName("aplayer-music")[0].innerText;});ap4b.on("play",()=>{console.log("**"+document.title+"**")});ap4b.on("loadstart",()=>{console.log("loadstart")});ap4b.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4b.on("loadeddata",()=>{console.log("loadeddata")});ap4b.on("canplay",()=>{console.log("canplay")});ap4b.on("canplaythrough",()=>{console.log("canplaythrough")});ap4b.on("stalled",()=>{console.log("stalled");});ap4b.on("suspend",()=>{console.log("suspend")});ap4b.on("play",()=>{console.log("play")});ap4b.on("pause",()=>{console.log("pause")});ap4b.on("waiting",()=>{console.log("waiting")});ap4b.on("playing",()=>{console.log("playing")});ap4b.on("seeking",()=>{console.log("seeking")});ap4b.on("seeked",()=>{console.log("seeked")});ap4b.on("error",()=>{console.log("error");});ap4b.on("ended",()=>{console.log("ended");});ap4b.on("abort",()=>{console.log("abort");});ap4b.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer4b")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1678,7 +2419,20 @@ lrc: '',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="More-Original-Film-Soundtrack-1969"><a href="#More-Original-Film-Soundtrack-1969" class="headerlink" title="More (Original Film Soundtrack) 1969"></a>More (Original Film Soundtrack) 1969</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="More-Original-Film-Soundtrack-1969"><a href="#More-Original-Film-Soundtrack-1969" class="headerlink" title="More (Original Film Soundtrack) 1969"></a>More (Original Film Soundtrack) 1969</h3>
+<div id="aplayer3" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer3"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Cirrus Minor',
 artist: 'Pink Floyd',
@@ -1758,7 +2512,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1969-Mo/13 Drama
 cover: '/songpack/Pink_Floyd/1969-Mo/cover.webp',
 lrc: '',
 },
-]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer3")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1766,7 +2564,20 @@ lrc: '',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="A-Saucerful-Of-Secrets-1968"><a href="#A-Saucerful-Of-Secrets-1968" class="headerlink" title="A Saucerful Of Secrets 1968"></a>A Saucerful Of Secrets 1968</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="A-Saucerful-Of-Secrets-1968"><a href="#A-Saucerful-Of-Secrets-1968" class="headerlink" title="A Saucerful Of Secrets 1968"></a>A Saucerful Of Secrets 1968</h3>
+<div id="aplayer2" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer2"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Let There Be More Light',
 artist: 'Pink Floyd',
@@ -1810,7 +2621,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1968-AS/07 Jugba
 cover: '/songpack/Pink_Floyd/1968-AS/cover.webp',
 lrc: '/songpack/Pink_Floyd/1968-AS/07 Jugband Blues.lrc',
 },
-]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer2")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1818,7 +2673,20 @@ lrc: '/songpack/Pink_Floyd/1968-AS/07 Jugband Blues.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="The-Piper-at-the-Gates-of-Dawn-1967"><a href="#The-Piper-at-the-Gates-of-Dawn-1967" class="headerlink" title="The Piper at the Gates of Dawn 1967"></a>The Piper at the Gates of Dawn 1967</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="The-Piper-at-the-Gates-of-Dawn-1967"><a href="#The-Piper-at-the-Gates-of-Dawn-1967" class="headerlink" title="The Piper at the Gates of Dawn 1967"></a>The Piper at the Gates of Dawn 1967</h3>
+<div id="aplayer1" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer1"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Astronomy Domine',
 artist: 'Pink Floyd',
@@ -1886,7 +2754,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Pink_Floyd/1967-TP/11 Bike.
 cover: '/songpack/Pink_Floyd/1967-TP/cover.webp',
 lrc: '/songpack/Pink_Floyd/1967-TP/11 Bike.lrc',
 },
-]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer1")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
