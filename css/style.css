@@ -1641,6 +1641,7 @@ header:hover .chn_mark {
 .aplayer {
   font-family: Verdana, Geneva, sans-serif;
   font-weight: initial;
+  caret-color: transparent;
 }
 .aplayer.aplayer-withlrc .aplayer-body .aplayer-pic {
   height: 106px !important;

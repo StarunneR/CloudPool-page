@@ -677,20 +677,7 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="愛上別人是快樂的事-Loving-Others-is-a-Happy-Thing-1992"><a href="#愛上別人是快樂的事-Loving-Others-is-a-Happy-Thing-1992" class="headerlink" title="愛上別人是快樂的事 Loving Others is a Happy Thing 1992"></a>愛上別人是快樂的事 Loving Others is a Happy Thing 1992</h3>
-<div id="aplayer1" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer1"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+        <h3 id="愛上別人是快樂的事-Loving-Others-is-a-Happy-Thing-1992"><a href="#愛上別人是快樂的事-Loving-Others-is-a-Happy-Thing-1992" class="headerlink" title="愛上別人是快樂的事 Loving Others is a Happy Thing 1992"></a>愛上別人是快樂的事 Loving Others is a Happy Thing 1992</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '不滿',
 artist: '伍佰',
@@ -758,66 +745,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/1992-AS/11 素蘭小�
 cover: '/songpack/WuBai/1992-AS/cover.webp',
 lrc: '/songpack/WuBai/1992-AS/11 素蘭小姐要出嫁.lrc',
 },
-]
-    });
+]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer1")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="浪人情歌-Wanderer’s-Love-Song-1994"><a href="#浪人情歌-Wanderer’s-Love-Song-1994" class="headerlink" title="浪人情歌 Wanderer’s Love Song 1994"></a>浪人情歌 Wanderer’s Love Song 1994</h3>
-<div id="aplayer2" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer2"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="浪人情歌-Wanderer’s-Love-Song-1994"><a href="#浪人情歌-Wanderer’s-Love-Song-1994" class="headerlink" title="浪人情歌 Wanderer’s Love Song 1994"></a>浪人情歌 Wanderer’s Love Song 1994</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '背叛 Betray',
 artist: '伍佰 & China Blue',
@@ -885,51 +815,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/1994-LR/11 來不及.
 cover: '/songpack/WuBai/1994-LR/cover.webp',
 lrc: '/songpack/WuBai/1994-LR/11 來不及.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer2")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -938,20 +824,7 @@ lrc: '/songpack/WuBai/1994-LR/11 來不及.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="愛情的盡頭-The-End-Of-Love-1996"><a href="#愛情的盡頭-The-End-Of-Love-1996" class="headerlink" title="愛情的盡頭 The End Of Love 1996"></a>愛情的盡頭 The End Of Love 1996</h3>
-<div id="aplayer3" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer3"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="愛情的盡頭-The-End-Of-Love-1996"><a href="#愛情的盡頭-The-End-Of-Love-1996" class="headerlink" title="愛情的盡頭 The End Of Love 1996"></a>愛情的盡頭 The End Of Love 1996</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '夏夜晚風 Summer Night Wind',
 artist: '伍佰 & China Blue',
@@ -1013,51 +886,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/1996-AQ/10 隨風而�
 cover: '/songpack/WuBai/1996-AQ/cover.webp',
 lrc: '/songpack/WuBai/1996-AQ/10 隨風而去.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer3")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1068,20 +897,7 @@ lrc: '/songpack/WuBai/1996-AQ/10 隨風而去.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="樹枝孤鳥-Lonely-Tree-Lonely-Bird-1998"><a href="#樹枝孤鳥-Lonely-Tree-Lonely-Bird-1998" class="headerlink" title="樹枝孤鳥 Lonely Tree, Lonely Bird 1998"></a>樹枝孤鳥 Lonely Tree, Lonely Bird 1998</h3>
-<div id="aplayer4" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer4"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="樹枝孤鳥-Lonely-Tree-Lonely-Bird-1998"><a href="#樹枝孤鳥-Lonely-Tree-Lonely-Bird-1998" class="headerlink" title="樹枝孤鳥 Lonely Tree, Lonely Bird 1998"></a>樹枝孤鳥 Lonely Tree, Lonely Bird 1998</h3><div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '少女的心 Young Girl\'s Heart',
 artist: '伍佰 & China Blue',
@@ -1155,51 +971,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/1998-SZ/12 怨嗟嘆.
 cover: '/songpack/WuBai/1998-SZ/cover.webp',
 lrc: '/songpack/WuBai/1998-SZ/12 怨嗟嘆.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer4")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap4.on("play",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("play",()=>{console.log("**"+document.title+"**")});ap4.on("loadstart",()=>{console.log("loadstart")});ap4.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4.on("loadeddata",()=>{console.log("loadeddata")});ap4.on("canplay",()=>{console.log("canplay")});ap4.on("canplaythrough",()=>{console.log("canplaythrough")});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("suspend",()=>{console.log("suspend")});ap4.on("play",()=>{console.log("play")});ap4.on("pause",()=>{console.log("pause")});ap4.on("waiting",()=>{console.log("waiting")});ap4.on("playing",()=>{console.log("playing")});ap4.on("seeking",()=>{console.log("seeking")});ap4.on("seeked",()=>{console.log("seeked")});ap4.on("error",()=>{console.log("error");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1211,20 +983,7 @@ lrc: '/songpack/WuBai/1998-SZ/12 怨嗟嘆.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="白鴿-White-Dove-1999"><a href="#白鴿-White-Dove-1999" class="headerlink" title="白鴿 White Dove 1999"></a>白鴿 White Dove 1999</h3>
-<div id="aplayer5" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer5"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="白鴿-White-Dove-1999"><a href="#白鴿-White-Dove-1999" class="headerlink" title="白鴿 White Dove 1999"></a>白鴿 White Dove 1999</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '上癮了 Addicted',
 artist: '伍佰 & China Blue',
@@ -1298,51 +1057,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/1999-BG/12 最後是�
 cover: '/songpack/WuBai/1999-BG/cover.webp',
 lrc: '/songpack/WuBai/1999-BG/12 最後是溫柔.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer5")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1352,20 +1067,7 @@ lrc: '/songpack/WuBai/1999-BG/12 最後是溫柔.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="夢的河流-Dream-River-2001"><a href="#夢的河流-Dream-River-2001" class="headerlink" title="夢的河流 Dream River 2001"></a>夢的河流 Dream River 2001</h3>
-<div id="aplayer6" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer6"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="夢的河流-Dream-River-2001"><a href="#夢的河流-Dream-River-2001" class="headerlink" title="夢的河流 Dream River 2001"></a>夢的河流 Dream River 2001</h3><div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '翅膀 Wings',
 artist: '伍佰 & China Blue',
@@ -1439,66 +1141,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2001-MD/12 夢的河�
 cover: '/songpack/WuBai/2001-MD/cover.webp',
 lrc: '/songpack/WuBai/2001-MD/12 夢的河流.lrc',
 },
-]
-    });
+]});ap6.on("play",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("play",()=>{console.log("**"+document.title+"**")});ap6.on("loadstart",()=>{console.log("loadstart")});ap6.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6.on("loadeddata",()=>{console.log("loadeddata")});ap6.on("canplay",()=>{console.log("canplay")});ap6.on("canplaythrough",()=>{console.log("canplaythrough")});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("suspend",()=>{console.log("suspend")});ap6.on("play",()=>{console.log("play")});ap6.on("pause",()=>{console.log("pause")});ap6.on("waiting",()=>{console.log("waiting")});ap6.on("playing",()=>{console.log("playing")});ap6.on("seeking",()=>{console.log("seeking")});ap6.on("seeked",()=>{console.log("seeked")});ap6.on("error",()=>{console.log("error");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer6")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="淚橋-Tear-Bridge-2003"><a href="#淚橋-Tear-Bridge-2003" class="headerlink" title="淚橋 Tear Bridge 2003"></a>淚橋 Tear Bridge 2003</h3>
-<div id="aplayer7" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer7"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="淚橋-Tear-Bridge-2003"><a href="#淚橋-Tear-Bridge-2003" class="headerlink" title="淚橋 Tear Bridge 2003"></a>淚橋 Tear Bridge 2003</h3><div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '淚橋 Tear Bridge',
 artist: '伍佰 & China Blue',
@@ -1572,66 +1217,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2003-LQ/12 花不香.
 cover: '/songpack/WuBai/2003-LQ/cover.webp',
 lrc: '/songpack/WuBai/2003-LQ/12 花不香.lrc',
 },
-]
-    });
+]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer7")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="雙面人-Two-Face-Man-2005"><a href="#雙面人-Two-Face-Man-2005" class="headerlink" title="雙面人 Two Face Man 2005"></a>雙面人 Two Face Man 2005</h3>
-<div id="aplayer8" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer8"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="雙面人-Two-Face-Man-2005"><a href="#雙面人-Two-Face-Man-2005" class="headerlink" title="雙面人 Two Face Man 2005"></a>雙面人 Two Face Man 2005</h3><div id="aplayer8" class="aplayerJS"></div><script>const ap8 = new APlayer({container: document.getElementById("aplayer8"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '厲害 Li Hai',
 artist: '伍佰 & China Blue',
@@ -1693,51 +1281,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2005-SM/10 莎哟娜�
 cover: '/songpack/WuBai/2005-SM/cover.webp',
 lrc: '/songpack/WuBai/2005-SM/10 莎哟娜啦.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer8")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap8.on("play",()=>{document.title=document.getElementById("aplayer8").getElementsByClassName("aplayer-music")[0].innerText;});ap8.on("play",()=>{console.log("**"+document.title+"**")});ap8.on("loadstart",()=>{console.log("loadstart")});ap8.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8.on("loadeddata",()=>{console.log("loadeddata")});ap8.on("canplay",()=>{console.log("canplay")});ap8.on("canplaythrough",()=>{console.log("canplaythrough")});ap8.on("stalled",()=>{console.log("stalled");});ap8.on("suspend",()=>{console.log("suspend")});ap8.on("play",()=>{console.log("play")});ap8.on("pause",()=>{console.log("pause")});ap8.on("waiting",()=>{console.log("waiting")});ap8.on("playing",()=>{console.log("playing")});ap8.on("seeking",()=>{console.log("seeking")});ap8.on("seeked",()=>{console.log("seeked")});ap8.on("error",()=>{console.log("error");});ap8.on("ended",()=>{console.log("ended");});ap8.on("abort",()=>{console.log("abort");});ap8.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1745,20 +1289,7 @@ lrc: '/songpack/WuBai/2005-SM/10 莎哟娜啦.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="純真年代-Innocent-Years-2006"><a href="#純真年代-Innocent-Years-2006" class="headerlink" title="純真年代 Innocent Years 2006"></a>純真年代 Innocent Years 2006</h3>
-<div id="aplayer9" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer9"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="純真年代-Innocent-Years-2006"><a href="#純真年代-Innocent-Years-2006" class="headerlink" title="純真年代 Innocent Years 2006"></a>純真年代 Innocent Years 2006</h3><div id="aplayer9" class="aplayerJS"></div><script>const ap9 = new APlayer({container: document.getElementById("aplayer9"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '我只要… I Just Want',
 artist: '伍佰 & China Blue',
@@ -1838,66 +1369,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2006-CZ/13 翻白.m4a
 cover: '/songpack/WuBai/2006-CZ/cover.webp',
 lrc: '/songpack/WuBai/2006-CZ/13 翻白.lrc',
 },
-]
-    });
+]});ap9.on("play",()=>{document.title=document.getElementById("aplayer9").getElementsByClassName("aplayer-music")[0].innerText;});ap9.on("play",()=>{console.log("**"+document.title+"**")});ap9.on("loadstart",()=>{console.log("loadstart")});ap9.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap9.on("loadeddata",()=>{console.log("loadeddata")});ap9.on("canplay",()=>{console.log("canplay")});ap9.on("canplaythrough",()=>{console.log("canplaythrough")});ap9.on("stalled",()=>{console.log("stalled");});ap9.on("suspend",()=>{console.log("suspend")});ap9.on("play",()=>{console.log("play")});ap9.on("pause",()=>{console.log("pause")});ap9.on("waiting",()=>{console.log("waiting")});ap9.on("playing",()=>{console.log("playing")});ap9.on("seeking",()=>{console.log("seeking")});ap9.on("seeked",()=>{console.log("seeked")});ap9.on("error",()=>{console.log("error");});ap9.on("ended",()=>{console.log("ended");});ap9.on("abort",()=>{console.log("abort");});ap9.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer9")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="太空彈-Spacebomb-2008"><a href="#太空彈-Spacebomb-2008" class="headerlink" title="太空彈 Spacebomb 2008"></a>太空彈 Spacebomb 2008</h3>
-<div id="aplayer10" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer10"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="太空彈-Spacebomb-2008"><a href="#太空彈-Spacebomb-2008" class="headerlink" title="太空彈 Spacebomb 2008"></a>太空彈 Spacebomb 2008</h3><div id="aplayer10" class="aplayerJS"></div><script>const ap10 = new APlayer({container: document.getElementById("aplayer10"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '太空彈 Spacebomb',
 artist: '伍佰 & China Blue',
@@ -1959,66 +1433,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2008-TK/10 時光雨.
 cover: '/songpack/WuBai/2008-TK/cover.webp',
 lrc: '/songpack/WuBai/2008-TK/10 時光雨.lrc',
 },
-]
-    });
+]});ap10.on("play",()=>{document.title=document.getElementById("aplayer10").getElementsByClassName("aplayer-music")[0].innerText;});ap10.on("play",()=>{console.log("**"+document.title+"**")});ap10.on("loadstart",()=>{console.log("loadstart")});ap10.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap10.on("loadeddata",()=>{console.log("loadeddata")});ap10.on("canplay",()=>{console.log("canplay")});ap10.on("canplaythrough",()=>{console.log("canplaythrough")});ap10.on("stalled",()=>{console.log("stalled");});ap10.on("suspend",()=>{console.log("suspend")});ap10.on("play",()=>{console.log("play")});ap10.on("pause",()=>{console.log("pause")});ap10.on("waiting",()=>{console.log("waiting")});ap10.on("playing",()=>{console.log("playing")});ap10.on("seeking",()=>{console.log("seeking")});ap10.on("seeked",()=>{console.log("seeked")});ap10.on("error",()=>{console.log("error");});ap10.on("ended",()=>{console.log("ended");});ap10.on("abort",()=>{console.log("abort");});ap10.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer10")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="詩情搖滾-Poetic-Rock-2009"><a href="#詩情搖滾-Poetic-Rock-2009" class="headerlink" title="詩情搖滾 Poetic Rock 2009"></a>詩情搖滾 Poetic Rock 2009</h3>
-<div id="aplayer11" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer11"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="詩情搖滾-Poetic-Rock-2009"><a href="#詩情搖滾-Poetic-Rock-2009" class="headerlink" title="詩情搖滾 Poetic Rock 2009"></a>詩情搖滾 Poetic Rock 2009</h3><div id="aplayer11" class="aplayerJS"></div><script>const ap11 = new APlayer({container: document.getElementById("aplayer11"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '如果這都不算愛 If This Is Not Love',
 artist: '伍佰 & China Blue',
@@ -2098,66 +1515,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2009-SQ/13 LISTEN TO 
 cover: '/songpack/WuBai/2009-SQ/cover.webp',
 lrc: '/songpack/WuBai/2009-SQ/13 LISTEN TO ME（听我说）.lrc',
 },
-]
-    });
+]});ap11.on("play",()=>{document.title=document.getElementById("aplayer11").getElementsByClassName("aplayer-music")[0].innerText;});ap11.on("play",()=>{console.log("**"+document.title+"**")});ap11.on("loadstart",()=>{console.log("loadstart")});ap11.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap11.on("loadeddata",()=>{console.log("loadeddata")});ap11.on("canplay",()=>{console.log("canplay")});ap11.on("canplaythrough",()=>{console.log("canplaythrough")});ap11.on("stalled",()=>{console.log("stalled");});ap11.on("suspend",()=>{console.log("suspend")});ap11.on("play",()=>{console.log("play")});ap11.on("pause",()=>{console.log("pause")});ap11.on("waiting",()=>{console.log("waiting")});ap11.on("playing",()=>{console.log("playing")});ap11.on("seeking",()=>{console.log("seeking")});ap11.on("seeked",()=>{console.log("seeked")});ap11.on("error",()=>{console.log("error");});ap11.on("ended",()=>{console.log("ended");});ap11.on("abort",()=>{console.log("abort");});ap11.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer11")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="單程車票-One-Way-Ticket-2011"><a href="#單程車票-One-Way-Ticket-2011" class="headerlink" title="單程車票 One Way Ticket 2011"></a>單程車票 One Way Ticket 2011</h3>
-<div id="aplayer12" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer12"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="單程車票-One-Way-Ticket-2011"><a href="#單程車票-One-Way-Ticket-2011" class="headerlink" title="單程車票 One Way Ticket 2011"></a>單程車票 One Way Ticket 2011</h3><div id="aplayer12" class="aplayerJS"></div><script>const ap12 = new APlayer({container: document.getElementById("aplayer12"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '藍月 Blue Moon',
 artist: '伍佰 & China Blue',
@@ -2231,66 +1591,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2011-DC/12 梦醒时�
 cover: '/songpack/WuBai/2011-DC/cover.webp',
 lrc: '/songpack/WuBai/2011-DC/12 梦醒时分(抒情摇滚版).lrc',
 },
-]
-    });
+]});ap12.on("play",()=>{document.title=document.getElementById("aplayer12").getElementsByClassName("aplayer-music")[0].innerText;});ap12.on("play",()=>{console.log("**"+document.title+"**")});ap12.on("loadstart",()=>{console.log("loadstart")});ap12.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap12.on("loadeddata",()=>{console.log("loadeddata")});ap12.on("canplay",()=>{console.log("canplay")});ap12.on("canplaythrough",()=>{console.log("canplaythrough")});ap12.on("stalled",()=>{console.log("stalled");});ap12.on("suspend",()=>{console.log("suspend")});ap12.on("play",()=>{console.log("play")});ap12.on("pause",()=>{console.log("pause")});ap12.on("waiting",()=>{console.log("waiting")});ap12.on("playing",()=>{console.log("playing")});ap12.on("seeking",()=>{console.log("seeking")});ap12.on("seeked",()=>{console.log("seeked")});ap12.on("error",()=>{console.log("error");});ap12.on("ended",()=>{console.log("ended");});ap12.on("abort",()=>{console.log("abort");});ap12.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer12")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="無盡閃亮的哀愁-Endless-Shining-Sadness-2013"><a href="#無盡閃亮的哀愁-Endless-Shining-Sadness-2013" class="headerlink" title="無盡閃亮的哀愁 Endless Shining Sadness 2013"></a>無盡閃亮的哀愁 Endless Shining Sadness 2013</h3>
-<div id="aplayer13" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer13"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="無盡閃亮的哀愁-Endless-Shining-Sadness-2013"><a href="#無盡閃亮的哀愁-Endless-Shining-Sadness-2013" class="headerlink" title="無盡閃亮的哀愁 Endless Shining Sadness 2013"></a>無盡閃亮的哀愁 Endless Shining Sadness 2013</h3><div id="aplayer13" class="aplayerJS"></div><script>const ap13 = new APlayer({container: document.getElementById("aplayer13"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '閃亮的哀愁 Shining Sadness',
 artist: '伍佰 & China Blue',
@@ -2358,66 +1661,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2013-WJ/11 太极.m4a
 cover: '/songpack/WuBai/2013-WJ/cover.webp',
 lrc: '/songpack/WuBai/2013-WJ/11 太极.lrc',
 },
-]
-    });
+]});ap13.on("play",()=>{document.title=document.getElementById("aplayer13").getElementsByClassName("aplayer-music")[0].innerText;});ap13.on("play",()=>{console.log("**"+document.title+"**")});ap13.on("loadstart",()=>{console.log("loadstart")});ap13.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap13.on("loadeddata",()=>{console.log("loadeddata")});ap13.on("canplay",()=>{console.log("canplay")});ap13.on("canplaythrough",()=>{console.log("canplaythrough")});ap13.on("stalled",()=>{console.log("stalled");});ap13.on("suspend",()=>{console.log("suspend")});ap13.on("play",()=>{console.log("play")});ap13.on("pause",()=>{console.log("pause")});ap13.on("waiting",()=>{console.log("waiting")});ap13.on("playing",()=>{console.log("playing")});ap13.on("seeking",()=>{console.log("seeking")});ap13.on("seeked",()=>{console.log("seeked")});ap13.on("error",()=>{console.log("error");});ap13.on("ended",()=>{console.log("ended");});ap13.on("abort",()=>{console.log("abort");});ap13.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer13")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="釘子花-Ding-Zi-Hua-2016"><a href="#釘子花-Ding-Zi-Hua-2016" class="headerlink" title="釘子花 Ding Zi Hua 2016"></a>釘子花 Ding Zi Hua 2016</h3>
-<div id="aplayer14" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer14"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="釘子花-Ding-Zi-Hua-2016"><a href="#釘子花-Ding-Zi-Hua-2016" class="headerlink" title="釘子花 Ding Zi Hua 2016"></a>釘子花 Ding Zi Hua 2016</h3><div id="aplayer14" class="aplayerJS"></div><script>const ap14 = new APlayer({container: document.getElementById("aplayer14"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '釘子花',
 artist: '伍佰 & China Blue',
@@ -2485,51 +1731,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2016-DZ/11 清風吹�
 cover: '/songpack/WuBai/2016-DZ/cover.webp',
 lrc: '/songpack/WuBai/2016-DZ/11 清風吹目墘.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer14")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap14.on("play",()=>{document.title=document.getElementById("aplayer14").getElementsByClassName("aplayer-music")[0].innerText;});ap14.on("play",()=>{console.log("**"+document.title+"**")});ap14.on("loadstart",()=>{console.log("loadstart")});ap14.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap14.on("loadeddata",()=>{console.log("loadeddata")});ap14.on("canplay",()=>{console.log("canplay")});ap14.on("canplaythrough",()=>{console.log("canplaythrough")});ap14.on("stalled",()=>{console.log("stalled");});ap14.on("suspend",()=>{console.log("suspend")});ap14.on("play",()=>{console.log("play")});ap14.on("pause",()=>{console.log("pause")});ap14.on("waiting",()=>{console.log("waiting")});ap14.on("playing",()=>{console.log("playing")});ap14.on("seeking",()=>{console.log("seeking")});ap14.on("seeked",()=>{console.log("seeked")});ap14.on("error",()=>{console.log("error");});ap14.on("ended",()=>{console.log("ended");});ap14.on("abort",()=>{console.log("abort");});ap14.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -2537,20 +1739,7 @@ lrc: '/songpack/WuBai/2016-DZ/11 清風吹目墘.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="讓水倒流-2019"><a href="#讓水倒流-2019" class="headerlink" title="讓水倒流 2019"></a>讓水倒流 2019</h3>
-<div id="aplayer15" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer15"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="讓水倒流-2019"><a href="#讓水倒流-2019" class="headerlink" title="讓水倒流 2019"></a>讓水倒流 2019</h3><div id="aplayer15" class="aplayerJS"></div><script>const ap15 = new APlayer({container: document.getElementById("aplayer15"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '讓水倒流',
 artist: '伍佰 & China Blue',
@@ -2624,66 +1813,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2019-RS/12 唯我独�
 cover: '/songpack/WuBai/2019-RS/cover.webp',
 lrc: '/songpack/WuBai/2019-RS/12 唯我独大.lrc',
 },
-]
-    });
+]});ap15.on("play",()=>{document.title=document.getElementById("aplayer15").getElementsByClassName("aplayer-music")[0].innerText;});ap15.on("play",()=>{console.log("**"+document.title+"**")});ap15.on("loadstart",()=>{console.log("loadstart")});ap15.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap15.on("loadeddata",()=>{console.log("loadeddata")});ap15.on("canplay",()=>{console.log("canplay")});ap15.on("canplaythrough",()=>{console.log("canplaythrough")});ap15.on("stalled",()=>{console.log("stalled");});ap15.on("suspend",()=>{console.log("suspend")});ap15.on("play",()=>{console.log("play")});ap15.on("pause",()=>{console.log("pause")});ap15.on("waiting",()=>{console.log("waiting")});ap15.on("playing",()=>{console.log("playing")});ap15.on("seeking",()=>{console.log("seeking")});ap15.on("seeked",()=>{console.log("seeked")});ap15.on("error",()=>{console.log("error");});ap15.on("ended",()=>{console.log("ended");});ap15.on("abort",()=>{console.log("abort");});ap15.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer15")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="純白的起點-Pure-White-Starting-Point-2023"><a href="#純白的起點-Pure-White-Starting-Point-2023" class="headerlink" title="純白的起點 Pure White Starting Point 2023"></a>純白的起點 Pure White Starting Point 2023</h3>
-<div id="aplayer16" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer16"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="純白的起點-Pure-White-Starting-Point-2023"><a href="#純白的起點-Pure-White-Starting-Point-2023" class="headerlink" title="純白的起點 Pure White Starting Point 2023"></a>純白的起點 Pure White Starting Point 2023</h3><div id="aplayer16" class="aplayerJS"></div><script>const ap16 = new APlayer({container: document.getElementById("aplayer16"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '天使',
 artist: '伍佰 & China Blue',
@@ -2751,51 +1883,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/WuBai/2023-CB/11 不要放�
 cover: '/songpack/WuBai/2023-CB/cover.webp',
 lrc: '/songpack/WuBai/2023-CB/11 不要放棄.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer16")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap16.on("play",()=>{document.title=document.getElementById("aplayer16").getElementsByClassName("aplayer-music")[0].innerText;});ap16.on("play",()=>{console.log("**"+document.title+"**")});ap16.on("loadstart",()=>{console.log("loadstart")});ap16.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap16.on("loadeddata",()=>{console.log("loadeddata")});ap16.on("canplay",()=>{console.log("canplay")});ap16.on("canplaythrough",()=>{console.log("canplaythrough")});ap16.on("stalled",()=>{console.log("stalled");});ap16.on("suspend",()=>{console.log("suspend")});ap16.on("play",()=>{console.log("play")});ap16.on("pause",()=>{console.log("pause")});ap16.on("waiting",()=>{console.log("waiting")});ap16.on("playing",()=>{console.log("playing")});ap16.on("seeking",()=>{console.log("seeking")});ap16.on("seeked",()=>{console.log("seeked")});ap16.on("error",()=>{console.log("error");});ap16.on("ended",()=>{console.log("ended");});ap16.on("abort",()=>{console.log("abort");});ap16.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
