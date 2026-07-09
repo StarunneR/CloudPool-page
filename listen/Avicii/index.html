@@ -686,7 +686,20 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="The-Singles-2011"><a href="#The-Singles-2011" class="headerlink" title="The Singles 2011"></a>The Singles 2011</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+        <h3 id="The-Singles-2011"><a href="#The-Singles-2011" class="headerlink" title="The Singles 2011"></a>The Singles 2011</h3>
+<div id="aplayer1" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer1"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'My Feelings for You (Radio Edit)',
 artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2011_TS/01 My Feelings for You (Radio Edit).m4a',
@@ -740,10 +753,67 @@ artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2011_TS/09 Muja.m4a',
 cover: '/songpack/Avicii/2011_TS/cover.webp',
 lrc: '',
-},]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+},]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer1")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <h3 id="True-2013"><a href="#True-2013" class="headerlink" title="True 2013"></a>True 2013</h3><p>GENRE: HOUSE</p>
-<div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+
+<div id="aplayer3" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer3"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Wake Me Up',
 artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2013_Tr/Wake Me Up.m4a',
@@ -847,7 +917,51 @@ artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2013_Tr/LEVELS(Bonus Track).m4a',
 cover: '/songpack/Avicii/2013_Tr/cover.webp',
 lrc: '/songpack/Avicii/2013_Tr/LEVELS(Bonus Track).lrc',
-}]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer3")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -858,7 +972,20 @@ lrc: '/songpack/Avicii/2013_Tr/LEVELS(Bonus Track).lrc',
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 <h3 id="True-Avicii-By-Avicii-2014"><a href="#True-Avicii-By-Avicii-2014" class="headerlink" title="True: Avicii By Avicii 2014"></a>True: Avicii By Avicii 2014</h3><p>GENRE: DANCE</p>
-<div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+
+<div id="aplayer4" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer4"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Wake Me Up (Avicii By Avicii)',
 artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2014_TA/Wake Me Up (Avicii by Avicii).m4a',
@@ -913,10 +1040,67 @@ artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2014_TA/Lay Me Down (Avicii by Avicii).m4a',
 cover: '/songpack/Avicii/2014_TA/cover.webp',
 lrc: '/songpack/Avicii/2014_TA/Lay Me Down (Avicii by Avicii).lrc',
-}]});ap4.on("play",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("play",()=>{console.log("**"+document.title+"**")});ap4.on("loadstart",()=>{console.log("loadstart")});ap4.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4.on("loadeddata",()=>{console.log("loadeddata")});ap4.on("canplay",()=>{console.log("canplay")});ap4.on("canplaythrough",()=>{console.log("canplaythrough")});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("suspend",()=>{console.log("suspend")});ap4.on("play",()=>{console.log("play")});ap4.on("pause",()=>{console.log("pause")});ap4.on("waiting",()=>{console.log("waiting")});ap4.on("playing",()=>{console.log("playing")});ap4.on("seeking",()=>{console.log("seeking")});ap4.on("seeked",()=>{console.log("seeked")});ap4.on("error",()=>{console.log("error");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer4")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <h3 id="Stories-2015"><a href="#Stories-2015" class="headerlink" title="Stories 2015"></a>Stories 2015</h3><p>GENRE: DANCE</p>
-<div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+
+<div id="aplayer5" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer5"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Waiting For Love',
 artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2015_St/Waiting For Love.m4a',
@@ -1027,9 +1211,66 @@ artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2015_St/The Nights.m4a',
 cover: '/songpack/Avicii/2015_St/cover.webp',
 lrc: '/songpack/Avicii/2015_St/The Nights.lrc',
-}]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
 
-<h3 id="AVICI-01-EP-2017"><a href="#AVICI-01-EP-2017" class="headerlink" title="AVĪCI (01) - EP 2017"></a>AVĪCI (01) - EP 2017</h3><div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer5")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="AVICI-01-EP-2017"><a href="#AVICI-01-EP-2017" class="headerlink" title="AVĪCI (01) - EP 2017"></a>AVĪCI (01) - EP 2017</h3>
+<div id="aplayer6" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer6"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Friend Of Mine',
 artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2017_A0/Friend Of Mine.m4a',
@@ -1070,7 +1311,51 @@ artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2017_A0/So Much Better.m4a',
 cover: '/songpack/Avicii/2017_A0/cover.webp',
 lrc: '/songpack/Avicii/2017_A0/So Much Better.lrc',
-}]});ap6.on("play",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("play",()=>{console.log("**"+document.title+"**")});ap6.on("loadstart",()=>{console.log("loadstart")});ap6.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6.on("loadeddata",()=>{console.log("loadeddata")});ap6.on("canplay",()=>{console.log("canplay")});ap6.on("canplaythrough",()=>{console.log("canplaythrough")});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("suspend",()=>{console.log("suspend")});ap6.on("play",()=>{console.log("play")});ap6.on("pause",()=>{console.log("pause")});ap6.on("waiting",()=>{console.log("waiting")});ap6.on("playing",()=>{console.log("playing")});ap6.on("seeking",()=>{console.log("seeking")});ap6.on("seeked",()=>{console.log("seeked")});ap6.on("error",()=>{console.log("error");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer6")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1079,7 +1364,20 @@ lrc: '/songpack/Avicii/2017_A0/So Much Better.lrc',
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
 <h3 id="TIM-2019"><a href="#TIM-2019" class="headerlink" title="TIM 2019"></a>TIM 2019</h3><p>GENRE: DANCE</p>
-<div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+
+<div id="aplayer7" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer7"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Peace Of Mind (feat. Vargas & Lagola)',
 artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2019_TI/Peace Of Mind (feat. Vargas & Lagola).m4a',
@@ -1162,7 +1460,51 @@ artist: 'Avicii',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/Avicii/2019_TI/Fades Away (feat. Noonie Bao).m4a',
 cover: '/songpack/Avicii/2019_TI/cover.webp',
 lrc: '/songpack/Avicii/2019_TI/Fades Away (feat. Noonie Bao).lrc',
-}]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer7")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">

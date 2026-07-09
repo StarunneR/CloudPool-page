@@ -677,7 +677,20 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <div id="aplayerundefined" class="aplayerJS"></div><script>const apundefined = new APlayer({container: document.getElementById("aplayerundefined"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+        
+<div id="aplayerundefined" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayerundefined"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: '天涯歌女',
 artist: '周璇',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/ZhouDM/天涯歌女.m4a',
@@ -802,7 +815,51 @@ artist: '周璇',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/ZhouDM/前程萬里.m4a',
 cover: '/songpack/ZhouDM/cover.jpg',
 lrc: '/songpack/ZhouDM/前程萬里.lrc',
-}]});apundefined.on("play",()=>{document.title=document.getElementById("aplayerundefined").getElementsByClassName("aplayer-music")[0].innerText;});apundefined.on("play",()=>{console.log("**"+document.title+"**")});apundefined.on("loadstart",()=>{console.log("loadstart")});apundefined.on("loadedmetadata",()=>{console.log("loadedmetadata")});apundefined.on("loadeddata",()=>{console.log("loadeddata")});apundefined.on("canplay",()=>{console.log("canplay")});apundefined.on("canplaythrough",()=>{console.log("canplaythrough")});apundefined.on("stalled",()=>{console.log("stalled");});apundefined.on("suspend",()=>{console.log("suspend")});apundefined.on("play",()=>{console.log("play")});apundefined.on("pause",()=>{console.log("pause")});apundefined.on("waiting",()=>{console.log("waiting")});apundefined.on("playing",()=>{console.log("playing")});apundefined.on("seeking",()=>{console.log("seeking")});apundefined.on("seeked",()=>{console.log("seeked")});apundefined.on("error",()=>{console.log("error");});apundefined.on("ended",()=>{console.log("ended");});apundefined.on("abort",()=>{console.log("abort");});apundefined.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayerundefined")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <hr>
 <p>专辑介绍：1997 Digital Remaster Remastered by: Denon-Nippon Columbia, Mixing Engineer: 保坂弘幸</p>

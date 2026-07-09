@@ -677,7 +677,20 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="DeAnn-2019"><a href="#DeAnn-2019" class="headerlink" title="DeAnn 2019"></a>DeAnn 2019</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+        <h3 id="DeAnn-2019"><a href="#DeAnn-2019" class="headerlink" title="DeAnn 2019"></a>DeAnn 2019</h3>
+<div id="aplayer1" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer1"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Flying or Crying',
 artist: 'Zach Bryan',
@@ -751,9 +764,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2019_DA/12 Sweet
 cover: '/songpack/Zach_Bryan/2019_DA/cover.webp',
 lrc: '/songpack/Zach_Bryan/2019_DA/12 Sweet DeAnn.lrc',
 },
-]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="Elisabeth-2020"><a href="#Elisabeth-2020" class="headerlink" title="Elisabeth 2020"></a>Elisabeth 2020</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer1")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="Elisabeth-2020"><a href="#Elisabeth-2020" class="headerlink" title="Elisabeth 2020"></a>Elisabeth 2020</h3>
+<div id="aplayer2" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer2"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Come as You Are',
 artist: 'Zach Bryan',
@@ -863,9 +933,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2020_El/18 Reviv
 cover: '/songpack/Zach_Bryan/2020_El/cover.webp',
 lrc: '/songpack/Zach_Bryan/2020_El/18 Revival.lrc',
 },
-]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="Quiet-Heavy-Dreams-EP-2020"><a href="#Quiet-Heavy-Dreams-EP-2020" class="headerlink" title="Quiet, Heavy Dreams - EP 2020"></a>Quiet, Heavy Dreams - EP 2020</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer2")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="Quiet-Heavy-Dreams-EP-2020"><a href="#Quiet-Heavy-Dreams-EP-2020" class="headerlink" title="Quiet, Heavy Dreams - EP 2020"></a>Quiet, Heavy Dreams - EP 2020</h3>
+<div id="aplayer3" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer3"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Let You Down',
 artist: 'Zach Bryan',
@@ -903,9 +1030,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2020_QH/06 Quiet
 cover: '/songpack/Zach_Bryan/2020_QH/cover.webp',
 lrc: '/songpack/Zach_Bryan/2020_QH/06 Quiet, Heavy Dreams.lrc',
 },
-]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="American-Heartbreak-2022"><a href="#American-Heartbreak-2022" class="headerlink" title="American Heartbreak 2022"></a>American Heartbreak 2022</h3><div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer3")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="American-Heartbreak-2022"><a href="#American-Heartbreak-2022" class="headerlink" title="American Heartbreak 2022"></a>American Heartbreak 2022</h3>
+<div id="aplayer4" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer4"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Late July',
 artist: 'Zach Bryan',
@@ -1111,7 +1295,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2022_AH/34 This 
 cover: '/songpack/Zach_Bryan/2022_AH/cover.webp',
 lrc: '/songpack/Zach_Bryan/2022_AH/34 This Road I Know.lrc',
 },
-]});ap4.on("play",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("play",()=>{console.log("**"+document.title+"**")});ap4.on("loadstart",()=>{console.log("loadstart")});ap4.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4.on("loadeddata",()=>{console.log("loadeddata")});ap4.on("canplay",()=>{console.log("canplay")});ap4.on("canplaythrough",()=>{console.log("canplaythrough")});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("suspend",()=>{console.log("suspend")});ap4.on("play",()=>{console.log("play")});ap4.on("pause",()=>{console.log("pause")});ap4.on("waiting",()=>{console.log("waiting")});ap4.on("playing",()=>{console.log("playing")});ap4.on("seeking",()=>{console.log("seeking")});ap4.on("seeked",()=>{console.log("seeked")});ap4.on("error",()=>{console.log("error");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer4")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1120,7 +1348,20 @@ lrc: '/songpack/Zach_Bryan/2022_AH/34 This Road I Know.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Summertime-Blues-EP-2022"><a href="#Summertime-Blues-EP-2022" class="headerlink" title="Summertime Blues - EP 2022"></a>Summertime Blues - EP 2022</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Summertime-Blues-EP-2022"><a href="#Summertime-Blues-EP-2022" class="headerlink" title="Summertime Blues - EP 2022"></a>Summertime Blues - EP 2022</h3>
+<div id="aplayer5" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer5"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Quittin\' Time',
 artist: 'Zach Bryan',
@@ -1176,7 +1417,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2022_SB/09 All t
 cover: '/songpack/Zach_Bryan/2022_SB/cover.webp',
 lrc: '/songpack/Zach_Bryan/2022_SB/09 All the Time.lrc',
 },
-]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer5")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1184,7 +1469,20 @@ lrc: '/songpack/Zach_Bryan/2022_SB/09 All the Time.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Zach-Bryan-2023"><a href="#Zach-Bryan-2023" class="headerlink" title="Zach Bryan 2023"></a>Zach Bryan 2023</h3><div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Zach-Bryan-2023"><a href="#Zach-Bryan-2023" class="headerlink" title="Zach Bryan 2023"></a>Zach Bryan 2023</h3>
+<div id="aplayer6" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer6"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Fear and Friday\'s (Poem)',
 artist: 'Zach Bryan',
@@ -1282,7 +1580,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2023_ZB/16 Oklah
 cover: '/songpack/Zach_Bryan/2023_ZB/cover.webp',
 lrc: '/songpack/Zach_Bryan/2023_ZB/16 Oklahoman Son.lrc',
 },
-]});ap6.on("play",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("play",()=>{console.log("**"+document.title+"**")});ap6.on("loadstart",()=>{console.log("loadstart")});ap6.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6.on("loadeddata",()=>{console.log("loadeddata")});ap6.on("canplay",()=>{console.log("canplay")});ap6.on("canplaythrough",()=>{console.log("canplaythrough")});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("suspend",()=>{console.log("suspend")});ap6.on("play",()=>{console.log("play")});ap6.on("pause",()=>{console.log("pause")});ap6.on("waiting",()=>{console.log("waiting")});ap6.on("playing",()=>{console.log("playing")});ap6.on("seeking",()=>{console.log("seeking")});ap6.on("seeked",()=>{console.log("seeked")});ap6.on("error",()=>{console.log("error");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer6")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1293,7 +1635,20 @@ lrc: '/songpack/Zach_Bryan/2023_ZB/16 Oklahoman Son.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Boys-Of-Faith-EP-2023"><a href="#Boys-Of-Faith-EP-2023" class="headerlink" title="Boys Of Faith - EP 2023"></a>Boys Of Faith - EP 2023</h3><div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Boys-Of-Faith-EP-2023"><a href="#Boys-Of-Faith-EP-2023" class="headerlink" title="Boys Of Faith - EP 2023"></a>Boys Of Faith - EP 2023</h3>
+<div id="aplayer7" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer7"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Nine Ball',
 artist: 'Zach Bryan',
@@ -1325,7 +1680,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2023_BO/05 Pain,
 cover: '/songpack/Zach_Bryan/2023_BO/cover.webp',
 lrc: '/songpack/Zach_Bryan/2023_BO/05 Pain, Sweet, Pain.lrc',
 },
-]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer7")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1335,7 +1734,20 @@ lrc: '/songpack/Zach_Bryan/2023_BO/05 Pain, Sweet, Pain.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="The-Great-American-Bar-Scene-2024"><a href="#The-Great-American-Bar-Scene-2024" class="headerlink" title="The Great American Bar Scene 2024"></a>The Great American Bar Scene 2024</h3><div id="aplayer8" class="aplayerJS"></div><script>const ap8 = new APlayer({container: document.getElementById("aplayer8"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="The-Great-American-Bar-Scene-2024"><a href="#The-Great-American-Bar-Scene-2024" class="headerlink" title="The Great American Bar Scene 2024"></a>The Great American Bar Scene 2024</h3>
+<div id="aplayer8" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer8"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Lucky Enough (Poem)',
 artist: 'Zach Bryan',
@@ -1451,7 +1863,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2024_TG/19 Bathw
 cover: '/songpack/Zach_Bryan/2024_TG/cover.webp',
 lrc: '/songpack/Zach_Bryan/2024_TG/19 Bathwater.lrc',
 },
-]});ap8.on("play",()=>{document.title=document.getElementById("aplayer8").getElementsByClassName("aplayer-music")[0].innerText;});ap8.on("play",()=>{console.log("**"+document.title+"**")});ap8.on("loadstart",()=>{console.log("loadstart")});ap8.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8.on("loadeddata",()=>{console.log("loadeddata")});ap8.on("canplay",()=>{console.log("canplay")});ap8.on("canplaythrough",()=>{console.log("canplaythrough")});ap8.on("stalled",()=>{console.log("stalled");});ap8.on("suspend",()=>{console.log("suspend")});ap8.on("play",()=>{console.log("play")});ap8.on("pause",()=>{console.log("pause")});ap8.on("waiting",()=>{console.log("waiting")});ap8.on("playing",()=>{console.log("playing")});ap8.on("seeking",()=>{console.log("seeking")});ap8.on("seeked",()=>{console.log("seeked")});ap8.on("error",()=>{console.log("error");});ap8.on("ended",()=>{console.log("ended");});ap8.on("abort",()=>{console.log("abort");});ap8.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer8")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1463,7 +1919,20 @@ lrc: '/songpack/Zach_Bryan/2024_TG/19 Bathwater.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="With-Heaven-On-Top-2026"><a href="#With-Heaven-On-Top-2026" class="headerlink" title="With Heaven On Top 2026"></a>With Heaven On Top 2026</h3><div id="aplayer9" class="aplayerJS"></div><script>const ap9 = new APlayer({container: document.getElementById("aplayer9"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="With-Heaven-On-Top-2026"><a href="#With-Heaven-On-Top-2026" class="headerlink" title="With Heaven On Top 2026"></a>With Heaven On Top 2026</h3>
+<div id="aplayer9" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer9"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Down, Down, Stream',
 artist: 'Zach Bryan',
@@ -1615,7 +2084,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Zach_Bryan/2026_WH/25 With 
 cover: '/songpack/Zach_Bryan/2026_WH/cover.webp',
 lrc: '/songpack/Zach_Bryan/2026_WH/25 With Heaven On Top.lrc',
 },
-]});ap9.on("play",()=>{document.title=document.getElementById("aplayer9").getElementsByClassName("aplayer-music")[0].innerText;});ap9.on("play",()=>{console.log("**"+document.title+"**")});ap9.on("loadstart",()=>{console.log("loadstart")});ap9.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap9.on("loadeddata",()=>{console.log("loadeddata")});ap9.on("canplay",()=>{console.log("canplay")});ap9.on("canplaythrough",()=>{console.log("canplaythrough")});ap9.on("stalled",()=>{console.log("stalled");});ap9.on("suspend",()=>{console.log("suspend")});ap9.on("play",()=>{console.log("play")});ap9.on("pause",()=>{console.log("pause")});ap9.on("waiting",()=>{console.log("waiting")});ap9.on("playing",()=>{console.log("playing")});ap9.on("seeking",()=>{console.log("seeking")});ap9.on("seeked",()=>{console.log("seeked")});ap9.on("error",()=>{console.log("error");});ap9.on("ended",()=>{console.log("ended");});ap9.on("abort",()=>{console.log("abort");});ap9.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer9")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">

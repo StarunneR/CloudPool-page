@@ -686,7 +686,20 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="Just-a-Little-More-Love-2002"><a href="#Just-a-Little-More-Love-2002" class="headerlink" title="Just a Little More Love 2002"></a>Just a Little More Love 2002</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+        <h3 id="Just-a-Little-More-Love-2002"><a href="#Just-a-Little-More-Love-2002" class="headerlink" title="Just a Little More Love 2002"></a>Just a Little More Love 2002</h3>
+<div id="aplayer1" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer1"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Just A Little More Love',
 artist: 'David Guetta',
@@ -766,7 +779,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2002_JA/13 Lat
 cover: '/songpack/David_Guetta/2002_JA/cover.webp',
 lrc: '',
 },
-]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer1")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -774,7 +831,20 @@ lrc: '',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Guetta-Blaster-2004"><a href="#Guetta-Blaster-2004" class="headerlink" title="Guetta Blaster 2004"></a>Guetta Blaster 2004</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="Guetta-Blaster-2004"><a href="#Guetta-Blaster-2004" class="headerlink" title="Guetta Blaster 2004"></a>Guetta Blaster 2004</h3>
+<div id="aplayer2" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer2"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Money (Radio Edit) (feat. Chris Willis & Mone)',
 artist: 'David Guetta',
@@ -848,9 +918,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2004_GB/12 Las
 cover: '/songpack/David_Guetta/2004_GB/cover.webp',
 lrc: '/songpack/David_Guetta/2004_GB/12 Last Train (feat. Miss Thing).lrc',
 },
-]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h3 id="Pop-Life-2007"><a href="#Pop-Life-2007" class="headerlink" title="Pop Life 2007"></a>Pop Life 2007</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer2")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h3 id="Pop-Life-2007"><a href="#Pop-Life-2007" class="headerlink" title="Pop Life 2007"></a>Pop Life 2007</h3>
+<div id="aplayer3" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer3"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Baby When The Light (with Steve Angello feat. Cozi)',
 artist: 'David Guetta',
@@ -930,7 +1057,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2007_PL/13 Lov
 cover: '/songpack/David_Guetta/2007_PL/cover.webp',
 lrc: '/songpack/David_Guetta/2007_PL/13 Love Is Gone (Fred Rister & Joachim Garraud Radio Edit RMX) (with Chris Willis).lrc',
 },
-]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer3")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -940,7 +1111,20 @@ lrc: '/songpack/David_Guetta/2007_PL/13 Love Is Gone (Fred Rister & Joachim Garr
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="One-Love-2009"><a href="#One-Love-2009" class="headerlink" title="One Love 2009"></a>One Love 2009</h3><h4 id="CD1"><a href="#CD1" class="headerlink" title="CD1"></a>CD1</h4><div id="aplayer4A" class="aplayerJS"></div><script>const ap4A = new APlayer({container: document.getElementById("aplayer4A"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+<h3 id="One-Love-2009"><a href="#One-Love-2009" class="headerlink" title="One Love 2009"></a>One Love 2009</h3><h4 id="CD1"><a href="#CD1" class="headerlink" title="CD1"></a>CD1</h4>
+<div id="aplayer4A" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer4A"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Sexy Bitch (feat. Akon)',
 artist: 'David Guetta',
@@ -1032,9 +1216,66 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2009_OL/1.15 I
 cover: '/songpack/David_Guetta/2009_OL/cover.webp',
 lrc: '/songpack/David_Guetta/2009_OL/1.15 I Wanna Go Crazy (feat. will.i..lrc',
 },
-]});ap4A.on("play",()=>{document.title=document.getElementById("aplayer4A").getElementsByClassName("aplayer-music")[0].innerText;});ap4A.on("play",()=>{console.log("**"+document.title+"**")});ap4A.on("loadstart",()=>{console.log("loadstart")});ap4A.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4A.on("loadeddata",()=>{console.log("loadeddata")});ap4A.on("canplay",()=>{console.log("canplay")});ap4A.on("canplaythrough",()=>{console.log("canplaythrough")});ap4A.on("stalled",()=>{console.log("stalled");});ap4A.on("suspend",()=>{console.log("suspend")});ap4A.on("play",()=>{console.log("play")});ap4A.on("pause",()=>{console.log("pause")});ap4A.on("waiting",()=>{console.log("waiting")});ap4A.on("playing",()=>{console.log("playing")});ap4A.on("seeking",()=>{console.log("seeking")});ap4A.on("seeked",()=>{console.log("seeked")});ap4A.on("error",()=>{console.log("error");});ap4A.on("ended",()=>{console.log("ended");});ap4A.on("abort",()=>{console.log("abort");});ap4A.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
 
-<h4 id="CD2"><a href="#CD2" class="headerlink" title="CD2"></a>CD2</h4><div id="aplayer4B" class="aplayerJS"></div><script>const ap4B = new APlayer({container: document.getElementById("aplayer4B"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer4A")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="CD2"><a href="#CD2" class="headerlink" title="CD2"></a>CD2</h4>
+<div id="aplayer4B" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer4B"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'When Love Takes Over (feat. Kelly Rowland) [Electro Extended Continuous Mix Version]',
 artist: 'David Guetta',
@@ -1132,7 +1373,51 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2009_OL/2.16 T
 cover: '/songpack/David_Guetta/2009_OL/cover.webp',
 lrc: '',
 },
-]});ap4B.on("play",()=>{document.title=document.getElementById("aplayer4B").getElementsByClassName("aplayer-music")[0].innerText;});ap4B.on("play",()=>{console.log("**"+document.title+"**")});ap4B.on("loadstart",()=>{console.log("loadstart")});ap4B.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4B.on("loadeddata",()=>{console.log("loadeddata")});ap4B.on("canplay",()=>{console.log("canplay")});ap4B.on("canplaythrough",()=>{console.log("canplaythrough")});ap4B.on("stalled",()=>{console.log("stalled");});ap4B.on("suspend",()=>{console.log("suspend")});ap4B.on("play",()=>{console.log("play")});ap4B.on("pause",()=>{console.log("pause")});ap4B.on("waiting",()=>{console.log("waiting")});ap4B.on("playing",()=>{console.log("playing")});ap4B.on("seeking",()=>{console.log("seeking")});ap4B.on("seeked",()=>{console.log("seeked")});ap4B.on("error",()=>{console.log("error");});ap4B.on("ended",()=>{console.log("ended");});ap4B.on("abort",()=>{console.log("abort");});ap4B.on("emptied",()=>{console.log("emptied");});</script>
+]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer4B")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1143,7 +1428,20 @@ lrc: '',
 <h3 id="One-More-Love-2010"><a href="#One-More-Love-2010" class="headerlink" title="One More Love 2010"></a>One More Love 2010</h3><ul>
 <li>Genre: EDM</li>
 </ul>
-<h4 id="CD1-1"><a href="#CD1-1" class="headerlink" title="CD1"></a>CD1</h4><div id="aplayer5A" class="aplayerJS"></div><script>const ap5A = new APlayer({container: document.getElementById("aplayer5A"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+<h4 id="CD1-1"><a href="#CD1-1" class="headerlink" title="CD1"></a>CD1</h4>
+<div id="aplayer5A" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer5A"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'When Love Takes Over (feat. Kelly Rowland)',
 artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2010_OM/CD1/When Love Takes Over (feat. Kelly Rowland).m4a',
@@ -1233,9 +1531,66 @@ artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2010_OM/CD1/If We Ever (feat. Makeba).m4a',
 cover: '/songpack/David_Guetta/2010_OM/cover.webp',
 lrc: '/songpack/David_Guetta/2010_OM/CD1/If We Ever (feat. Makeba).lrc',
-}]});ap5A.on("play",()=>{document.title=document.getElementById("aplayer5A").getElementsByClassName("aplayer-music")[0].innerText;});ap5A.on("play",()=>{console.log("**"+document.title+"**")});ap5A.on("loadstart",()=>{console.log("loadstart")});ap5A.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5A.on("loadeddata",()=>{console.log("loadeddata")});ap5A.on("canplay",()=>{console.log("canplay")});ap5A.on("canplaythrough",()=>{console.log("canplaythrough")});ap5A.on("stalled",()=>{console.log("stalled");});ap5A.on("suspend",()=>{console.log("suspend")});ap5A.on("play",()=>{console.log("play")});ap5A.on("pause",()=>{console.log("pause")});ap5A.on("waiting",()=>{console.log("waiting")});ap5A.on("playing",()=>{console.log("playing")});ap5A.on("seeking",()=>{console.log("seeking")});ap5A.on("seeked",()=>{console.log("seeked")});ap5A.on("error",()=>{console.log("error");});ap5A.on("ended",()=>{console.log("ended");});ap5A.on("abort",()=>{console.log("abort");});ap5A.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
 
-<h4 id="CD2-1"><a href="#CD2-1" class="headerlink" title="CD2"></a>CD2</h4><div id="aplayer5B" class="aplayerJS"></div><script>const ap5B = new APlayer({container: document.getElementById("aplayer5B"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer5A")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="CD2-1"><a href="#CD2-1" class="headerlink" title="CD2"></a>CD2</h4>
+<div id="aplayer5B" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer5B"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [
 {
 name: 'Who\'s That Chick  (feat. Rihanna)',
 artist: 'David Guetta',
@@ -1314,7 +1669,51 @@ artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2010_OM/CD2/Love Is Gone (Original Mix).m4a',
 cover: '/songpack/David_Guetta/2010_OM/cover.webp',
 lrc: '/songpack/David_Guetta/2010_OM/CD2/Love Is Gone (Original Mix).lrc',
-}]});ap5B.on("play",()=>{document.title=document.getElementById("aplayer5B").getElementsByClassName("aplayer-music")[0].innerText;});ap5B.on("play",()=>{console.log("**"+document.title+"**")});ap5B.on("loadstart",()=>{console.log("loadstart")});ap5B.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5B.on("loadeddata",()=>{console.log("loadeddata")});ap5B.on("canplay",()=>{console.log("canplay")});ap5B.on("canplaythrough",()=>{console.log("canplaythrough")});ap5B.on("stalled",()=>{console.log("stalled");});ap5B.on("suspend",()=>{console.log("suspend")});ap5B.on("play",()=>{console.log("play")});ap5B.on("pause",()=>{console.log("pause")});ap5B.on("waiting",()=>{console.log("waiting")});ap5B.on("playing",()=>{console.log("playing")});ap5B.on("seeking",()=>{console.log("seeking")});ap5B.on("seeked",()=>{console.log("seeked")});ap5B.on("error",()=>{console.log("error");});ap5B.on("ended",()=>{console.log("ended");});ap5B.on("abort",()=>{console.log("abort");});ap5B.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer5B")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title"><em>One Love (Deluxe)</em></p>
 </div></div><div class="fold_content">
@@ -1325,7 +1724,20 @@ lrc: '/songpack/David_Guetta/2010_OM/CD2/Love Is Gone (Original Mix).lrc',
 <h3 id="Nothing-But-the-Beat-2011"><a href="#Nothing-But-the-Beat-2011" class="headerlink" title="Nothing But the Beat 2011"></a>Nothing But the Beat 2011</h3><ul>
 <li>Genre: Electropop</li>
 </ul>
-<h4 id="CD1-2"><a href="#CD1-2" class="headerlink" title="CD1"></a>CD1</h4><div id="aplayer6A" class="aplayerJS"></div><script>const ap6A = new APlayer({container: document.getElementById("aplayer6A"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+<h4 id="CD1-2"><a href="#CD1-2" class="headerlink" title="CD1"></a>CD1</h4>
+<div id="aplayer6A" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer6A"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Titanium',
 artist: 'David Guetta feat. Sia',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2011_NB/CD1/Titanium.m4a',
@@ -1427,9 +1839,66 @@ artist: 'David Guetta feat. Jessie J',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2011_NB/CD1/Repeat.m4a',
 cover: '/songpack/David_Guetta/2011_NB/cover.webp',
 lrc: '/songpack/David_Guetta/2011_NB/CD1/Repeat.lrc',
-}]});ap6A.on("play",()=>{document.title=document.getElementById("aplayer6A").getElementsByClassName("aplayer-music")[0].innerText;});ap6A.on("play",()=>{console.log("**"+document.title+"**")});ap6A.on("loadstart",()=>{console.log("loadstart")});ap6A.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6A.on("loadeddata",()=>{console.log("loadeddata")});ap6A.on("canplay",()=>{console.log("canplay")});ap6A.on("canplaythrough",()=>{console.log("canplaythrough")});ap6A.on("stalled",()=>{console.log("stalled");});ap6A.on("suspend",()=>{console.log("suspend")});ap6A.on("play",()=>{console.log("play")});ap6A.on("pause",()=>{console.log("pause")});ap6A.on("waiting",()=>{console.log("waiting")});ap6A.on("playing",()=>{console.log("playing")});ap6A.on("seeking",()=>{console.log("seeking")});ap6A.on("seeked",()=>{console.log("seeked")});ap6A.on("error",()=>{console.log("error");});ap6A.on("ended",()=>{console.log("ended");});ap6A.on("abort",()=>{console.log("abort");});ap6A.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
 
-<h4 id="CD2-2"><a href="#CD2-2" class="headerlink" title="CD2"></a>CD2</h4><div id="aplayer6B" class="aplayerJS"></div><script>const ap6B = new APlayer({container: document.getElementById("aplayer6B"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer6A")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="CD2-2"><a href="#CD2-2" class="headerlink" title="CD2"></a>CD2</h4>
+<div id="aplayer6B" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer6B"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Every Chance We Get We Run',
 artist: 'David Guetta & Alesso feat. Tegan & Sara',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2011_NB/CD2/Every Chance We Get We Run.m4a',
@@ -1501,7 +1970,51 @@ artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2011_NB/CD2/Glasgow.m4a',
 cover: '/songpack/David_Guetta/2011_NB/cover.webp',
 lrc: '',
-}]});ap6B.on("play",()=>{document.title=document.getElementById("aplayer6B").getElementsByClassName("aplayer-music")[0].innerText;});ap6B.on("play",()=>{console.log("**"+document.title+"**")});ap6B.on("loadstart",()=>{console.log("loadstart")});ap6B.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6B.on("loadeddata",()=>{console.log("loadeddata")});ap6B.on("canplay",()=>{console.log("canplay")});ap6B.on("canplaythrough",()=>{console.log("canplaythrough")});ap6B.on("stalled",()=>{console.log("stalled");});ap6B.on("suspend",()=>{console.log("suspend")});ap6B.on("play",()=>{console.log("play")});ap6B.on("pause",()=>{console.log("pause")});ap6B.on("waiting",()=>{console.log("waiting")});ap6B.on("playing",()=>{console.log("playing")});ap6B.on("seeking",()=>{console.log("seeking")});ap6B.on("seeked",()=>{console.log("seeked")});ap6B.on("error",()=>{console.log("error");});ap6B.on("ended",()=>{console.log("ended");});ap6B.on("abort",()=>{console.log("abort");});ap6B.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer6B")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1512,7 +2025,20 @@ lrc: '',
 <h3 id="Listen-2014"><a href="#Listen-2014" class="headerlink" title="Listen 2014"></a>Listen 2014</h3><ul>
 <li>Genre: EDM · pop</li>
 </ul>
-<div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+
+<div id="aplayer7" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer7"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Dangerous',
 artist: 'David Guetta feat. Sam Martin',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2014_Li/CD1/Dangerous.m4a',
@@ -1620,7 +2146,51 @@ artist: 'David Guetta feat. Sam Martin',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2014_Li/CD2/Dangerous (Robin Schulz Remix).m4a',
 cover: '/songpack/David_Guetta/2014_Li/cover.webp',
 lrc: '/songpack/David_Guetta/2014_Li/CD2/Dangerous (Robin Schulz Remix).lrc',
-},]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
+},]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer7")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1631,7 +2201,20 @@ lrc: '/songpack/David_Guetta/2014_Li/CD2/Dangerous (Robin Schulz Remix).lrc',
 <h3 id="7-2018"><a href="#7-2018" class="headerlink" title="7 2018"></a>7 2018</h3><ul>
 <li>Genre: Dance · house · pop</li>
 </ul>
-<h4 id="CD1-3"><a href="#CD1-3" class="headerlink" title="CD1"></a>CD1</h4><div id="aplayer8A" class="aplayerJS"></div><script>const ap8A = new APlayer({container: document.getElementById("aplayer8A"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+<h4 id="CD1-3"><a href="#CD1-3" class="headerlink" title="CD1"></a>CD1</h4>
+<div id="aplayer8A" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer8A"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Don\'t Leave Me Alone',
 artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2018_7/CD1/Don\'t Leave Me Alone.m4a',
@@ -1721,9 +2304,66 @@ artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2018_7/CD1/Light Headed.m4a',
 cover: '/songpack/David_Guetta/2018_7/cover.webp',
 lrc: '/songpack/David_Guetta/2018_7/CD1/Light Headed.lrc',
-}]});ap8A.on("play",()=>{document.title=document.getElementById("aplayer8A").getElementsByClassName("aplayer-music")[0].innerText;});ap8A.on("play",()=>{console.log("**"+document.title+"**")});ap8A.on("loadstart",()=>{console.log("loadstart")});ap8A.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8A.on("loadeddata",()=>{console.log("loadeddata")});ap8A.on("canplay",()=>{console.log("canplay")});ap8A.on("canplaythrough",()=>{console.log("canplaythrough")});ap8A.on("stalled",()=>{console.log("stalled");});ap8A.on("suspend",()=>{console.log("suspend")});ap8A.on("play",()=>{console.log("play")});ap8A.on("pause",()=>{console.log("pause")});ap8A.on("waiting",()=>{console.log("waiting")});ap8A.on("playing",()=>{console.log("playing")});ap8A.on("seeking",()=>{console.log("seeking")});ap8A.on("seeked",()=>{console.log("seeked")});ap8A.on("error",()=>{console.log("error");});ap8A.on("ended",()=>{console.log("ended");});ap8A.on("abort",()=>{console.log("abort");});ap8A.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
 
-<h4 id="CD2-3"><a href="#CD2-3" class="headerlink" title="CD2"></a>CD2</h4><div id="aplayer8B" class="aplayerJS"></div><script>const ap8B = new APlayer({container: document.getElementById("aplayer8B"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [{
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer8A")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
+
+<h4 id="CD2-3"><a href="#CD2-3" class="headerlink" title="CD2"></a>CD2</h4>
+<div id="aplayer8B" class="aplayerJS"></div>
+
+<script>
+(() => {
+
+    const ap = new APlayer({
+        container: document.getElementById("aplayer8B"),
+        lrcType: 3,
+        loop: "none",
+        mutex: true,
+        preload: "auto",
+        order: "list",
+        audio: [{
 name: 'Reach For Me',
 artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2018_7/CD2/Reach For Me.m4a',
@@ -1795,7 +2435,51 @@ artist: 'David Guetta',
 url:'https://cps3storage.s3-accelerate.amazonaws.com/David_Guetta/2018_7/CD2/Just A Little More Love (Jack Back 2018 Remix).m4a',
 cover: '/songpack/David_Guetta/2018_7/cover.webp',
 lrc: '/songpack/David_Guetta/2018_7/CD2/Just A Little More Love (Jack Back 2018 Remix)',
-}]});ap8B.on("play",()=>{document.title=document.getElementById("aplayer8B").getElementsByClassName("aplayer-music")[0].innerText;});ap8B.on("play",()=>{console.log("**"+document.title+"**")});ap8B.on("loadstart",()=>{console.log("loadstart")});ap8B.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8B.on("loadeddata",()=>{console.log("loadeddata")});ap8B.on("canplay",()=>{console.log("canplay")});ap8B.on("canplaythrough",()=>{console.log("canplaythrough")});ap8B.on("stalled",()=>{console.log("stalled");});ap8B.on("suspend",()=>{console.log("suspend")});ap8B.on("play",()=>{console.log("play")});ap8B.on("pause",()=>{console.log("pause")});ap8B.on("waiting",()=>{console.log("waiting")});ap8B.on("playing",()=>{console.log("playing")});ap8B.on("seeking",()=>{console.log("seeking")});ap8B.on("seeked",()=>{console.log("seeked")});ap8B.on("error",()=>{console.log("error");});ap8B.on("ended",()=>{console.log("ended");});ap8B.on("abort",()=>{console.log("abort");});ap8B.on("emptied",()=>{console.log("emptied");});</script>
+}]
+    });
+
+    ap.on("play", () => {
+        const musicTitle =
+            document
+                .getElementById("aplayer8B")
+                .querySelector(".aplayer-music")
+                ?.innerText;
+
+        if (musicTitle) {
+            document.title = musicTitle;
+            console.log("**" + musicTitle + "**");
+        }
+    });
+    
+    const debugEvents = [
+        "loadstart",
+        "loadedmetadata",
+        "loadeddata",
+        "canplay",
+        "canplaythrough",
+        "stalled",
+        "suspend",
+        "play",
+        "pause",
+        "waiting",
+        "playing",
+        "seeking",
+        "seeked",
+        "error",
+        "ended",
+        "abort",
+        "emptied"
+    ];
+
+    debugEvents.forEach(eventName => {
+        ap.on(eventName, () => {
+            console.log(eventName);
+        });
+    });
+
+})();
+</script>
+
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
