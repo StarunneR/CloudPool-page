@@ -18,6 +18,9 @@
   <!-- head 中尽量靠前放 preconnect -->
   <link rel="preconnect" href="https://s4.zstatic.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fastly.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fastly.jsdelivr.net">
   <!--
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -74,7 +77,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/geopattern@1.2.3/geopattern.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/qrious/4.0.2/qrious.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js'"></script>
-  <script src="https://unpkg.com/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
+  <script src="https://fastly.jsdelivr.net/npm/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
   <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -680,20 +683,7 @@
         <h3 id="擱淺的人-Stranded-People"><a href="#擱淺的人-Stranded-People" class="headerlink" title="擱淺的人 Stranded People"></a>擱淺的人 Stranded People</h3><ul>
 <li>Genre: Instrumental</li>
 </ul>
-
-<div id="aplayer1" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer1"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '犬的視線',
 artist: '康士坦的變化球',
@@ -737,66 +727,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/KSTDBHQ/2016-GQ/07 INTRO + 
 cover: '/songpack/KSTDBHQ/2016-GQ/cover.webp',
 lrc: '',
 },
-]
-    });
+]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer1")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="更迭-Alternate-Moments"><a href="#更迭-Alternate-Moments" class="headerlink" title="更迭 Alternate Moments"></a>更迭 Alternate Moments</h3>
-<div id="aplayer2" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer2"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="更迭-Alternate-Moments"><a href="#更迭-Alternate-Moments" class="headerlink" title="更迭 Alternate Moments"></a>更迭 Alternate Moments</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '拾',
 artist: '康士坦的變化球',
@@ -858,66 +791,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/KSTDBHQ/2020-GD/10 安靜�
 cover: '/songpack/KSTDBHQ/2020-GD/cover.webp',
 lrc: '/songpack/KSTDBHQ/2020-GD/10 安靜的美好.lrc',
 },
-]
-    });
+]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer2")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="眠月線-Track-to-Sleeping-Moon"><a href="#眠月線-Track-to-Sleeping-Moon" class="headerlink" title="眠月線 Track to Sleeping Moon"></a>眠月線 Track to Sleeping Moon</h3>
-<div id="aplayerundefined" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayerundefined"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="眠月線-Track-to-Sleeping-Moon"><a href="#眠月線-Track-to-Sleeping-Moon" class="headerlink" title="眠月線 Track to Sleeping Moon"></a>眠月線 Track to Sleeping Moon</h3><div id="aplayerundefined" class="aplayerJS"></div><script>const apundefined = new APlayer({container: document.getElementById("aplayerundefined"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '眠月線',
 artist: '康士坦的變化球',
@@ -973,51 +849,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/KSTDBHQ/2023-MY/09 長寧10
 cover: '/songpack/KSTDBHQ/2023-MY/cover.webp',
 lrc: '/songpack/KSTDBHQ/2023-MY/09 長寧1008.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayerundefined")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});apundefined.on("play",()=>{document.title=document.getElementById("aplayerundefined").getElementsByClassName("aplayer-music")[0].innerText;});apundefined.on("play",()=>{console.log("**"+document.title+"**")});apundefined.on("loadstart",()=>{console.log("loadstart")});apundefined.on("loadedmetadata",()=>{console.log("loadedmetadata")});apundefined.on("loadeddata",()=>{console.log("loadeddata")});apundefined.on("canplay",()=>{console.log("canplay")});apundefined.on("canplaythrough",()=>{console.log("canplaythrough")});apundefined.on("stalled",()=>{console.log("stalled");});apundefined.on("suspend",()=>{console.log("suspend")});apundefined.on("play",()=>{console.log("play")});apundefined.on("pause",()=>{console.log("pause")});apundefined.on("waiting",()=>{console.log("waiting")});apundefined.on("playing",()=>{console.log("playing")});apundefined.on("seeking",()=>{console.log("seeking")});apundefined.on("seeked",()=>{console.log("seeked")});apundefined.on("error",()=>{console.log("error");});apundefined.on("ended",()=>{console.log("ended");});apundefined.on("abort",()=>{console.log("abort");});apundefined.on("emptied",()=>{console.log("emptied");});</script>
 
 <hr>
 <!--wiki内容替换： \[[0-9]{1,2}\]  -->
@@ -1140,12 +972,12 @@ lrc: '/songpack/KSTDBHQ/2023-MY/09 長寧1008.lrc',
     requiredMeta: [""],
     pageview: "true" && "",
     emoji: [
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
-      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
-      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://fastly.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://fastly.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
     ],
     locale,
   });

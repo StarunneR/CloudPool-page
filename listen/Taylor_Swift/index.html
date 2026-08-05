@@ -18,6 +18,9 @@
   <!-- head 中尽量靠前放 preconnect -->
   <link rel="preconnect" href="https://s4.zstatic.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fastly.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fastly.jsdelivr.net">
   <!--
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -74,7 +77,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/geopattern@1.2.3/geopattern.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/qrious/4.0.2/qrious.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js'"></script>
-  <script src="https://unpkg.com/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
+  <script src="https://fastly.jsdelivr.net/npm/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
   <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -686,20 +689,7 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="Taylor-Swift-2006"><a href="#Taylor-Swift-2006" class="headerlink" title="Taylor Swift 2006"></a>Taylor Swift 2006</h3>
-<div id="aplayer1" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer1"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+        <h3 id="Taylor-Swift-2006"><a href="#Taylor-Swift-2006" class="headerlink" title="Taylor Swift 2006"></a>Taylor Swift 2006</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Tim McGraw',
 artist: 'Taylor Swift',
@@ -791,51 +781,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2006-TS/15 Tea
 cover: '/songpack/Taylor_Swift/2006-TS/cover.webp',
 lrc: '/songpack/Taylor_Swift/2006-TS/15 Teardrops On My Guitar (pop version).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer1")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -843,20 +789,7 @@ lrc: '/songpack/Taylor_Swift/2006-TS/15 Teardrops On My Guitar (pop version).lrc
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Fearless-2008"><a href="#Fearless-2008" class="headerlink" title="Fearless 2008"></a>Fearless 2008</h3>
-<div id="aplayer2" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer2"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="Fearless-2008"><a href="#Fearless-2008" class="headerlink" title="Fearless 2008"></a>Fearless 2008</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Fearless',
 artist: 'Taylor Swift',
@@ -978,51 +911,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2008-Fe/20 I H
 cover: '/songpack/Taylor_Swift/2008-Fe/cover.webp',
 lrc: '/songpack/Taylor_Swift/2008-Fe/20 I Heart.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer2")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1031,20 +920,7 @@ lrc: '/songpack/Taylor_Swift/2008-Fe/20 I Heart.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h4 id="Fearless-Taylor’s-Version-2021"><a href="#Fearless-Taylor’s-Version-2021" class="headerlink" title="Fearless (Taylor’s Version) 2021"></a>Fearless (Taylor’s Version) 2021</h4>
-<div id="aplayer2V" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer2V"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h4 id="Fearless-Taylor’s-Version-2021"><a href="#Fearless-Taylor’s-Version-2021" class="headerlink" title="Fearless (Taylor’s Version) 2021"></a>Fearless (Taylor’s Version) 2021</h4><div id="aplayer2V" class="aplayerJS"></div><script>const ap2V = new APlayer({container: document.getElementById("aplayer2V"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Fearless (Taylor’s Version)',
 artist: 'Taylor Swift',
@@ -1190,51 +1066,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2021-FTV/26 By
 cover: '/songpack/Taylor_Swift/2021-FTV/cover.webp',
 lrc: '/songpack/Taylor_Swift/2021-FTV/26 Bye Bye Baby (Taylor’s Version) (From The Vault).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer2V")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap2V.on("play",()=>{document.title=document.getElementById("aplayer2V").getElementsByClassName("aplayer-music")[0].innerText;});ap2V.on("play",()=>{console.log("**"+document.title+"**")});ap2V.on("loadstart",()=>{console.log("loadstart")});ap2V.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2V.on("loadeddata",()=>{console.log("loadeddata")});ap2V.on("canplay",()=>{console.log("canplay")});ap2V.on("canplaythrough",()=>{console.log("canplaythrough")});ap2V.on("stalled",()=>{console.log("stalled");});ap2V.on("suspend",()=>{console.log("suspend")});ap2V.on("play",()=>{console.log("play")});ap2V.on("pause",()=>{console.log("pause")});ap2V.on("waiting",()=>{console.log("waiting")});ap2V.on("playing",()=>{console.log("playing")});ap2V.on("seeking",()=>{console.log("seeking")});ap2V.on("seeked",()=>{console.log("seeked")});ap2V.on("error",()=>{console.log("error");});ap2V.on("ended",()=>{console.log("ended");});ap2V.on("abort",()=>{console.log("abort");});ap2V.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1244,20 +1076,7 @@ lrc: '/songpack/Taylor_Swift/2021-FTV/26 Bye Bye Baby (Taylor’s Version) (From
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Speak-Now-2010"><a href="#Speak-Now-2010" class="headerlink" title="Speak Now 2010"></a>Speak Now 2010</h3>
-<div id="aplayer3" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer3"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="Speak-Now-2010"><a href="#Speak-Now-2010" class="headerlink" title="Speak Now 2010"></a>Speak Now 2010</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Mine (US Version)',
 artist: 'Taylor Swift',
@@ -1379,51 +1198,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2010-SN/20 Min
 cover: '/songpack/Taylor_Swift/2010-SN/cover.webp',
 lrc: '/songpack/Taylor_Swift/2010-SN/20 Mine.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer3")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1432,20 +1207,7 @@ lrc: '/songpack/Taylor_Swift/2010-SN/20 Mine.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h4 id="Speak-Now-Taylor’s-Version-2023"><a href="#Speak-Now-Taylor’s-Version-2023" class="headerlink" title="Speak Now (Taylor’s Version) 2023"></a>Speak Now (Taylor’s Version) 2023</h4>
-<div id="aplayer3V" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer3V"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h4 id="Speak-Now-Taylor’s-Version-2023"><a href="#Speak-Now-Taylor’s-Version-2023" class="headerlink" title="Speak Now (Taylor’s Version) 2023"></a>Speak Now (Taylor’s Version) 2023</h4><div id="aplayer3V" class="aplayerJS"></div><script>const ap3V = new APlayer({container: document.getElementById("aplayer3V"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Mine (Taylor\'s Version)',
 artist: 'Taylor Swift',
@@ -1579,51 +1341,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2023-STV/22 Ti
 cover: '/songpack/Taylor_Swift/2023-STV/cover.webp',
 lrc: '/songpack/Taylor_Swift/2023-STV/22 Timeless (Taylor’s Version) (From The Vault).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer3V")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap3V.on("play",()=>{document.title=document.getElementById("aplayer3V").getElementsByClassName("aplayer-music")[0].innerText;});ap3V.on("play",()=>{console.log("**"+document.title+"**")});ap3V.on("loadstart",()=>{console.log("loadstart")});ap3V.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3V.on("loadeddata",()=>{console.log("loadeddata")});ap3V.on("canplay",()=>{console.log("canplay")});ap3V.on("canplaythrough",()=>{console.log("canplaythrough")});ap3V.on("stalled",()=>{console.log("stalled");});ap3V.on("suspend",()=>{console.log("suspend")});ap3V.on("play",()=>{console.log("play")});ap3V.on("pause",()=>{console.log("pause")});ap3V.on("waiting",()=>{console.log("waiting")});ap3V.on("playing",()=>{console.log("playing")});ap3V.on("seeking",()=>{console.log("seeking")});ap3V.on("seeked",()=>{console.log("seeked")});ap3V.on("error",()=>{console.log("error");});ap3V.on("ended",()=>{console.log("ended");});ap3V.on("abort",()=>{console.log("abort");});ap3V.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1640,20 +1358,7 @@ lrc: '/songpack/Taylor_Swift/2023-STV/22 Timeless (Taylor’s Version) (From The
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Red-2012"><a href="#Red-2012" class="headerlink" title="Red 2012"></a>Red 2012</h3>
-<div id="aplayer4" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer4"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="Red-2012"><a href="#Red-2012" class="headerlink" title="Red 2012"></a>Red 2012</h3><div id="aplayer4" class="aplayerJS"></div><script>const ap4 = new APlayer({container: document.getElementById("aplayer4"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'State of Grace',
 artist: 'Taylor Swift',
@@ -1751,51 +1456,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2012-Re/16 Beg
 cover: '/songpack/Taylor_Swift/2012-Re/cover.webp',
 lrc: '/songpack/Taylor_Swift/2012-Re/16 Begin Again.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer4")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap4.on("play",()=>{document.title=document.getElementById("aplayer4").getElementsByClassName("aplayer-music")[0].innerText;});ap4.on("play",()=>{console.log("**"+document.title+"**")});ap4.on("loadstart",()=>{console.log("loadstart")});ap4.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4.on("loadeddata",()=>{console.log("loadeddata")});ap4.on("canplay",()=>{console.log("canplay")});ap4.on("canplaythrough",()=>{console.log("canplaythrough")});ap4.on("stalled",()=>{console.log("stalled");});ap4.on("suspend",()=>{console.log("suspend")});ap4.on("play",()=>{console.log("play")});ap4.on("pause",()=>{console.log("pause")});ap4.on("waiting",()=>{console.log("waiting")});ap4.on("playing",()=>{console.log("playing")});ap4.on("seeking",()=>{console.log("seeking")});ap4.on("seeked",()=>{console.log("seeked")});ap4.on("error",()=>{console.log("error");});ap4.on("ended",()=>{console.log("ended");});ap4.on("abort",()=>{console.log("abort");});ap4.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1805,20 +1466,7 @@ lrc: '/songpack/Taylor_Swift/2012-Re/16 Begin Again.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h4 id="Red-Taylor’s-Version-2021"><a href="#Red-Taylor’s-Version-2021" class="headerlink" title="Red (Taylor’s Version) 2021"></a>Red (Taylor’s Version) 2021</h4>
-<div id="aplayer4V" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer4V"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h4 id="Red-Taylor’s-Version-2021"><a href="#Red-Taylor’s-Version-2021" class="headerlink" title="Red (Taylor’s Version) 2021"></a>Red (Taylor’s Version) 2021</h4><div id="aplayer4V" class="aplayerJS"></div><script>const ap4V = new APlayer({container: document.getElementById("aplayer4V"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'State Of Grace (Taylor\'s Version)',
 artist: 'Taylor Swift',
@@ -2000,51 +1648,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2021-RTV/30 Al
 cover: '/songpack/Taylor_Swift/2021-RTV/cover.webp',
 lrc: '/songpack/Taylor_Swift/2021-RTV/30 All Too Well (10 Minute Version) (Taylor\'s Version) (From The Vault).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer4V")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap4V.on("play",()=>{document.title=document.getElementById("aplayer4V").getElementsByClassName("aplayer-music")[0].innerText;});ap4V.on("play",()=>{console.log("**"+document.title+"**")});ap4V.on("loadstart",()=>{console.log("loadstart")});ap4V.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4V.on("loadeddata",()=>{console.log("loadeddata")});ap4V.on("canplay",()=>{console.log("canplay")});ap4V.on("canplaythrough",()=>{console.log("canplaythrough")});ap4V.on("stalled",()=>{console.log("stalled");});ap4V.on("suspend",()=>{console.log("suspend")});ap4V.on("play",()=>{console.log("play")});ap4V.on("pause",()=>{console.log("pause")});ap4V.on("waiting",()=>{console.log("waiting")});ap4V.on("playing",()=>{console.log("playing")});ap4V.on("seeking",()=>{console.log("seeking")});ap4V.on("seeked",()=>{console.log("seeked")});ap4V.on("error",()=>{console.log("error");});ap4V.on("ended",()=>{console.log("ended");});ap4V.on("abort",()=>{console.log("abort");});ap4V.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -2056,20 +1660,7 @@ lrc: '/songpack/Taylor_Swift/2021-RTV/30 All Too Well (10 Minute Version) (Taylo
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="1989-2014"><a href="#1989-2014" class="headerlink" title="1989 2014"></a>1989 2014</h3>
-<div id="aplayer5" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer5"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="1989-2014"><a href="#1989-2014" class="headerlink" title="1989 2014"></a>1989 2014</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Welcome To New York',
 artist: 'Taylor Swift',
@@ -2185,51 +1776,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2014-19/19 Bla
 cover: '/songpack/Taylor_Swift/2014-19/cover.webp',
 lrc: '/songpack/Taylor_Swift/2014-19/19 Blank Space (Voice Memo).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer5")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -2238,20 +1785,7 @@ lrc: '/songpack/Taylor_Swift/2014-19/19 Blank Space (Voice Memo).lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h4 id="1989-Taylor’s-Version-2021"><a href="#1989-Taylor’s-Version-2021" class="headerlink" title="1989 (Taylor’s Version) 2021"></a>1989 (Taylor’s Version) 2021</h4>
-<div id="aplayer5V" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer5V"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h4 id="1989-Taylor’s-Version-2021"><a href="#1989-Taylor’s-Version-2021" class="headerlink" title="1989 (Taylor’s Version) 2021"></a>1989 (Taylor’s Version) 2021</h4><div id="aplayer5V" class="aplayerJS"></div><script>const ap5V = new APlayer({container: document.getElementById("aplayer5V"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Welcome To New York (Taylor\'s Version)',
 artist: 'Taylor Swift',
@@ -2385,51 +1919,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2023-1TV/22 Ba
 cover: '/songpack/Taylor_Swift/2023-1TV/cover.webp',
 lrc: '/songpack/Taylor_Swift/2023-1TV/22 Bad Blood (Taylor\'s Version) [feat. Kendrick Lamar].lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer5V")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap5V.on("play",()=>{document.title=document.getElementById("aplayer5V").getElementsByClassName("aplayer-music")[0].innerText;});ap5V.on("play",()=>{console.log("**"+document.title+"**")});ap5V.on("loadstart",()=>{console.log("loadstart")});ap5V.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5V.on("loadeddata",()=>{console.log("loadeddata")});ap5V.on("canplay",()=>{console.log("canplay")});ap5V.on("canplaythrough",()=>{console.log("canplaythrough")});ap5V.on("stalled",()=>{console.log("stalled");});ap5V.on("suspend",()=>{console.log("suspend")});ap5V.on("play",()=>{console.log("play")});ap5V.on("pause",()=>{console.log("pause")});ap5V.on("waiting",()=>{console.log("waiting")});ap5V.on("playing",()=>{console.log("playing")});ap5V.on("seeking",()=>{console.log("seeking")});ap5V.on("seeked",()=>{console.log("seeked")});ap5V.on("error",()=>{console.log("error");});ap5V.on("ended",()=>{console.log("ended");});ap5V.on("abort",()=>{console.log("abort");});ap5V.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -2443,20 +1933,7 @@ lrc: '/songpack/Taylor_Swift/2023-1TV/22 Bad Blood (Taylor\'s Version) [feat. Ke
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="reputation-2017"><a href="#reputation-2017" class="headerlink" title="reputation 2017"></a>reputation 2017</h3>
-<div id="aplayer6" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer6"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="reputation-2017"><a href="#reputation-2017" class="headerlink" title="reputation 2017"></a>reputation 2017</h3><div id="aplayer6" class="aplayerJS"></div><script>const ap6 = new APlayer({container: document.getElementById("aplayer6"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '...Ready For It',
 artist: 'Taylor Swift',
@@ -2548,51 +2025,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2017-re/15 New
 cover: '/songpack/Taylor_Swift/2017-re/cover.webp',
 lrc: '/songpack/Taylor_Swift/2017-re/15 New Year’s Day.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer6")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap6.on("play",()=>{document.title=document.getElementById("aplayer6").getElementsByClassName("aplayer-music")[0].innerText;});ap6.on("play",()=>{console.log("**"+document.title+"**")});ap6.on("loadstart",()=>{console.log("loadstart")});ap6.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap6.on("loadeddata",()=>{console.log("loadeddata")});ap6.on("canplay",()=>{console.log("canplay")});ap6.on("canplaythrough",()=>{console.log("canplaythrough")});ap6.on("stalled",()=>{console.log("stalled");});ap6.on("suspend",()=>{console.log("suspend")});ap6.on("play",()=>{console.log("play")});ap6.on("pause",()=>{console.log("pause")});ap6.on("waiting",()=>{console.log("waiting")});ap6.on("playing",()=>{console.log("playing")});ap6.on("seeking",()=>{console.log("seeking")});ap6.on("seeked",()=>{console.log("seeked")});ap6.on("error",()=>{console.log("error");});ap6.on("ended",()=>{console.log("ended");});ap6.on("abort",()=>{console.log("abort");});ap6.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -2601,20 +2034,7 @@ lrc: '/songpack/Taylor_Swift/2017-re/15 New Year’s Day.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Lover-2019"><a href="#Lover-2019" class="headerlink" title="Lover 2019"></a>Lover 2019</h3>
-<div id="aplayer7" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer7"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="Lover-2019"><a href="#Lover-2019" class="headerlink" title="Lover 2019"></a>Lover 2019</h3><div id="aplayer7" class="aplayerJS"></div><script>const ap7 = new APlayer({container: document.getElementById("aplayer7"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'I Forgot That You Existed',
 artist: 'Taylor Swift',
@@ -2724,51 +2144,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2019-Lo/18 Day
 cover: '/songpack/Taylor_Swift/2019-Lo/cover.webp',
 lrc: '/songpack/Taylor_Swift/2019-Lo/18 Daylight.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer7")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap7.on("play",()=>{document.title=document.getElementById("aplayer7").getElementsByClassName("aplayer-music")[0].innerText;});ap7.on("play",()=>{console.log("**"+document.title+"**")});ap7.on("loadstart",()=>{console.log("loadstart")});ap7.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap7.on("loadeddata",()=>{console.log("loadeddata")});ap7.on("canplay",()=>{console.log("canplay")});ap7.on("canplaythrough",()=>{console.log("canplaythrough")});ap7.on("stalled",()=>{console.log("stalled");});ap7.on("suspend",()=>{console.log("suspend")});ap7.on("play",()=>{console.log("play")});ap7.on("pause",()=>{console.log("pause")});ap7.on("waiting",()=>{console.log("waiting")});ap7.on("playing",()=>{console.log("playing")});ap7.on("seeking",()=>{console.log("seeking")});ap7.on("seeked",()=>{console.log("seeked")});ap7.on("error",()=>{console.log("error");});ap7.on("ended",()=>{console.log("ended");});ap7.on("abort",()=>{console.log("abort");});ap7.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -2781,20 +2157,7 @@ lrc: '/songpack/Taylor_Swift/2019-Lo/18 Daylight.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="folklore-2020"><a href="#folklore-2020" class="headerlink" title="folklore 2020"></a>folklore 2020</h3>
-<div id="aplayer8" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer8"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="folklore-2020"><a href="#folklore-2020" class="headerlink" title="folklore 2020"></a>folklore 2020</h3><div id="aplayer8" class="aplayerJS"></div><script>const ap8 = new APlayer({container: document.getElementById("aplayer8"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'the 1',
 artist: 'Taylor Swift',
@@ -2898,51 +2261,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-fo/17 the
 cover: '/songpack/Taylor_Swift/2020-fo/cover.webp',
 lrc: '/songpack/Taylor_Swift/2020-fo/17 the lakes (bonus track).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer8")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap8.on("play",()=>{document.title=document.getElementById("aplayer8").getElementsByClassName("aplayer-music")[0].innerText;});ap8.on("play",()=>{console.log("**"+document.title+"**")});ap8.on("loadstart",()=>{console.log("loadstart")});ap8.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap8.on("loadeddata",()=>{console.log("loadeddata")});ap8.on("canplay",()=>{console.log("canplay")});ap8.on("canplaythrough",()=>{console.log("canplaythrough")});ap8.on("stalled",()=>{console.log("stalled");});ap8.on("suspend",()=>{console.log("suspend")});ap8.on("play",()=>{console.log("play")});ap8.on("pause",()=>{console.log("pause")});ap8.on("waiting",()=>{console.log("waiting")});ap8.on("playing",()=>{console.log("playing")});ap8.on("seeking",()=>{console.log("seeking")});ap8.on("seeked",()=>{console.log("seeked")});ap8.on("error",()=>{console.log("error");});ap8.on("ended",()=>{console.log("ended");});ap8.on("abort",()=>{console.log("abort");});ap8.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -2952,20 +2271,7 @@ lrc: '/songpack/Taylor_Swift/2020-fo/17 the lakes (bonus track).lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="evermore-2020"><a href="#evermore-2020" class="headerlink" title="evermore 2020"></a>evermore 2020</h3>
-<div id="aplayer9" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer9"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="evermore-2020"><a href="#evermore-2020" class="headerlink" title="evermore 2020"></a>evermore 2020</h3><div id="aplayer9" class="aplayerJS"></div><script>const ap9 = new APlayer({container: document.getElementById("aplayer9"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'willow',
 artist: 'Taylor Swift',
@@ -3069,51 +2375,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2020-ev/17 it�
 cover: '/songpack/Taylor_Swift/2020-ev/cover.webp',
 lrc: '/songpack/Taylor_Swift/2020-ev/17 it’s time to go (bonus track).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer9")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap9.on("play",()=>{document.title=document.getElementById("aplayer9").getElementsByClassName("aplayer-music")[0].innerText;});ap9.on("play",()=>{console.log("**"+document.title+"**")});ap9.on("loadstart",()=>{console.log("loadstart")});ap9.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap9.on("loadeddata",()=>{console.log("loadeddata")});ap9.on("canplay",()=>{console.log("canplay")});ap9.on("canplaythrough",()=>{console.log("canplaythrough")});ap9.on("stalled",()=>{console.log("stalled");});ap9.on("suspend",()=>{console.log("suspend")});ap9.on("play",()=>{console.log("play")});ap9.on("pause",()=>{console.log("pause")});ap9.on("waiting",()=>{console.log("waiting")});ap9.on("playing",()=>{console.log("playing")});ap9.on("seeking",()=>{console.log("seeking")});ap9.on("seeked",()=>{console.log("seeked")});ap9.on("error",()=>{console.log("error");});ap9.on("ended",()=>{console.log("ended");});ap9.on("abort",()=>{console.log("abort");});ap9.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -3124,20 +2386,7 @@ lrc: '/songpack/Taylor_Swift/2020-ev/17 it’s time to go (bonus track).lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Midnights-2022"><a href="#Midnights-2022" class="headerlink" title="Midnights 2022"></a>Midnights 2022</h3>
-<div id="aplayer10" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer10"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="Midnights-2022"><a href="#Midnights-2022" class="headerlink" title="Midnights 2022"></a>Midnights 2022</h3><div id="aplayer10" class="aplayerJS"></div><script>const ap10 = new APlayer({container: document.getElementById("aplayer10"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Lavender Haze',
 artist: 'Taylor Swift',
@@ -3277,51 +2526,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2022-Mi/23 Kar
 cover: '/songpack/Taylor_Swift/2022-Mi/cover.webp',
 lrc: '/songpack/Taylor_Swift/2022-Mi/23 Karma.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer10")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap10.on("play",()=>{document.title=document.getElementById("aplayer10").getElementsByClassName("aplayer-music")[0].innerText;});ap10.on("play",()=>{console.log("**"+document.title+"**")});ap10.on("loadstart",()=>{console.log("loadstart")});ap10.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap10.on("loadeddata",()=>{console.log("loadeddata")});ap10.on("canplay",()=>{console.log("canplay")});ap10.on("canplaythrough",()=>{console.log("canplaythrough")});ap10.on("stalled",()=>{console.log("stalled");});ap10.on("suspend",()=>{console.log("suspend")});ap10.on("play",()=>{console.log("play")});ap10.on("pause",()=>{console.log("pause")});ap10.on("waiting",()=>{console.log("waiting")});ap10.on("playing",()=>{console.log("playing")});ap10.on("seeking",()=>{console.log("seeking")});ap10.on("seeked",()=>{console.log("seeked")});ap10.on("error",()=>{console.log("error");});ap10.on("ended",()=>{console.log("ended");});ap10.on("abort",()=>{console.log("abort");});ap10.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -3344,20 +2549,7 @@ lrc: '/songpack/Taylor_Swift/2022-Mi/23 Karma.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="THE-TORTURED-POETS-DEPARTMENT-THE-ANTHOLOGY-2024"><a href="#THE-TORTURED-POETS-DEPARTMENT-THE-ANTHOLOGY-2024" class="headerlink" title="THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY 2024"></a>THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY 2024</h3>
-<div id="aplayer11" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer11"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="THE-TORTURED-POETS-DEPARTMENT-THE-ANTHOLOGY-2024"><a href="#THE-TORTURED-POETS-DEPARTMENT-THE-ANTHOLOGY-2024" class="headerlink" title="THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY 2024"></a>THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY 2024</h3><div id="aplayer11" class="aplayerJS"></div><script>const ap11 = new APlayer({container: document.getElementById("aplayer11"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Fortnight',
 artist: 'Taylor Swift',
@@ -3545,51 +2737,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2024-TT/31 The
 cover: '/songpack/Taylor_Swift/2024-TT/cover.webp',
 lrc: '/songpack/Taylor_Swift/2024-TT/31 The Manuscript.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer11")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap11.on("play",()=>{document.title=document.getElementById("aplayer11").getElementsByClassName("aplayer-music")[0].innerText;});ap11.on("play",()=>{console.log("**"+document.title+"**")});ap11.on("loadstart",()=>{console.log("loadstart")});ap11.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap11.on("loadeddata",()=>{console.log("loadeddata")});ap11.on("canplay",()=>{console.log("canplay")});ap11.on("canplaythrough",()=>{console.log("canplaythrough")});ap11.on("stalled",()=>{console.log("stalled");});ap11.on("suspend",()=>{console.log("suspend")});ap11.on("play",()=>{console.log("play")});ap11.on("pause",()=>{console.log("pause")});ap11.on("waiting",()=>{console.log("waiting")});ap11.on("playing",()=>{console.log("playing")});ap11.on("seeking",()=>{console.log("seeking")});ap11.on("seeked",()=>{console.log("seeked")});ap11.on("error",()=>{console.log("error");});ap11.on("ended",()=>{console.log("ended");});ap11.on("abort",()=>{console.log("abort");});ap11.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -3608,20 +2756,7 @@ lrc: '/songpack/Taylor_Swift/2024-TT/31 The Manuscript.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="The-Life-of-a-Showgirl-Acoustic-Collection-2025"><a href="#The-Life-of-a-Showgirl-Acoustic-Collection-2025" class="headerlink" title="The Life of a Showgirl + Acoustic Collection 2025"></a>The Life of a Showgirl + Acoustic Collection 2025</h3>
-<div id="aplayer12" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer12"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="The-Life-of-a-Showgirl-Acoustic-Collection-2025"><a href="#The-Life-of-a-Showgirl-Acoustic-Collection-2025" class="headerlink" title="The Life of a Showgirl + Acoustic Collection 2025"></a>The Life of a Showgirl + Acoustic Collection 2025</h3><div id="aplayer12" class="aplayerJS"></div><script>const ap12 = new APlayer({container: document.getElementById("aplayer12"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'The Fate of Ophelia',
 artist: 'Taylor Swift',
@@ -3737,51 +2872,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Taylor_Swift/2025-TL/19 The
 cover: '/songpack/Taylor_Swift/2025-TL/cover1.webp',
 lrc: '/songpack/Taylor_Swift/2025-TL/19 The Life of a Showgirl (Dressing Room Rehearsal Version).lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer12")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap12.on("play",()=>{document.title=document.getElementById("aplayer12").getElementsByClassName("aplayer-music")[0].innerText;});ap12.on("play",()=>{console.log("**"+document.title+"**")});ap12.on("loadstart",()=>{console.log("loadstart")});ap12.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap12.on("loadeddata",()=>{console.log("loadeddata")});ap12.on("canplay",()=>{console.log("canplay")});ap12.on("canplaythrough",()=>{console.log("canplaythrough")});ap12.on("stalled",()=>{console.log("stalled");});ap12.on("suspend",()=>{console.log("suspend")});ap12.on("play",()=>{console.log("play")});ap12.on("pause",()=>{console.log("pause")});ap12.on("waiting",()=>{console.log("waiting")});ap12.on("playing",()=>{console.log("playing")});ap12.on("seeking",()=>{console.log("seeking")});ap12.on("seeked",()=>{console.log("seeked")});ap12.on("error",()=>{console.log("error");});ap12.on("ended",()=>{console.log("ended");});ap12.on("abort",()=>{console.log("abort");});ap12.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -3967,12 +3058,12 @@ lrc: '/songpack/Taylor_Swift/2025-TL/19 The Life of a Showgirl (Dressing Room Re
     requiredMeta: [""],
     pageview: "true" && "",
     emoji: [
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
-      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
-      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://fastly.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://fastly.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
     ],
     locale,
   });

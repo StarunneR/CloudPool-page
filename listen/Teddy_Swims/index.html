@@ -18,6 +18,9 @@
   <!-- head 中尽量靠前放 preconnect -->
   <link rel="preconnect" href="https://s4.zstatic.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fastly.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fastly.jsdelivr.net">
   <!--
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -74,7 +77,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/geopattern@1.2.3/geopattern.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/qrious/4.0.2/qrious.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js'"></script>
-  <script src="https://unpkg.com/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
+  <script src="https://fastly.jsdelivr.net/npm/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
   <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -677,20 +680,7 @@
   $("#fontsize-slider").on("input", rangeSwitch)
 </script>
       <section class="markdown-content" id="content">
-        <h3 id="Unlearning-2021"><a href="#Unlearning-2021" class="headerlink" title="Unlearning 2021"></a>Unlearning 2021</h3>
-<div id="aplayer1" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer1"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+        <h3 id="Unlearning-2021"><a href="#Unlearning-2021" class="headerlink" title="Unlearning 2021"></a>Unlearning 2021</h3><div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'L.I.F.E.',
 artist: 'Teddy Swims',
@@ -734,51 +724,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Teddy_Swims/2021-Un/07 Will
 cover: '/songpack/Teddy_Swims/2021-Un/cover.webp',
 lrc: '/songpack/Teddy_Swims/2021-Un/07 Will It Find Me.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer1")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -786,20 +732,7 @@ lrc: '/songpack/Teddy_Swims/2021-Un/07 Will It Find Me.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="Tough-Love-EP-2022"><a href="#Tough-Love-EP-2022" class="headerlink" title="Tough Love - EP 2022"></a>Tough Love - EP 2022</h3>
-<div id="aplayer2" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer2"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="Tough-Love-EP-2022"><a href="#Tough-Love-EP-2022" class="headerlink" title="Tough Love - EP 2022"></a>Tough Love - EP 2022</h3><div id="aplayer2" class="aplayerJS"></div><script>const ap2 = new APlayer({container: document.getElementById("aplayer2"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: '911',
 artist: 'Teddy Swims',
@@ -837,51 +770,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Teddy_Swims/2022-TL/06 Simp
 cover: '/songpack/Teddy_Swims/2022-TL/cover.webp',
 lrc: '/songpack/Teddy_Swims/2022-TL/06 Simple Things.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer2")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap2.on("play",()=>{document.title=document.getElementById("aplayer2").getElementsByClassName("aplayer-music")[0].innerText;});ap2.on("play",()=>{console.log("**"+document.title+"**")});ap2.on("loadstart",()=>{console.log("loadstart")});ap2.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2.on("loadeddata",()=>{console.log("loadeddata")});ap2.on("canplay",()=>{console.log("canplay")});ap2.on("canplaythrough",()=>{console.log("canplaythrough")});ap2.on("stalled",()=>{console.log("stalled");});ap2.on("suspend",()=>{console.log("suspend")});ap2.on("play",()=>{console.log("play")});ap2.on("pause",()=>{console.log("pause")});ap2.on("waiting",()=>{console.log("waiting")});ap2.on("playing",()=>{console.log("playing")});ap2.on("seeking",()=>{console.log("seeking")});ap2.on("seeked",()=>{console.log("seeked")});ap2.on("error",()=>{console.log("error");});ap2.on("ended",()=>{console.log("ended");});ap2.on("abort",()=>{console.log("abort");});ap2.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -889,20 +778,7 @@ lrc: '/songpack/Teddy_Swims/2022-TL/06 Simple Things.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="I’ve-Tried-Everything-But-Therapy-Part-1-2023"><a href="#I’ve-Tried-Everything-But-Therapy-Part-1-2023" class="headerlink" title="I’ve Tried Everything But Therapy (Part 1) 2023"></a>I’ve Tried Everything But Therapy (Part 1) 2023</h3>
-<div id="aplayer3" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer3"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="I’ve-Tried-Everything-But-Therapy-Part-1-2023"><a href="#I’ve-Tried-Everything-But-Therapy-Part-1-2023" class="headerlink" title="I’ve Tried Everything But Therapy (Part 1) 2023"></a>I’ve Tried Everything But Therapy (Part 1) 2023</h3><div id="aplayer3" class="aplayerJS"></div><script>const ap3 = new APlayer({container: document.getElementById("aplayer3"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Some Things I\'ll Never Know',
 artist: 'Teddy Swims',
@@ -964,51 +840,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Teddy_Swims/2023-I1/10 Ever
 cover: '/songpack/Teddy_Swims/2023-I1/cover.webp',
 lrc: '/songpack/Teddy_Swims/2023-I1/10 Evergreen.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer3")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap3.on("play",()=>{document.title=document.getElementById("aplayer3").getElementsByClassName("aplayer-music")[0].innerText;});ap3.on("play",()=>{console.log("**"+document.title+"**")});ap3.on("loadstart",()=>{console.log("loadstart")});ap3.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap3.on("loadeddata",()=>{console.log("loadeddata")});ap3.on("canplay",()=>{console.log("canplay")});ap3.on("canplaythrough",()=>{console.log("canplaythrough")});ap3.on("stalled",()=>{console.log("stalled");});ap3.on("suspend",()=>{console.log("suspend")});ap3.on("play",()=>{console.log("play")});ap3.on("pause",()=>{console.log("pause")});ap3.on("waiting",()=>{console.log("waiting")});ap3.on("playing",()=>{console.log("playing")});ap3.on("seeking",()=>{console.log("seeking")});ap3.on("seeked",()=>{console.log("seeked")});ap3.on("error",()=>{console.log("error");});ap3.on("ended",()=>{console.log("ended");});ap3.on("abort",()=>{console.log("abort");});ap3.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1019,20 +851,7 @@ lrc: '/songpack/Teddy_Swims/2023-I1/10 Evergreen.lrc',
 
 </div></div><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
 
-<h3 id="I’ve-Tried-Everything-But-Therapy-Part-1-5-2024"><a href="#I’ve-Tried-Everything-But-Therapy-Part-1-5-2024" class="headerlink" title="I’ve Tried Everything But Therapy (Part 1.5) 2024"></a>I’ve Tried Everything But Therapy (Part 1.5) 2024</h3><h4 id="CD1"><a href="#CD1" class="headerlink" title="CD1"></a>CD1</h4>
-<div id="aplayer4a" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer4a"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="I’ve-Tried-Everything-But-Therapy-Part-1-5-2024"><a href="#I’ve-Tried-Everything-But-Therapy-Part-1-5-2024" class="headerlink" title="I’ve Tried Everything But Therapy (Part 1.5) 2024"></a>I’ve Tried Everything But Therapy (Part 1.5) 2024</h3><h4 id="CD1"><a href="#CD1" class="headerlink" title="CD1"></a>CD1</h4><div id="aplayer4a" class="aplayerJS"></div><script>const ap4a = new APlayer({container: document.getElementById("aplayer4a"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Hammer to the Heart',
 artist: 'Teddy Swims',
@@ -1058,66 +877,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Teddy_Swims/2024-I5-CD1/04 
 cover: '/songpack/Teddy_Swims/2024-I5-CD1/cover.webp',
 lrc: '/songpack/Teddy_Swims/2024-I5-CD1/04 Growing Up is Getting Old.lrc',
 },
-]
-    });
+]});ap4a.on("play",()=>{document.title=document.getElementById("aplayer4a").getElementsByClassName("aplayer-music")[0].innerText;});ap4a.on("play",()=>{console.log("**"+document.title+"**")});ap4a.on("loadstart",()=>{console.log("loadstart")});ap4a.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4a.on("loadeddata",()=>{console.log("loadeddata")});ap4a.on("canplay",()=>{console.log("canplay")});ap4a.on("canplaythrough",()=>{console.log("canplaythrough")});ap4a.on("stalled",()=>{console.log("stalled");});ap4a.on("suspend",()=>{console.log("suspend")});ap4a.on("play",()=>{console.log("play")});ap4a.on("pause",()=>{console.log("pause")});ap4a.on("waiting",()=>{console.log("waiting")});ap4a.on("playing",()=>{console.log("playing")});ap4a.on("seeking",()=>{console.log("seeking")});ap4a.on("seeked",()=>{console.log("seeked")});ap4a.on("error",()=>{console.log("error");});ap4a.on("ended",()=>{console.log("ended");});ap4a.on("abort",()=>{console.log("abort");});ap4a.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer4a")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h4 id="CD2"><a href="#CD2" class="headerlink" title="CD2"></a>CD2</h4>
-<div id="aplayer4b" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer4b"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h4 id="CD2"><a href="#CD2" class="headerlink" title="CD2"></a>CD2</h4><div id="aplayer4b" class="aplayerJS"></div><script>const ap4b = new APlayer({container: document.getElementById("aplayer4b"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Some Things I\'ll Never Know',
 artist: 'Teddy Swims',
@@ -1179,66 +941,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Teddy_Swims/2024-I5-CD2/10 
 cover: '/songpack/Teddy_Swims/2024-I5-CD2/cover.webp',
 lrc: '/songpack/Teddy_Swims/2024-I5-CD2/10 Evergreen.lrc',
 },
-]
-    });
+]});ap4b.on("play",()=>{document.title=document.getElementById("aplayer4b").getElementsByClassName("aplayer-music")[0].innerText;});ap4b.on("play",()=>{console.log("**"+document.title+"**")});ap4b.on("loadstart",()=>{console.log("loadstart")});ap4b.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap4b.on("loadeddata",()=>{console.log("loadeddata")});ap4b.on("canplay",()=>{console.log("canplay")});ap4b.on("canplaythrough",()=>{console.log("canplaythrough")});ap4b.on("stalled",()=>{console.log("stalled");});ap4b.on("suspend",()=>{console.log("suspend")});ap4b.on("play",()=>{console.log("play")});ap4b.on("pause",()=>{console.log("pause")});ap4b.on("waiting",()=>{console.log("waiting")});ap4b.on("playing",()=>{console.log("playing")});ap4b.on("seeking",()=>{console.log("seeking")});ap4b.on("seeked",()=>{console.log("seeked")});ap4b.on("error",()=>{console.log("error");});ap4b.on("ended",()=>{console.log("ended");});ap4b.on("abort",()=>{console.log("abort");});ap4b.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer4b")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h3 id="I’ve-Tried-Everything-But-Therapy-Part-2-2025"><a href="#I’ve-Tried-Everything-But-Therapy-Part-2-2025" class="headerlink" title="I’ve Tried Everything But Therapy (Part 2) 2025"></a>I’ve Tried Everything But Therapy (Part 2) 2025</h3>
-<div id="aplayer5" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer5"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h3 id="I’ve-Tried-Everything-But-Therapy-Part-2-2025"><a href="#I’ve-Tried-Everything-But-Therapy-Part-2-2025" class="headerlink" title="I’ve Tried Everything But Therapy (Part 2) 2025"></a>I’ve Tried Everything But Therapy (Part 2) 2025</h3><div id="aplayer5" class="aplayerJS"></div><script>const ap5 = new APlayer({container: document.getElementById("aplayer5"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Not Your Man',
 artist: 'Teddy Swims',
@@ -1318,51 +1023,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Teddy_Swims/2025-I2/13 She 
 cover: '/songpack/Teddy_Swims/2025-I2/cover.webp',
 lrc: '/songpack/Teddy_Swims/2025-I2/13 She Loves the Rain.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer5")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap5.on("play",()=>{document.title=document.getElementById("aplayer5").getElementsByClassName("aplayer-music")[0].innerText;});ap5.on("play",()=>{console.log("**"+document.title+"**")});ap5.on("loadstart",()=>{console.log("loadstart")});ap5.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap5.on("loadeddata",()=>{console.log("loadeddata")});ap5.on("canplay",()=>{console.log("canplay")});ap5.on("canplaythrough",()=>{console.log("canplaythrough")});ap5.on("stalled",()=>{console.log("stalled");});ap5.on("suspend",()=>{console.log("suspend")});ap5.on("play",()=>{console.log("play")});ap5.on("pause",()=>{console.log("pause")});ap5.on("waiting",()=>{console.log("waiting")});ap5.on("playing",()=>{console.log("playing")});ap5.on("seeking",()=>{console.log("seeking")});ap5.on("seeked",()=>{console.log("seeked")});ap5.on("error",()=>{console.log("error");});ap5.on("ended",()=>{console.log("ended");});ap5.on("abort",()=>{console.log("abort");});ap5.on("emptied",()=>{console.log("emptied");});</script>
 
 <div class="fold"><div class="fold_hider"><div class="close hider_title">点击显示&#x2F;隐藏</p>
 </div></div><div class="fold_content">
@@ -1495,12 +1156,12 @@ lrc: '/songpack/Teddy_Swims/2025-I2/13 She Loves the Rain.lrc',
     requiredMeta: [""],
     pageview: "true" && "",
     emoji: [
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
-      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
-      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://fastly.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://fastly.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
     ],
     locale,
   });

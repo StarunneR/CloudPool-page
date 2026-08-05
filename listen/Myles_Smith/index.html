@@ -18,6 +18,9 @@
   <!-- head 中尽量靠前放 preconnect -->
   <link rel="preconnect" href="https://s4.zstatic.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fastly.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fastly.jsdelivr.net">
   <!--
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.css" integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -74,7 +77,7 @@
   <script src="https://s4.zstatic.net/ajax/libs/geopattern/1.2.3/js/geopattern.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/geopattern@1.2.3/geopattern.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/nprogress/0.2.0/nprogress.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js'"></script>
   <script src="https://s4.zstatic.net/ajax/libs/qrious/4.0.2/qrious.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js'"></script>
-  <script src="https://unpkg.com/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
+  <script src="https://fastly.jsdelivr.net/npm/@waline/client@v3/dist/waline.umd.js" crossorigin="anonymous" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/@waline/client@3/dist/waline.umd.min.js'"></script>
   
   <script src="/live2d-widget/autoload.js"></script>
   <script src="/js/APlayer.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -680,20 +683,7 @@
         <h3 id="You-Promised-A-Lifetime-2024"><a href="#You-Promised-A-Lifetime-2024" class="headerlink" title="You Promised A Lifetime 2024"></a>You Promised A Lifetime 2024</h3><ul>
 <li>Genre: Alternative &amp; Indie</li>
 </ul>
-
-<div id="aplayer1" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer1"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<div id="aplayer1" class="aplayerJS"></div><script>const ap1 = new APlayer({container: document.getElementById("aplayer1"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'My Home',
 artist: 'Myles Smith',
@@ -731,69 +721,12 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Myles_Smith/2024-YP/06 Bett
 cover: '/songpack/Myles_Smith/2024-YP/cover.webp',
 lrc: '/songpack/Myles_Smith/2024-YP/06 Betting on Us.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer1")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap1.on("play",()=>{document.title=document.getElementById("aplayer1").getElementsByClassName("aplayer-music")[0].innerText;});ap1.on("play",()=>{console.log("**"+document.title+"**")});ap1.on("loadstart",()=>{console.log("loadstart")});ap1.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap1.on("loadeddata",()=>{console.log("loadeddata")});ap1.on("canplay",()=>{console.log("canplay")});ap1.on("canplaythrough",()=>{console.log("canplaythrough")});ap1.on("stalled",()=>{console.log("stalled");});ap1.on("suspend",()=>{console.log("suspend")});ap1.on("play",()=>{console.log("play")});ap1.on("pause",()=>{console.log("pause")});ap1.on("waiting",()=>{console.log("waiting")});ap1.on("playing",()=>{console.log("playing")});ap1.on("seeking",()=>{console.log("seeking")});ap1.on("seeked",()=>{console.log("seeked")});ap1.on("error",()=>{console.log("error");});ap1.on("ended",()=>{console.log("ended");});ap1.on("abort",()=>{console.log("abort");});ap1.on("emptied",()=>{console.log("emptied");});</script>
 
 <h3 id="A-Minute-A-Moment…-2025"><a href="#A-Minute-A-Moment…-2025" class="headerlink" title="A Minute, A Moment… 2025"></a>A Minute, A Moment… 2025</h3><ul>
 <li>Genre: Alternative &amp; Indie</li>
 </ul>
-<h4 id="CD1"><a href="#CD1" class="headerlink" title="CD1"></a>CD1</h4>
-<div id="aplayer2a" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer2a"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h4 id="CD1"><a href="#CD1" class="headerlink" title="CD1"></a>CD1</h4><div id="aplayer2a" class="aplayerJS"></div><script>const ap2a = new APlayer({container: document.getElementById("aplayer2a"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Made For Me',
 artist: 'Myles Smith',
@@ -831,66 +764,9 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Myles_Smith/2025-AM/1-06 Dr
 cover: '/songpack/Myles_Smith/2025-AM/cover.webp',
 lrc: '/songpack/Myles_Smith/2025-AM/1-06 Dreamers.lrc',
 },
-]
-    });
+]});ap2a.on("play",()=>{document.title=document.getElementById("aplayer2a").getElementsByClassName("aplayer-music")[0].innerText;});ap2a.on("play",()=>{console.log("**"+document.title+"**")});ap2a.on("loadstart",()=>{console.log("loadstart")});ap2a.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2a.on("loadeddata",()=>{console.log("loadeddata")});ap2a.on("canplay",()=>{console.log("canplay")});ap2a.on("canplaythrough",()=>{console.log("canplaythrough")});ap2a.on("stalled",()=>{console.log("stalled");});ap2a.on("suspend",()=>{console.log("suspend")});ap2a.on("play",()=>{console.log("play")});ap2a.on("pause",()=>{console.log("pause")});ap2a.on("waiting",()=>{console.log("waiting")});ap2a.on("playing",()=>{console.log("playing")});ap2a.on("seeking",()=>{console.log("seeking")});ap2a.on("seeked",()=>{console.log("seeked")});ap2a.on("error",()=>{console.log("error");});ap2a.on("ended",()=>{console.log("ended");});ap2a.on("abort",()=>{console.log("abort");});ap2a.on("emptied",()=>{console.log("emptied");});</script>
 
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer2a")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
-
-<h4 id="CD2"><a href="#CD2" class="headerlink" title="CD2"></a>CD2</h4>
-<div id="aplayer2b" class="aplayerJS"></div>
-
-<script>
-(() => {
-
-    const ap = new APlayer({
-        container: document.getElementById("aplayer2b"),
-        lrcType: 3,
-        loop: "none",
-        mutex: true,
-        preload: "auto",
-        order: "list",
-        audio: [
+<h4 id="CD2"><a href="#CD2" class="headerlink" title="CD2"></a>CD2</h4><div id="aplayer2b" class="aplayerJS"></div><script>const ap2b = new APlayer({container: document.getElementById("aplayer2b"),lrcType:3,loop:"none",mutex:true,preload:"auto",order:"list",audio: [
 {
 name: 'Nice To Meet You',
 artist: 'Myles Smith',
@@ -940,51 +816,7 @@ url:'https://cps3storage.s3-accelerate.amazonaws.com/Myles_Smith/2025-AM/2-08 Ni
 cover: '/songpack/Myles_Smith/2025-AM/cover.webp',
 lrc: '/songpack/Myles_Smith/2025-AM/2-08 Nice To Meet You.lrc',
 },
-]
-    });
-
-    ap.on("play", () => {
-        const musicTitle =
-            document
-                .getElementById("aplayer2b")
-                .querySelector(".aplayer-music")
-                ?.innerText;
-
-        if (musicTitle) {
-            document.title = musicTitle;
-            console.log("**" + musicTitle + "**");
-        }
-    });
-    
-    const debugEvents = [
-        "loadstart",
-        "loadedmetadata",
-        "loadeddata",
-        "canplay",
-        "canplaythrough",
-        "stalled",
-        "suspend",
-        "play",
-        "pause",
-        "waiting",
-        "playing",
-        "seeking",
-        "seeked",
-        "error",
-        "ended",
-        "abort",
-        "emptied"
-    ];
-
-    debugEvents.forEach(eventName => {
-        ap.on(eventName, () => {
-            console.log(eventName);
-        });
-    });
-
-})();
-</script>
-
+]});ap2b.on("play",()=>{document.title=document.getElementById("aplayer2b").getElementsByClassName("aplayer-music")[0].innerText;});ap2b.on("play",()=>{console.log("**"+document.title+"**")});ap2b.on("loadstart",()=>{console.log("loadstart")});ap2b.on("loadedmetadata",()=>{console.log("loadedmetadata")});ap2b.on("loadeddata",()=>{console.log("loadeddata")});ap2b.on("canplay",()=>{console.log("canplay")});ap2b.on("canplaythrough",()=>{console.log("canplaythrough")});ap2b.on("stalled",()=>{console.log("stalled");});ap2b.on("suspend",()=>{console.log("suspend")});ap2b.on("play",()=>{console.log("play")});ap2b.on("pause",()=>{console.log("pause")});ap2b.on("waiting",()=>{console.log("waiting")});ap2b.on("playing",()=>{console.log("playing")});ap2b.on("seeking",()=>{console.log("seeking")});ap2b.on("seeked",()=>{console.log("seeked")});ap2b.on("error",()=>{console.log("error");});ap2b.on("ended",()=>{console.log("ended");});ap2b.on("abort",()=>{console.log("abort");});ap2b.on("emptied",()=>{console.log("emptied");});</script>
 
 <hr>
 <ul>
@@ -1125,12 +957,12 @@ lrc: '/songpack/Myles_Smith/2025-AM/2-08 Nice To Meet You.lrc',
     requiredMeta: [""],
     pageview: "true" && "",
     emoji: [
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/tieba",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/weibo",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/qq",
-      "https://testingcf.jsdelivr.net/gh/walinejs/emojis/alus",
-      "https://testingcf.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
-      "https://testingcf.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/tieba",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/weibo",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/qq",
+      "https://fastly.jsdelivr.net/gh/walinejs/emojis/alus",
+      "https://fastly.jsdelivr.net/gh/Saidosi/azuki-emoji-for-waline@1.0/azukisan",
+      "https://fastly.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif",
     ],
     locale,
   });
